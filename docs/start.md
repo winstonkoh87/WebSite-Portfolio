@@ -1,6 +1,6 @@
-![Athena Banner](https://raw.githubusercontent.com/winstonkoh87/Athena-Public/main/docs/athena_banner.png)
-
 # 🏛️ Athena: Personal AI Digital Assistant
+
+![Athena Banner](https://raw.githubusercontent.com/winstonkoh87/Athena-Public/main/docs/athena_banner.png)
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Protocols](https://img.shields.io/badge/Protocols-198-blue)
