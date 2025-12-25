@@ -23,6 +23,15 @@ Personal brand portfolio site showcasing the Three-Pillar Leadership Framework, 
 | Writing | Blog placeholder (SEO-ready) |
 | Contact | WhatsApp CTA + social links |
 
+## Documentation (Knowledge Base)
+
+System architectures and strategic frameworks ported from **Project Athena**:
+
+- [**Adaptive Latency**](docs/concepts/adaptive-latency.md) — Variable compute reasoning.
+- [**Modular Identity**](docs/concepts/modular-architecture.md) — Scalable agent design.
+- [**Arena Physics**](docs/frameworks/arena-physics.md) — Contextual viability analysis.
+- [**System Architecture**](docs/ARCHITECTURE.md) — Portfolio diagram.
+
 ## Features
 
 - Interactive particle constellation background
