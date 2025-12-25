@@ -1,17 +1,40 @@
-# WebSite-Portfolio
+# Winston Koh | Strategic Systems Architect
 
-A premium portfolio website for Winston Koh, showcasing technical expertise and leadership frameworks.
+Personal brand portfolio site showcasing the Three-Pillar Leadership Framework, Arena Physics, and strategic operating principles.
+
+## Live Site
+
+🔗 **<https://winstonkoh87.github.io/WebSite-Portfolio/>**
+
+## Tech Stack
+
+- **HTML5** — Semantic markup
+- **CSS3** — Custom properties, flexbox, grid, glassmorphism
+- **Vanilla JavaScript** — Particle constellation background
+- **No frameworks** — Zero dependencies
+
+## Pages
+
+| Page | Description |
+|------|-------------|
+| Home | Hero + navigation cards |
+| About | Identity, philosophy, Bionic Operating Model |
+| Framework | Three-Pillar Leadership, Arena Physics, Laws, SDR |
+| Writing | Blog placeholder (SEO-ready) |
+| Contact | WhatsApp CTA + social links |
 
 ## Features
 
-- **Modern Design**: Built with vanilla CSS, glassmorphism, and responsive layouts.
-- **Leadership Framework**: Integration of the Strategy-Power-Warmth model.
-- **Operating Philosophy**: Documentation of core strategic principles.
+- Interactive particle constellation background
+- Floating WhatsApp button (all pages)
+- Mobile responsive
+- Dark mode aesthetic
+- Fast load (~40KB total)
 
-## Structure
+## Deployment
 
-- `index.html`: Main portfolio page.
-- `style.css`: Premium themes and layouts.
+Hosted on GitHub Pages. Push to `main` → auto-deploy.
 
 ---
-*Created via the Athena Bionic Operating System.*
+
+*Built with pure HTML/CSS/JS. No frameworks. No bullshit.*
