@@ -1,4 +1,4 @@
-![Athena Banner](./docs/athena_banner.png)
+![Athena Banner](https://raw.githubusercontent.com/winstonkoh87/Athena-Public/main/docs/athena_banner.png)
 
 # 🏛️ Athena: Personal AI Digital Assistant
 
@@ -29,7 +29,7 @@ I needed more than a note-taking app. I needed a **"second brain"** — one that
 
 I built **Athena**: a hybrid-cloud cognitive system powered by the **[Triple Crown Stack](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/templates/core_identity_template.md#5-bionic-capability-stack-the-triple-crown)** (Gemini + Supabase + Edge Functions).
 
-- Researched and integrated best practices from [Anthropic's Agents.md](https://github.com/anthropics/anthropic-cookbook/blob/main/misc/agents.md), [Supabase pgvector](https://supabase.com/docs/guides/ai/vector-columns), and [Stanford's DSPy](https://github.com/stanfordnlp/dspy)
+- Researched and integrated best practices from [Anthropic's Agents.md](https://github.com/anthropics/anthropic-cookbook/blob/main/patterns/agents/README.md), [Supabase pgvector](https://supabase.com/docs/guides/ai/vector-columns), and [Stanford's DSPy](https://github.com/stanfordnlp/dspy)
 - Designed **[Laws #0-#4](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/templates/core_identity_template.md)** as hard-coded safety rails and decision principles
 - Built **[3-Phase Temporal Workflow](#the-workflow-temporal-flow)** (`/start` → Execute → `/end`) for continuous context inheritance
 - Implemented **[Edge Functions](#tech-stack)** for automated "iCloud-like" memory synchronization
@@ -46,6 +46,8 @@ I built **Athena**: a hybrid-cloud cognitive system powered by the **[Triple Cro
 | **[Automation Scripts](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/scripts/)** | 88 |
 | **[Workflows](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/workflows/)** | 23 |
 | **Embedded Documents** | 750+ (VectorRAG) |
+| **System Architecture** | [Architecture](ARCHITECTURE.md) |
+| **VectorRAG Architecture** | [VectorRAG](VECTORRAG.md) |
 
 **Impact:**
 
@@ -76,7 +78,7 @@ This isn't just an AI assistant. It's a cognitive extension that grows smarter w
 
 ## 🎬 Quick Demo
 
-[![Athena Terminal Demo — Boot to Response](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/demo_screenshot.png)](https://winstonkoh87.github.io/Athena-Public/examples/demo.html)
+[![Athena Terminal Demo — Boot to Response](https://raw.githubusercontent.com/winstonkoh87/Athena-Public/main/examples/demo_screenshot.png)](https://winstonkoh87.github.io/Athena-Public/examples/demo.html)
 
 *Click to view the **live interactive demo** → [winstonkoh87.github.io/Athena-Public/examples/demo.html](https://winstonkoh87.github.io/Athena-Public/examples/demo.html)*
 
@@ -91,7 +93,7 @@ This isn't just an AI assistant. It's a cognitive extension that grows smarter w
 5. [How It Works](#how-it-works)
 6. [Reasoning Modes](#-reasoning-modes-the-bleach-scaling-law)
 7. [Anti-Hallucination Architecture](#-anti-hallucination-architecture)
-8. [VectorRAG Architecture](docs/VECTORRAG.md)
+8. [VectorRAG Architecture](VECTORRAG.md)
 9. [Example Workflows](#example-workflows)
 10. [The Domain Bridge](#-the-domain-bridge-finance--ai)
 11. [Why I Built This](#why-i-built-this)
@@ -105,9 +107,9 @@ This isn't just an AI assistant. It's a cognitive extension that grows smarter w
 
 ## 🗺️ Living Roadmap
 
-See where the system is heading: [**View the Living Roadmap**](ROADMAP.md)
+See where the system is heading: [**View the Living Roadmap**](https://github.com/winstonkoh87/Athena-Public/blob/main/ROADMAP.md)
 
-- ✅ **Recall**: VectorRAG (Supabase + pgvector), Protocols, Temporal Continuity → [**Deep Dive: VectorRAG Architecture**](docs/VECTORRAG.md)
+- ✅ **Recall**: VectorRAG (Supabase + pgvector), Protocols, Temporal Continuity → [**Deep Dive: VectorRAG Architecture**](VECTORRAG.md)
 - ✅ **Mobile Access**: Telegram Bot (Athena-Lite) for field notes
 - 🚧 **Augmentation**: Voice Interface, Advanced Grounding
 - 🔮 **Autonomy**: Daily Briefing Agent, Recursive Self-Optimization
@@ -197,7 +199,7 @@ Athena isn't just backend logic. I use it to act as a **Creative Director** for 
 | **Speed** | Concept → Production-ready HTML/CSS in <60 seconds. |
 | **No Figma** | I skip design tools entirely. The code *is* the canvas.
 
-[→ See [Protocol 130](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/protocols/130-vibe-coding.md) (Vibe Coding)](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/protocols/130-vibe-coding.md) | [See [Protocol 98](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/protocols/98-strategic-depth-theory.md) (Strategic Depth)](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/protocols/98-strategic-depth-theory.md) | [Protocol Template](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/templates/protocol_template.md)
+[→ See [Protocol 130](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/protocols/130-vibe-coding.md) (Vibe Coding)](<https://github.com/winstonkoh87/Athena-Public/blob/main/examples/protocols/130-vibe-coding.md>) | [See [Protocol 98](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/protocols/98-strategic-depth-theory.md) (Strategic Depth)](<https://github.com/winstonkoh87/Athena-Public/blob/main/examples/protocols/98-strategic-depth-theory.md>) | [Protocol Template](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/templates/protocol_template.md)
 
 ---
 
@@ -321,7 +323,7 @@ flowchart LR
 
 Athena operates on a continuous loop: **Boot (`/start`) → Execute → Persist (`/end`)**. Unlike standard LLMs, context is preserved in files, not chat history.
 
-[→ View the Temporal Workflow Diagram](docs/ARCHITECTURE.md#loading-strategy)
+[→ View the Temporal Workflow Diagram](ARCHITECTURE.md#loading-strategy)
 
 ---
 
@@ -716,7 +718,7 @@ I'm Winston — an **AI Systems Engineer** who spent 10+ years in financial serv
 
 | Feature | Description |
 |---------|-------------|
-| **Visual Architecture Auditing** | PlantUML generation and structural verification ([Protocol 166](docs/protocols/engineering/166-intent-drift-detector.md)) |
+| **Visual Architecture Auditing** | PlantUML generation and structural verification ([Protocol 166](https://github.com/winstonkoh87/Athena-Public/blob/main/docs/protocols/engineering/166-intent-drift-detector.md)) |
 | **Intent Persistence** | TASK_LOG infrastructure to prevent AI regression |
 | **Protocol 49 v2: Robustness > Efficiency** | Upgraded trade-off framework: Pareto frontier framing, failure modes table, executable flip gates |
 | **Anti-Hallucination Architecture** | Structural design to minimize AI hallucinations (Law #5, [Protocol 141](https://github.com/winstonkoh87/Athena-Public/blob/main/examples/protocols/141-claim-atomization.md)) |

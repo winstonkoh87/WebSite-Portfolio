@@ -1,0 +1,23 @@
+{
+    "ignorePatterns": [
+        {
+            "pattern": "^https://linkedin\\.com/.*"
+        },
+        {
+            "pattern": "^https://www\\.linkedin\\.com/.*"
+        },
+        {
+            "pattern": "^https://ai\\.google\\.dev/.*"
+        },
+        {
+            "pattern": "^https://google\\.dev/.*"
+        },
+        {
+            "pattern": "^https://github\\.com/winstonkoh87/Athena-Public/blob/main/examples/.*"
+        }
+    ],
+    "timeout": "20s",
+    "retryOn429": true,
+    "retryCount": 2,
+    "fallbackRetryDelay": "30s"
+}
