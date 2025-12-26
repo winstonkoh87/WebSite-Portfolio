@@ -508,6 +508,85 @@ blockquote {
 }
 
 /* ========================================
+   ARTICLE GRID (WRITING PAGE)
+======================================== */
+.article-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.article-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.article-card:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.article-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.article-card-content {
+    padding: 2rem;
+}
+
+.article-card .article-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.article-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.article-tag {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-primary);
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+}
+
+.article-card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+    transition: color 0.2s;
+}
+
+.article-card:hover h3 {
+    color: var(--accent-primary);
+}
+
+.article-excerpt {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    color: var(--accent-primary);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* ========================================
    CONTACT PAGE
 ======================================== */
 .contact-intro {
