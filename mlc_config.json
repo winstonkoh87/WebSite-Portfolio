@@ -7,7 +7,7 @@
             "pattern": "^https://www\\.linkedin\\.com/.*"
         },
         {
-            "pattern": "^https://ai\\.google\\.dev/.*"
+            "pattern": "^https://ai\\.google\\.dev.*"
         },
         {
             "pattern": "^https://google\\.dev/.*"
