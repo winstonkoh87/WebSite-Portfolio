@@ -2,8 +2,9 @@
 
 ---
 
-* [Home](/)
-* [Executive Summary](start.md)
+* **[📚 Docs Home](start.md)**
+
+---
 
 * **Core Identity**
   * [Philosophy](concepts/amoral_realism.md)
