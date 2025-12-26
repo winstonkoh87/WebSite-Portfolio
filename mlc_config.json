@@ -14,6 +14,15 @@
         },
         {
             "pattern": "^https://github\\.com/winstonkoh87/Athena-Public/blob/main/examples/.*"
+        },
+        {
+            "pattern": "^\\.\\./examples/.*"
+        },
+        {
+            "pattern": "^\\.\\./\\.framework/.*"
+        },
+        {
+            "pattern": "^\\./SEMANTIC_SEARCH\\.md.*"
         }
     ],
     "timeout": "20s",
