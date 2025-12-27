@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const text = "Initializing System... Loaded: Strategic Architect Protocol v7.0";
+    const text = "Initializing System... Loaded: Strategic Architect Protocol v7.6";
     const speed = 40; // typing speed in ms
     const element = document.getElementById('typewriter');
 
