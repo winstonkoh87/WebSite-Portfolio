@@ -131,6 +131,38 @@
     margin-bottom: 0.5rem;
 }
 
+/* Table of Contents */
+.toc-box {
+    margin: 2rem 0;
+}
+
+.toc-box h4 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc-list li {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+}
+
+.toc-list a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.toc-list a:hover {
+    text-decoration: underline;
+}
+
 /* Key Insight Callout */
 .key-insight {
     background: linear-gradient(135deg, rgba(108, 99, 255, 0.1), rgba(255, 107, 107, 0.1));
