@@ -47,6 +47,20 @@ html {
     scroll-behavior: smooth;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
+}
+
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -97,6 +111,8 @@ nav ul {
     display: flex;
     list-style: none;
     gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 nav ul li a {
@@ -145,7 +161,8 @@ main {
 
 .hero h1 {
     font-family: 'Outfit', sans-serif;
-    font-size: 4rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
     font-weight: 700;
     margin-bottom: 1rem;
     color: var(--text-color);
@@ -165,6 +182,69 @@ main {
 }
 
 /* ========================================
+   METRICS SECTION (TRUST BAR)
+   ======================================== */
+.text-gradient {
+    background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-cta {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.metrics-section {
+    max-width: 900px;
+    margin: -2rem auto 4rem;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.metrics-grid {
+    display: flex;
+    justify-content: space-around;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.metric-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-value {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.metric-label {
+    font-size: 0.8rem;
+    color: var(--accent-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+    .metrics-grid {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+/* ========================================
    CARDS SECTION
 ======================================== */
 .cards-section {
@@ -173,7 +253,7 @@ main {
 
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5rem;
 }
 
