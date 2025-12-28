@@ -377,9 +377,13 @@ section {
 
 .masonry-item img {
     width: 100%;
+    height: auto;
     border-radius: 8px;
     display: block;
     transition: filter 0.3s ease;
+    object-fit: cover;
+    aspect-ratio: 4 / 5;
+    /* Consistent portrait ratio */
 }
 
 .masonry-item figcaption {
