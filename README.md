@@ -48,7 +48,7 @@ The human provides **strategic direction** and **high-nuance judgment**. The AI 
 
 ---
 
-## 📈 Development Activity
+## ⚡ Development Activity
 
 <!--START_SECTION:waka-->
 <!--END_SECTION:waka-->
