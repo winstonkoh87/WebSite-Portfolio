@@ -501,6 +501,51 @@ section {
     font-weight: 400;
 }
 
+/* Essay Featured Article */
+.essay-featured {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    background: var(--surface-color);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: var(--space-md);
+    border: 1px solid #333;
+}
+
+.essay-featured:hover {
+    padding-left: 2rem;
+    border-color: var(--accent-color);
+}
+
+.essay-featured .essay-title {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.essay-excerpt {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.essay-coming-soon {
+    text-align: center;
+    padding: var(--space-lg) 0;
+    color: var(--text-secondary);
+}
+
+.essay-coming-soon p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.essay-hint {
+    font-style: italic;
+    font-size: 0.95rem !important;
+    color: #555;
+}
+
 /* Now Page */
 .now-list {
     list-style: none;
