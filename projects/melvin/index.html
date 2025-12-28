@@ -13,7 +13,8 @@
     <meta property="og:title" content="Melvin Lim | Officer. Scholar. Human.">
     <meta property="og:description" content="Leading with calm energy — discipline for outcomes, warmth for people.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="assets/img/hero-portrait.png">
+    <meta property="og:image" content="https://winstonkoh87.github.io/projects/melvin/assets/img/hero-portrait.png">
+    <meta property="og:url" content="https://winstonkoh87.github.io/projects/melvin/">
     <meta name="twitter:card" content="summary_large_image">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -165,40 +166,46 @@
     </footer>
 
     <script>
-        const words = ["Calm Energy", "Strategic Focus", "Human Connection"];
-        const textElement = document.getElementById("typewriter");
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typeSpeed = 100;
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-        function type() {
-            const currentWord = words[wordIndex];
+        if (!prefersReduced) {
+            const words = ["Calm Energy", "Strategic Focus", "Human Connection"];
+            const textElement = document.getElementById("typewriter");
 
-            if (isDeleting) {
-                textElement.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-                typeSpeed = 50; // Faster when deleting
-            } else {
-                textElement.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-                typeSpeed = 100; // Normal typing speed
+            if (textElement) {
+                let wordIndex = 0;
+                let charIndex = 0;
+                let isDeleting = false;
+                let typeSpeed = 100;
+
+                function type() {
+                    const currentWord = words[wordIndex];
+
+                    if (isDeleting) {
+                        textElement.textContent = currentWord.substring(0, charIndex - 1);
+                        charIndex--;
+                        typeSpeed = 50;
+                    } else {
+                        textElement.textContent = currentWord.substring(0, charIndex + 1);
+                        charIndex++;
+                        typeSpeed = 100;
+                    }
+
+                    if (!isDeleting && charIndex === currentWord.length) {
+                        isDeleting = true;
+                        typeSpeed = 2000;
+                    } else if (isDeleting && charIndex === 0) {
+                        isDeleting = false;
+                        wordIndex = (wordIndex + 1) % words.length;
+                        typeSpeed = 500;
+                    }
+
+                    setTimeout(type, typeSpeed);
+                }
+
+                type();
             }
-
-            if (!isDeleting && charIndex === currentWord.length) {
-                isDeleting = true;
-                typeSpeed = 2000; // Pause at end of word
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                typeSpeed = 500; // Pause before new word
-            }
-
-            setTimeout(type, typeSpeed);
         }
-
-        // Start the loop
-        document.addEventListener('DOMContentLoaded', type);
     </script>
 </body>
 

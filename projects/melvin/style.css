@@ -16,6 +16,21 @@
     --space-xl: 8rem;
 
     --nav-h: 72px;
+
+    color-scheme: dark;
+}
+
+/* Accessibility Utility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 
 * {
@@ -50,6 +65,13 @@ a {
 
 a:hover {
     opacity: 0.8;
+}
+
+a:focus-visible,
+.btn-primary:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
+    border-radius: 8px;
 }
 
 .skip-link {
@@ -162,6 +184,14 @@ section {
     color: var(--text-secondary);
 }
 
+.sub-detail {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #777;
+    letter-spacing: 0.02em;
+    font-size: 0.9rem;
+}
+
 .hero-img {
     margin-top: var(--space-lg);
     border-radius: 0 0 2rem 2rem;
@@ -251,6 +281,12 @@ section {
     margin-top: 1rem;
 }
 
+.card-detail {
+    color: var(--text-secondary);
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+}
+
 .card-tall {
     background-size: cover;
     background-position: center;
@@ -300,8 +336,20 @@ section {
 }
 
 .masonry-grid {
-    column-count: 3;
+    column-count: 1;
     column-gap: var(--space-sm);
+}
+
+@media (min-width: 600px) {
+    .masonry-grid {
+        column-count: 2;
+    }
+}
+
+@media (min-width: 900px) {
+    .masonry-grid {
+        column-count: 3;
+    }
 }
 
 .masonry-item {
@@ -382,8 +430,13 @@ section {
         border-radius: 1rem;
     }
 
-    .nav-links {
+    /* Mobile Nav Logic: Hide links but keep updated CTA */
+    .nav-links a:not(.btn-primary) {
         display: none;
+    }
+
+    .nav-links {
+        gap: 0;
     }
 
     /* Mobile Menu would go here in V3 */
