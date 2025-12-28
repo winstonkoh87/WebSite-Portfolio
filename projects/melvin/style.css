@@ -179,6 +179,17 @@ section {
     color: var(--text-secondary);
 }
 
+/* Prevent layout shift during typewriter animation */
+.dynamic-wrapper {
+    display: block;
+    min-height: 1.2em;
+    /* Reserve space for the tallest text */
+}
+
+.dynamic-text {
+    display: inline-block;
+}
+
 .hero-subtitle {
     font-size: 1.25rem;
     color: var(--text-secondary);
