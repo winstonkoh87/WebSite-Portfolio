@@ -48,6 +48,13 @@ The human provides **strategic direction** and **high-nuance judgment**. The AI 
 
 ---
 
+## 📈 Development Activity
+
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
+
+---
+
 ## Tech Stack
 
 - **HTML5** — Semantic markup
