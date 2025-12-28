@@ -1,6 +1,8 @@
-# Winston Koh | Strategic Systems Architect
+# Winston Koh | I Build Systems That Run Themselves
 
-Personal brand portfolio site showcasing the Three-Pillar Leadership Framework, Arena Physics, and strategic operating principles.
+> Turning messy AI tools into reliable business workflows. No babysitting. Just results.
+
+Personal portfolio showcasing autonomous systems, AI-augmented workflows, and the Bionic Operating Model.
 
 ## Live Site
 
@@ -16,7 +18,7 @@ Personal brand portfolio site showcasing the Three-Pillar Leadership Framework, 
 
 | Layer | Role | Example |
 |-------|------|---------|
-| **Human (Winston)** | Vision, strategy, taste | "I need a portfolio that positions me as a Strategic Systems Architect" |
+| **Human (Winston)** | Vision, strategy, taste | "I need a portfolio that positions me as someone who builds reliable systems" |
 | **AI (Athena)** | Execution, research, code | Scaffolded HTML/CSS, wrote copy, implemented particles.js, audited SEO |
 
 This isn't just a portfolio *about* AI-augmented work — it's a **living demonstration** of the workflow itself.
@@ -90,4 +92,4 @@ CI/CD: HTML validation + broken link checker via GitHub Actions.
 
 ---
 
-*Built with pure HTML/CSS/JS. No frameworks. No bullshit. Co-created with AI.*
+*Built with pure HTML/CSS/JS. No frameworks. No bullshit. It just works.*
