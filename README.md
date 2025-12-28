@@ -2,6 +2,8 @@
 
 > Turning messy AI tools into reliable business workflows. No babysitting. Just results.
 
+[![wakatime](https://wakatime.com/badge/github/winstonkoh87/winstonkoh87.github.io.svg)](https://wakatime.com/badge/github/winstonkoh87/winstonkoh87.github.io)
+
 Personal portfolio showcasing autonomous systems, AI-augmented workflows, and the Bionic Operating Model.
 
 ## Live Site
