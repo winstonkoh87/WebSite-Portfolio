@@ -441,3 +441,120 @@ section {
 
     /* Mobile Menu would go here in V3 */
 }
+
+/* Pages (Scholar's Study) */
+.page-container {
+    padding-top: calc(var(--nav-h) + var(--space-xl));
+    min-height: 80vh;
+}
+
+.notebook-header {
+    margin-bottom: var(--space-lg);
+}
+
+.notebook-title {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-family: var(--font-serif);
+    line-height: 1.1;
+    color: var(--text-primary);
+}
+
+.notebook-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-top: 1rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+}
+
+.essay-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid #333;
+}
+
+.essay-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #333;
+    transition: padding-left 0.3s ease;
+}
+
+.essay-item:hover {
+    padding-left: 1rem;
+    border-color: var(--text-primary);
+}
+
+.essay-date {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: #666;
+    min-width: 120px;
+}
+
+.essay-title {
+    font-size: 1.5rem;
+    font-family: var(--font-serif);
+    font-weight: 400;
+}
+
+/* Now Page */
+.now-list {
+    list-style: none;
+    margin-top: var(--space-md);
+}
+
+.now-item {
+    margin-bottom: var(--space-md);
+    padding-left: 1.5rem;
+    border-left: 2px solid #333;
+}
+
+.now-item strong {
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 0.25rem;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+}
+
+.now-item p {
+    color: var(--text-secondary);
+}
+
+/* Library Page */
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+
+.book-item {
+    background: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #333;
+    transition: transform 0.2s ease;
+}
+
+.book-item:hover {
+    transform: translateY(-2px);
+    border-color: var(--text-primary);
+}
+
+.book-title {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+}
+
+.book-author {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
