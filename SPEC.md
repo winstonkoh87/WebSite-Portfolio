@@ -1,50 +1,43 @@
-# Project Name: Portfolio V2 (The Systems Architect)
+# Project Name: Portfolio V2.1 (The Systems Architect)
 
-> **One-Liner**: A high-performance, static portfolio that positions Winston Koh as a "Systems Architect" rather than just a developer.
+> **One-Liner**: A high-performance, static portfolio that positions Winston Koh as a "Systems Architect" (Logic > UI).
 > **Target Audience**: High-value clients, technical recruiters, and "Arena" players.
-> **Success Metric**: Inbound leads (WhatsApp clicks) and "Trust" signals (Time on Site).
+> **Success Metric**: Inbound leads (WhatsApp for SME, Email/Form for Enterprise) and "Trust" signals.
 
-## 1. The Core Loop
+## 1. The Core Loop (Refined)
 
-1. **Hook**: User lands on `index.html`. Hero text ("I build systems that run themselves") framing the value prop.
-2. **Proof**: User navigates to `portfolio.html`, filters by "AI Systems", sees *Project Athena* and *Brew & Bean* demo.
-3. **Conversion**: User clicks floating WhatsApp button or "Initialize Project" (Tally Form).
+1. **Hook**: `index.html` Hero ("Bridging business logic with technical execution").
+2. **Proof Strip**: Immediate "Featured Systems" row above the fold (Athena, Brew, Melvin).
+3. **Deep Dive**: `portfolio.html` with explicit "System Diagrams" (Mermaid/SVG) for case studies.
+4. **Conversion**: **Contextual CTA**.
+   - **SME**: Floating WhatsApp ("Reply in <24h").
+   - **Enterprise**: "Initialize Project" (Tally/Email).
 
 ## 2. Technical Stack (Constraints)
 
 *Hard constraints. No "nice to haves".*
 
-- **Host**: GitHub Pages (winstonkoh87.github.io).  **[NO VERCEL]**
-- **Core**: Vanilla HTML5, CSS3 (CSS Variables for themes), ES6 JavaScript.
-- **Assets**: SVG Icons (Phosphor/Heroicons style), `particles.js` (Hero background).
-- **Analytics**: Google Analytics 4 (G-VG4XS3R5NV).
-- **Routing**: Standard file-based routing (`/about.html`, `/projects/sample-cafe/`).
+- **Host**: GitHub Pages. **[NO VERCEL]**
+- **Core**: Vanilla HTML5, CSS3, ES6.
+- **Aesthetics**: **NO PARTICLES.JS**. Use Technical CSS Grid / SVG Background. "Engineer" vibe, not "Gamer".
+- **Build**: Simple Python script (`build.py`) for component stamping (Header/Footer) to avoid "Nav Hell".
 
 ## 3. Architecture & File Structure
 
-- **Root**: Landing page (`index.html`) + Core pages (`about`, `writing`, `framework`, `contact`).
+- **Root**: `index.html` (Hook + Proof), `portfolio.html` (Gallery).
 - **`projects/`**: Self-contained sub-sites.
-  - `projects/sample-cafe/`: Landing page demo.
-  - `projects/p6-math-tuition/`: SME demo.
-  - `projects/melvin/`: Personal branding demo.
-- **`assets/`**: Shared CSS (`style.css`, `terminal.css`) and JS (`script.js`).
+- **`assets/`**: Shared Design System.
 
 ## 4. Content Strategy (The Three Pillars)
 
-1. **AI Systems**: "The Brain" (e.g., Project Athena). High complexity, Python/RAG.
-2. **SME Solutions**: "The Engine" (e.g., Brew & Bean). High ROI, lead-gen focused.
-3. **Personal Branding**: "The Soul" (e.g., Melvin Lim). High trust, aesthetic.
+1. **AI Systems** (Athena): Show the *Terminal*, not just the Code. Video Walkthroughs.
+2. **SME Solutions** (Brew & Bean): Show the *Dashboard/ROI*, not just the Landing Page.
+3. **Personal Branding** (Melvin): Show the *Narrative*.
 
-## 5. Non-Goals (Anti-Scope)
+## 5. Implementation Roadmap (V2.1)
 
-- **No Complex Frameworks**: No React, Next.js, or Vue. Keep it "View Source" friendly.
-- **No Backend**: No database. Contact forms use `mailto` or WhatsApp or Tally.
-- **No CMS**: Content is Markdown (converted) or raw HTML.
-
-## 6. Implementation Plan / Roadmap
-
-- [x] **Phase 1: Foundation** (HTML/CSS Framework, Dark Mode)
-- [x] **Phase 2: Content Migration** (Values, Framework, About)
-- [x] **Phase 3: Demo Integration** (Brew & Bean, MathPro)
-- [ ] **Phase 4: SEO Polish** (Sitemap automation, Structured Data for all sub-projects)
-- [ ] **Phase 5: Performance Tuning** (WebP images, defer JS)
+- [ ] **Phase 1: Visual Overhaul** (Kill Particles, Add Grid BG, Update Hero Copy).
+- [ ] **Phase 2: The Proof Strip** (Add Featured Section to Home).
+- [ ] **Phase 3: Contextual CTAs** (Split WhatsApp vs Email).
+- [ ] **Phase 4: Architecture Diagrams** (Add SVG flows to Case Studies).
+- [ ] **Phase 5: Tooling** (Create `build.py` for hydration).
