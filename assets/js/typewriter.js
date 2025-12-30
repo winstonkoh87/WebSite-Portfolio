@@ -1,44 +1,54 @@
+// Typewriter effect for homepage terminal
+// Uses system commands for "builder" aesthetic
+
 document.addEventListener('DOMContentLoaded', function () {
-    const lines = [
-        "> INITIALIZING SYSTEM ARCHITECTURE...",
-        "> OPTIMIZING DECISION PROTOCOLS...",
-        "> LOADING: STRATEGIC ARCHITECT V8.0",
-        "> SYSTEM READY."
-    ];
-    const speed = 20; // typing speed in ms (1.5x faster)
-    const lineDelay = 250; // delay between lines (1.5x faster)
-    const element = document.getElementById('typewriter');
+    const textElement = document.getElementById('typewriter');
 
-    let lineIndex = 0;
-    let charIndex = 0;
-
-    function typeWriter() {
-        if (lineIndex < lines.length) {
-            const currentLine = lines[lineIndex];
-
-            if (charIndex < currentLine.length) {
-                // If starting a new line, ensure we have a break or clear logic
-                // But here we are appending to the same span "typewriter".
-                // Simple hack: We won't clear, we just append. 
-                // However, for multiple lines, we need <br>.
-                // Better approach: We append text. If charIndex is 0 and lineIndex > 0, append <br> first.
-
-                if (charIndex === 0 && lineIndex > 0) {
-                    element.innerHTML += "<br>";
-                }
-
-                element.innerHTML += currentLine.charAt(charIndex);
-                charIndex++;
-                setTimeout(typeWriter, speed);
-            } else {
-                // End of line
-                lineIndex++;
-                charIndex = 0;
-                setTimeout(typeWriter, lineDelay);
-            }
-        }
+    // Respect reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+        if (textElement) textElement.textContent = 'system_ready.';
+        return;
     }
 
-    // Start typing after a short delay
-    setTimeout(typeWriter, 300);
+    const phrases = [
+        "initializing_core_logic...",
+        "optimizing_workflows...",
+        "eliminating_redundancy...",
+        "system_ready."
+    ];
+
+    let phraseIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+        const currentPhrase = phrases[phraseIndex];
+
+        if (isDeleting) {
+            textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        let typeSpeed = isDeleting ? 30 : 50; // Fast typing, fast deleting
+
+        if (!isDeleting && charIndex === currentPhrase.length) {
+            typeSpeed = 2000; // Pause at end of phrase
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            typeSpeed = 500;
+        }
+
+        setTimeout(type, typeSpeed);
+    }
+
+    // Start only if element exists
+    if (textElement) {
+        setTimeout(type, 300);
+    }
 });

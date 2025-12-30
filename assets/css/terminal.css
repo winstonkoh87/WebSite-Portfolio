@@ -113,3 +113,44 @@
         transform: translateY(0);
     }
 }
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    #particle-canvas {
+        display: none;
+    }
+
+    .cursor {
+        animation: none !important;
+    }
+
+    .fade-in-delayed,
+    .fade-in-delayed-2,
+    .fade-in-delayed-3 {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+/* Project Status Badges */
+.project-status {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.project-status.production {
+    color: #64ffda;
+    border: 1px solid rgba(100, 255, 218, 0.3);
+    background: rgba(100, 255, 218, 0.1);
+}
+
+.project-status.demo {
+    color: #f7b731;
+    border: 1px solid rgba(247, 183, 49, 0.3);
+    background: rgba(247, 183, 49, 0.1);
+}
