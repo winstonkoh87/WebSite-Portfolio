@@ -237,6 +237,14 @@ main {
     letter-spacing: 1px;
 }
 
+.metric-pillar {
+    font-size: 0.65rem;
+    color: #6b7694;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.25rem;
+}
+
 @media (max-width: 600px) {
     .metrics-grid {
         flex-direction: column;
