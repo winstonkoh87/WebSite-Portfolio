@@ -2,8 +2,6 @@
 
 > Turning messy AI tools into reliable business workflows. No babysitting. Just results.
 
-[![wakatime](https://wakatime.com/badge/github/winstonkoh87/winstonkoh87.github.io.svg)](https://wakatime.com/badge/github/winstonkoh87/winstonkoh87.github.io)
-
 Personal portfolio showcasing autonomous systems, AI-augmented workflows, and the Bionic Operating Model.
 
 ## Live Site
@@ -47,13 +45,6 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 The human provides **strategic direction** and **high-nuance judgment**. The AI handles **research, execution, and documentation** at scale. Every conversation becomes intellectual capital.
 
 > *"Athena is a digital extension of me. It executes in my voice, with my principles."*
-
----
-
-## ⚡ Development Activity
-
-<!--START_SECTION:waka-->
-<!--END_SECTION:waka-->
 
 ---
 
