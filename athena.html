@@ -35,6 +35,12 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
 
+    <!-- Mermaid.js -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'dark', fontFamily: 'JetBrains Mono' });
+    </script>
+
     <style>
         /* Athena-specific styles */
         .athena-hero {
@@ -452,18 +458,17 @@
             <h2>The Loop</h2>
             <p style="color: #8892b0;">How data moves through Athena.</p>
 
-            <div class="loop-flow">
-                <span class="loop-step">Query</span>
-                <span class="loop-arrow">→</span>
-                <span class="loop-step">Hybrid Retrieval</span>
-                <span class="loop-arrow">→</span>
-                <span class="loop-step">Context Pack</span>
-                <span class="loop-arrow">→</span>
-                <span class="loop-step">LLM Reason</span>
-                <span class="loop-arrow">→</span>
-                <span class="loop-step">Execute</span>
-                <span class="loop-arrow">→</span>
-                <span class="loop-step">Log + Write-back</span>
+            <div class="mermaid-container"
+                style="background: rgba(10, 10, 10, 0.5); padding: 2rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); margin: 2rem 0;">
+                <pre class="mermaid">
+graph LR
+    A[Query] --> B[Hybrid Retrieval]
+    B --> C[Context Pack]
+    C --> D[LLM Reason]
+    D --> E[Execute]
+    E --> F[Log + Write-back]
+    F -.-> A
+                </pre>
             </div>
 
             <div class="design-note">
