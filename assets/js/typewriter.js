@@ -33,15 +33,15 @@ document.addEventListener('DOMContentLoaded', function () {
             charIndex++;
         }
 
-        let typeSpeed = isDeleting ? 30 : 50; // Fast typing, fast deleting
+        let typeSpeed = isDeleting ? 25 : 42; // 1.2x faster
 
         if (!isDeleting && charIndex === currentPhrase.length) {
-            typeSpeed = 2000; // Pause at end of phrase
+            typeSpeed = 1650; // Pause at end of phrase (1.2x faster)
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             phraseIndex = (phraseIndex + 1) % phrases.length;
-            typeSpeed = 500;
+            typeSpeed = 400; // 1.2x faster
         }
 
         setTimeout(type, typeSpeed);
