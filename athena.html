@@ -38,7 +38,19 @@
     <!-- Mermaid.js -->
     <script type="module">
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({ startOnLoad: true, theme: 'dark', fontFamily: 'JetBrains Mono' });
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            fontFamily: 'JetBrains Mono',
+            themeVariables: {
+                lineColor: '#64ffda',
+                primaryColor: '#1a1a2e',
+                primaryTextColor: '#ccd6f6',
+                primaryBorderColor: '#64ffda',
+                secondaryColor: '#0a0a0f',
+                tertiaryColor: '#1a1a2e'
+            }
+        });
     </script>
 
     <style>
