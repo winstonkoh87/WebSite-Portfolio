@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
         "> LOADING: STRATEGIC ARCHITECT V8.0",
         "> SYSTEM READY."
     ];
-    const speed = 30; // typing speed in ms
-    const lineDelay = 400; // delay between lines
+    const speed = 20; // typing speed in ms (1.5x faster)
+    const lineDelay = 250; // delay between lines (1.5x faster)
     const element = document.getElementById('typewriter');
 
     let lineIndex = 0;
@@ -40,5 +40,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Start typing after a short delay
-    setTimeout(typeWriter, 500);
+    setTimeout(typeWriter, 300);
 });
