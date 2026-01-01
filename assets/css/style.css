@@ -595,6 +595,17 @@ blockquote {
     color: var(--accent-primary);
 }
 
+.topic-list a {
+    color: #60a5fa;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.topic-list a:hover {
+    color: #93c5fd;
+    text-decoration: underline;
+}
+
 /* ========================================
    ARTICLE GRID (WRITING PAGE)
 ======================================== */
