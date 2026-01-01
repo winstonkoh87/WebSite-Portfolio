@@ -97,6 +97,30 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
         rel="stylesheet">
+
+    <!-- Custom CSS Overrides -->
+    <style>
+        /* Bright Blue Links for Further Reading / Checklist Boxes */
+        .checklist-box a {
+            color: #4a9eff !important;
+            text-decoration-color: rgba(74, 158, 255, 0.4);
+        }
+    </style>
+
+    <!-- Mermaid.js for diagrams (optional: remove if article has no diagrams) -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            themeVariables: {
+                darkMode: true,
+                background: '#0a0a0f',
+                primaryColor: '#4a9eff',
+                secondaryColor: '#cc785c'
+            }
+        });
+    </script>
 </head>
 
 <body>
