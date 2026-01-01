@@ -100,6 +100,21 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
         rel="stylesheet">
+
+    <!-- Mermaid.js for diagrams -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            themeVariables: {
+                darkMode: true,
+                background: '#0a0a0f',
+                primaryColor: '#4a9eff',
+                secondaryColor: '#cc785c'
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -236,6 +251,32 @@
                         alt="Trilateral Feedback Loop: User, Architect, and Auditor nodes connected in a triangle"
                         loading="lazy" decoding="async">
                     <figcaption>The Trilateral Loop: Three nodes, three perspectives, one synthesis.</figcaption>
+                </figure>
+
+                <!-- Mermaid Flowchart -->
+                <figure class="article-figure">
+                    <div class="mermaid">
+                        flowchart LR
+                        A[You] -->|1. Query| B["Athena<br />(Claude)"]
+                        B -->|2. Discuss| A
+                        A -->|3. Export Artifact| C["AI #2<br />Gemini"]
+                        A -->|3. Export Artifact| D["AI #3<br />ChatGPT"]
+                        A -->|3. Export Artifact| E["AI #4<br />Grok"]
+                        C -->|4. Red-Team Audit| F[Findings]
+                        D -->|4. Red-Team Audit| F
+                        E -->|4. Red-Team Audit| F
+                        F -->|5. Return| B
+                        B -->|6. Synthesize| G[Final Conclusion]
+
+                        style A fill:#4a9eff,color:#fff
+                        style B fill:#cc785c,color:#fff
+                        style C fill:#4285f4,color:#fff
+                        style D fill:#10a37f,color:#fff
+                        style E fill:#1da1f2,color:#fff
+                        style G fill:#22c55e,color:#fff
+                    </div>
+                    <figcaption>The full workflow: Primary AI generates, rival AIs audit, synthesis returns.
+                    </figcaption>
                 </figure>
 
                 <p><strong>Important caveat:</strong> This is not a cure-all. It won't eliminate hallucinations or
