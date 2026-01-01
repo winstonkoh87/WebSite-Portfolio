@@ -295,8 +295,10 @@
 
 .author-bio {
     display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-align: center;
 }
 
 .author-avatar {
@@ -320,6 +322,11 @@
     color: var(--text-secondary);
     font-size: 0.95rem;
     line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.author-info p:last-child {
+    margin-top: 0.5rem;
 }
 
 .author-info a {
