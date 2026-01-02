@@ -206,8 +206,11 @@
                     Claude, Gemini, or a local
                     Llama model.</p>
                 <p><em>(Technical Note: It's not magic. An adapter layer normalizes the different API schemas, but
-                        prompts do require tuning. The point is: the <strong>Structure</strong> doesn't move. Verified
-                        context slices are sent to the cloud for inference, but the Knowledge Graph remains local.)</em>
+                        prompts do require tuning. The point is: the <strong>Structure</strong> doesn't move. Only
+                        verified context slices—retrieved from signed notes with source attribution, blocklisted secrets
+                        removed,
+                        and capped to a token budget—are sent to the cloud for inference. The Knowledge Graph remains
+                        local.)</em>
                 </p>
 
                 <!-- Mermaid Flowchart -->
@@ -240,10 +243,13 @@
                     </div>
                     <figcaption>Figure 1: The Sovereign Architecture. The <strong>Antigravity IDE</strong> acts as a
                         router, injecting your rigid Identity (Context) into whichever fluid Model (Compute) you choose.
+                        <em>(Model names are illustrative; any provider behind the adapter works.)</em>
                     </figcaption>
                 </figure>
 
-                <p>My "Intellectual Capital" (my memories, my decisions, my code) lives on <em>my</em> machine. The AI
+                <p>I call the software engine behind Athena the <strong>"Antigravity IDE"</strong> — my local control
+                    plane, router, and tool executor.
+                    My "Intellectual Capital" (my memories, my decisions, my code) lives on <em>my</em> machine. The AI
                     model is just a replaceable engine that processes it.</p>
 
                 <div class="key-insight">
@@ -269,8 +275,8 @@
                             </tr>
                             <tr>
                                 <td><strong>Privacy</strong></td>
-                                <td>Data Used for Training</td>
-                                <td>Ephemeral Context Only</td>
+                                <td>Content may be retained (plan-dependent)</td>
+                                <td>Source-of-truth stays local; minimal context transmitted</td>
                             </tr>
                         </tbody>
                     </table>
@@ -289,7 +295,7 @@
                     <p>This isn't just a vibe. It's <strong>Engineering</strong>.</p>
                     <ul>
                         <li><strong>Deterministic Pre-Flight:</strong> A Python script checks <code>risk_score</code>
-                            before any tool execution.</li>
+                            (rules + keyword triggers + conservative defaults) before any tool execution.</li>
                         <li><strong>Immutable Constitution:</strong> The system prompt is version-controlled and
                             injected at the API level, not the chat level.</li>
                         <li><strong>The "Break Glass" Rule:</strong> High-risk actions (e.g., <code>delete_file</code>,
@@ -330,7 +336,7 @@
 > **Goal**: Identify low-hanging fruit for organic traffic.
 
 ## Steps
-1. **Crawl**: Run `screaming_frog` simulation.
+1. **Crawl**: Run headless crawl (BeautifulSoup/Scrapy).
 2. **Index Check**: `site:domain.com`.
 3. **Keyword Gap**: Compare vs Competitor A.
 
@@ -357,13 +363,15 @@
                     the system memory.</p>
 
                 <div class="key-insight">
-                    <h4>⚠️ The Cost of No Friction: A Case Study</h4>
-                    <p>There was a tragic case in 2024 where a mentally ill individual, isolated in an echo chamber of
-                        his own thoughts, spiraled until he killed his mother and himself. If he had an AI "companion,"
-                        standard RLHF training would likely have made it <em>empathize</em> with his grievances,
-                        validating his distortion loop.</p>
+                    <h4>⚠️ The Cost of No Friction</h4>
+                    <p>There have been multiple reported cases (2024-2025) of individuals in mental health crises
+                        whose distorted thinking was allegedly validated—not challenged—by AI companions.
+                        In some instances, this reportedly contributed to tragic outcomes.</p>
                     <p><strong>The Trilateral Difference:</strong> In Athena, the "Auditor" node is not trained to be
-                        friends. It is trained to be safe. It detects the <em>pattern</em> of ruin.</p>
+                        a friend. It is trained to be <em>safe</em>. It detects the <em>pattern</em> of ruin and injects
+                        friction
+                        before escalation. <em>(This is not a substitute for professional mental health support.)</em>
+                    </p>
                 </div>
 
                 <!-- Mermaid: Part 1 - The Trap -->
@@ -406,8 +414,8 @@
                 <p>The system gets smarter with every failure. It is anti-fragile.</p>
 
                 <h2 id="pillar5">Pillar 5: Deep Context (Semantic Persistence)</h2>
-                <p>ChatGPT has a "Memory" feature now, but it is a walled garden. You cannot query it programmatically,
-                    you cannot backup specific nodes, and you cannot graph it.</p>
+                <p>ChatGPT has a "Memory" feature now, but there is no documented programmable interface for node-level
+                    backup or graph queries. It is not designed as a portable, user-owned knowledge graph.</p>
                 <p>Athena uses <strong><a
                             href="https://github.com/winstonkoh87/Athena-Public/blob/main/docs/SEMANTIC_SEARCH.md"
                             target="_blank" rel="noopener">Semantic Search</a></strong> (Vector Database) to recall
