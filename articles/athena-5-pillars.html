@@ -369,35 +369,38 @@
                 <!-- Mermaid: Part 1 - The Trap -->
                 <figure class="article-figure">
                     <div class="mermaid">
+                        %%{init: {'flowchart': {'nodeSpacing': 50, 'rankSpacing': 80}}}%%
                         flowchart LR
-                        subgraph Standard["Standard AI (The Yes Man)"]
-                        A[User Intent] -->|Empathy| B[AI: 'Understandable']
-                        B -->|Loop| A
-                        B -.->|Outcome| C[Tragedy]
-                        end
+                        A["🧠 User Intent"] --> B["🤖 AI: Validates"]
+                        B --> |"Loop"| A
+                        B -.-> C["💀 Tragedy"]
 
+                        style A fill:#4a9eff,color:#fff
+                        style B fill:#666,color:#fff
                         style C fill:#ef4444,color:#fff
                     </div>
-                    <figcaption>Figure 2a: The Trap. Standard "Empathetic" AI validates distortions, creating a feedback
-                        loop of delusion.</figcaption>
+                    <figcaption>Figure 2a: <strong>The Trap.</strong> Standard AI validates distortions, creating a
+                        feedback loop.</figcaption>
                 </figure>
 
                 <!-- Mermaid: Part 2 - The Fix -->
                 <figure class="article-figure">
                     <div class="mermaid">
+                        %%{init: {'flowchart': {'nodeSpacing': 50, 'rankSpacing': 80}}}%%
                         flowchart LR
-                        subgraph Athena["Athena Trilateral Loop (The Safeguard)"]
-                        D[User Intent] -->|Strategy| E[Architect Node]
-                        E -->|Proposal| F{Auditor}
-                        F --"Risk: High"--> G[STOP]
-                        F --"Delusion"--> H[Intervention]
-                        end
+                        D["🧠 User Intent"] --> E["🏗️ Architect"]
+                        E --> F{"🛡️ Auditor"}
+                        F -->|"Risk: High"| G["✅ STOP"]
+                        F -->|"Delusion"| H["⚠️ Intervene"]
 
+                        style D fill:#4a9eff,color:#fff
+                        style E fill:#666,color:#fff
+                        style F fill:#cc785c,color:#fff
                         style G fill:#22c55e,color:#fff
                         style H fill:#f59e0b,color:#fff
                     </div>
-                    <figcaption>Figure 2b: The Fix. The 'Auditor Node' injects friction, breaking the loop before it
-                        spirals.</figcaption>
+                    <figcaption>Figure 2b: <strong>The Fix.</strong> The Auditor injects friction, breaking the loop.
+                    </figcaption>
                 </figure>
 
                 <p>The system gets smarter with every failure. It is anti-fragile.</p>
@@ -410,7 +413,8 @@
                             target="_blank" rel="noopener">Semantic Search</a></strong> (Vector Database) to recall
                     <em>why</em> we made a
                     decision three months ago. When I start a new project, it pulls up the "Post-Mortem" from the last
-                    failed project and says, <em>"Remember when we said we wouldn't do this again?"</em></p>
+                    failed project and says, <em>"Remember when we said we wouldn't do this again?"</em>
+                </p>
                 <p>This turns "Chat" (ephemeral) into "Asset Building" (compounding). Every conversation adds to the
                     knowledge graph.</p>
 
