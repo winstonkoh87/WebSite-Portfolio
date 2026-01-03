@@ -15,6 +15,9 @@
         href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
@@ -45,11 +48,18 @@
                     <span class="essay-date">Dec 2024</span>
                     <h3 class="essay-title">What Two Years Taught Me</h3>
                     <p class="essay-excerpt">
-                        National Service is compulsory for every Singaporean male. But what you take from it is a choice.
-                        I went in expecting to just get through it. I came out understanding what it means to lead under 
-                        pressure. OCS taught me that leadership isn't about being the smartest in the room — it's about 
+                        National Service is compulsory for every Singaporean male. But what you take from it is a
+                        choice.
+                        I went in expecting to just get through it. I came out understanding what it means to lead under
+                        pressure. OCS taught me that leadership isn't about being the smartest in the room — it's about
                         being the most trusted. That lesson stays with me.
                     </p>
+
+                    <!-- AI Feature Button -->
+                    <button class="ai-btn" onclick="synthesizeEssay(this)">
+                        <i data-lucide="sparkles" width="14" height="14"></i> Scholar's Synthesis
+                    </button>
+                    <div class="ai-result-area"></div>
                 </article>
 
                 <!-- Coming Soon Notice -->
@@ -77,6 +87,9 @@
             <p class="copyright">© 2026 Melvin Lim.</p>
         </div>
     </footer>
+
+    <!-- AI Features Script -->
+    <script src="ai-features.js"></script>
 </body>
 
 </html>

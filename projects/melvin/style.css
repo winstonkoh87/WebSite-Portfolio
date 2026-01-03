@@ -4,7 +4,6 @@
     --text-primary: #f0f0f0;
     --text-secondary: #888888;
     --accent-color: #ccff00;
-    /* Acid Green variant */
     --surface-color: #151515;
 
     --font-serif: 'Instrument Serif', serif;
@@ -179,11 +178,9 @@ section {
     color: var(--text-secondary);
 }
 
-/* Prevent layout shift during typewriter animation */
 .dynamic-wrapper {
     display: block;
     min-height: 1.2em;
-    /* Reserve space for the tallest text */
 }
 
 .dynamic-text {
@@ -208,7 +205,6 @@ section {
     border-radius: 0 0 2rem 2rem;
     width: 100%;
     max-width: 800px;
-    /* Constraint */
     height: auto;
     max-height: 80vh;
     object-fit: cover;
@@ -242,7 +238,6 @@ section {
     padding: 2rem 0;
 }
 
-/* Desktop Grid */
 @media (min-width: 768px) {
     .bento-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -383,7 +378,6 @@ section {
     transition: filter 0.3s ease;
     object-fit: cover;
     aspect-ratio: 4 / 5;
-    /* Consistent portrait ratio */
 }
 
 .masonry-item figcaption {
@@ -445,7 +439,6 @@ section {
         border-radius: 1rem;
     }
 
-    /* Mobile Nav Logic: Hide links but keep updated CTA */
     .nav-links a:not(.btn-primary) {
         display: none;
     }
@@ -453,8 +446,6 @@ section {
     .nav-links {
         gap: 0;
     }
-
-    /* Mobile Menu would go here in V3 */
 }
 
 /* Pages (Scholar's Study) */
@@ -588,7 +579,7 @@ section {
 /* Library Page */
 .book-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: var(--space-md);
     margin-top: var(--space-md);
 }
@@ -599,6 +590,10 @@ section {
     border-radius: 8px;
     border: 1px solid #333;
     transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 140px;
 }
 
 .book-item:hover {
@@ -617,4 +612,68 @@ section {
 .book-author {
     color: var(--text-secondary);
     font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* --- AI FEATURES STYLES --- */
+.ai-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-secondary);
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    border-radius: 999px;
+    cursor: pointer;
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+    width: fit-content;
+}
+
+.ai-btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    background: rgba(204, 255, 0, 0.05);
+}
+
+.ai-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.ai-result-box {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(204, 255, 0, 0.05);
+    border-left: 2px solid var(--accent-color);
+    border-radius: 0 4px 4px 0;
+    font-size: 0.95rem;
+    color: #ddd;
+    animation: fadeIn 0.4s ease;
+    line-height: 1.6;
+}
+
+.ai-result-box strong {
+    color: var(--accent-color);
+    font-family: var(--font-serif);
+}
+
+/* Loading Animation */
+.loading-dots:after {
+    content: '.';
+    animation: dots 1.5s steps(5, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60% { content: '...'; }
+    80%, 100% { content: ''; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
 }

@@ -14,6 +14,9 @@
         href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
@@ -40,46 +43,76 @@
 
             <div class="book-list">
                 <!-- Book 1 -->
-                <a href="https://www.amazon.com/Antifragile-Things-That-Disorder-Incerto/dp/0812979680"
-                    class="book-item" target="_blank" rel="noopener noreferrer">
-                    <span class="book-title">Antifragile</span>
-                    <span class="book-author">Nassim Taleb</span>
-                </a>
+                <div class="book-item">
+                    <a href="https://www.amazon.com/Antifragile-Things-That-Disorder-Incerto/dp/0812979680"
+                        target="_blank" rel="noopener noreferrer">
+                        <span class="book-title">Antifragile</span>
+                        <span class="book-author">Nassim Taleb</span>
+                    </a>
+                    <button class="ai-btn" onclick="askBookAI(this, 'Antifragile', 'Nassim Taleb')">
+                        <i data-lucide="sparkles" width="14" height="14"></i> Why read?
+                    </button>
+                </div>
 
                 <!-- Book 2 -->
-                <a href="https://www.amazon.com/Thinking-Systems-Donella-H-Meadows/dp/1603580557" class="book-item"
-                    target="_blank" rel="noopener noreferrer">
-                    <span class="book-title">Thinking in Systems</span>
-                    <span class="book-author">Donella Meadows</span>
-                </a>
+                <div class="book-item">
+                    <a href="https://www.amazon.com/Thinking-Systems-Donella-H-Meadows/dp/1603580557" target="_blank"
+                        rel="noopener noreferrer">
+                        <span class="book-title">Thinking in Systems</span>
+                        <span class="book-author">Donella Meadows</span>
+                    </a>
+                    <button class="ai-btn" onclick="askBookAI(this, 'Thinking in Systems', 'Donella Meadows')">
+                        <i data-lucide="sparkles" width="14" height="14"></i> Why read?
+                    </button>
+                </div>
 
                 <!-- Book 3 -->
-                <a href="https://www.amazon.com/Team-Teams-Rules-Engagement-Complex/dp/1591847486" class="book-item"
-                    target="_blank" rel="noopener noreferrer">
-                    <span class="book-title">Team of Teams</span>
-                    <span class="book-author">Gen. Stanley McChrystal</span>
-                </a>
+                <div class="book-item">
+                    <a href="https://www.amazon.com/Team-Teams-Rules-Engagement-Complex/dp/1591847486" target="_blank"
+                        rel="noopener noreferrer">
+                        <span class="book-title">Team of Teams</span>
+                        <span class="book-author">Gen. Stanley McChrystal</span>
+                    </a>
+                    <button class="ai-btn" onclick="askBookAI(this, 'Team of Teams', 'Gen. Stanley McChrystal')">
+                        <i data-lucide="sparkles" width="14" height="14"></i> Why read?
+                    </button>
+                </div>
 
                 <!-- Book 4 -->
-                <a href="https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299" class="book-item"
-                    target="_blank" rel="noopener noreferrer">
-                    <span class="book-title">Atomic Habits</span>
-                    <span class="book-author">James Clear</span>
-                </a>
+                <div class="book-item">
+                    <a href="https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299" target="_blank"
+                        rel="noopener noreferrer">
+                        <span class="book-title">Atomic Habits</span>
+                        <span class="book-author">James Clear</span>
+                    </a>
+                    <button class="ai-btn" onclick="askBookAI(this, 'Atomic Habits', 'James Clear')">
+                        <i data-lucide="sparkles" width="14" height="14"></i> Why read?
+                    </button>
+                </div>
 
                 <!-- Book 5 -->
-                <a href="https://www.amazon.com/Meditations-New-Translation-Marcus-Aurelius/dp/0812968255"
-                    class="book-item" target="_blank" rel="noopener noreferrer">
-                    <span class="book-title">Meditations</span>
-                    <span class="book-author">Marcus Aurelius</span>
-                </a>
+                <div class="book-item">
+                    <a href="https://www.amazon.com/Meditations-New-Translation-Marcus-Aurelius/dp/0812968255"
+                        target="_blank" rel="noopener noreferrer">
+                        <span class="book-title">Meditations</span>
+                        <span class="book-author">Marcus Aurelius</span>
+                    </a>
+                    <button class="ai-btn" onclick="askBookAI(this, 'Meditations', 'Marcus Aurelius')">
+                        <i data-lucide="sparkles" width="14" height="14"></i> Why read?
+                    </button>
+                </div>
 
                 <!-- Book 6 -->
-                <a href="https://www.amazon.com/Zero-One-Notes-Startups-Future/dp/0804139296" class="book-item"
-                    target="_blank" rel="noopener noreferrer">
-                    <span class="book-title">Zero to One</span>
-                    <span class="book-author">Peter Thiel</span>
-                </a>
+                <div class="book-item">
+                    <a href="https://www.amazon.com/Zero-One-Notes-Startups-Future/dp/0804139296" target="_blank"
+                        rel="noopener noreferrer">
+                        <span class="book-title">Zero to One</span>
+                        <span class="book-author">Peter Thiel</span>
+                    </a>
+                    <button class="ai-btn" onclick="askBookAI(this, 'Zero to One', 'Peter Thiel')">
+                        <i data-lucide="sparkles" width="14" height="14"></i> Why read?
+                    </button>
+                </div>
             </div>
         </section>
     </main>
@@ -99,6 +132,9 @@
             <p class="copyright">© 2026 Melvin Lim.</p>
         </div>
     </footer>
+
+    <!-- AI Features Script -->
+    <script src="ai-features.js"></script>
 </body>
 
 </html>
