@@ -286,27 +286,33 @@
     <!-- Athena Live Widget -->
     <div id="athena-widget" class="athena-widget minimized">
         <div class="athena-header" onclick="toggleAthena()">
-            <div class="status-dots">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
+            <div class="header-left">
+                <div class="bot-avatar-header">🤖</div>
+                <div class="header-info">
+                    <span class="header-title">Athena Assistant</span>
+                    <span class="header-status">● Online</span>
+                </div>
             </div>
-            <span class="header-title">Athena_Live v1.0</span>
-            <span class="toggle-icon">_</span>
+            <div class="header-controls">
+                <span class="toggle-icon">−</span>
+            </div>
         </div>
 
         <div class="athena-body">
             <div class="chat-history" id="chat-history">
-                <div class="message system">
-                    <span class="prompt">//</span> CONNECTED.<br>
-                    <span class="prompt">//</span> I've indexed Winston's portfolio.<br>
-                    <span class="prompt">//</span> Ask about skills, projects, or philosophy.
-                </div>
+                <!-- Messages injected by JS -->
             </div>
 
+            <!-- Dynamic suggestions area -->
+            <div class="suggestion-area" id="suggestion-area"></div>
+
             <div class="input-area">
-                <span class="prompt">></span>
-                <input type="text" id="user-input" placeholder="Enter command..." onkeypress="handleEnter(event)">
+                <input type="text" id="user-input" placeholder="Type your message..." onkeypress="handleEnter(event)">
+                <button class="send-btn" onclick="sendFromButton()" aria-label="Send message">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                    </svg>
+                </button>
             </div>
         </div>
     </div>
@@ -323,12 +329,6 @@
     <script src="assets/js/particles.js"></script>
     <script src="assets/js/typewriter.js"></script>
     <script src="assets/js/athena-lite.js"></script>
-
-    <!-- Athena Live API Configuration -->
-    <script>
-        // API key configured
-        setApiKey('AIzaSyAAtRT0ujrn4zZHmKwyJVUrGO5zSiV19qE');
-    </script>
 </body>
 
 </html>

@@ -1377,97 +1377,109 @@ footer p {
 }
 
 /* ========================================
-   ATHENA LIVE WIDGET
+   ATHENA LIVE WIDGET — MODERN CHATBOT UI
 ======================================== */
 .athena-widget {
     position: fixed;
     bottom: 2rem;
     right: 6rem;
     width: 380px;
-    background: rgba(10, 10, 15, 0.98);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.9rem;
     z-index: 9998;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    backdrop-filter: blur(20px);
     overflow: hidden;
 }
 
 .athena-widget.minimized {
-    height: 44px;
-    width: 220px;
+    height: 60px;
+    width: 240px;
     cursor: pointer;
+    border-radius: 30px;
 }
 
 .athena-widget.minimized .athena-body {
     display: none;
 }
 
+/* Header - Blue gradient */
 .athena-header {
-    background: rgba(255, 255, 255, 0.03);
-    padding: 0.75rem 1rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    padding: 0.9rem 1rem;
     display: flex;
     align-items: center;
-    gap: 10px;
-    border-bottom: 1px solid var(--border-color);
+    justify-content: space-between;
     cursor: pointer;
     user-select: none;
 }
 
 .athena-header:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.bot-avatar-header {
+    width: 36px;
+    height: 36px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
 }
 
 .header-title {
-    color: var(--text-muted);
-    font-size: 0.75rem;
-    flex-grow: 1;
-    letter-spacing: 0.5px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 600;
 }
 
-.status-dots {
+.header-status {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.7rem;
+}
+
+.header-controls {
     display: flex;
-    gap: 6px;
-}
-
-.status-dots .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-}
-
-.status-dots .dot.red {
-    background: #ff5f56;
-}
-
-.status-dots .dot.yellow {
-    background: #ffbd2e;
-}
-
-.status-dots .dot.green {
-    background: #27c93f;
+    align-items: center;
 }
 
 .toggle-icon {
-    color: var(--text-muted);
-    font-size: 1rem;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 300;
 }
 
+/* Chat Body */
 .athena-body {
-    height: 320px;
     display: flex;
     flex-direction: column;
+    height: 380px;
+    background: #f8fafc;
 }
 
 .chat-history {
-    flex-grow: 1;
+    flex: 1;
     padding: 1rem;
     overflow-y: auto;
-    color: var(--text-color);
-    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
 .chat-history::-webkit-scrollbar {
@@ -1475,77 +1487,198 @@ footer p {
 }
 
 .chat-history::-webkit-scrollbar-thumb {
-    background: var(--border-color);
+    background: #cbd5e1;
     border-radius: 2px;
 }
 
-.athena-widget .message {
-    margin-bottom: 0.75rem;
-    word-wrap: break-word;
+/* Message Bubbles */
+.message-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 90%;
 }
 
-.athena-widget .message.user {
-    color: var(--accent-primary);
+.message-wrapper.bot {
+    align-self: flex-start;
 }
 
-.athena-widget .message.bot {
-    color: var(--text-color);
+.message-wrapper.user {
+    align-self: flex-end;
+    flex-direction: row-reverse;
 }
 
-.athena-widget .message.system {
-    color: var(--text-muted);
-    font-style: italic;
-    font-size: 0.8rem;
-}
-
-.athena-widget .prompt {
-    color: #64ffda;
-    margin-right: 6px;
-    font-weight: 600;
-}
-
-.input-area {
-    padding: 0.75rem 1rem;
-    border-top: 1px solid var(--border-color);
+.bot-avatar {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border-radius: 50%;
     display: flex;
     align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.message-bubble {
+    padding: 0.75rem 1rem;
+    border-radius: 16px;
+    line-height: 1.5;
+    animation: fadeInUp 0.3s ease;
+}
+
+.message-wrapper.bot .message-bubble {
+    background: #ffffff;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+    border-bottom-left-radius: 4px;
+}
+
+.message-wrapper.user .message-bubble {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #ffffff;
+    border-bottom-right-radius: 4px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Suggestion Area */
+.suggestion-area {
+    display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
-    background: rgba(0, 0, 0, 0.4);
+    padding: 0.75rem 1rem;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+}
+
+.suggestion-area:empty {
+    display: none;
+}
+
+.suggestion-btn {
+    background: #ffffff;
+    border: 1px solid #3b82f6;
+    color: #3b82f6;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.suggestion-btn:hover {
+    background: #3b82f6;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* Input Area */
+.input-area {
+    padding: 0.75rem 1rem;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 }
 
 .input-area input {
-    background: transparent;
-    border: none;
-    color: var(--text-color);
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
-    width: 100%;
+    flex: 1;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    color: #1e293b;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
     outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-area input:focus {
+    border-color: #3b82f6;
 }
 
 .input-area input::placeholder {
-    color: var(--text-muted);
-    opacity: 0.6;
+    color: #94a3b8;
 }
 
-/* Pulse animation for header when minimized */
-.athena-widget.minimized .dot.green {
-    animation: pulse-green 2s ease-in-out infinite;
+.send-btn {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    border: none;
+    border-radius: 50%;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
 }
 
-@keyframes pulse-green {
+.send-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.send-btn svg {
+    margin-left: 2px;
+}
+
+/* Typing Indicator */
+.typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: 0.75rem 1rem;
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background: #94a3b8;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
 
     0%,
+    80%,
     100% {
-        opacity: 1;
+        transform: translateY(0);
     }
 
-    50% {
-        opacity: 0.4;
+    40% {
+        transform: translateY(-6px);
     }
 }
 
-/* Mobile responsive */
+/* Mobile Responsive */
 @media (max-width: 600px) {
     .athena-widget {
         right: 1rem;
@@ -1557,6 +1690,6 @@ footer p {
     .athena-widget.minimized {
         left: auto;
         right: 1rem;
-        width: 180px;
+        width: 200px;
     }
 }

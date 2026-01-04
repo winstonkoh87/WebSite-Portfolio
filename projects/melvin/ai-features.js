@@ -81,7 +81,11 @@ const BOOK_INSIGHTS = {
     "start with why": "Sinek's Golden Circle — Why before How before What — remains the simplest model for inspiring teams and customers.",
     "the hard thing about hard things": "Horowitz on the messy reality of leadership: there's no playbook for the truly hard decisions. You're alone, and that's okay.",
     "deep work": "Newport's case for focused work in a distracted age. Block time ruthlessly. Shallow work expands to fill available space.",
-    "range": "Epstein's antidote to early specialization. Broad experience creates transfer learning. Generalists win in complex domains."
+    "range": "Epstein's antidote to early specialization. Broad experience creates transfer learning. Generalists win in complex domains.",
+    "antifragile": "Taleb's concept of gaining from disorder. Don't just withstand shocks; get stronger from them. Avoid the Fragile, be Antifragile.",
+    "thinking in systems": "Meadows' primer on stocks, flows, and feedback loops. Stop looking at events and start looking at the structures that cause them.",
+    "team of teams": "McChrystal's shift from hierarchical command to networked adaptability. In complex environments, shared consciousness beats efficiency.",
+    "zero to one": "Thiel's treatise on vertical progress. Competition is for losers; build a monopoly by solving a unique problem."
 };
 
 // ========================================
