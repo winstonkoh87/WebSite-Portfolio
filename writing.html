@@ -215,6 +215,14 @@
 
                     const filter = this.dataset.filter;
 
+                    // GA4 Event Tracking
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'filter_click', {
+                            'event_category': 'Writing Page',
+                            'event_label': filter
+                        });
+                    }
+
                     // Filter cards
                     articleCards.forEach(card => {
                         if (filter === 'all') {

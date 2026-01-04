@@ -55,10 +55,10 @@ const STATES = {
     },
 
     'PRICING': {
-        response: "💰 Project-based pricing:\n\n• **Landing Page**: from $800\n• **Full Website**: from $1,500\n• **Portfolio + Branding**: from $1,200\n\nComplexity scales the price. Best to chat directly for a custom quote!",
-        suggestions: ["✅ Yes, let's talk", "See examples first", "What's included?"],
+        response: "💰 Project-based pricing:\n\n• **Landing Page**: from $800\n• **Full Website**: from $1,500\n• **Portfolio + Branding**: from $1,200\n\n📋 Want the full **Rate Card**? Just ask on WhatsApp — I'll send it over!",
+        suggestions: ["📋 Send me rate card", "See examples first", "What's included?"],
         keywords: {
-            "yes|talk|contact|whatsapp|start": "CONTACT",
+            "yes|talk|contact|whatsapp|start|send|rate|card": "CONTACT",
             "example|see|show|portfolio": "PROJECTS",
             "include|what|scope|deliverable": "SCOPE"
         }

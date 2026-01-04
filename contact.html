@@ -186,6 +186,15 @@
                     const answer = faqItem.querySelector('.faq-answer');
                     const icon = this.querySelector('.faq-icon');
                     const isOpen = this.getAttribute('aria-expanded') === 'true';
+                    const questionText = this.querySelector('span').textContent;
+
+                    // GA4 Event Tracking (only on open)
+                    if (!isOpen && typeof gtag !== 'undefined') {
+                        gtag('event', 'faq_click', {
+                            'event_category': 'Contact Page',
+                            'event_label': questionText
+                        });
+                    }
 
                     // Close all other FAQs
                     faqQuestions.forEach(q => {
