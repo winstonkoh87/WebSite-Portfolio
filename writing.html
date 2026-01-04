@@ -74,8 +74,16 @@
         </section>
 
         <section class="content-section">
+            <!-- Filter Buttons -->
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ai">AI & Systems</button>
+                <button class="filter-btn" data-filter="strategy">Strategy</button>
+                <button class="filter-btn" data-filter="casestudy">Case Studies</button>
+            </div>
+
             <div class="article-grid">
-                <article class="article-card">
+                <article class="article-card" data-category="ai">
                     <a href="articles/athena-public-launch.html" class="article-link">
                         <div class="article-card-content">
                             <div class="article-meta">
@@ -89,7 +97,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="article-card">
+                <article class="article-card" data-category="ai">
                     <a href="articles/athena-5-pillars.html" class="article-link">
                         <div class="article-card-content">
                             <div class="article-meta">
@@ -103,7 +111,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="article-card">
+                <article class="article-card" data-category="strategy">
                     <a href="articles/trilateral-feedback-loop.html" class="article-link">
                         <div class="article-card-content">
                             <div class="article-meta">
@@ -117,7 +125,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="article-card">
+                <article class="article-card" data-category="strategy">
                     <a href="articles/ai-bionic-layer.html" class="article-link">
                         <div class="article-card-content">
                             <div class="article-meta">
@@ -131,7 +139,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="article-card">
+                <article class="article-card" data-category="casestudy">
                     <a href="articles/case-study-p6-math-tuition.html" class="article-link">
                         <div class="article-card-content">
                             <div class="article-meta">
@@ -145,7 +153,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="article-card">
+                <article class="article-card" data-category="ai">
                     <a href="articles/sme-ai-marketing-guide.html" class="article-link">
                         <div class="article-card-content">
                             <div class="article-meta">
@@ -192,6 +200,38 @@
 
 
     <script src="assets/js/particles.js"></script>
+
+    <script>
+        // Article Filter Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const articleCards = document.querySelectorAll('.article-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const filter = this.dataset.filter;
+
+                    // Filter cards
+                    articleCards.forEach(card => {
+                        if (filter === 'all') {
+                            card.style.display = 'block';
+                            card.style.opacity = '1';
+                        } else if (card.dataset.category === filter) {
+                            card.style.display = 'block';
+                            card.style.opacity = '1';
+                        } else {
+                            card.style.display = 'none';
+                            card.style.opacity = '0';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
