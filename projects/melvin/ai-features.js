@@ -1,126 +1,145 @@
 /**
- * AI Features for Melvin Lim's Portfolio
- * Powered by Google Gemini API
+ * AI Features for Melvin Lim's Portfolio — Smart Mock Edition
+ * Zero API calls. Zero cost. 100% reliability.
+ * 
+ * Uses pre-written responses that sound AI-generated.
  */
 
-// ⚠️ SECURITY WARNING: 
-// This API key is exposed in client-side code.
-// Restrict it in Google Cloud Console to only accept requests from your domain.
-const API_KEY = "AIzaSyAAtRT0ujrn4zZHmKwyJVUrGO5zSiV19qE";
+// ========================================
+// CONFIGURATION
+// ========================================
 
-// Cache TTL: 7 days in milliseconds
-const CACHE_TTL = 7 * 24 * 60 * 60 * 1000;
+const CONFIG = {
+    minDelay: 600,    // Minimum "thinking" delay (ms)
+    maxDelay: 1500,   // Maximum "thinking" delay (ms)
+};
 
-async function callGemini(prompt) {
-    if (!API_KEY || API_KEY.includes("PASTE_YOUR")) {
-        console.error("Please configure the API Key in ai-features.js");
-        return "System Error: API Key not configured. Check console.";
+// ========================================
+// ESSAY SYNTHESIS (Pre-written Aphorisms)
+// ========================================
+
+const ESSAY_INSIGHTS = {
+    // Default insights keyed by essay title (or partial match)
+    "default": {
+        aphorism: "Leadership is not about rank — it's about the space you create for others to grow.",
+        advice: "Practice active listening in your next meeting. Notice who speaks least, and invite their perspective."
+    },
+    "leadership": {
+        aphorism: "The best leaders are thermostats, not thermometers — they set the temperature, not just read it.",
+        advice: "Before reacting to team dynamics, ask: 'What climate am I creating here?'"
+    },
+    "failure": {
+        aphorism: "Failure is data. Shame is noise. Separate them ruthlessly.",
+        advice: "Document your next setback clinically, as if observing someone else. The lessons become clearer."
+    },
+    "team": {
+        aphorism: "A team's strength isn't in its stars, but in its ability to orbit around a shared mission.",
+        advice: "Revisit your team's 'why' quarterly. Alignment decays faster than you think."
+    },
+    "resilience": {
+        aphorism: "Resilience isn't bouncing back — it's integrating forward with new wisdom.",
+        advice: "After hardship, ask: 'What capability did this build?' Name it explicitly."
+    },
+    "decision": {
+        aphorism: "In uncertainty, the cost of inaction compounds faster than the cost of imperfect action.",
+        advice: "Set a decision deadline. Any decision made within it beats a 'perfect' decision made too late."
+    },
+    "growth": {
+        aphorism: "Growth happens at the edge of competence, not in the center of comfort.",
+        advice: "Identify one skill where you're 'good enough' and deliberately push into discomfort."
+    },
+    "mentorship": {
+        aphorism: "The mentor's gift is not answers, but better questions.",
+        advice: "Replace 'Here's what I'd do' with 'What options have you considered?' Wait for depth."
+    },
+    "saf": {
+        aphorism: "Discipline without purpose is tyranny. Purpose without discipline is chaos. Leadership is the synthesis.",
+        advice: "Audit your routines: which serve purpose, and which are mere habit? Cut the latter."
+    },
+    "reflection": {
+        aphorism: "Reflection is not retreat — it's reconnaissance for the next advance.",
+        advice: "Schedule 15 minutes weekly for unstructured thinking. Protect it like a VIP meeting."
     }
+};
 
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
+// ========================================
+// BOOK INSIGHTS (Pre-written Recommendations)
+// ========================================
 
-    const payload = {
-        contents: [{ parts: [{ text: prompt }] }]
-    };
+const BOOK_INSIGHTS = {
+    "default": "This book offers frameworks for systems thinking and deliberate practice — essential for leaders navigating complexity with intention.",
 
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
+    // Specific books (add more as needed)
+    "thinking, fast and slow": "Kahneman's dual-system model is foundational. Understanding System 1 vs System 2 prevents decision fatigue and cognitive bias in high-stakes leadership.",
+    "atomic habits": "Clear's 1% improvement framework compounds leadership growth. Identity-based habits ('I am a leader who...') outperform goal-based ones.",
+    "extreme ownership": "Willink and Babin distill combat leadership into civilian truth: own everything, blame nothing. The ultimate accountability framework.",
+    "good to great": "Collins' 'Level 5 Leadership' — humility plus fierce resolve — still benchmarks executive maturity two decades later.",
+    "principles": "Dalio's radical transparency and idea meritocracy provide an operating system for teams that value truth over ego.",
+    "the art of war": "Sun Tzu's 2,500-year-old strategy remains relevant: win without fighting, know your terrain, and victory is decided before battle.",
+    "meditations": "Marcus Aurelius wrote the original leadership journal. Stoic principles for maintaining composure when everything is chaos.",
+    "high output management": "Grove's Intel playbook: leverage, meetings as work, and the manager as coach. Silicon Valley's management bible.",
+    "start with why": "Sinek's Golden Circle — Why before How before What — remains the simplest model for inspiring teams and customers.",
+    "the hard thing about hard things": "Horowitz on the messy reality of leadership: there's no playbook for the truly hard decisions. You're alone, and that's okay.",
+    "deep work": "Newport's case for focused work in a distracted age. Block time ruthlessly. Shallow work expands to fill available space.",
+    "range": "Epstein's antidote to early specialization. Broad experience creates transfer learning. Generalists win in complex domains."
+};
 
-        if (response.status === 429) return "I'm overwhelmed with requests. Please try again in a minute.";
-        if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+// ========================================
+// HELPER FUNCTIONS
+// ========================================
 
-        const data = await response.json();
-        return data.candidates?.[0]?.content?.parts?.[0]?.text || "No insights found.";
-    } catch (e) {
-        console.error("AI Error:", e);
-        return "I'm currently resting. Please try asking again later.";
-    }
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// --- HELPER: Local Storage Caching with TTL ---
-function getCachedResult(key) {
-    try {
-        const cached = localStorage.getItem(key);
-        if (cached) {
-            const parsed = JSON.parse(cached);
-            // Check if cache has expired
-            if (parsed.timestamp && Date.now() - parsed.timestamp < CACHE_TTL) {
-                return parsed.value;
-            } else {
-                // Cache expired, remove it
-                localStorage.removeItem(key);
-                return null;
-            }
+function getRandomDelay() {
+    return Math.floor(Math.random() * (CONFIG.maxDelay - CONFIG.minDelay)) + CONFIG.minDelay;
+}
+
+function findInsight(title, insights) {
+    const lowerTitle = title.toLowerCase();
+
+    // Look for keyword matches in the title
+    for (const [key, value] of Object.entries(insights)) {
+        if (key !== "default" && lowerTitle.includes(key)) {
+            return value;
         }
-    } catch (e) {
-        return null;
     }
-    return null;
+
+    // Fallback to default
+    return insights["default"];
 }
 
-function setCachedResult(key, value) {
-    try {
-        const cacheEntry = {
-            value: value,
-            timestamp: Date.now()
-        };
-        localStorage.setItem(key, JSON.stringify(cacheEntry));
-    } catch (e) {
-        console.warn("Local Storage full or disabled, skipping cache.");
-    }
-}
+// ========================================
+// FEATURE 1: Scholar's Synthesis (Essays)
+// ========================================
 
-// --- Feature 1: Scholar's Synthesis (Essays) ---
 async function synthesizeEssay(buttonEl) {
     const article = buttonEl.closest('.essay-item');
-    const contentElement = article.querySelector('.essay-excerpt') || article.querySelector('p');
-    const content = contentElement ? contentElement.innerText : "Leadership reflection";
     const resultArea = article.querySelector('.ai-result-area');
+    const essayTitle = article.querySelector('.essay-title')?.innerText || "reflection";
 
-    const essayTitle = article.querySelector('.essay-title')?.innerText || "unknown_essay";
-    const cacheKey = `melvin_essay_${essayTitle.replace(/\s/g, '_')}`;
-
-    // 1. Check Cache First
-    const cachedResponse = getCachedResult(cacheKey);
-    if (cachedResponse) {
-        resultArea.innerHTML = `<div class="ai-result-box">${cachedResponse}</div>`;
-        buttonEl.innerHTML = `<i data-lucide="check" width="14" height="14"></i> Cached Insight`;
-        buttonEl.disabled = true;
-        if (window.lucide) lucide.createIcons();
-        return;
-    }
-
-    // 2. If not cached, Call API
-    resultArea.innerHTML = `<div class="ai-result-box">Synthesizing wisdom<span class="loading-dots"></span></div>`;
+    // Disable button and show loading
     buttonEl.disabled = true;
+    resultArea.innerHTML = `<div class="ai-result-box">Synthesizing wisdom<span class="loading-dots"></span></div>`;
 
-    const prompt = `
-        You are a wise mentor and leadership coach. 
-        Read this reflection from a young officer: "${content}".
-        Generate a single, bold "Leadership Aphorism" (one sentence) that captures the core lesson. 
-        Then, provide one sentence of "Actionable Advice" derived from it.
-        Format as plain text.
-    `;
+    // Simulate "thinking"
+    await sleep(getRandomDelay());
 
-    const response = await callGemini(prompt);
+    // Get insight based on essay title keywords
+    const insight = findInsight(essayTitle, ESSAY_INSIGHTS);
 
-    // Format bold text for display
-    const formattedResponse = response.replace(/(Leadership Aphorism:|Actionable Advice:)/g, '<strong>$1</strong>');
+    // Format response
+    const response = `<strong>Leadership Aphorism:</strong> "${insight.aphorism}"<br><br><strong>Actionable Advice:</strong> ${insight.advice}`;
 
-    // 3. Save to Cache
-    if (!response.includes("I'm currently resting") && !response.includes("System Error")) {
-        setCachedResult(cacheKey, formattedResponse);
-    }
-
-    resultArea.innerHTML = `<div class="ai-result-box">${formattedResponse}</div>`;
+    resultArea.innerHTML = `<div class="ai-result-box">${response}</div>`;
     buttonEl.innerText = "Synthesized";
 }
 
-// --- Feature 2: AI Librarian (Library) ---
+// ========================================
+// FEATURE 2: AI Librarian (Books)
+// ========================================
+
 async function askBookAI(btnElement, title, author) {
     let resultBox = btnElement.parentElement.querySelector('.ai-result-box');
     if (!resultBox) {
@@ -129,54 +148,27 @@ async function askBookAI(btnElement, title, author) {
         btnElement.parentElement.appendChild(resultBox);
     }
 
-    const cacheKey = `melvin_book_${title.replace(/\s/g, '_')}`;
-
-    // 1. Check Cache First
-    const cachedResponse = getCachedResult(cacheKey);
-    if (cachedResponse) {
-        resultBox.innerText = cachedResponse;
-        btnElement.innerHTML = `<i data-lucide="check" width="14" height="14"></i> Insight Loaded`;
-        btnElement.disabled = true;
-        if (window.lucide) lucide.createIcons();
-        return;
-    }
-
-    // 2. If not cached, Call API
-    resultBox.innerHTML = `Consulting the archives<span class="loading-dots"></span>`;
+    // Disable button and show loading
     btnElement.disabled = true;
+    resultBox.innerHTML = `Consulting the archives<span class="loading-dots"></span>`;
 
-    const prompt = `
-        Explain why the book "${title}" by ${author} is essential reading for a leader interested in Systems Thinking, Stoicism, or High-Performance Teams.
-        Keep the answer under 40 words. Be sophisticated but accessible.
-    `;
+    // Simulate "thinking"
+    await sleep(getRandomDelay());
 
-    const response = await callGemini(prompt);
+    // Get insight based on book title
+    const insight = findInsight(title, BOOK_INSIGHTS);
 
-    // 3. Save to Cache
-    if (!response.includes("I'm currently resting") && !response.includes("System Error")) {
-        setCachedResult(cacheKey, response);
-    }
-
-    resultBox.innerText = response;
+    resultBox.innerText = insight;
     btnElement.innerHTML = `<i data-lucide="check" width="14" height="14"></i> Insight Loaded`;
+
     if (window.lucide) lucide.createIcons();
 }
 
-// --- Utility: Clear AI Cache ---
-function clearAICache() {
-    const keys = Object.keys(localStorage);
-    let cleared = 0;
-    keys.forEach(key => {
-        if (key.startsWith('melvin_')) {
-            localStorage.removeItem(key);
-            cleared++;
-        }
-    });
-    console.log(`Cleared ${cleared} cached AI responses.`);
-    alert(`Cleared ${cleared} cached AI responses. Refresh to regenerate.`);
-}
+// ========================================
+// INITIALIZE
+// ========================================
 
-// Initialize Lucide icons if loaded
 document.addEventListener("DOMContentLoaded", () => {
     if (window.lucide) lucide.createIcons();
+    console.log("⚡ Melvin AI Features v2.0 (Smart Mock) initialized");
 });

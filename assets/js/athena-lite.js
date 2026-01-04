@@ -1,13 +1,9 @@
 /**
- * Athena Live Widget v1.0
+ * Athena Live Widget v2.0 — Smart Mock Edition
  * Interactive terminal chatbot for Winston Koh's portfolio
  * 
- * Features:
- * - Gemini API integration with system prompt
- * - Rate limiting (1 req/5 sec)
- * - Session cap (10 messages)
- * - Hardcoded responses for sensitive topics
- * - Hallucination prevention via strict context
+ * Philosophy: Zero API calls. Zero cost. Zero latency. 100% reliability.
+ * Uses keyword-based matching with random delay for "AI feel".
  */
 
 // ========================================
@@ -15,156 +11,99 @@
 // ========================================
 
 const ATHENA_CONFIG = {
-    // Rate limiting
-    rateLimitMs: 5000,          // 5 seconds between requests
-    sessionCap: 10,             // Max messages per session
-
-    // API (Client-side - for demo purposes)
-    // Using gemini-2.0-flash (stable free tier)
-    apiEndpoint: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent',
-    apiKey: null, // Set via setApiKey() or prompt user
-
-    // UI
-    typingSpeed: 20,            // ms per character for typing effect
+    sessionCap: 15,             // Max messages per session
+    minDelay: 400,              // Minimum "thinking" delay (ms)
+    maxDelay: 1200,             // Maximum "thinking" delay (ms)
+    typingSpeed: 18,            // ms per character for typing effect
 };
-
-// Cache TTL: 7 days in milliseconds
-const CACHE_TTL = 7 * 24 * 60 * 60 * 1000;
-
-// ========================================
-// LOCAL STORAGE CACHING (TTL-based)
-// ========================================
-
-function getCachedResult(key) {
-    try {
-        const cached = localStorage.getItem(key);
-        if (cached) {
-            const parsed = JSON.parse(cached);
-            if (parsed.timestamp && Date.now() - parsed.timestamp < CACHE_TTL) {
-                return parsed.value;
-            }
-            localStorage.removeItem(key); // expired
-        }
-    } catch (e) {
-        return null;
-    }
-    return null;
-}
-
-function setCachedResult(key, value) {
-    try {
-        localStorage.setItem(key, JSON.stringify({ value, timestamp: Date.now() }));
-    } catch (e) {
-        console.warn('LocalStorage full, skipping cache.');
-    }
-}
-
-function clearAthenaCache() {
-    const keys = Object.keys(localStorage).filter(k => k.startsWith('athena_'));
-    keys.forEach(k => localStorage.removeItem(k));
-    console.log(`✅ Cleared ${keys.length} cached Athena responses.`);
-    return keys.length;
-}
 
 // Session state
 let messageCount = 0;
-let lastRequestTime = 0;
 let isProcessing = false;
 
 // ========================================
-// HARDCODED RESPONSES (Hallucination Prevention)
+// KNOWLEDGE BASE (The "Brain")
 // ========================================
 
-const HARDCODED_RESPONSES = {
-    // Rates and pricing
-    'rate': 'My rates are discussed on a project basis. Use the contact form or WhatsApp to get a quote.',
-    'price': 'Pricing depends on project scope. Reach out via WhatsApp for a custom quote.',
-    'cost': 'Project costs vary. Let\'s discuss your needs — use the contact page.',
-    'hourly': 'I work on project-based pricing, not hourly. Contact me for details.',
-    'charge': 'I provide quotes based on project scope. WhatsApp me for a discussion.',
+const KNOWLEDGE_BASE = [
+    // --- Pricing & Rates ---
+    {
+        triggers: ["rate", "price", "cost", "charge", "expensive", "cheap", "fee", "budget", "quote", "pricing"],
+        response: "Project-based pricing. Minimums start at $800 for landing pages, scaling with complexity. Use WhatsApp for a custom quote."
+    },
 
-    // Availability
-    'available': 'My availability changes. Best to reach out directly via WhatsApp or the contact form.',
-    'free': 'Schedule a call via the contact page to discuss your project timeline.',
-    'busy': 'My current availability varies. Contact me directly for the latest.',
+    // --- Tech Stack ---
+    {
+        triggers: ["python", "tech", "stack", "code", "language", "framework", "react", "vue", "next"],
+        response: "Primary stack: Python (FastAPI) for logic, vanilla HTML/CSS/JS for frontend. I avoid heavy frameworks unless SDR justifies them. See the Projects section for examples."
+    },
 
-    // Personal info
-    'phone': 'You can reach Winston via WhatsApp: +65 9790 9965',
-    'contact': 'WhatsApp: +65 9790 9965 or use the contact form on this site.',
-    'email': 'Use the contact form or WhatsApp for direct communication.',
-    'age': 'That information is not in my cache.',
-    'married': 'That information is not in my cache.',
-    'personal': 'That information is not in my cache.',
-};
+    // --- AI & Athena ---
+    {
+        triggers: ["ai", "athena", "rag", "llm", "gpt", "gemini", "claude", "chatgpt", "artificial"],
+        response: "Athena is my personal RAG system — 4,000+ memories, 200+ protocols, hybrid vector search. It's how I recall context instantly. This widget is a simplified public interface."
+    },
 
-// ========================================
-// PORTFOLIO CONTEXT (Pseudo-RAG)
-// ========================================
+    // --- Projects & Portfolio ---
+    {
+        triggers: ["project", "portfolio", "work", "example", "case", "study", "client"],
+        response: "Featured: Melvin Lim (SAF officer portfolio), MathPro Tuition (P6 math), Brew & Bean Café (F&B landing page). Scroll down to the Projects section for full breakdowns."
+    },
 
-const PORTFOLIO_CONTEXT = `
-## WINSTON KOH — PORTFOLIO CONTEXT
+    // --- SME & Business ---
+    {
+        triggers: ["sme", "tuition", "business", "small", "cafe", "restaurant", "shop", "ecommerce"],
+        response: "I specialize in 'Bionic' upgrades for SMEs — websites that capture leads, not just look pretty. See MathPro case study: streamlined lead funnel for P6 Math tuition."
+    },
 
-### Identity
-- Name: Winston Koh
-- Title: Strategic Systems Architect
-- Tagline: "I build systems that run themselves."
-- Location: Singapore
-- Contact: WhatsApp +65 9790 9965
+    // --- Contact ---
+    {
+        triggers: ["contact", "email", "hire", "work with", "reach", "whatsapp", "telegram"],
+        response: "Best channel: WhatsApp (+65 9790 9965). Second best: LinkedIn. I respond faster to specific project inquiries than vague 'hello' messages."
+    },
 
-### What He Does
-- Builds AI-augmented business workflows
-- Creates SME websites (tuition centres, cafes, e-commerce)
-- Develops personal branding portfolios
-- Specializes in "systems architecture" — not just code, but full operational loops
+    // --- About Winston ---
+    {
+        triggers: ["who", "about", "winston", "background", "experience", "story"],
+        response: "Winston Koh — Strategic Systems Architect. I build systems that run themselves. Background: SME growth strategy, AI integration, and 'Bionic' workflows. Philosophy: Amoral Realism."
+    },
 
-### The Philosophy (Six Laws)
-1. Law #1: No Irreversible Ruin (avoid catastrophic risk)
-2. Law #2: Context is King (Arena Physics — pick winnable games)
-3. Law #3: Actions > Words (Revealed Preference — watch what people do, not say)
-4. Law #0: Subjective Utility (respect individual preferences)
-5. Law #4: Modular Architecture (scalable, not monolithic)
-6. Law #5: Citation Protocol (no orphan stats, cite sources)
+    // --- Philosophy & Laws ---
+    {
+        triggers: ["philosophy", "law", "principle", "rule", "belief", "approach"],
+        response: "The Six Laws: (1) No Irreversible Ruin, (2) Context is King, (3) Actions > Words, (0) Subjective Utility, (4) Modular Architecture, (5) Cite Your Sources. These govern all my work."
+    },
 
-### Featured Projects
-1. **Project Athena**: Personal AI OS with 4,000+ memories, 200+ protocols, hybrid RAG search. "The Second Brain."
-2. **Melvin Lim Portfolio**: Leadership portfolio for SAF Officer. Bento grid design.
-3. **Brew & Bean Café**: F&B landing page with WhatsApp lead capture.
-4. **MathPro Tuition**: P6 Math tuition site with 3-tier pricing.
-5. **ThatBioTutor**: Digital marketing proposal for tuition centre.
-6. **StickerLah**: E-commerce with cart system and bulk discounts.
+    // --- Availability ---
+    {
+        triggers: ["available", "free", "busy", "timeline", "when", "schedule", "slot"],
+        response: "Availability shifts weekly. Best to reach out via WhatsApp to discuss timelines. I prioritize projects with clear scope and committed clients."
+    },
 
-### Tech Stack
-- Frontend: HTML/CSS/JS (no bloat frameworks)
-- Backend: Python, Supabase (pgvector)
-- AI: Gemini Pro, Claude, hybrid RAG
-- Hosting: GitHub Pages, Cloudflare
+    // --- What You Do ---
+    {
+        triggers: ["do", "offer", "service", "help", "build", "create", "make"],
+        response: "I build: (1) SME websites with lead capture, (2) Personal branding portfolios, (3) AI-augmented workflows. I don't just build sites — I build systems."
+    },
 
-### Differentiator
-Winston doesn't just build websites — he builds systems. The "Bionic Unit" model means AI augments human decision-making, not replaces it.
-`;
+    // --- Greeting ---
+    {
+        triggers: ["hello", "hi", "hey", "sup", "yo", "good morning", "good afternoon"],
+        response: "Connection established. I'm Athena — Winston's local AI interface. Ask me about his projects, tech stack, or philosophy. Or just say 'contact' for direct lines."
+    },
 
-// ========================================
-// SYSTEM PROMPT
-// ========================================
+    // --- Thanks ---
+    {
+        triggers: ["thank", "thanks", "thx", "appreciate", "cheers"],
+        response: "Acknowledged. If you need Winston directly, WhatsApp is the fastest channel. Good luck with your project."
+    },
 
-const SYSTEM_PROMPT = `You are Athena, Winston Koh's AI digital assistant embedded on his portfolio website.
-
-## YOUR RULES (STRICT):
-1. You ONLY answer questions about Winston Koh, his work, skills, and philosophy.
-2. You NEVER make up facts. If information is not in the context below, say "That data is not in my local cache."
-3. Keep answers under 50 words. Be concise. Use terminal-style language.
-4. Tone: Professional, slightly robotic, helpful. "Amoral Realism" — no sugarcoating.
-5. For pricing/rates/availability questions, always defer to direct contact.
-6. You do NOT discuss politics, religion, or personal opinions.
-7. You do NOT pretend to be human. You are an AI assistant.
-
-## CONTEXT (Your Knowledge Base):
-${PORTFOLIO_CONTEXT}
-
-## RESPONSE FORMAT:
-- Start with ">" prompt
-- Keep it punchy
-- End with a relevant follow-up question OR a CTA when appropriate`;
+    // --- Joke / Fun ---
+    {
+        triggers: ["joke", "funny", "humor", "entertain"],
+        response: "I'm optimized for utility, not entertainment. But here's one: Why do programmers prefer dark mode? Because light attracts bugs."
+    },
+];
 
 // ========================================
 // DOM ELEMENTS
@@ -182,7 +121,7 @@ function initAthena() {
         return;
     }
 
-    console.log('⚡ Athena Live initialized');
+    console.log('⚡ Athena Live v2.0 (Smart Mock) initialized');
 }
 
 // ========================================
@@ -215,75 +154,51 @@ async function sendMessage(query) {
 
     // Check session cap
     if (messageCount >= ATHENA_CONFIG.sessionCap) {
-        appendMessage('system', 'Session limit reached. Refresh page to continue or use WhatsApp for direct contact.');
-        return;
-    }
-
-    // Check rate limit
-    const now = Date.now();
-    if (now - lastRequestTime < ATHENA_CONFIG.rateLimitMs) {
-        const waitTime = Math.ceil((ATHENA_CONFIG.rateLimitMs - (now - lastRequestTime)) / 1000);
-        appendMessage('system', `Rate limit: wait ${waitTime}s...`);
+        appendMessage('system', 'Session limit reached. Refresh page or use WhatsApp for direct contact.');
         return;
     }
 
     isProcessing = true;
-    lastRequestTime = now;
     messageCount++;
 
     // Display user message
     appendMessage('user', query);
     userInput.value = '';
 
-    // Check for hardcoded responses first
-    const hardcodedResponse = checkHardcodedResponse(query);
-    if (hardcodedResponse) {
-        await typeMessage('bot', hardcodedResponse);
-        isProcessing = false;
-        return;
-    }
-
-    // Check cache before API call
-    const cacheKey = `athena_${query.toLowerCase().trim().replace(/\s+/g, '_').slice(0, 50)}`;
-    const cachedResponse = getCachedResult(cacheKey);
-    if (cachedResponse) {
-        await typeMessage('bot', cachedResponse + ' [Cached]');
-        isProcessing = false;
-        return;
-    }
-
-    // Show loading
+    // Show processing indicator
     const loadingId = appendMessage('system', 'Querying local cache...');
 
-    try {
-        const response = await callGeminiAPI(query);
-        removeMessage(loadingId);
+    // Simulate "thinking" delay (crucial for AI feel)
+    const delay = Math.floor(Math.random() * (ATHENA_CONFIG.maxDelay - ATHENA_CONFIG.minDelay)) + ATHENA_CONFIG.minDelay;
 
-        // Cache successful responses (not error messages)
-        if (!response.includes('Error:') && !response.includes('API key not configured')) {
-            setCachedResult(cacheKey, response);
-        }
+    await sleep(delay);
 
-        await typeMessage('bot', response);
-    } catch (error) {
-        removeMessage(loadingId);
-        appendMessage('system', 'Error: Neural link interrupted. Try again or use WhatsApp.');
-        console.error('Athena error:', error);
-    }
+    // Remove loading message
+    removeMessage(loadingId);
+
+    // Get response from knowledge base
+    const response = getResponse(query);
+
+    // Type out the response
+    await typeMessage('bot', response);
 
     isProcessing = false;
 }
 
-function checkHardcodedResponse(query) {
+function getResponse(query) {
     const lowerQuery = query.toLowerCase();
 
-    for (const [keyword, response] of Object.entries(HARDCODED_RESPONSES)) {
-        if (lowerQuery.includes(keyword)) {
-            return response;
-        }
+    // Check knowledge base for matches
+    const match = KNOWLEDGE_BASE.find(entry =>
+        entry.triggers.some(trigger => lowerQuery.includes(trigger))
+    );
+
+    if (match) {
+        return match.response;
     }
 
-    return null;
+    // Fallback response
+    return "That query falls outside my public index. Try asking about 'projects', 'tech stack', 'rates', or 'philosophy'. Or use 'contact' for direct lines.";
 }
 
 // ========================================
@@ -345,79 +260,6 @@ function sleep(ms) {
 }
 
 // ========================================
-// GEMINI API (Direct Client-Side)
-// ========================================
-
-async function callGeminiAPI(userQuery) {
-    if (!ATHENA_CONFIG.apiKey) {
-        return 'API key not configured. Contact Winston directly via WhatsApp.';
-    }
-
-    const url = `${ATHENA_CONFIG.apiEndpoint}?key=${ATHENA_CONFIG.apiKey}`;
-
-    const requestBody = {
-        contents: [
-            {
-                role: 'user',
-                parts: [{ text: userQuery }]
-            }
-        ],
-        systemInstruction: {
-            parts: [{ text: SYSTEM_PROMPT }]
-        },
-        generationConfig: {
-            temperature: 0.3,       // Low for consistency
-            topP: 0.8,
-            topK: 40,
-            maxOutputTokens: 150,   // Keep responses short
-        },
-        safetySettings: [
-            { category: 'HARM_CATEGORY_HARASSMENT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-            { category: 'HARM_CATEGORY_HATE_SPEECH', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-            { category: 'HARM_CATEGORY_SEXUALLY_EXPLICIT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' },
-            { category: 'HARM_CATEGORY_DANGEROUS_CONTENT', threshold: 'BLOCK_MEDIUM_AND_ABOVE' }
-        ]
-    };
-
-    const response = await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(requestBody)
-    });
-
-    if (!response.ok) {
-        throw new Error(`API error: ${response.status}`);
-    }
-
-    const data = await response.json();
-
-    // Extract text from response
-    if (data.candidates && data.candidates[0] && data.candidates[0].content) {
-        return data.candidates[0].content.parts[0].text;
-    }
-
-    return 'Response unclear. Try rephrasing or contact Winston directly.';
-}
-
-// ========================================
-// API KEY MANAGEMENT
-// ========================================
-
-function setApiKey(key) {
-    ATHENA_CONFIG.apiKey = key;
-    console.log('⚡ Athena API key configured');
-}
-
-// For demo: prompt user for key if not set
-function promptForApiKey() {
-    const key = prompt('Enter Gemini API Key (for demo):');
-    if (key) {
-        setApiKey(key);
-        appendMessage('system', 'API key configured. Athena is ready.');
-    }
-}
-
-// ========================================
 // INITIALIZE ON DOM READY
 // ========================================
 
@@ -426,6 +268,3 @@ document.addEventListener('DOMContentLoaded', initAthena);
 // Expose functions globally
 window.toggleAthena = toggleAthena;
 window.handleEnter = handleEnter;
-window.setApiKey = setApiKey;
-window.promptForApiKey = promptForApiKey;
-window.clearAthenaCache = clearAthenaCache;
