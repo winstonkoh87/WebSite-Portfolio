@@ -25,7 +25,7 @@ Items to address in future iterations:
   - How secrets are stored
   - What logs contain
 
-- [ ] **About Page "My Stack" Section**:
+- [x] **About Page "My Stack" Section**:
   - Tools I use
   - Tools I refuse to use (and why)
 
