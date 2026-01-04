@@ -33,16 +33,7 @@ The homepage includes an **interactive AI chat widget** that demonstrates the At
 
 ### The Smart Mock Story
 
-We initially integrated the **Gemini API** for live AI responses. It worked — but the ROI didn't justify it:
-
-| Issue | Impact |
-|-------|--------|
-| **API costs** | $0.002-0.01 per request adds up fast |
-| **Rate limits** | Gemini's free tier = 15 RPM |
-| **Latency** | 2-4 second response times |
-| **Complexity** | API key management, error handling |
-
-**The pivot**: Instead of live API calls, we built a **Smart Mock system** — keyword-matched, pre-authored responses with simulated typing delay. Same UX, zero cost, instant responses.
+API integration with Gemini was too much hassle — rate limits, latency, key management. So we built a **Smart Mock system** instead: keyword-matched, pre-authored responses with simulated typing delay. Same UX, zero cost, instant responses.
 
 ```
                ┌──────────────────────────────────────┐
