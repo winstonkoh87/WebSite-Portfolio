@@ -20,8 +20,8 @@ const ATHENA_CONFIG = {
     sessionCap: 10,             // Max messages per session
 
     // API (Client-side - for demo purposes)
-    // Using gemini-3-flash-preview (latest)
-    apiEndpoint: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent',
+    // Using gemini-2.5-flash (free tier available)
+    apiEndpoint: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent',
     apiKey: null, // Set via setApiKey() or prompt user
 
     // UI
