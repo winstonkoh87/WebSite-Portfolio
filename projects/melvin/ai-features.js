@@ -6,7 +6,7 @@
 // ⚠️ SECURITY WARNING: 
 // This API key is exposed in client-side code.
 // Restrict it in Google Cloud Console to only accept requests from your domain.
-const API_KEY = "AIzaSyA31QwESvJCK2ecbrfspNfI87K87nCnSqc";
+const API_KEY = "AIzaSyAAtRT0ujrn4zZHmKwyJVUrGO5zSiV19qE";
 
 // Cache TTL: 7 days in milliseconds
 const CACHE_TTL = 7 * 24 * 60 * 60 * 1000;

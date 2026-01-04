@@ -28,6 +28,44 @@ const ATHENA_CONFIG = {
     typingSpeed: 20,            // ms per character for typing effect
 };
 
+// Cache TTL: 7 days in milliseconds
+const CACHE_TTL = 7 * 24 * 60 * 60 * 1000;
+
+// ========================================
+// LOCAL STORAGE CACHING (TTL-based)
+// ========================================
+
+function getCachedResult(key) {
+    try {
+        const cached = localStorage.getItem(key);
+        if (cached) {
+            const parsed = JSON.parse(cached);
+            if (parsed.timestamp && Date.now() - parsed.timestamp < CACHE_TTL) {
+                return parsed.value;
+            }
+            localStorage.removeItem(key); // expired
+        }
+    } catch (e) {
+        return null;
+    }
+    return null;
+}
+
+function setCachedResult(key, value) {
+    try {
+        localStorage.setItem(key, JSON.stringify({ value, timestamp: Date.now() }));
+    } catch (e) {
+        console.warn('LocalStorage full, skipping cache.');
+    }
+}
+
+function clearAthenaCache() {
+    const keys = Object.keys(localStorage).filter(k => k.startsWith('athena_'));
+    keys.forEach(k => localStorage.removeItem(k));
+    console.log(`✅ Cleared ${keys.length} cached Athena responses.`);
+    return keys.length;
+}
+
 // Session state
 let messageCount = 0;
 let lastRequestTime = 0;
@@ -205,12 +243,27 @@ async function sendMessage(query) {
         return;
     }
 
+    // Check cache before API call
+    const cacheKey = `athena_${query.toLowerCase().trim().replace(/\s+/g, '_').slice(0, 50)}`;
+    const cachedResponse = getCachedResult(cacheKey);
+    if (cachedResponse) {
+        await typeMessage('bot', cachedResponse + ' [Cached]');
+        isProcessing = false;
+        return;
+    }
+
     // Show loading
     const loadingId = appendMessage('system', 'Querying local cache...');
 
     try {
         const response = await callGeminiAPI(query);
         removeMessage(loadingId);
+
+        // Cache successful responses (not error messages)
+        if (!response.includes('Error:') && !response.includes('API key not configured')) {
+            setCachedResult(cacheKey, response);
+        }
+
         await typeMessage('bot', response);
     } catch (error) {
         removeMessage(loadingId);
@@ -375,3 +428,4 @@ window.toggleAthena = toggleAthena;
 window.handleEnter = handleEnter;
 window.setApiKey = setApiKey;
 window.promptForApiKey = promptForApiKey;
+window.clearAthenaCache = clearAthenaCache;
