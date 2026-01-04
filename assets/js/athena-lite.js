@@ -36,6 +36,8 @@ const STATES = {
             "service|do|offer|help|build": "SERVICES",
             "price|cost|rate|charge|fee|budget|quote": "PRICING",
             "project|portfolio|work|example|case": "PROJECTS",
+            "who|winston|about|background": "ABOUT",
+            "trust|review|testimonial|credible|legit": "TRUST",
             "hello|hi|hey": "START"
         }
     },
@@ -99,6 +101,26 @@ const STATES = {
             "need|want|yes|interested": "CONTACT",
             "example|see|student": "PROJECTS",
             "much|price|cost": "PRICING"
+        }
+    },
+
+    'ABOUT': {
+        response: "👤 About Winston:\n\nFormer analyst, now bionic operator. Built **Athena** (this AI) with 4,000+ memories and 200+ protocols.\n\nPhilosophy: *Build systems that run themselves.*\n\nCheck the About page for the full story, or...",
+        suggestions: ["See his work", "Get a quote", "Why trust him?"],
+        keywords: {
+            "work|portfolio|see|show": "PROJECTS",
+            "quote|contact|start": "CONTACT",
+            "trust|why|credible": "TRUST"
+        }
+    },
+
+    'TRUST': {
+        response: "⭐ Trust signals:\n\n• **95+ Lighthouse scores** on all builds\n• **Open-source Athena** — 200+ protocols, public repo\n• **3 testimonials** on homepage (real clients)\n• **No retainers** — project-based, pay on delivery\n\nSee for yourself:",
+        suggestions: ["View portfolio", "Read testimonials", "Get a quote"],
+        keywords: {
+            "portfolio|see|view": "PROJECTS",
+            "testimonial|review|read": "PROJECTS",
+            "quote|contact|start": "CONTACT"
         }
     },
 
