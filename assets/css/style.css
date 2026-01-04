@@ -746,6 +746,53 @@ blockquote {
 }
 
 /* ========================================
+   FAQ SECTION
+======================================== */
+.faq-section {
+    margin-top: 4rem;
+    text-align: left;
+}
+
+.faq-section h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.faq-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.faq-item {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.faq-item h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.faq-item p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.faq-item strong {
+    color: var(--text-color);
+}
+
+/* ========================================
    FOOTER
 ======================================== */
 footer {
