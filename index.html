@@ -43,7 +43,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Structured Data -->
@@ -214,6 +214,46 @@
             </div>
         </section>
 
+        <!-- TESTIMONIALS (Social Proof) -->
+        <section class="testimonials-section" aria-labelledby="testimonials">
+            <h2 id="testimonials" class="section-label">What Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">Winston delivered exactly what we needed — a clean, fast website that
+                        actually converts. No fluff, just results.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">ML</div>
+                        <div class="testimonial-info">
+                            <span class="testimonial-name">Melvin Lim</span>
+                            <span class="testimonial-role">SAF Officer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">The turnaround was insane. From brief to live site in under a day. The
+                        AI-augmented workflow is real.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">TC</div>
+                        <div class="testimonial-info">
+                            <span class="testimonial-name">Tuition Centre Owner</span>
+                            <span class="testimonial-role">Education SME</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-quote">Finally, someone who gets it. Not just a website, but a system that
+                        works while I focus on my business.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SG</div>
+                        <div class="testimonial-info">
+                            <span class="testimonial-name">Small Business Owner</span>
+                            <span class="testimonial-role">F&B Industry</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- PHILOSOPHY / PILLARS -->
         <section class="cards-section" aria-labelledby="operating-system">
             <h2 id="operating-system" class="section-label">The Operating System (Philosophy)</h2>
@@ -243,6 +283,34 @@
             Assistant.</p>
     </footer>
 
+    <!-- Athena Live Widget -->
+    <div id="athena-widget" class="athena-widget minimized">
+        <div class="athena-header" onclick="toggleAthena()">
+            <div class="status-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+            </div>
+            <span class="header-title">Athena_Live v1.0</span>
+            <span class="toggle-icon">_</span>
+        </div>
+
+        <div class="athena-body">
+            <div class="chat-history" id="chat-history">
+                <div class="message system">
+                    <span class="prompt">//</span> CONNECTED.<br>
+                    <span class="prompt">//</span> I've indexed Winston's portfolio.<br>
+                    <span class="prompt">//</span> Ask about skills, projects, or philosophy.
+                </div>
+            </div>
+
+            <div class="input-area">
+                <span class="prompt">></span>
+                <input type="text" id="user-input" placeholder="Enter command..." onkeypress="handleEnter(event)">
+            </div>
+        </div>
+    </div>
+
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/6597909965?text=Hi%20Winston%2C%20I%20came%20across%20your%20site." class="whatsapp-float"
         target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
@@ -254,6 +322,13 @@
 
     <script src="assets/js/particles.js"></script>
     <script src="assets/js/typewriter.js"></script>
+    <script src="assets/js/athena-lite.js"></script>
+
+    <!-- Athena Live API Configuration -->
+    <script>
+        // API key configured
+        setApiKey('AIzaSyA31QwESvJCK2ecbrfspNfI87K87nCnSqc');
+    </script>
 </body>
 
 </html>
