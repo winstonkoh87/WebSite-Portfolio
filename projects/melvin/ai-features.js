@@ -136,9 +136,32 @@ async function synthesizeEssay(buttonEl) {
     // Format response
     const response = `<strong>Leadership Aphorism:</strong> "${insight.aphorism}"<br><br><strong>Actionable Advice:</strong> ${insight.advice}`;
 
-    resultArea.innerHTML = `<div class="ai-result-box">${response}</div>`;
-    buttonEl.innerText = "Synthesized";
+    resultArea.innerHTML = `<div class="ai-result-box"></div>`;
+    const box = resultArea.querySelector('.ai-result-box');
+
+    // Typewriter effect
+    let i = 0;
+    const speed = 15; // ms per character
+    function typeWriter() {
+        if (i < response.length) {
+            // Check for HTML tags
+            if (response.substring(i, i + 1) === '<') {
+                const endTag = response.indexOf('>', i);
+                box.innerHTML += response.substring(i, endTag + 1);
+                i = endTag + 1;
+            } else {
+                box.innerHTML += response.charAt(i);
+                i++;
+            }
+            setTimeout(typeWriter, speed);
+        } else {
+            buttonEl.innerText = "Synthesized";
+        }
+    }
+
+    typeWriter();
 }
+
 
 // ========================================
 // FEATURE 2: AI Librarian (Books)
@@ -162,10 +185,45 @@ async function askBookAI(btnElement, title, author) {
     // Get insight based on book title
     const insight = findInsight(title, BOOK_INSIGHTS);
 
-    resultBox.innerText = insight;
-    btnElement.innerHTML = `<i data-lucide="check" width="14" height="14"></i> Insight Loaded`;
+    resultBox.innerHTML = "";
 
-    if (window.lucide) lucide.createIcons();
+    // Typewriter effect
+    let i = 0;
+    const speed = 15;
+    function typeWriterLibrary() {
+        if (i < insight.length) {
+            resultBox.innerHTML += insight.charAt(i);
+            i++;
+            setTimeout(typeWriterLibrary, speed);
+        } else {
+            btnElement.innerHTML = `<i data-lucide="check" width="14" height="14"></i> Insight Loaded`;
+            if (window.lucide) lucide.createIcons();
+        }
+    }
+
+    typeWriterLibrary();
+}
+
+
+// ========================================
+// FEATURE 3: Autonomic Stats (Reading Time)
+// ========================================
+
+function initEssayStats() {
+    const essays = document.querySelectorAll('.essay-item');
+    essays.forEach(essay => {
+        const text = essay.innerText;
+        const wordCount = text.split(/\s+/).length;
+        const readingTime = Math.ceil(wordCount / 200); // 200 wpm avg
+
+        const dateEl = essay.querySelector('.essay-date');
+        if (dateEl) {
+            const stats = document.createElement('span');
+            stats.className = 'essay-stats';
+            stats.innerHTML = ` • ${readingTime} min read`;
+            dateEl.appendChild(stats);
+        }
+    });
 }
 
 // ========================================
@@ -174,5 +232,7 @@ async function askBookAI(btnElement, title, author) {
 
 document.addEventListener("DOMContentLoaded", () => {
     if (window.lucide) lucide.createIcons();
-    console.log("⚡ Melvin AI Features v2.0 (Smart Mock) initialized");
+    initEssayStats();
+    console.log("⚡ Melvin AI Features v2.1 (Bionic Polish) initialized");
 });
+

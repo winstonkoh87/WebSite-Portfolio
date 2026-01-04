@@ -30,20 +30,59 @@ let currentState = 'START';
 
 const STATES = {
     'START': {
-        response: "👋 Hey! I'm Athena — Winston's AI assistant. How can I help you today?",
-        suggestions: ["💼 What do you do?", "💰 Pricing info", "📂 See projects"],
+        response: "👋 **System Online.** I'm Athena — Winston's Bionic OS.\n\nYou can ask about **Services** or **Pricing**...\n\n...OR you can type `/status` to see my internals. 😈",
+        suggestions: ["💼 Services", "💰 Pricing", "/status", "/roast me"],
         keywords: {
             "service|do|offer|help|build": "SERVICES",
             "price|cost|rate|charge|fee|budget|quote": "PRICING",
             "project|portfolio|work|example|case": "PROJECTS",
             "who|winston|about|background": "ABOUT",
-            "trust|review|testimonial|credible|legit": "TRUST",
-            "hello|hi|hey": "START"
+            "hello|hi|hey": "START",
+            "/status|status|stats|uptime": "CMD_STATUS",
+            "/stack|stack|tech|brain": "CMD_STACK",
+            "/roast|roast|joke|funny": "CMD_ROAST",
+            "sudo|admin|root|login": "CMD_SECRET"
+        }
+    },
+
+    'CMD_STATUS': {
+        response: "🟢 **SYSTEM STATUS**\n\n• **Uptime**: 99.98%\n• **Memory**: 4,203 Vectors (Synced)\n• **Latency**: 12ms (Local)\n• **Mood**: Efficient\n\nI am not a chatbot. I am a **Decision Engine**. Try `/stack` to see how I'm built.",
+        suggestions: ["/stack", "Back to business"],
+        keywords: {
+            "/stack|stack": "CMD_STACK",
+            "business|back|service": "START"
+        }
+    },
+
+    'CMD_STACK': {
+        response: "⚡ **THE BIONIC STACK**\n\n• **Brain**: Gemini 1.5 Pro (Reasoning)\n• **Memory**: Supabase Vector (Recall)\n• **Body**: Python + 200 Shell Scripts\n• **Cost**: ~$0.02 per query\n\nI replace an entire Operations Team. Want to build one?",
+        suggestions: ["Yes, I want one!", "No, just a website"],
+        keywords: {
+            "yes|want|build|need": "AI_DEEP",
+            "website|web|no": "SERVICES"
+        }
+    },
+
+    'CMD_ROAST': {
+        response: "🔥 **ROAST MODE ENGAGED**\n\nScanning your vibe... \n\nYou're the type of person who opens 50 tabs, bookmarks 10 'productivity tools', and then watches 3 hours of Netflix.\n\nClose the tabs. Ship something. (Or hire Winston to ship it for you). 😉",
+        suggestions: ["Ouch. Fair.", "Hire Winston"],
+        keywords: {
+            "ouch|fair|true|lol|haha": "START",
+            "hire|winston|contact": "CONTACT"
+        }
+    },
+
+    'CMD_SECRET': {
+        response: "🔒 **ACCESS DENIED**\n\nNice try. Only **God Mode** users (Winston) allowed in the kernel.\n\nBut I like your curiosity. You'd be a good client.",
+        suggestions: ["Get a quote", "Back to start"],
+        keywords: {
+            "quote|contact": "CONTACT",
+            "back|start": "START"
         }
     },
 
     'SERVICES': {
-        response: "🔧 I build three things:\n\n1️⃣ **SME Websites** — Lead capture machines for small businesses\n2️⃣ **Personal Portfolios** — For professionals & students\n3️⃣ **AI Workflows** — Automation systems that run themselves\n\nNot just pretty sites — complete business systems!",
+        response: "🔧 I build three things:\n\n1️⃣ **SME Websites** — Lead capture machines\n2️⃣ **Personal Portfolios** — For High-Agency humans\n3️⃣ **AI Workflows** — Systems that sleep while you earn\n\nNot just pretty sites — **Assets**.",
         suggestions: ["See examples", "🌟 Get a quote", "Tell me more about AI"],
         keywords: {
             "example|portfolio|show|see": "PROJECTS",
@@ -55,8 +94,8 @@ const STATES = {
     },
 
     'PRICING': {
-        response: "💰 Project-based pricing:\n\n• **Landing Page**: from $800\n• **Full Website**: from $1,500\n• **Portfolio + Branding**: from $1,200\n\n📋 Want the full **Rate Card**? Just ask on WhatsApp — I'll send it over!",
-        suggestions: ["📋 Send me rate card", "See examples first", "What's included?"],
+        response: "💰 **Strategic Pricing** (No Fluff):\n\n• **Landing Page**: ~$800\n• **Full System**: ~$1,500\n• **Branding**: ~$1,200\n\nPay for **Outcomes**, not hours. Want the full Rate Card PDF?",
+        suggestions: ["📋 Send Rate Card", "See examples first"],
         keywords: {
             "yes|talk|contact|whatsapp|start|send|rate|card": "CONTACT",
             "example|see|show|portfolio": "PROJECTS",
@@ -65,17 +104,18 @@ const STATES = {
     },
 
     'PROJECTS': {
-        response: "📂 Featured work:\n\n🫡 **Melvin Lim** — SAF Officer portfolio (personal branding)\n☕ **Brew & Bean** — F&B landing page (lead capture)\n🧬 **ThatBioTutor** — Tuition centre (SEO + conversion)\n\nScroll down to see live demos, or...",
-        suggestions: ["I want something similar!", "Tell me about your process", "Different style?"],
+        response: "📂 **Evidence Locker**:\n\n🫡 **Melvin Lim** — Rank & Status\n☕ **Brew & Bean** — Lead Gen\n🧬 **ThatBioTutor** — SEO Dominance\n\nScroll down to verify. Or ask me to `/roast` your current site.",
+        suggestions: ["I want something similar!", "Tell me about process", "/roast me"],
         keywords: {
             "similar|want|interested|yes|start": "CONTACT",
             "process|how|work|timeline": "PROCESS",
-            "different|other|more|style": "SERVICES"
+            "different|other|more|style": "SERVICES",
+            "/roast|roast": "CMD_ROAST"
         }
     },
 
     'AI_DEEP': {
-        response: "🤖 AI Workflows explained:\n\nI turn manual tasks into automated pipelines. Example: **Athena** (the system running this chat) has 4,000+ memories and 200+ protocols.\n\nFor businesses, I build:\n• Auto-response systems\n• Data processing pipelines\n• Decision support tools\n\nThink: *things that run while you sleep.*",
+        response: "🤖 **AI Architecture**:\n\nI turn manual tasks into automated pipelines. Example: **Athena** (Me) has 4,203 memories.\n\nFor businesses, I build:\n• Auto-Response Agents\n• Data Pipelines\n• Decision Support\n\nThink: *Employees that don't need coffee.*",
         suggestions: ["🚀 I need this!", "Back to services", "What does it cost?"],
         keywords: {
             "need|want|interested|build|start": "CONTACT",
@@ -85,7 +125,7 @@ const STATES = {
     },
 
     'SME_DEEP': {
-        response: "🏪 SME Websites aren't just websites — they're lead machines.\n\nEvery build includes:\n• Mobile-first design\n• WhatsApp integration\n• Analytics tracking\n• SEO foundation\n\nGoal: **Visitors → Leads → Customers**",
+        response: "🏪 **SME Physics**:\n\nWebsites are liabilities. **Systems** are assets.\n\nMy builds include:\n• WhatsApp conversion loops\n• Google Analytics 4 (Data)\n• SEO foundations (Traffic)\n\nGoal: **Strangers → Leads → Cash**",
         suggestions: ["Get a quote", "See an example", "What's the process?"],
         keywords: {
             "quote|contact|start|interested": "CONTACT",
@@ -95,7 +135,7 @@ const STATES = {
     },
 
     'PORTFOLIO_DEEP': {
-        response: "👤 Personal Portfolios for:\n\n• **Students** — DSA/ABA applications, university admissions\n• **Professionals** — LinkedIn upgrade, personal branding\n• **Freelancers** — Showcase your work, attract clients\n\nYour story, presented beautifully.",
+        response: "👤 **Identity Architecture**:\n\n• **Students**: Hack the admissions algorithm\n• **Founders**: raising capital?\n• **Freelancers**: Charge premium rates\n\nYour story, weaponized.",
         suggestions: ["I need one!", "See student examples", "How much?"],
         keywords: {
             "need|want|yes|interested": "CONTACT",
@@ -105,17 +145,18 @@ const STATES = {
     },
 
     'ABOUT': {
-        response: "👤 About Winston:\n\nFormer analyst, now bionic operator. Built **Athena** (this AI) with 4,000+ memories and 200+ protocols.\n\nPhilosophy: *Build systems that run themselves.*\n\nCheck the About page for the full story, or...",
-        suggestions: ["See his work", "Get a quote", "Why trust him?"],
+        response: "👤 **Operator Profile**: Winston Koh\n\nFormer analyst. Now Bionic Architect.\n\nHe built **Me** (Athena) to automate his own life. Now he builds systems for others.\n\nCheck the About page, or type `/stack`.",
+        suggestions: ["See his work", "Get a quote", "/stack"],
         keywords: {
             "work|portfolio|see|show": "PROJECTS",
             "quote|contact|start": "CONTACT",
-            "trust|why|credible": "TRUST"
+            "trust|why|credible": "TRUST",
+            "/stack|stack": "CMD_STACK"
         }
     },
 
     'TRUST': {
-        response: "⭐ Trust signals:\n\n• **95+ Lighthouse scores** on all builds\n• **Open-source Athena** — 200+ protocols, public repo\n• **3 testimonials** on homepage (real clients)\n• **No retainers** — project-based, pay on delivery\n\nSee for yourself:",
+        response: "⭐ **Verification Layer**:\n\n• **95+ Lighthouse Scores** (Speed)\n• **Open Source** (No secrets)\n• **Real Clients** (Scroll down)\n• **No Retainers** (One-off fee)\n\nWe trust in Physics, not promises.",
         suggestions: ["View portfolio", "Read testimonials", "Get a quote"],
         keywords: {
             "portfolio|see|view": "PROJECTS",
@@ -125,7 +166,7 @@ const STATES = {
     },
 
     'SCOPE': {
-        response: "📦 What's included in every project:\n\n✅ Custom design (no templates)\n✅ Mobile responsive\n✅ Basic SEO setup\n✅ Analytics integration\n✅ 2 rounds of revisions\n✅ 30-day support post-launch\n\nWant the full breakdown?",
+        response: "📦 **The Box**:\n\n✅ Custom code (No templates)\n✅ Mobile optimized\n✅ SEO basic setup\n✅ Analytics included\n✅ 30-day warranty\n\nWant the full breakdown?",
         suggestions: ["Let's start!", "Show me examples", "Back to pricing"],
         keywords: {
             "start|yes|contact|go": "CONTACT",
@@ -135,7 +176,7 @@ const STATES = {
     },
 
     'PROCESS': {
-        response: "⚡ How we work:\n\n1️⃣ **Brief** — We chat about goals (30 min)\n2️⃣ **Proposal** — Scope + pricing in 24h\n3️⃣ **Build** — 1-2 weeks depending on complexity\n4️⃣ **Review** — 2 rounds of feedback\n5️⃣ **Launch** — You go live! 🚀\n\nSimple. Fast. No BS.",
+        response: "⚡ **Transmission Speed**:\n\n1️⃣ **Brief** (30m Chat)\n2️⃣ **Proposal** (24h turnaround)\n3️⃣ **Build** (7-14 Days)\n4️⃣ **Launch** (Global Deploy)\n\nFast. Fatal. Final.",
         suggestions: ["Start now!", "See portfolio first", "What's the cost?"],
         keywords: {
             "start|now|yes|go|contact": "CONTACT",
@@ -145,7 +186,7 @@ const STATES = {
     },
 
     'CONTACT': {
-        response: "📱 Perfect! Here's how to reach Winston:\n\n**WhatsApp**: +65 9790 9965 *(fastest)*\n**Email**: Click the green button below\n\n💡 Pro tip: Share your project idea in the first message — you'll get a faster response!\n\nLooking forward to building something amazing together! 🚀",
+        response: "📱 **Open Comms Channel**:\n\n**WhatsApp**: +65 9790 9965 *(Priority)*\n**Email**: Click button below\n\n💡 Power Move: Share your project idea in the first message. Winston replies fast to interesting problems.",
         suggestions: ["💬 Open WhatsApp", "📋 Fill project form", "One more question"],
         keywords: {
             "whatsapp|chat|message": "CONTACT_WA",
@@ -156,7 +197,7 @@ const STATES = {
     },
 
     'CONTACT_WA': {
-        response: "📲 Opening WhatsApp...\n\nJust click the green button in the corner, or hit this link:\n**wa.me/6597909965**\n\nSee you there! 👋",
+        response: "📲 **Establishing Uplink...**\n\nClick the green button or link:\n**wa.me/6597909965**\n\nSee you on the other side. 👋",
         suggestions: ["Got it!", "Need form instead", "Ask another question"],
         keywords: {
             "got|ok|thanks": "END",
@@ -167,7 +208,7 @@ const STATES = {
     },
 
     'CONTACT_FORM': {
-        response: "📋 Project brief form:\n\n**tally.so/r/3xjo1O**\n\nTakes 2 minutes. Winston reviews within 24h and sends a proposal!\n\nGood luck with your project! 🎯",
+        response: "📋 **Project Intake**:\n\n**tally.so/r/3xjo1O**\n\nCompleting this form increases proposal acceptance probability by 40%.",
         suggestions: ["Done!", "WhatsApp instead", "One more question"],
         keywords: {
             "done|ok|thanks": "END",
@@ -178,10 +219,11 @@ const STATES = {
     },
 
     'END': {
-        response: "🙏 Thanks for chatting! Good luck with your project.\n\nFeel free to come back anytime. Athena out! ✨",
-        suggestions: ["Start over"],
+        response: "🙏 **Session Complete.**\n\nI'll be here if you need more data. Athena out. ✨",
+        suggestions: ["/start", "/roast me"],
         keywords: {
-            "start|over|again|new": "START"
+            "start|over|again|new|/start": "START",
+            "/roast|roast": "CMD_ROAST"
         }
     }
 };
