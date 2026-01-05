@@ -1,6 +1,6 @@
 # Building a Portfolio Website from Scratch (with AI)
 
-> **Last Updated**: 4 January 2026
+> **Last Updated**: 5 January 2026
 
 [![Live Site](https://img.shields.io/badge/Live-winstonkoh87.github.io-00C853?style=flat-square)](https://winstonkoh87.github.io/)
 [![Built with Athena](https://img.shields.io/badge/Built_with-Athena-CC785C?style=flat-square)](https://github.com/winstonkoh87/Athena-Public)
@@ -20,7 +20,7 @@ This is a documentation of how I built a complete portfolio website with AI-augm
 
 | Metric | Count |
 |--------|-------|
-| **Pages** | 7 |
+| **Pages** | 8 |
 | **Articles** | 6 |
 | **Live Demo Sites** | 5 |
 | **AI Widget** | ✅ Athena Live |
@@ -50,7 +50,8 @@ API integration with Gemini was too much hassle — rate limits, latency, key ma
 ### What It Does
 
 - **Smart Mock System** — Rule-based responses covering ~20 common questions
-- **localStorage Caching** — Instant responses for repeated questions (24hr TTL)
+- **localStorage Persistence** — Chat state survives page refresh for seamless UX
+- **Reset Command** — `/reset` command allows users to clear cache and restart the flow
 - **Dynamic Suggestions** — Context-aware follow-up prompts after each response
 - **Graceful Fallback** — Unknown queries get a helpful "how to reach me" response
 
@@ -133,6 +134,7 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 | [Writing](https://winstonkoh87.github.io/writing.html) | Blog with 6 published articles |
 | [Portfolio](https://winstonkoh87.github.io/portfolio.html) | 5 live demo sites + coming soon projects |
 | [Athena](https://winstonkoh87.github.io/athena.html) | Product page: What Athena is and how it works |
+| [Services](https://winstonkoh87.github.io/services.html) | Fixed pricing. Fast delivery. Systems that work. |
 | [Contact](https://winstonkoh87.github.io/contact.html) | WhatsApp CTA + social links |
 
 ---
@@ -155,7 +157,7 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 | Project | Type | Link |
 |---------|------|------|
 | **P6 Math Tuition** | Education | [View Site](https://winstonkoh87.github.io/projects/p6-math-tuition/) |
-| **Sample Café** | F&B | [View Site](https://winstonkoh87.github.io/projects/brew/) |
+| **Brew & Bean** | F&B | [View Site](https://winstonkoh87.github.io/projects/brew/) |
 | **Sticker Shop** | E-commerce | [View Site](https://winstonkoh87.github.io/projects/sticker-shop/) |
 | **That Bio Tutor** | Education | [View Site](https://winstonkoh87.github.io/projects/thatbiotutor/) |
 | **Melvin Lim Portfolio** | Personal | [View Site](https://winstonkoh87.github.io/projects/melvin/) |
