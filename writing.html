@@ -15,8 +15,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0a0a0f">
     <link rel="canonical" href="https://winstonkoh87.github.io/writing.html">
-    <title>Writing | Winston Koh</title>
-    <meta name="description" content="Thoughts on systems, strategy, and survival in high-stakes environments.">
+    <title>Writing | AI Strategy & Engineering Insights | Winston Koh</title>
+    <meta name="description"
+        content="Deep-dives into AI systems, RAG architecture, and bionic engineering. Scaling intelligence through sovereign systems.">
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://winstonkoh87.github.io/writing.html">
@@ -60,7 +61,7 @@
             <ul>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="writing.html" class="active">Writing</a></li>
-                <li><a href="framework.html">Framework</a></li>
+                <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -69,8 +70,25 @@
 
     <main id="main-content" class="page-content">
         <section class="page-header">
-            <h1>Writing</h1>
-            <p class="page-subtitle">Thoughts on systems, strategy, and survival.</p>
+            <div class="header-row">
+                <div class="header-text">
+                    <h1>Writing</h1>
+                    <p class="page-subtitle">Thoughts on systems, strategy, and survival.</p>
+                </div>
+                <div class="controls-container">
+                    <div class="search-container">
+                        <input type="text" id="article-search" class="search-input" placeholder="Search articles..."
+                            aria-label="Search articles">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                    <div class="sort-container">
+                        <select id="article-sort" class="sort-select" aria-label="Sort articles">
+                            <option value="newest">Newest</option>
+                            <option value="oldest">Oldest</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="content-section">
@@ -82,8 +100,8 @@
                 <button class="filter-btn" data-filter="casestudy">Case Studies</button>
             </div>
 
-            <div class="article-grid">
-                <article class="article-card" data-category="ai">
+            <div class="article-grid" id="article-grid">
+                <article class="article-card" data-category="ai" data-date="2026-01-05">
                     <a href="articles/athena-public-launch.html" class="article-link">
                         <div class="article-card-content">
                             <div class="article-meta">
@@ -97,7 +115,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="article-card" data-category="ai">
+                <article class="article-card" data-category="ai" data-date="2026-01-03">
                     <a href="articles/athena-5-pillars.html" class="article-link">
                         <div class="article-card-content">
                             <div class="article-meta">
@@ -111,7 +129,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="article-card" data-category="strategy">
+                <article class="article-card" data-category="strategy" data-date="2026-01-01">
                     <a href="articles/trilateral-feedback-loop.html" class="article-link">
                         <div class="article-card-content">
                             <div class="article-meta">
@@ -125,7 +143,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="article-card" data-category="strategy">
+                <article class="article-card" data-category="strategy" data-date="2025-12-28">
                     <a href="articles/ai-bionic-layer.html" class="article-link">
                         <div class="article-card-content">
                             <div class="article-meta">
@@ -139,7 +157,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="article-card" data-category="casestudy">
+                <article class="article-card" data-category="casestudy" data-date="2025-12-20">
                     <a href="articles/case-study-p6-math-tuition.html" class="article-link">
                         <div class="article-card-content">
                             <div class="article-meta">
@@ -153,7 +171,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="article-card" data-category="ai">
+                <article class="article-card" data-category="ai" data-date="2025-12-15">
                     <a href="articles/sme-ai-marketing-guide.html" class="article-link">
                         <div class="article-card-content">
                             <div class="article-meta">
@@ -169,6 +187,17 @@
                     </a>
                 </article>
             </div>
+
+            <!-- Empty State for Search -->
+            <div id="no-results" class="empty-state" style="display: none; padding: 4rem 1rem;">
+                <div class="empty-icon" style="font-size: 3rem; margin-bottom: 1rem;">🔍</div>
+                <h3>No articles found</h3>
+                <p>Try adjusting your search or filters to find what you're looking for.</p>
+                <button onclick="resetFilters()" class="text-link"
+                    style="margin-top: 1rem; background: none; border: none; font-family: inherit; cursor: pointer;">
+                    Clear all filters
+                </button>
+            </div>
         </section>
 
         <section class="content-section">
@@ -183,14 +212,66 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Winston Koh</p>
-        <p class="footer-credit">Co-created with <a href="https://github.com/winstonkoh87/Athena-Public" target="_blank"
-                rel="noopener noreferrer">Project Athena</a> — AI-Powered Digital Personal Assistant.</p>
+    <footer class="fat-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Column 1: Navigation -->
+                <div class="footer-col">
+                    <h4 onclick="toggleFooterCol(this.parentElement)">Pages</h4>
+                    <div class="footer-links-wrapper">
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="writing.html">Writing</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 2: Featured Work -->
+                <div class="footer-col">
+                    <h4 onclick="toggleFooterCol(this.parentElement)">Work</h4>
+                    <div class="footer-links-wrapper">
+                        <ul class="footer-links">
+                            <li class="footer-label">Projects</li>
+                            <li><a href="athena.html">Project Athena</a></li>
+                            <li><a href="projects/melvin/index.html">Melvin's Portfolio</a></li>
+                            <li><a href="projects/brew/index.html">Brew & Bean</a></li>
+                            <li class="footer-label" style="margin-top: 1rem;">Articles</li>
+                            <li><a href="articles/athena-public-launch.html">Athena Launch Story</a></li>
+                            <li><a href="articles/athena-5-pillars.html">Sovereign AI Pillars</a></li>
+                            <li><a href="articles/trilateral-feedback-loop.html">Adversarial AI Audit</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 3: Connect -->
+                <div class="footer-col">
+                    <h4 onclick="toggleFooterCol(this.parentElement)">Connect</h4>
+                    <div class="footer-links-wrapper">
+                        <ul class="footer-links">
+                            <li><a href="https://wa.me/6583581066" target="_blank">WhatsApp</a></li>
+                            <li><a href="https://github.com/winstonkoh87" target="_blank">GitHub</a></li>
+                            <li><a href="https://linkedin.com/in/winstonkoh87" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://www.carousell.sg/u/winstonkoh87/" target="_blank">Carousell</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Winston Koh. All rights reserved.</p>
+                <div class="footer-athena-credit">
+                    Co-created with <a href="athena.html">Project Athena</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/6597909965?text=Hi%20Winston%2C%20I%20came%20across%20your%20site." class="whatsapp-float"
+    <a href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I%20came%20across%20your%20writing." class="whatsapp-float"
         target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -202,43 +283,115 @@
     <script src="assets/js/particles.js"></script>
 
     <script>
-        // Article Filter Functionality
+        // Article Filter & Search Functionality
         document.addEventListener('DOMContentLoaded', function () {
             const filterBtns = document.querySelectorAll('.filter-btn');
             const articleCards = document.querySelectorAll('.article-card');
+            const articleGrid = document.getElementById('article-grid');
+            const sortSelect = document.getElementById('article-sort');
+            const searchInput = document.getElementById('article-search');
+            let activeFilter = 'all';
 
+            function sortArticles() {
+                const sortValue = sortSelect.value;
+                const articles = Array.from(articleCards);
+
+                articles.sort((a, b) => {
+                    const dateA = new Date(a.dataset.date);
+                    const dateB = new Date(b.dataset.date);
+                    return sortValue === 'newest' ? dateB - dateA : dateA - dateB;
+                });
+
+                articles.forEach(article => articleGrid.appendChild(article));
+            }
+
+            function filterArticles() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+
+                articleCards.forEach(card => {
+                    const category = card.dataset.category;
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    const excerpt = card.querySelector('.article-excerpt').textContent.toLowerCase();
+
+                    const matchesFilter = activeFilter === 'all' || category === activeFilter;
+                    const matchesSearch = searchTerm === '' || title.includes(searchTerm) || excerpt.includes(searchTerm);
+
+                    if (matchesFilter && matchesSearch) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(10px)';
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Show/Hide Empty State
+                const visibleCards = Array.from(articleCards).filter(card => card.style.display === 'block');
+                const emptyState = document.getElementById('no-results');
+                if (visibleCards.length === 0) {
+                    emptyState.style.display = 'block';
+                    articleGrid.style.display = 'none';
+                } else {
+                    emptyState.style.display = 'none';
+                    articleGrid.style.display = 'grid';
+                }
+            }
+
+            window.resetFilters = function () {
+                searchInput.value = '';
+                filterBtns[0].click();
+                filterArticles();
+            };
+
+            // Filter button clicks
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', function () {
-                    // Update active button
                     filterBtns.forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
-
-                    const filter = this.dataset.filter;
+                    activeFilter = this.dataset.filter;
 
                     // GA4 Event Tracking
                     if (typeof gtag !== 'undefined') {
                         gtag('event', 'filter_click', {
                             'event_category': 'Writing Page',
-                            'event_label': filter
+                            'event_label': activeFilter
                         });
                     }
 
-                    // Filter cards
-                    articleCards.forEach(card => {
-                        if (filter === 'all') {
-                            card.style.display = 'block';
-                            card.style.opacity = '1';
-                        } else if (card.dataset.category === filter) {
-                            card.style.display = 'block';
-                            card.style.opacity = '1';
-                        } else {
-                            card.style.display = 'none';
-                            card.style.opacity = '0';
-                        }
-                    });
+                    filterArticles();
                 });
             });
+
+            // Search input
+            searchInput.addEventListener('input', function () {
+                // GA4 Event Tracking (debounced would be better for production)
+                if (typeof gtag !== 'undefined' && this.value.length > 2) {
+                    gtag('event', 'search', {
+                        'event_category': 'Writing Page',
+                        'search_term': this.value
+                    });
+                }
+                filterArticles();
+            });
+
+            // Sort input
+            sortSelect.addEventListener('change', function () {
+                sortArticles();
+                filterArticles();
+            });
+
+            // Initial sort
+            sortArticles();
         });
+    </script>
+    <script>
+        function toggleFooterCol(el) {
+            el.classList.toggle('active');
+        }
     </script>
 </body>
 

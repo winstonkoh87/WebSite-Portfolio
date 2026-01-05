@@ -351,10 +351,62 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Winston Koh</p>
-        <p class="footer-credit">Co-created with <a href="https://github.com/winstonkoh87/Athena-Public" target="_blank"
-                rel="noopener noreferrer">Project Athena</a> — AI-Powered Digital Personal Assistant.</p>
+    <footer class="fat-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Column 1: Navigation -->
+                <div class="footer-col">
+                    <h4 onclick="toggleFooterCol(this.parentElement)">Pages</h4>
+                    <div class="footer-links-wrapper">
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="writing.html">Writing</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 2: Featured Work -->
+                <div class="footer-col">
+                    <h4 onclick="toggleFooterCol(this.parentElement)">Work</h4>
+                    <div class="footer-links-wrapper">
+                        <ul class="footer-links">
+                            <li class="footer-label">Projects</li>
+                            <li><a href="athena.html">Project Athena</a></li>
+                            <li><a href="projects/melvin/index.html">Melvin's Portfolio</a></li>
+                            <li><a href="projects/brew/index.html">Brew & Bean</a></li>
+                            <li class="footer-label" style="margin-top: 1rem;">Articles</li>
+                            <li><a href="articles/athena-public-launch.html">Athena Launch Story</a></li>
+                            <li><a href="articles/athena-5-pillars.html">Sovereign AI Pillars</a></li>
+                            <li><a href="articles/trilateral-feedback-loop.html">Adversarial AI Audit</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 3: Connect -->
+                <div class="footer-col">
+                    <h4 onclick="toggleFooterCol(this.parentElement)">Connect</h4>
+                    <div class="footer-links-wrapper">
+                        <ul class="footer-links">
+                            <li><a href="https://wa.me/6583581066" target="_blank">WhatsApp</a></li>
+                            <li><a href="https://github.com/winstonkoh87" target="_blank">GitHub</a></li>
+                            <li><a href="https://linkedin.com/in/winstonkoh87" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://www.carousell.sg/u/winstonkoh87/" target="_blank">Carousell</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Winston Koh. All rights reserved.</p>
+                <div class="footer-athena-credit">
+                    Co-created with <a href="athena.html">Project Athena</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- Floating WhatsApp Button -->
@@ -368,6 +420,11 @@
 
 
     <script src="assets/js/particles.js"></script>
+    <script>
+        function toggleFooterCol(el) {
+            el.classList.toggle('active');
+        }
+    </script>
 </body>
 
 </html>

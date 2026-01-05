@@ -15,9 +15,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0a0a0f">
     <link rel="canonical" href="https://winstonkoh87.github.io/portfolio.html">
-    <title>Portfolio | Winston Koh</title>
+    <title>Portfolio | AI Systems & Full-stack Projects | Winston Koh</title>
     <meta name="description"
-        content="Browse my portfolio of web projects, demos, and case studies. From AI systems to SME websites.">
+        content="Explore my portfolio of AI-driven systems, custom web applications, and technical case studies. Production-ready solutions for SMEs and engineering teams.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -27,7 +27,8 @@
         content="Browse my portfolio of web projects, demos, and case studies. From AI systems to SME websites.">
     <meta property="og:image" content="https://winstonkoh87.github.io/assets/images/og-image.png">
 
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/jpeg" href="assets/images/winston-avatar.jpg">
+    <link rel="apple-touch-icon" href="assets/images/winston-avatar.jpg">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/terminal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,7 +48,7 @@
             <ul>
                 <li><a href="portfolio.html" class="active">Portfolio</a></li>
                 <li><a href="writing.html">Writing</a></li>
-                <li><a href="framework.html">Framework</a></li>
+                <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -76,9 +77,13 @@
                 <a href="athena.html" class="portfolio-card" data-category="systems">
                     <div class="project-header">
                         <span class="card-icon" aria-hidden="true">⚡</span>
-                        <span class="project-status production">Production</span>
+                        <div style="display: flex; gap: 0.5rem; align-items: center;">
+                            <span class="project-status production">Production</span>
+                            <span class="live-badge">● LIVE</span>
+                        </div>
                     </div>
                     <h3>Project Athena</h3>
+                    <p class="project-role"><em>Role: Architect + Full Stack</em></p>
                     <p>
                         <strong>The Outcome:</strong> An autonomous "Second Brain" that reduces engineering research
                         time by 60%.
@@ -99,6 +104,7 @@
                         <span class="project-status production">Production</span>
                     </div>
                     <h3>Melvin Lim Portfolio</h3>
+                    <p class="project-role"><em>Role: Design + Development</em></p>
                     <p>Personal portfolio for an SAF Officer and Scholar. Features a calm, high-trust design with
                         bento-grid layout for milestones.</p>
                     <div class="project-tags">
@@ -117,6 +123,7 @@
                         <span class="project-status demo">Demo</span>
                     </div>
                     <h3>MathPro Tuition</h3>
+                    <p class="project-role"><em>Role: Design + Full Stack</em></p>
                     <p>5-page static website for a P6 Math tuition centre. Clean design, 3-tier pricing, lead capture
                         form. Demonstrates SME web service quality.</p>
                     <div class="project-tags">
@@ -134,6 +141,7 @@
                         <span class="project-status demo">Demo</span>
                     </div>
                     <h3>ThatBioTutor Growth Proposal</h3>
+                    <p class="project-role"><em>Role: Strategy + Design + Dev</em></p>
                     <p>Multi-page digital marketing proposal with SEO strategy, content recommendations, and
                         pricing packages. Dark glassmorphism design with mobile nav.</p>
                     <div class="project-tags">
@@ -145,12 +153,13 @@
                 </a>
 
                 <!-- Brew & Bean Café Demo -->
-                <a href="projects/sample-cafe/" class="portfolio-card" data-category="sme">
+                <a href="projects/brew/" class="portfolio-card" data-category="sme">
                     <div class="project-header">
                         <span class="card-icon" aria-hidden="true">☕</span>
                         <span class="project-status demo">Demo</span>
                     </div>
                     <h3>Brew & Bean Café</h3>
+                    <p class="project-role"><em>Role: Design + Development</em></p>
                     <p>Artisan coffee shop landing page with menu showcase, story section, testimonials, and reservation
                         CTA. Premium F&B design.</p>
                     <div class="project-tags">
@@ -167,6 +176,7 @@
                         <span class="project-status demo">Demo</span>
                     </div>
                     <h3>StickerLah E-commerce</h3>
+                    <p class="project-role"><em>Role: Design + Full Stack</em></p>
                     <p>Cute SG sticker shop with product grid, cart drawer, bulk discounts, and checkout flow. Inspired
                         by DCHtoons.</p>
                     <div class="project-tags">
@@ -252,15 +262,15 @@
             <!-- Stats Section -->
             <div class="portfolio-stats">
                 <div class="stat-item">
-                    <span class="stat-number">2</span>
+                    <span class="stat-number metric-value">2</span>
                     <span class="stat-label">Production Systems</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">4</span>
+                    <span class="stat-number metric-value">4</span>
                     <span class="stat-label">Demo Sites</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">5</span>
+                    <span class="stat-number metric-value">5</span>
                     <span class="stat-label">Coming Soon</span>
                 </div>
             </div>
@@ -268,14 +278,66 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Winston Koh</p>
-        <p class="footer-credit">Co-created with <a href="https://github.com/winstonkoh87/Athena-Public" target="_blank"
-                rel="noopener noreferrer">Project Athena</a> — AI-Powered Digital Personal Assistant.</p>
+    <footer class="fat-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Column 1: Navigation -->
+                <div class="footer-col">
+                    <h4 onclick="toggleFooterCol(this.parentElement)">Pages</h4>
+                    <div class="footer-links-wrapper">
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="writing.html">Writing</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 2: Featured Work -->
+                <div class="footer-col">
+                    <h4 onclick="toggleFooterCol(this.parentElement)">Work</h4>
+                    <div class="footer-links-wrapper">
+                        <ul class="footer-links">
+                            <li class="footer-label">Projects</li>
+                            <li><a href="athena.html">Project Athena</a></li>
+                            <li><a href="projects/melvin/index.html">Melvin's Portfolio</a></li>
+                            <li><a href="projects/brew/index.html">Brew & Bean</a></li>
+                            <li class="footer-label" style="margin-top: 1rem;">Articles</li>
+                            <li><a href="articles/athena-public-launch.html">Athena Launch Story</a></li>
+                            <li><a href="articles/athena-5-pillars.html">Sovereign AI Pillars</a></li>
+                            <li><a href="articles/trilateral-feedback-loop.html">Adversarial AI Audit</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 3: Connect -->
+                <div class="footer-col">
+                    <h4 onclick="toggleFooterCol(this.parentElement)">Connect</h4>
+                    <div class="footer-links-wrapper">
+                        <ul class="footer-links">
+                            <li><a href="https://wa.me/6583581066" target="_blank">WhatsApp</a></li>
+                            <li><a href="https://github.com/winstonkoh87" target="_blank">GitHub</a></li>
+                            <li><a href="https://linkedin.com/in/winstonkoh87" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://www.carousell.sg/u/winstonkoh87/" target="_blank">Carousell</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Winston Koh. All rights reserved.</p>
+                <div class="footer-athena-credit">
+                    Co-created with <a href="athena.html">Project Athena</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/6597909965?text=Hi%20Winston%2C%20I%20came%20across%20your%20portfolio."
+    <a href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I%20came%20across%20your%20portfolio."
         class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -285,6 +347,7 @@
 
 
     <script src="assets/js/particles.js"></script>
+    <script src="assets/js/counter.js"></script>
 
 
     <script>
@@ -317,6 +380,11 @@
                 });
             });
         });
+    </script>
+    <script>
+        function toggleFooterCol(el) {
+            el.classList.toggle('active');
+        }
     </script>
 </body>
 

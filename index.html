@@ -15,9 +15,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0a0a0f">
     <link rel="canonical" href="https://winstonkoh87.github.io/">
-    <title>Winston Koh | Strategic Systems Architect</title>
+    <title>Winston Koh | AI Systems Architect & Full-stack Engineer</title>
     <meta name="description"
-        content="I build systems that run themselves. Turning messy AI tools into reliable business workflows. No babysitting. Just results.">
+        content="I build production-grade AI systems and reliable business workflows. Full-stack engineer specializing in LLM integration, RAG architecture, and process automation.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -37,7 +37,8 @@
         content="Turning messy AI tools into reliable business workflows. No babysitting. Just results.">
     <meta property="twitter:image" content="https://winstonkoh87.github.io/assets/images/og-image.png">
 
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" sizes="any">
+    <link rel="icon" type="image/jpeg" href="assets/images/winston-avatar.jpg">
+    <link rel="apple-touch-icon" href="assets/images/winston-avatar.jpg">>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/terminal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,7 +74,7 @@
             <ul>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="writing.html">Writing</a></li>
-                <li><a href="framework.html">Framework</a></li>
+                <li><a href="services.html">Services</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -83,6 +84,17 @@
     <main id="main-content">
         <section class="hero">
             <div class="hero-content">
+                <!-- Intent Engine Toggle -->
+                <div class="intent-toggle-container fade-in-delayed">
+                    <span class="intent-label">Hire Me:</span>
+                    <div class="intent-switch">
+                        <button class="intent-btn active" onclick="setIntent('freelance')"
+                            id="btn-freelance">Freelance</button>
+                        <button class="intent-btn" onclick="setIntent('fulltime')" id="btn-fulltime">Full-time</button>
+                        <div class="intent-bg"></div>
+                    </div>
+                </div>
+
                 <div class="terminal-window">
                     <div class="terminal-header">
                         <span class="terminal-dot red"></span>
@@ -95,17 +107,21 @@
                     </div>
                 </div>
 
-                <h1 class="fade-in-delayed">I build systems<br>that <span class="text-gradient">run themselves.</span>
+                <h1 id="hero-headline" class="fade-in-delayed">I build systems<br>that <span class="text-gradient">run
+                        themselves.</span>
                 </h1>
-                <p class="hero-subtitle fade-in-delayed-2">Strategic Systems Architect</p>
-                <p class="hero-description fade-in-delayed-3">
+                <p id="hero-subtitle" class="hero-subtitle fade-in-delayed-2">Strategic Systems Architect</p>
+                <p id="hero-description" class="hero-description fade-in-delayed-3">
                     I turn messy AI tools into reliable business workflows. No constant babysitting. No jargon. Just
                     results.
                 </p>
 
                 <div class="hero-cta fade-in-delayed-3">
-                    <a class="btn btn-primary" href="https://tally.so/r/3xjo1O" target="_blank"
-                        rel="noopener noreferrer">Initialize Project</a>
+                    <a id="hero-cta-btn" class="btn btn-primary"
+                        href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I%20came%20across%20your%20site%20and%20wanted%20to%20connect."
+                        target="_blank" rel="noopener noreferrer">Let's Talk</a>
+                    <a id="hero-cta-secondary" class="btn btn-secondary" href="Winston%20Koh%20-%20Resume.pdf"
+                        target="_blank" rel="noopener noreferrer" style="display: none;">Download CV ↓</a>
                 </div>
             </div>
         </section>
@@ -142,7 +158,10 @@
                 <a href="athena.html" class="project-card">
                     <div class="project-header">
                         <span class="card-icon" aria-hidden="true">⚡</span>
-                        <span class="project-status production">AI Systems</span>
+                        <div style="display: flex; gap: 0.5rem; align-items: center;">
+                            <span class="project-status production">AI Systems</span>
+                            <span class="live-badge">● LIVE</span>
+                        </div>
                     </div>
                     <h3>Project Athena</h3>
                     <p>
@@ -157,7 +176,7 @@
                 </a>
 
                 <!-- Brew & Bean (SME) -->
-                <a href="projects/sample-cafe/" class="project-card">
+                <a href="projects/brew/" class="project-card">
                     <div class="project-header">
                         <span class="card-icon" aria-hidden="true">☕</span>
                         <span class="project-status demo">SME Solutions</span>
@@ -222,7 +241,7 @@
                     <p class="testimonial-quote">Winston delivered exactly what we needed — a clean, fast website that
                         actually converts. No fluff, just results.</p>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar">ML</div>
+                        <img src="assets/images/client-melvin.png" alt="Melvin Lim" class="testimonial-avatar-img">
                         <div class="testimonial-info">
                             <span class="testimonial-name">Melvin Lim</span>
                             <span class="testimonial-role">SAF Officer</span>
@@ -233,7 +252,7 @@
                     <p class="testimonial-quote">The turnaround was insane. From brief to live site in under a day. The
                         AI-augmented workflow is real.</p>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar">TC</div>
+                        <img src="assets/images/client-tuition.png" alt="Education SME" class="testimonial-avatar-img">
                         <div class="testimonial-info">
                             <span class="testimonial-name">Tuition Centre Owner</span>
                             <span class="testimonial-role">Education SME</span>
@@ -244,7 +263,7 @@
                     <p class="testimonial-quote">Finally, someone who gets it. Not just a website, but a system that
                         works while I focus on my business.</p>
                     <div class="testimonial-author">
-                        <div class="testimonial-avatar">SG</div>
+                        <img src="assets/images/client-sme.png" alt="F&B Industry" class="testimonial-avatar-img">
                         <div class="testimonial-info">
                             <span class="testimonial-name">Small Business Owner</span>
                             <span class="testimonial-role">F&B Industry</span>
@@ -263,10 +282,10 @@
                     <h3>About</h3>
                     <p>The philosophy, the background, the operating model.</p>
                 </a>
-                <a href="framework.html" class="card">
+                <a href="services.html" class="card">
                     <span class="card-icon" aria-hidden="true">→</span>
-                    <h3>Framework</h3>
-                    <p>Three-Pillar Leadership, Arena Physics, and the Laws.</p>
+                    <h3>Services</h3>
+                    <p>Fixed pricing. Fast delivery. Systems that work.</p>
                 </a>
                 <a href="writing.html" class="card">
                     <span class="card-icon" aria-hidden="true">→</span>
@@ -277,17 +296,70 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Winston Koh</p>
-        <p class="footer-credit">Co-created with <a href="athena.html">Project Athena</a> — AI-Powered Digital Personal
-            Assistant.</p>
+    <footer class="fat-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Column 1: Navigation -->
+                <div class="footer-col">
+                    <h4 onclick="toggleFooterCol(this.parentElement)">Pages</h4>
+                    <div class="footer-links-wrapper">
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="writing.html">Writing</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 2: Featured Work (Combined Projects & Articles) -->
+                <div class="footer-col">
+                    <h4 onclick="toggleFooterCol(this.parentElement)">Work</h4>
+                    <div class="footer-links-wrapper">
+                        <ul class="footer-links">
+                            <li class="footer-label">Projects</li>
+                            <li><a href="athena.html">Project Athena</a></li>
+                            <li><a href="projects/melvin/index.html">Melvin's Portfolio</a></li>
+                            <li><a href="projects/brew/index.html">Brew & Bean</a></li>
+                            <li class="footer-label" style="margin-top: 1rem;">Articles</li>
+                            <li><a href="articles/athena-public-launch.html">Athena Launch Story</a></li>
+                            <li><a href="articles/athena-5-pillars.html">Sovereign AI Pillars</a></li>
+                            <li><a href="articles/trilateral-feedback-loop.html">Adversarial AI Audit</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 3: Connect -->
+                <div class="footer-col">
+                    <h4 onclick="toggleFooterCol(this.parentElement)">Connect</h4>
+                    <div class="footer-links-wrapper">
+                        <ul class="footer-links">
+                            <li><a href="https://wa.me/6583581066" target="_blank">WhatsApp</a></li>
+                            <li><a href="https://github.com/winstonkoh87" target="_blank">GitHub</a></li>
+                            <li><a href="https://linkedin.com/in/winstonkoh87" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://www.carousell.sg/u/winstonkoh87/" target="_blank">Carousell</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Winston Koh. All rights reserved.</p>
+                <div class="footer-athena-credit">
+                    Co-created with <a href="athena.html">Project Athena</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- Athena Live Widget -->
     <div id="athena-widget" class="athena-widget minimized">
         <div class="athena-header" onclick="toggleAthena()">
             <div class="header-left">
-                <div class="bot-avatar-header">🤖</div>
+                <img src="assets/images/winston-avatar.jpg" alt="Athena" class="brand-avatar-mini"
+                    style="width: 30px; height: 30px; border-width: 1px;">
                 <div class="header-info">
                     <span class="header-title">Athena Assistant</span>
                     <span class="header-status">● Online</span>
@@ -318,7 +390,7 @@
     </div>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/6597909965?text=Hi%20Winston%2C%20I%20came%20across%20your%20site." class="whatsapp-float"
+    <a href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I%20came%20across%20your%20site." class="whatsapp-float"
         target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -328,7 +400,117 @@
 
     <script src="assets/js/particles.js"></script>
     <script src="assets/js/typewriter.js"></script>
+    <script src="assets/js/counter.js"></script>
+
+    <!-- Intent Engine Script -->
+    <script>
+        const INTENT_DATA = {
+            freelance: {
+                headline: "I build systems<br>that <span class='text-gradient'>run themselves.</span>",
+                subtitle: "Strategic Systems Architect",
+                desc: "I turn messy AI tools into reliable business workflows. No constant babysitting. No jargon. Just results.",
+                cta: "Let's Talk",
+                ctaLink: "https://wa.me/6583581066?text=Hi%20Winston%2C%20I%20came%20across%20your%20site%20and%20wanted%20to%20connect.",
+                showSecondary: false
+            },
+            fulltime: {
+                headline: "Full-Stack Engineer<br>with <span class='text-gradient'>AI Specialization.</span>",
+                subtitle: "Python • JavaScript • RAG Systems",
+                desc: "I build production-grade applications that integrate LLMs with reliable business logic. Open to technical leadership roles.",
+                cta: "View Architecture",
+                ctaLink: "athena.html",
+                showSecondary: true
+            }
+        };
+
+        function setIntent(mode, animate = true) {
+            // 1. Visual Toggle State
+            const btns = document.querySelectorAll('.intent-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            document.getElementById(`btn-${mode}`).classList.add('active');
+
+            // 2. CSS Theme Swap
+            if (mode === 'fulltime') {
+                document.body.classList.add('fulltime-mode');
+            } else {
+                document.body.classList.remove('fulltime-mode');
+            }
+
+            // 3. Content Injection
+            const data = INTENT_DATA[mode];
+            const elements = [
+                document.getElementById('hero-headline'),
+                document.getElementById('hero-subtitle'),
+                document.getElementById('hero-description'),
+                document.getElementById('hero-cta-btn')
+            ];
+            const secondaryBtn = document.getElementById('hero-cta-secondary');
+
+            // Helper to swap text
+            const swapText = () => {
+                const headline = document.getElementById('hero-headline');
+                const subtitle = document.getElementById('hero-subtitle');
+                const description = document.getElementById('hero-description');
+                const ctaBtn = document.getElementById('hero-cta-btn');
+
+                if (headline) headline.innerHTML = data.headline;
+                if (subtitle) subtitle.innerHTML = data.subtitle;
+                if (description) description.innerHTML = data.desc;
+                if (ctaBtn) {
+                    ctaBtn.innerHTML = data.cta;
+                    ctaBtn.href = data.ctaLink;
+                }
+                if (secondaryBtn) {
+                    secondaryBtn.style.display = data.showSecondary ? 'inline-block' : 'none';
+                }
+            };
+
+            if (animate) {
+                // Fade out
+                elements.forEach(el => {
+                    if (el) el.style.opacity = '0';
+                });
+
+                setTimeout(() => {
+                    swapText();
+                    // Fade in
+                    elements.forEach(el => {
+                        if (el) {
+                            el.style.opacity = '1';
+                            el.style.transition = 'opacity 0.4s ease';
+                        }
+                    });
+                }, 250);
+            } else {
+                // Instant update (No animation)
+                swapText();
+                // Ensure visibility and clean styles
+                elements.forEach(el => {
+                    if (el) {
+                        el.style.opacity = '';
+                        el.style.transition = '';
+                    }
+                });
+            }
+
+            // 4. Save preference
+            localStorage.setItem('intent_mode', mode);
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Force default to freelance as per user request, without animation
+            const savedMode = 'freelance';
+            setIntent(savedMode, false);
+        });
+    </script>
+
     <script src="assets/js/athena-lite.js"></script>
+    <script>
+        function toggleFooterCol(el) {
+            el.classList.toggle('active');
+        }
+    </script>
 </body>
 
 </html>

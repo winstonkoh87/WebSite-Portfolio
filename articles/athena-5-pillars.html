@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VG4XS3R5NV"></script>
@@ -10,19 +9,16 @@
         gtag("js", new Date());
         gtag("config", "G-VG4XS3R5NV");
     </script>
-
     <!-- Core Meta -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0a0a0f">
-
     <!-- SEO Meta -->
     <title>Why I Built My Own Brain: The 5 Pillars of Sovereign AI | Winston Koh</title>
     <meta name="description"
         content="Why a portable, augmenting, and sovereign AI beats a 'smart' one. The 5 pillars that make Athena an asset, not a liability.">
     <meta name="author" content="Winston Koh | Strategic Systems Architect">
     <link rel="canonical" href="https://winstonkoh87.github.io/articles/athena-5-pillars.html">
-
     <!-- Open Graph -->
     <meta property="og:title" content="Why I Built My Own Brain: The 5 Pillars of Sovereign AI">
     <meta property="og:description"
@@ -34,14 +30,12 @@
     <meta property="article:published_time" content="2026-01-02T08:00:00+08:00">
     <meta property="article:modified_time" content="2026-01-02T08:00:00+08:00">
     <meta property="article:author" content="Winston Koh">
-
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Why I Built My Own Brain: The 5 Pillars of Sovereign AI">
     <meta name="twitter:description"
         content="Why a portable, augmenting, and sovereign AI beats a 'smart' one. The 5 pillars that make Athena an asset, not a liability.">
     <meta name="twitter:image" content="https://winstonkoh87.github.io/assets/images/og-image.png">
-
     <!-- JSON-LD Schema -->
     <script type="application/ld+json">
     {
@@ -67,7 +61,6 @@
         }
     }
     </script>
-
     <!-- Breadcrumbs Schema -->
     <script type="application/ld+json">
     {
@@ -91,7 +84,6 @@
         }]
     }
     </script>
-
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/article.css">
@@ -100,7 +92,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700&display=swap"
         rel="stylesheet">
-
     <style>
         /* User Override: Bright Blue Links for Further Reading */
         .checklist-box a {
@@ -108,7 +99,6 @@
             text-decoration-color: rgba(74, 158, 255, 0.4);
         }
     </style>
-
     <!-- Mermaid.js for diagrams -->
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>
@@ -123,11 +113,11 @@
             }
         });
     </script>
+    <link rel="icon" type="image/jpeg" href="../assets/images/winston-avatar.jpg">
+    <link rel="apple-touch-icon" href="../assets/images/winston-avatar.jpg">
 </head>
-
 <body>
     <canvas id="particle-canvas"></canvas>
-
     <header>
         <nav>
             <a href="../index.html" class="logo">WK</a>
@@ -140,24 +130,19 @@
             </ul>
         </nav>
     </header>
-
     <main class="article-container">
         <a href="../writing.html" class="back-link">← Back to Writing</a>
-
         <article>
             <header class="article-header">
                 <h1>Why I Built My Own Brain (The 5 Pillars of Sovereign AI)</h1>
                 <div class="article-meta">
-                    <span>⏱️ 7 min read</span>
                     <span>🏷️ AI Strategy</span>
                 </div>
                 <div class="article-dates">
                     <span>Published: <time datetime="2026-01-02">02 Jan 2026</time></span>
                 </div>
             </header>
-
             <div class="article-content">
-
                 <!-- Executive Summary -->
                 <div class="exec-summary">
                     <h4>📋 Executive Summary</h4>
@@ -170,18 +155,15 @@
                             lock-in and "Goldfish Memory."</li>
                     </ul>
                 </div>
-
                 <p>If you are building your entire second brain inside ChatGPT's web interface, you don't have a brain.
                     You have a subscription.</p>
                 <p>Yes, you can export your data. But you cannot export the <em>logic</em>, the <em>indexing</em>, or
                     the <em>workflow</em>. The moment they change the Terms of Service, ban your account, or "update"
                     the model to be lazier, you lose your operational capacity. You are a tenant in someone else's
                     digital skull.</p>
-                <p>I built <strong><a href="https://github.com/winstonkoh87/Athena-Public" target="_blank"
-                            rel="noopener">Project Athena</a></strong> to solve this. It is not just
+                <p>I built <strong><a href="../athena.html">Project Athena</a></strong> to solve this. It is not just
                     "better prompting." It is a
                     different philosophy of intelligence.</p>
-
                 <!-- Table of Contents -->
                 <div class="toc-box">
                     <h4>Table of Contents</h4>
@@ -193,9 +175,7 @@
                         <li><a href="#pillar5">Pillar 5: Deep Context</a></li>
                     </ul>
                 </div>
-
                 <!-- CONTENT SECTIONS -->
-
                 <h2 id="pillar1">Pillar 1: Sovereignty (The Moat)</h2>
                 <p>This is the prerequisite for everything else. <strong>Sovereignty means owning the files.</strong>
                 </p>
@@ -212,7 +192,6 @@
                         and capped to a token budget—are sent to the cloud for inference. The Knowledge Graph remains
                         local.)</em>
                 </p>
-
                 <!-- Mermaid Flowchart -->
                 <figure class="article-figure">
                     <div class="mermaid">
@@ -222,19 +201,16 @@
                         A[("Local Vault\n(Identity + History)")] -->|Load Context| B["Antigravity IDE\n(The Control
                         Plane)"]
                         end
-
                         subgraph Compute["Interchangeable Compute (You Rent This)"]
                         direction TB
                         B -.->|Switch Model| C[Gemini 3 Pro]
                         B -.->|Switch Model| D[Claude Opus 4.5]
                         B -.->|Switch Model| E[Local: Llama 4]
                         end
-
                         C -->|Reasoning| B
                         D -->|Reasoning| B
                         E -->|Reasoning| B
                         B -->|Save Result| A
-
                         style A fill:#4a9eff,color:#fff
                         style B fill:#cc785c,color:#fff
                         style C fill:#22c55e,color:#fff
@@ -248,12 +224,10 @@
                         <em>(Model names are illustrative; any provider behind the adapter works.)</em>
                     </figcaption>
                 </figure>
-
                 <p>I run Athena through <strong>Antigravity IDE</strong>—Google's agentic coding environment.
                     It serves as my local control plane, router, and tool executor.
                     My "Intellectual Capital" (my memories, my decisions, my code) lives on <em>my</em> machine. The AI
                     model is just a replaceable engine that processes it.</p>
-
                 <div class="key-insight">
                     <h4>🛡️ Threat Model: Why Local First?</h4>
                     <table class="comparison-table">
@@ -283,7 +257,6 @@
                         </tbody>
                     </table>
                 </div>
-
                 <h2 id="pillar2">Pillar 2: The Augmentation Layer (Identity)</h2>
                 <p>Most AI is trained to be helpful. This is useful for tasks, but dangerous for strategy.</p>
                 <p>A "helpful" AI will agree with your bad ideas. It will help you write a polite email to a toxic
@@ -291,7 +264,6 @@
                             href="https://github.com/winstonkoh87/Athena-Public/blob/main/docs/MANIFESTO.md"
                             target="_blank" rel="noopener">Identity</a></strong>. It has a set
                     of "Laws" (Project Axioms) that it must obey above my temporary whims.</p>
-
                 <div class="checklist-box">
                     <h4>⚙️ Enforcement Mechanism</h4>
                     <p>This isn't just a vibe. It's <strong>Engineering</strong>.</p>
@@ -305,7 +277,6 @@
                         </li>
                     </ul>
                 </div>
-
                 <div class="key-insight">
                     <h4>💡 The "Saved My Ass" Moment</h4>
                     <p>Last month, I almost sent a scathing reply to a client who ghosted me. I felt justified.</p>
@@ -314,7 +285,6 @@
                             hit."</em></p>
                     <p>It refused to send the email. I slept on it. I thanked Athena the next morning.</p>
                 </div>
-
                 <p><strong>The Trap of Empathy:</strong> Standard AI is trained to be empathetic. If you have a
                     maladaptive thought (e.g., "I should text my toxic ex" or "I should revenge-trade this loss"),
                     ChatGPT says, <em>"It's understandable you feel that way."</em> It validates the distortion.</p>
@@ -323,7 +293,6 @@
                         time you acted on it, you regretted it."</em></p>
                 <p>It acts as an external Prefrontal Cortex. The ability to say "No" based on data is the ultimate
                     feature.</p>
-
                 <h2 id="pillar3">Pillar 3: Protocolized Intelligence (Scalability)</h2>
                 <p>How do you make an AI "know" 500 different business frameworks without hitting the context limit?
                     You make them <strong><a href="https://github.com/winstonkoh87/Athena-Public/blob/main/TAG_INDEX.md"
@@ -331,23 +300,19 @@
                 <p>In Athena, every skill is a Markdown file (e.g., <code>protocol-04-seo-audit.md</code>). When I ask
                     for an SEO audit, Athena loads that specific file just-in-time. This allows for "Modular Skill
                     Scaling."</p>
-
                 <!-- Protocol Snippet -->
                 <div class="code-block">
                     <pre><code># Protocol 04: SEO Audit (Snippet)
 > **Goal**: Identify low-hanging fruit for organic traffic.
-
 ## Steps
 1. **Crawl**: Run headless crawl (BeautifulSoup/Scrapy).
 2. **Index Check**: `site:domain.com`.
 3. **Keyword Gap**: Compare vs Competitor A.
-
 ## Output Schema
 - [ ] Technical Health Score (0-100)
 - [ ] Top 3 "Quick Wins"
 - [ ] Content Gap Analysis</code></pre>
                 </div>
-
                 <h2 id="pillar4">Pillar 4: The Trilateral Feedback Loop (Anti-Fragility)</h2>
                 <p>When I make a mistake, I don't just say "oops." I fix the system.</p>
                 <p>The <strong><a
@@ -363,7 +328,6 @@
                 <p>It is an adversarial process. I use rival AI models (e.g., Gemini checking Claude) to audit work. If
                     Gemini 3 Pro finds a flaw in Claude Opus 4.5's plan, I create a new <strong>Constraint</strong> in
                     the system memory.</p>
-
                 <div class="key-insight">
                     <h4>⚠️ The Cost of No Friction</h4>
                     <p>There have been multiple reported cases (2024-2025) of individuals in mental health crises
@@ -375,7 +339,6 @@
                         before escalation. <em>(This is not a substitute for professional mental health support.)</em>
                     </p>
                 </div>
-
                 <!-- Mermaid: Part 1 - The Trap -->
                 <figure class="article-figure">
                     <div class="mermaid">
@@ -384,7 +347,6 @@
                         A["🧠 User Intent"] --> B["🤖 AI: Validates"]
                         B --> |"Loop"| A
                         B -.-> C["💀 Tragedy"]
-
                         style A fill:#4a9eff,color:#fff
                         style B fill:#666,color:#fff
                         style C fill:#ef4444,color:#fff
@@ -392,7 +354,6 @@
                     <figcaption>Figure 2a: <strong>The Trap.</strong> Standard AI validates distortions, creating a
                         feedback loop.</figcaption>
                 </figure>
-
                 <!-- Mermaid: Part 2 - The Fix -->
                 <figure class="article-figure">
                     <div class="mermaid">
@@ -402,7 +363,6 @@
                         E --> F{"🛡️ Auditor"}
                         F -->|"Risk: High"| G["✅ STOP"]
                         F -->|"Delusion"| H["⚠️ Intervene"]
-
                         style D fill:#4a9eff,color:#fff
                         style E fill:#666,color:#fff
                         style F fill:#cc785c,color:#fff
@@ -412,9 +372,7 @@
                     <figcaption>Figure 2b: <strong>The Fix.</strong> The Auditor injects friction, breaking the loop.
                     </figcaption>
                 </figure>
-
                 <p>The system gets smarter with every failure. It is anti-fragile.</p>
-
                 <h2 id="pillar5">Pillar 5: Deep Context (Semantic Persistence)</h2>
                 <p>ChatGPT has a "Memory" feature now, but there is no documented programmable interface for node-level
                     backup or graph queries. It is not designed as a portable, user-owned knowledge graph.</p>
@@ -427,18 +385,14 @@
                 </p>
                 <p>This turns "Chat" (ephemeral) into "Asset Building" (compounding). Every conversation adds to the
                     knowledge graph.</p>
-
                 <hr>
-
                 <h3>The Conclusion</h3>
                 <p>We are entering an era of <strong>Model Abundance</strong>. Intelligence is cheap. Context is
                     expensive.</p>
                 <p>The winner won't be the person with the smartest model. Everyone will have the smartest model. The
                     winner will be the person with the best <strong>Architecture</strong> to harness that intelligence
                     without losing their soul to a subscription.</p>
-
             </div>
-
             <!-- Footer / Further Reading -->
             <div class="checklist-box">
                 <h4>📚 Further Reading</h4>
@@ -451,7 +405,6 @@
                             Source Code</a> — Clone the repo even if you don't know Python.</li>
                 </ul>
             </div>
-
             <!-- Author Footer -->
             <footer class="article-footer">
                 <div class="author-bio">
@@ -468,13 +421,59 @@
             </footer>
         </article>
     </main>
-
-    <footer>
-        <p>&copy; 2026 Winston Koh</p>
-        <p class="footer-credit">Co-created with <a href="https://github.com/winstonkoh87/Athena-Public" target="_blank"
-                rel="noopener">Project Athena</a> — AI-Powered Digital Personal Assistant.</p>
+    <footer class="fat-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Column 1: Navigation -->
+                <div class="footer-col">
+                    <h4 onclick="toggleFooterCol(this.parentElement)">Pages</h4>
+                    <div class="footer-links-wrapper">
+                        <ul class="footer-links">
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="../portfolio.html">Portfolio</a></li>
+                            <li><a href="../writing.html">Writing</a></li>
+                            <li><a href="../services.html">Services</a></li>
+                            <li><a href="../about.html">About</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Column 2: Featured Work (Combined Projects & Articles) -->
+                <div class="footer-col">
+                    <h4 onclick="toggleFooterCol(this.parentElement)">Work</h4>
+                    <div class="footer-links-wrapper">
+                        <ul class="footer-links">
+                            <li class="footer-label">Projects</li>
+                            <li><a href="../athena.html">Project Athena</a></li>
+                            <li><a href="../projects/melvin/index.html">Melvin's Portfolio</a></li>
+                            <li><a href="../projects/brew/index.html">Brew & Bean</a></li>
+                            <li class="footer-label" style="margin-top: 1rem;">Articles</li>
+                            <li><a href="athena-public-launch.html">Athena Launch Story</a></li>
+                            <li><a href="athena-5-pillars.html">Sovereign AI Pillars</a></li>
+                            <li><a href="trilateral-feedback-loop.html">Adversarial AI Audit</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Column 3: Connect -->
+                <div class="footer-col">
+                    <h4 onclick="toggleFooterCol(this.parentElement)">Connect</h4>
+                    <div class="footer-links-wrapper">
+                        <ul class="footer-links">
+                            <li><a href="https://wa.me/6583581066" target="_blank">WhatsApp</a></li>
+                            <li><a href="https://github.com/winstonkoh87" target="_blank">GitHub</a></li>
+                            <li><a href="https://linkedin.com/in/winstonkoh87" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://www.carousell.sg/u/winstonkoh87/" target="_blank">Carousell</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Winston Koh. All rights reserved.</p>
+                <p class="footer-credit">Co-created with <a href="https://github.com/winstonkoh87/Athena-Public"
+                        target="_blank" rel="noopener">Project Athena</a> — AI-Powered Digital Personal Assistant.</p>
+            </div>
+        </div>
     </footer>
-
     <!-- WhatsApp Float -->
     <a href="https://wa.me/6597909965?text=Hi%20Winston%2C%20I%20came%20across%20your%20article." class="whatsapp-float"
         target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
@@ -483,8 +482,11 @@
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
         </svg>
     </a>
-
     <script src="../assets/js/particles.js"></script>
+    <script>
+        function toggleFooterCol(el) {
+            el.classList.toggle('active');
+        }
+    </script>
 </body>
-
 </html>

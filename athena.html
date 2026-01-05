@@ -26,7 +26,8 @@
     <meta property="og:description" content="The autonomous 'Second Brain' that makes engineering context durable.">
     <meta property="og:image" content="https://winstonkoh87.github.io/assets/images/og-image.png">
 
-    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/jpeg" href="assets/images/winston-avatar.jpg">
+    <link rel="apple-touch-icon" href="assets/images/winston-avatar.jpg">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/terminal.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -134,12 +135,12 @@
 
             <div class="proof-grid">
                 <div class="proof-card">
-                    <div class="value">4,203</div>
+                    <div class="value metric-value">4,203</div>
                     <div class="label">Vector Memories</div>
                     <div class="meaning">Older decisions recalled without hunting</div>
                 </div>
                 <div class="proof-card">
-                    <div class="value">200+</div>
+                    <div class="value metric-value">200</div>
                     <div class="label">Protocols Indexed</div>
                     <div class="meaning">Reusable playbooks for debugging, shipping, ops</div>
                 </div>
@@ -150,9 +151,10 @@
                 </div>
             </div>
 
-            <p style="color: #64ffda; margin-top: 1.5rem;">
+            <p style="color: #64ffda; margin-top: 1.5rem; display: flex; gap: 1.5rem;">
                 <a href="https://github.com/winstonkoh87/Athena-Public" target="_blank" rel="noopener"
                     style="color: inherit;">Explore the codebase →</a>
+                <a href="articles/athena-public-launch.html" style="color: inherit;">Read the Launch Story →</a>
             </p>
         </section>
 
@@ -245,16 +247,70 @@ graph LR
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Winston Koh</p>
-        <p class="footer-credit">Built with <a href="athena.html">Project Athena</a> — AI-Powered Second Brain.</p>
+    <footer class="fat-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Column 1: Navigation -->
+                <div class="footer-col">
+                    <h4 onclick="toggleFooterCol(this.parentElement)">Pages</h4>
+                    <div class="footer-links-wrapper">
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="writing.html">Writing</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 2: Featured Work -->
+                <div class="footer-col">
+                    <h4 onclick="toggleFooterCol(this.parentElement)">Work</h4>
+                    <div class="footer-links-wrapper">
+                        <ul class="footer-links">
+                            <li class="footer-label">Projects</li>
+                            <li><a href="athena.html">Project Athena</a></li>
+                            <li><a href="projects/melvin/index.html">Melvin's Portfolio</a></li>
+                            <li><a href="projects/brew/index.html">Brew & Bean</a></li>
+                            <li class="footer-label" style="margin-top: 1rem;">Articles</li>
+                            <li><a href="articles/athena-public-launch.html">Athena Launch Story</a></li>
+                            <li><a href="articles/athena-5-pillars.html">Sovereign AI Pillars</a></li>
+                            <li><a href="articles/trilateral-feedback-loop.html">Adversarial AI Audit</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 3: Connect -->
+                <div class="footer-col">
+                    <h4 onclick="toggleFooterCol(this.parentElement)">Connect</h4>
+                    <div class="footer-links-wrapper">
+                        <ul class="footer-links">
+                            <li><a href="https://wa.me/6583581066" target="_blank">WhatsApp</a></li>
+                            <li><a href="https://github.com/winstonkoh87" target="_blank">GitHub</a></li>
+                            <li><a href="https://linkedin.com/in/winstonkoh87" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://www.carousell.sg/u/winstonkoh87/" target="_blank">Carousell</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Winston Koh. All rights reserved.</p>
+                <div class="footer-athena-credit">
+                    Co-created with <a href="athena.html">Project Athena</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- Athena Live Widget -->
     <div id="athena-widget" class="athena-widget minimized">
         <div class="athena-header" onclick="toggleAthena()">
             <div class="header-left">
-                <div class="bot-avatar-header">🤖</div>
+                <img src="assets/images/winston-avatar.jpg" alt="Athena" class="brand-avatar-mini"
+                    style="width: 30px; height: 30px; border-width: 1px;">
                 <div class="header-info">
                     <span class="header-title">Athena Assistant</span>
                     <span class="header-status">● Online</span>
@@ -285,7 +341,7 @@ graph LR
     </div>
 
     <!-- Floating WhatsApp Button (delayed appearance) -->
-    <a href="https://wa.me/6597909965?text=Hi%20Winston%2C%20I%20saw%20Athena.%20Let%27s%20chat." class="whatsapp-float"
+    <a href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I%20saw%20Athena.%20Let%27s%20chat." class="whatsapp-float"
         target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"
         style="opacity: 0; transition: opacity 0.3s;" id="whatsapp-fab">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -296,6 +352,7 @@ graph LR
 
     <script src="assets/js/particles.js"></script>
     <script src="assets/js/athena-lite.js"></script>
+    <script src="assets/js/counter.js"></script>
     <script>
         // 1. Delayed WhatsApp FAB appearance (2 seconds)
         setTimeout(function () {
@@ -322,6 +379,11 @@ graph LR
                 "interactivity": { "events": { "onhover": { "enable": false } } },
                 "retina_detect": true
             });
+        }
+    </script>
+    <script>
+        function toggleFooterCol(el) {
+            el.classList.toggle('active');
         }
     </script>
 </body>

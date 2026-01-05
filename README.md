@@ -155,7 +155,7 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 | Project | Type | Link |
 |---------|------|------|
 | **P6 Math Tuition** | Education | [View Site](https://winstonkoh87.github.io/projects/p6-math-tuition/) |
-| **Sample Café** | F&B | [View Site](https://winstonkoh87.github.io/projects/sample-cafe/) |
+| **Sample Café** | F&B | [View Site](https://winstonkoh87.github.io/projects/brew/) |
 | **Sticker Shop** | E-commerce | [View Site](https://winstonkoh87.github.io/projects/sticker-shop/) |
 | **That Bio Tutor** | Education | [View Site](https://winstonkoh87.github.io/projects/thatbiotutor/) |
 | **Melvin Lim Portfolio** | Personal | [View Site](https://winstonkoh87.github.io/projects/melvin/) |

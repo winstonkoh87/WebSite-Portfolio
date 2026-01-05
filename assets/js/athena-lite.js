@@ -33,15 +33,21 @@ const STATES = {
         response: "👋 **System Online.** I'm Athena — Winston's Bionic OS.\n\nYou can ask about **Services** or **Pricing**...\n\n...OR you can type `/status` to see my internals. 😈",
         suggestions: ["💼 Services", "💰 Pricing", "/status", "/roast me"],
         keywords: {
-            "service|do|offer|help|build": "SERVICES",
-            "price|cost|rate|charge|fee|budget|quote": "PRICING",
-            "project|portfolio|work|example|case": "PROJECTS",
-            "who|winston|about|background": "ABOUT",
-            "hello|hi|hey": "START",
+            "service|do|offer|help|assist|support|build|create|make|need|looking": "SERVICES",
+            "price|cost|rate|charge|fee|budget|quote|how much|affordable|cheap|expensive": "PRICING",
+            "project|portfolio|work|example|case|sample|demo|show|see": "PROJECTS",
+            "who|winston|about|background|yourself|you": "ABOUT",
+            "hello|hi|hey|hola|yo": "START",
             "/status|status|stats|uptime": "CMD_STATUS",
             "/stack|stack|tech|brain": "CMD_STACK",
             "/roast|roast|joke|funny": "CMD_ROAST",
-            "sudo|admin|root|login": "CMD_SECRET"
+            "sudo|admin|root|login": "CMD_SECRET",
+            "seo|search engine|google|ranking|traffic|organic": "SME_DEEP",
+            "marketing|ads|advertis|promote|growth|leads|conversion": "SME_DEEP",
+            "audit|review|check|analyze|improve|feedback": "SERVICES",
+            "ai|automation|automate|bot|chatbot|workflow|system": "AI_DEEP",
+            "website|web|site|landing|page|online": "SERVICES",
+            "brand|design|ghibli|style|art|look|feel|illustration|avatar": "DESIGN_DEEP"
         }
     },
 
@@ -155,6 +161,15 @@ const STATES = {
         }
     },
 
+    'DESIGN_DEEP': {
+        response: "🎨 **Design Philosophy**\n\nThe UI you see is a blend of **High-Tech Bionic** (the terminal, the blur) and **Hand-Drawn Human** (the Studio Ghibli avatars).\n\nWhy? Because AI systems without a human core are cold. I represent the warm bridge between code and result.\n\nLike the art? Want a similar brand identity?",
+        suggestions: ["Yes, I love it!", "Tell me more about the 'Bionic' part"],
+        keywords: {
+            "yes|love|brand|ghibli|art|identity|hire": "CONTACT",
+            "bionic|tech|systems": "CMD_STACK"
+        }
+    },
+
     'TRUST': {
         response: "⭐ **Verification Layer**:\n\n• **95+ Lighthouse Scores** (Speed)\n• **Open Source** (No secrets)\n• **Real Clients** (Scroll down)\n• **No Retainers** (One-off fee)\n\nWe trust in Physics, not promises.",
         suggestions: ["View portfolio", "Read testimonials", "Get a quote"],
@@ -186,7 +201,7 @@ const STATES = {
     },
 
     'CONTACT': {
-        response: "📱 **Open Comms Channel**:\n\n**WhatsApp**: +65 9790 9965 *(Priority)*\n**Email**: Click button below\n\n💡 Power Move: Share your project idea in the first message. Winston replies fast to interesting problems.",
+        response: "📱 **Open Comms Channel**:\n\n**WhatsApp**: +65 8358 1066 *(Priority)*\n**Telegram**: @WinstonKoh87\n**Email**: Click button below\n\n💡 Power Move: Share your project idea in the first message. Winston replies fast to interesting problems.",
         suggestions: ["💬 Open WhatsApp", "📋 Fill project form", "One more question"],
         keywords: {
             "whatsapp|chat|message": "CONTACT_WA",
@@ -197,7 +212,7 @@ const STATES = {
     },
 
     'CONTACT_WA': {
-        response: "📲 **Establishing Uplink...**\n\nClick the green button or link:\n**wa.me/6597909965**\n\nSee you on the other side. 👋",
+        response: "📲 **Establishing Uplink...**\n\nClick the green button or link:\n**wa.me/6583581066**\n\nSee you on the other side. 👋",
         suggestions: ["Got it!", "Need form instead", "Ask another question"],
         keywords: {
             "got|ok|thanks": "END",
@@ -240,6 +255,33 @@ const FALLBACK = {
 
 let chatHistory, userInput, widget, suggestionArea;
 
+function saveState() {
+    localStorage.setItem('athena_state', JSON.stringify({
+        currentState: currentState,
+        messageCount: messageCount,
+        history: chatHistory.innerHTML
+    }));
+}
+
+function loadState() {
+    const saved = localStorage.getItem('athena_state');
+    if (saved) {
+        const data = JSON.parse(saved);
+        currentState = data.currentState;
+        messageCount = data.messageCount;
+        chatHistory.innerHTML = data.history;
+        return true;
+    }
+    return false;
+}
+
+function clearState() {
+    localStorage.removeItem('athena_state');
+    currentState = 'START';
+    messageCount = 0;
+    chatHistory.innerHTML = '';
+}
+
 function initAthena() {
     chatHistory = document.getElementById('chat-history');
     userInput = document.getElementById('user-input');
@@ -251,8 +293,16 @@ function initAthena() {
         return;
     }
 
-    // Show welcome message
-    showStateResponse('START');
+    // Try to load saved state
+    if (!loadState()) {
+        showStateResponse('START');
+    } else {
+        // Re-attach suggestion listeners since they are lost after innerHTML swap
+        const lastSuggestions = STATES[currentState]?.suggestions || [];
+        if (lastSuggestions.length > 0) {
+            showSuggestions(lastSuggestions);
+        }
+    }
 
     console.log('⚡ Athena Live v4.0 (Guided Conversation) initialized');
 }
@@ -288,6 +338,7 @@ function showStateResponse(state) {
 
     currentState = state;
     appendBotMessage(stateObj.response, stateObj.suggestions);
+    saveState();
 }
 
 // ========================================
@@ -338,6 +389,15 @@ async function sendMessage(query) {
     // Display user message
     appendUserMessage(query);
     userInput.value = '';
+    saveState();
+
+    // Check for reset command
+    if (query.toLowerCase() === '/reset') {
+        clearState();
+        showStateResponse('START');
+        isProcessing = false;
+        return;
+    }
 
     // Show typing indicator
     showTypingIndicator();
@@ -385,7 +445,7 @@ function appendBotMessage(text, suggestions = []) {
 
     const avatar = document.createElement('div');
     avatar.className = 'bot-avatar';
-    avatar.textContent = '🤖';
+    avatar.innerHTML = '<img src="assets/images/winston-avatar.jpg" alt="Athena" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">';
 
     const bubble = document.createElement('div');
     bubble.className = 'message-bubble';
@@ -436,7 +496,7 @@ function showTypingIndicator() {
 
     const avatar = document.createElement('div');
     avatar.className = 'bot-avatar';
-    avatar.textContent = '🤖';
+    avatar.innerHTML = '<img src="assets/images/winston-avatar.jpg" alt="Athena" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">';
 
     const typing = document.createElement('div');
     typing.className = 'message-bubble typing-indicator';

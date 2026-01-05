@@ -15,9 +15,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0a0a0f">
     <link rel="canonical" href="https://winstonkoh87.github.io/about.html">
-    <title>About | Winston Koh</title>
+    <title>About | Winston Koh | AI Systems Architect</title>
     <meta name="description"
-        content="Background, philosophy, and operating model of Winston Koh — Strategic Systems Architect.">
+        content="Explore the technical framework and philosophy of Winston Koh. Building high-leverage AI systems and sovereign digital assets.">
     <!-- Open Graph -->
     <meta property="og:type" content="profile">
     <meta property="og:url" content="https://winstonkoh87.github.io/about.html">
@@ -66,7 +66,7 @@
             <ul>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="writing.html">Writing</a></li>
-                <li><a href="framework.html">Framework</a></li>
+                <li><a href="services.html">Services</a></li>
                 <li><a href="about.html" class="active">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -74,8 +74,12 @@
     </header>
 
     <main id="main-content" class="page-content">
-        <section class="page-header">
-            <h1>About</h1>
+        <section class="about-header-flex">
+            <img src="assets/images/winston-avatar.jpg" alt="Winston Koh Illustration" class="brand-avatar">
+            <div class="header-text">
+                <h1>About</h1>
+                <p class="page-subtitle">Strategic Systems Architect & Full-stack Engineer</p>
+            </div>
         </section>
 
         <section class="content-section">
@@ -146,7 +150,7 @@
                     <h3>Preferred Tools</h3>
                     <ul>
                         <li><strong>IDE:</strong> Google Antigravity (Agentic), VS Code</li>
-                        <li><strong>Reasoning:</strong> Claude Opus, Gemini 3 Pro</li>
+                        <li><strong>Reasoning:</strong> Claude Opus, Gemini 1.5 Pro</li>
                         <li><strong>Backend:</strong> Python, Supabase</li>
                         <li><strong>Architecture:</strong> Flat-file Markdown, Protocol-Driven</li>
                     </ul>
@@ -180,14 +184,66 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Winston Koh</p>
-        <p class="footer-credit">Co-created with <a href="https://github.com/winstonkoh87/Athena-Public" target="_blank"
-                rel="noopener noreferrer">Project Athena</a></p>
+    <footer class="fat-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Column 1: Navigation -->
+                <div class="footer-col">
+                    <h4 onclick="toggleFooterCol(this.parentElement)">Pages</h4>
+                    <div class="footer-links-wrapper">
+                        <ul class="footer-links">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="portfolio.html">Portfolio</a></li>
+                            <li><a href="writing.html">Writing</a></li>
+                            <li><a href="services.html">Services</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 2: Featured Work -->
+                <div class="footer-col">
+                    <h4 onclick="toggleFooterCol(this.parentElement)">Work</h4>
+                    <div class="footer-links-wrapper">
+                        <ul class="footer-links">
+                            <li class="footer-label">Projects</li>
+                            <li><a href="athena.html">Project Athena</a></li>
+                            <li><a href="projects/melvin/index.html">Melvin's Portfolio</a></li>
+                            <li><a href="projects/brew/index.html">Brew & Bean</a></li>
+                            <li class="footer-label" style="margin-top: 1rem;">Articles</li>
+                            <li><a href="articles/athena-public-launch.html">Athena Launch Story</a></li>
+                            <li><a href="articles/athena-5-pillars.html">Sovereign AI Pillars</a></li>
+                            <li><a href="articles/trilateral-feedback-loop.html">Adversarial AI Audit</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Column 3: Connect -->
+                <div class="footer-col">
+                    <h4 onclick="toggleFooterCol(this.parentElement)">Connect</h4>
+                    <div class="footer-links-wrapper">
+                        <ul class="footer-links">
+                            <li><a href="https://wa.me/6583581066" target="_blank">WhatsApp</a></li>
+                            <li><a href="https://github.com/winstonkoh87" target="_blank">GitHub</a></li>
+                            <li><a href="https://linkedin.com/in/winstonkoh87" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://www.carousell.sg/u/winstonkoh87/" target="_blank">Carousell</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Winston Koh. All rights reserved.</p>
+                <div class="footer-athena-credit">
+                    Co-created with <a href="athena.html">Project Athena</a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/6597909965?text=Hi%20Winston%2C%20I%20came%20across%20your%20site." class="whatsapp-float"
+    <a href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I%20came%20across%20your%20site." class="whatsapp-float"
         target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -197,6 +253,11 @@
 
 
     <script src="assets/js/particles.js"></script>
+    <script>
+        function toggleFooterCol(el) {
+            el.classList.toggle('active');
+        }
+    </script>
 </body>
 
 </html>
