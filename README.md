@@ -1,19 +1,16 @@
-# Building a Portfolio Website from Scratch (with AI)
+# Building a Portfolio Website (Astro v2)
 
-> **Last Updated**: 5 January 2026
+> **Last Updated**: 6 January 2026
+> **Status**: Migrated to Astro Framework 🚀
 
 [![Live Site](https://img.shields.io/badge/Live-winstonkoh87.github.io-00C853?style=flat-square)](https://winstonkoh87.github.io/)
 [![Built with Athena](https://img.shields.io/badge/Built_with-Athena-CC785C?style=flat-square)](https://github.com/winstonkoh87/Athena-Public)
-[![HTML5](https://img.shields.io/badge/HTML5-Semantic-E34F26?logo=html5&logoColor=white&style=flat-square)](https://validator.w3.org/)
-[![CSS3](https://img.shields.io/badge/CSS3-Custom_Properties-1572B6?logo=css3&logoColor=white&style=flat-square)]()
-[![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?logo=javascript&logoColor=black&style=flat-square)]()
+[![Astro](https://img.shields.io/badge/Framework-Astro_5.0-BC52EE?logo=astro&logoColor=white&style=flat-square)](https://astro.build/)
 [![GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-222222?logo=github&logoColor=white&style=flat-square)](https://pages.github.com/)
-[![No Frameworks](https://img.shields.io/badge/Frameworks-None-black?style=flat-square)]()
-[![WakaTime](https://wakatime.com/badge/user/59d28359-905e-4790-b46e-27545d0d074f.svg)](https://wakatime.com/@winstonkoh87)
 
-A personal portfolio website built from the ground up using pure HTML, CSS, and JavaScript — no frameworks, no dependencies, no bullshit.
+A personal portfolio website built with **Astro**, focusing on performance, component reusability, and zero-JavaScript defaults.
 
-This is a documentation of how I built a complete portfolio website with AI-augmented execution using [Project Athena](https://github.com/winstonkoh87/Athena-Public).
+This is a documentation of how I built (and evolved) a complete portfolio website with AI-augmented execution using [Project Athena](https://github.com/winstonkoh87/Athena-Public).
 
 ---
 
@@ -25,6 +22,7 @@ This is a documentation of how I built a complete portfolio website with AI-augm
 | **Articles** | 6 |
 | **Live Demo Sites** | 5 |
 | **AI Widget** | ✅ Athena Live |
+| **Framework** | Astro 5.0 |
 
 ---
 
@@ -66,25 +64,25 @@ Try it: [winstonkoh87.github.io](https://winstonkoh87.github.io/) → Click the 
 
 | Component | Technology |
 |-----------|------------|
-| **Markup** | HTML5 (semantic) |
-| **Styling** | CSS3 (custom properties, flexbox, grid, glassmorphism) |
-| **Interactivity** | Vanilla JavaScript |
-| **Build** | `build.py` (component stamping) |
-| **CI/CD** | GitHub Actions (HTML validation + link checker) |
+| **Framework** | **Astro 5.0** |
+| **Styling** | Vanilla CSS (Scoped & Global) |
+| **Interactivity** | Vanilla JavaScript (Islands Architecture) |
+| **Build** | `npm run build` (Static Site Generation) |
+| **CI/CD** | GitHub Actions (Astro Build + Deploy) |
 | **Hosting** | GitHub Pages |
 
-### Philosophy: Keep It Simple
+### Philosophy: Evolution to Astro
 
-We intentionally opted for a **basic tech stack**. No React. No Next.js. No Tailwind. No npm.
+We started with pure HTML/CSS/JS to prove a point about simplicity. But as the site grew (blogs, components, layouts), we needed a **maintainable architecture** without sacrificing performance.
 
-Why?
+**Enter Astro.**
 
-- **Lower complexity** = fewer points of failure
-- **Faster load times** = ~40KB total page weight
-- **Easier maintenance** = anyone can read the code
-- **No build dependencies** = just push and deploy
+- **Zero JS by Default**: Ships pure HTML unless interactivity is explicitly requested.
+- **Component Architecture**: Reusable `.astro` components for Headers, Footers, and Cards.
+- **Content Collections**: Markdown/MDX support for the blog (coming soon).
+- **Same Performance**: Still ~40KB initial load, but now with better developer experience.
 
-You don't need a complicated stack to get the job done. **Zero frameworks. Zero dependencies.**
+We didn't sell out. We **leveled up**.
 
 ---
 
@@ -97,19 +95,18 @@ You don't need a complicated stack to get the job done. **Zero frameworks. Zero 
 | Layer | Role | Example |
 |-------|------|---------|
 | **Human (Winston)** | Vision, strategy, taste | "I need a portfolio that positions me as someone who builds reliable systems" |
-| **AI (Athena)** | Execution, research, code | HTML/CSS, copy, SEO audit, widget implementation |
+| **AI (Athena)** | Execution, research, code | Astro migration, component extraction, SEO audit |
 
 This isn't just a portfolio *about* AI-augmented work — it's a **living demonstration** of the workflow itself.
 
 ### What Athena Did (January 2026)
 
+- **Migrated** entire site from Vanilla HTML to Astro v5
+- **Refactored** repeated UI into reusable Components (`<Navigation/>`, `<Footer/>`)
 - **Built** the Athena Live AI widget with Smart Mock response system
 - **Implemented** localStorage caching for instant responses
-- **Generated** 6 article pages (AI Strategy, Case Studies, Guides)
-- **Created** 5 live demo sites (restaurants, tutoring, portfolios)
 - **Designed** dark mode aesthetic, glassmorphism cards, particle constellation
 - **Audited** codebase for SEO, accessibility, broken links
-- **Generated** og:image social cards for LinkedIn/Twitter
 
 ### The Operating Model
 
@@ -130,13 +127,13 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 | Page | Description |
 |------|-------------|
 | [Home](https://winstonkoh87.github.io/) | Hero + Athena Live widget + Featured projects |
-| [About](https://winstonkoh87.github.io/about.html) | Identity, philosophy, Bionic Operating Model |
-| [Framework](https://winstonkoh87.github.io/framework.html) | Three-Pillar Leadership, Arena Physics, Laws, SDR |
-| [Writing](https://winstonkoh87.github.io/writing.html) | Blog with 6 published articles |
-| [Portfolio](https://winstonkoh87.github.io/portfolio.html) | 5 live demo sites + coming soon projects |
-| [Athena](https://winstonkoh87.github.io/athena.html) | Product page: What Athena is and how it works |
-| [Services](https://winstonkoh87.github.io/services.html) | Fixed pricing. Fast delivery. Systems that work. |
-| [Contact](https://winstonkoh87.github.io/contact.html) | WhatsApp CTA + social links |
+| [About](https://winstonkoh87.github.io/about) | Identity, philosophy, Bionic Operating Model |
+| [Framework](https://winstonkoh87.github.io/framework) | Three-Pillar Leadership, Arena Physics, Laws, SDR |
+| [Writing](https://winstonkoh87.github.io/writing) | Blog with 6 published articles |
+| [Portfolio](https://winstonkoh87.github.io/portfolio) | 5 live demo sites + coming soon projects |
+| [Athena](https://winstonkoh87.github.io/athena) | Product page: What Athena is and how it works |
+| [Services](https://winstonkoh87.github.io/services) | Fixed pricing. Fast delivery. Systems that work. |
+| [Contact](https://winstonkoh87.github.io/contact) | WhatsApp CTA + social links |
 
 ---
 
@@ -144,12 +141,12 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 
 | Title | Topic |
 |-------|-------|
-| [The AI Bionic Layer](https://winstonkoh87.github.io/articles/ai-bionic-layer.html) | Why AI augmentation beats replacement |
-| [The 5 Pillars of Athena](https://winstonkoh87.github.io/articles/athena-5-pillars.html) | Architecture deep-dive |
-| [Athena Public Launch](https://winstonkoh87.github.io/articles/athena-public-launch.html) | Open-source announcement |
-| [Case Study: P6 Math Tuition](https://winstonkoh87.github.io/articles/case-study-p6-math-tuition.html) | Client work breakdown |
-| [SME AI Marketing Guide](https://winstonkoh87.github.io/articles/sme-ai-marketing-guide.html) | Practical AI for small business |
-| [Trilateral Feedback Loop](https://winstonkoh87.github.io/articles/trilateral-feedback-loop.html) | Multi-AI validation system |
+| [The AI Bionic Layer](https://winstonkoh87.github.io/articles/ai-bionic-layer) | Why AI augmentation beats replacement |
+| [The 5 Pillars of Athena](https://winstonkoh87.github.io/articles/athena-5-pillars) | Architecture deep-dive |
+| [Athena Public Launch](https://winstonkoh87.github.io/articles/athena-public-launch) | Open-source announcement |
+| [Case Study: P6 Math Tuition](https://winstonkoh87.github.io/articles/case-study-p6-math-tuition) | Client work breakdown |
+| [SME AI Marketing Guide](https://winstonkoh87.github.io/articles/sme-ai-marketing-guide) | Practical AI for small business |
+| [Trilateral Feedback Loop](https://winstonkoh87.github.io/articles/trilateral-feedback-loop) | Multi-AI validation system |
 
 ---
 
@@ -171,23 +168,23 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 - 💬 Athena Live AI chat widget
 - 📱 Mobile responsive
 - 🌙 Dark mode aesthetic
-- ⚡ Fast load (~40KB total)
+- ⚡ Fast load (~40KB total) — Powered by Astro Island Architecture
 - 🔍 JSON-LD structured data (SEO)
 - ♿ Accessibility: skip-links, focus-visible states
 - 💾 localStorage caching for AI responses
-- 📊 GitHub Actions: HTML validation + broken link checker
+- 📊 GitHub Actions: CI/CD Build & Deploy
 
 ---
 
 ## 🚀 Deployment
 
-Hosted on **GitHub Pages**. Push to `main` → auto-deploy.
+Hosted on **GitHub Pages** via Astro Build Action.
 
 ```bash
 git push origin main
-# → GitHub Actions validates HTML
-# → GitHub Actions checks for broken links
-# → Site deploys automatically
+# → GitHub Actions builds Astro project
+# → Output generated in /dist
+# → Deployed to GitHub Pages
 ```
 
 ---
@@ -202,4 +199,4 @@ System architectures and strategic frameworks are hosted on the **[Athena-Public
 
 ---
 
-*Built with pure HTML/CSS/JS. No frameworks. No bullshit. It just works.*
+*Built with Astro. Efficient. Scalable. No bullshit.*

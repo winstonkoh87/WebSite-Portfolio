@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="404 | Lost in the Arena">
+    <div class="error-container">
+        <h1>404</h1>
+        <p>You have drifted outside the Arena.</p>
+        <p><a href="/">Return to Center</a></p>
+    </div>
+</Layout>
+
+<style>
+    .error-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 60vh;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 8rem;
+        margin: 0;
+        color: #3b82f6;
+        line-height: 1;
+    }
+
+    p {
+        font-size: 1.5rem;
+        color: #888;
+        margin: 1rem 0;
+    }
+
+    a {
+        color: #ec4899;
+        text-decoration: none;
+        border-bottom: 1px solid #ec4899;
+        transition: all 0.2s ease;
+    }
+
+    a:hover {
+        color: #fff;
+        border-color: #fff;
+    }
+</style>
