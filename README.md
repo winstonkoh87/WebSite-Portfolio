@@ -9,6 +9,7 @@
 [![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?logo=javascript&logoColor=black&style=flat-square)]()
 [![GitHub Pages](https://img.shields.io/badge/Hosted_on-GitHub_Pages-222222?logo=github&logoColor=white&style=flat-square)](https://pages.github.com/)
 [![No Frameworks](https://img.shields.io/badge/Frameworks-None-black?style=flat-square)]()
+[![WakaTime](https://wakatime.com/badge/user/59d28359-905e-4790-b46e-27545d0d074f.svg)](https://wakatime.com/@winstonkoh87)
 
 A personal portfolio website built from the ground up using pure HTML, CSS, and JavaScript — no frameworks, no dependencies, no bullshit.
 
