@@ -123,6 +123,7 @@
 ======================================== */
 .intent-toggle-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
@@ -130,6 +131,19 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.85rem;
     color: var(--text-muted);
+}
+
+.hire-me-headline {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .intent-switch {
@@ -1411,6 +1425,36 @@ blockquote {
 }
 
 .whatsapp-float svg {
+    width: 28px;
+    height: 28px;
+    fill: white;
+}
+
+/* ========================================
+   FLOATING TELEGRAM BUTTON (Stacked above WhatsApp)
+======================================== */
+.telegram-float {
+    position: fixed;
+    bottom: 6rem;
+    right: 2rem;
+    width: 56px;
+    height: 56px;
+    background: #0088cc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 136, 204, 0.4);
+    z-index: 1000;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.telegram-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(0, 136, 204, 0.5);
+}
+
+.telegram-float svg {
     width: 28px;
     height: 28px;
     fill: white;
