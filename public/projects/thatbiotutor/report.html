@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThatBioTutor — Digital Marketing Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Print-Optimized PDF Report */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #fff;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Cover */
+        .cover {
+            text-align: center;
+            padding: 80px 0;
+            border-bottom: 2px solid #10b981;
+            margin-bottom: 40px;
+        }
+
+        .cover-badge {
+            display: inline-block;
+            background: #10b981;
+            color: #fff;
+            padding: 8px 24px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 24px;
+        }
+
+        .cover h1 {
+            font-size: 36px;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .cover-subtitle {
+            color: #64748b;
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+
+        .cover-meta {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* Sections */
+        h2 {
+            font-size: 20px;
+            color: #0f172a;
+            margin: 32px 0 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        h3 {
+            font-size: 16px;
+            color: #10b981;
+            margin: 20px 0 12px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: #475569;
+        }
+
+        strong {
+            color: #0f172a;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: #64748b;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Stats */
+        .stats {
+            display: flex;
+            gap: 24px;
+            margin: 24px 0;
+        }
+
+        .stat-box {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #10b981;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #64748b;
+            margin-top: 4px;
+        }
+
+        /* Boxes */
+        .problem-box {
+            background: #fef2f2;
+            border-left: 3px solid #ef4444;
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .problem-box p {
+            color: #991b1b;
+            margin: 0;
+        }
+
+        .solution-box {
+            background: #ecfdf5;
+            border-left: 3px solid #10b981;
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .solution-box p {
+            color: #065f46;
+            margin: 0;
+        }
+
+        /* Pricing */
+        .pricing {
+            display: flex;
+            gap: 24px;
+            margin: 24px 0;
+        }
+
+        .pricing-box {
+            flex: 1;
+            padding: 24px;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+        }
+
+        .pricing-box.featured {
+            border-color: #10b981;
+            background: #f0fdf4;
+        }
+
+        .pricing-tier {
+            font-weight: 600;
+            color: #64748b;
+            margin-bottom: 8px;
+        }
+
+        .pricing-amount {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .pricing-amount span {
+            font-size: 14px;
+            font-weight: 400;
+            color: #64748b;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 14px;
+        }
+
+        .pricing-features li::before {
+            content: '✓ ';
+            color: #10b981;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            color: #94a3b8;
+            font-size: 12px;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                padding: 0;
+            }
+
+            .cover {
+                page-break-after: always;
+            }
+
+            h2 {
+                page-break-after: avoid;
+            }
+
+            table,
+            .stats,
+            .pricing {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Save as PDF instruction */
+        .print-hint {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            font-size: 13px;
+            color: #92400e;
+        }
+
+        @media print {
+            .print-hint {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="print-hint">
+        💡 <strong>To save as PDF:</strong> Press <code>Cmd+P</code> (Mac) or <code>Ctrl+P</code> (Windows), then select
+        "Save as PDF" as the destination.
+    </div>
+
+    <!-- Cover Page -->
+    <div class="cover">
+        <div class="cover-badge">Digital Marketing Proposal</div>
+        <h1>ThatBioTutor</h1>
+        <p class="cover-subtitle">Strategic Growth Recommendations</p>
+        <p class="cover-meta">Prepared: January 2026 • Confidential</p>
+    </div>
+
+    <!-- Executive Summary -->
+    <h2>📋 Executive Summary</h2>
+    <p>ThatBioTutor has achieved <strong>product-market fit</strong> with a defensible niche (O Level Pure Bio) and
+        strong organic presence. However, three growth levers remain underutilized:</p>
+
+    <div class="stats">
+        <div class="stat-box">
+            <div class="stat-value">SEO</div>
+            <div class="stat-label">High Priority</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-value">Content</div>
+            <div class="stat-label">High Priority</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-value">Ads</div>
+            <div class="stat-label">Phase 2</div>
+        </div>
+    </div>
+
+    <!-- Current Performance -->
+    <h2>📊 Current Performance</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Metric</th>
+                <th>Value</th>
+                <th>Assessment</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Instagram Following</td>
+                <td>31,000+</td>
+                <td style="color: #10b981;">Excellent</td>
+            </tr>
+            <tr>
+                <td>Google Reviews</td>
+                <td>5.0★ (120 reviews)</td>
+                <td style="color: #10b981;">Excellent</td>
+            </tr>
+            <tr>
+                <td>Pass Rate (A1-B3)</td>
+                <td>94%</td>
+                <td style="color: #10b981;">Excellent</td>
+            </tr>
+            <tr>
+                <td>Google Search Traffic</td>
+                <td>~5% of leads</td>
+                <td style="color: #ef4444;">Opportunity</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- The Opportunity -->
+    <h2>⚠️ The Opportunity Gap</h2>
+    <div class="problem-box">
+        <p><strong>Problem:</strong> Your website ranks for "ThatBioTutor" but not intent keywords like "O level bio
+            tuition Singapore". Competitors are capturing search traffic you should own.</p>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Keyword</th>
+                <th>Monthly Searches</th>
+                <th>Your Rank</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>"O level biology tuition"</td>
+                <td>880</td>
+                <td style="color: #ef4444;">Not Ranking</td>
+            </tr>
+            <tr>
+                <td>"secondary biology tutor singapore"</td>
+                <td>590</td>
+                <td style="color: #ef4444;">Not Ranking</td>
+            </tr>
+            <tr>
+                <td>"pure biology tuition"</td>
+                <td>320</td>
+                <td style="color: #ef4444;">Not Ranking</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="solution-box">
+        <p><strong>Opportunity:</strong> With targeted SEO, you could capture 2,000+ monthly searches from parents
+            actively looking for bio tuition.</p>
+    </div>
+
+    <!-- Strategy -->
+    <h2>🎯 Recommended Strategy</h2>
+
+    <h3>Pillar 1: Search Engine Optimization</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Action</th>
+                <th>Deliverable</th>
+                <th>Timeline</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Keyword Research</td>
+                <td>25 target keywords</td>
+                <td>Week 1</td>
+            </tr>
+            <tr>
+                <td>Technical Audit</td>
+                <td>Speed, mobile, schema fixes</td>
+                <td>Week 2</td>
+            </tr>
+            <tr>
+                <td>Content Creation</td>
+                <td>2-4 blog articles/month</td>
+                <td>Ongoing</td>
+            </tr>
+            <tr>
+                <td>Link Building</td>
+                <td>Guest posts (DA40+)</td>
+                <td>Ongoing</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Pillar 2: Content Syndication</h3>
+    <p>Expand reach of your free notes and lesson content across multiple platforms:</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Platform</th>
+                <th>Content Type</th>
+                <th>Purpose</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Carousell</td>
+                <td>Free Bio Notes listings</td>
+                <td>"Barnacle SEO"</td>
+            </tr>
+            <tr>
+                <td>YouTube</td>
+                <td>5-min topic explainers</td>
+                <td>Evergreen discovery</td>
+            </tr>
+            <tr>
+                <td>TikTok</td>
+                <td>60s "Bio Hacks"</td>
+                <td>Gen-Z funnel</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Pillar 3: Paid Ads (Phase 2)</h3>
+    <p>Launch after SEO foundation is built (Month 6+). Start with $300-$500/month retargeting website visitors. Scale
+        winners to $1,000+/month.</p>
+
+    <!-- Pricing -->
+    <h2>💎 Investment Options</h2>
+    <div class="pricing">
+        <div class="pricing-box">
+            <div class="pricing-tier">Growth</div>
+            <div class="pricing-amount">$1,200<span>/month</span></div>
+            <ul class="pricing-features">
+                <li>2 SEO articles/month</li>
+                <li>Technical audit & fixes</li>
+                <li>Business Profile optimization</li>
+                <li>25 keyword tracking</li>
+                <li>Monthly reports</li>
+            </ul>
+        </div>
+        <div class="pricing-box featured">
+            <div class="pricing-tier">Scale (Recommended)</div>
+            <div class="pricing-amount">$2,000<span>/month</span></div>
+            <ul class="pricing-features">
+                <li>4 SEO articles/month</li>
+                <li>YouTube support</li>
+                <li>Carousell syndication</li>
+                <li>2 guest posts/month</li>
+                <li>60 keyword tracking</li>
+                <li>Priority support</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Next Steps -->
+    <h2>🚀 Next Steps</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Step</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>15-minute call to discuss priorities and clarify questions</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Scope confirmation — we send detailed SOW for approval</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Work begins — Month 1 kickoff</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Prepared January 2026 • Confidential Proposal for ThatBioTutor</p>
+        <p>Contact: WhatsApp +65 8839 8575</p>
+    </div>
+</body>
+
+</html>

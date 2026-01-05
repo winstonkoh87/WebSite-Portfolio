@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="MathPro Tuition programmes - P6 PSLE preparation, small group classes, 1-to-1 tuition, and holiday bootcamps. Find the right programme for your child.">
+
+    <title>Our Programmes | MathPro Tuition - P6 Math Specialists</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .services-hero {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .services-hero h1 {
+            color: var(--white);
+            margin-bottom: var(--space-md);
+        }
+
+        .services-hero p {
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all var(--transition-base);
+        }
+
+        .pricing-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--accent);
+            position: relative;
+        }
+
+        .pricing-card.featured::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--accent);
+            color: var(--gray-900);
+            padding: var(--space-xs) var(--space-md);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .pricing-header {
+            background: var(--gray-50);
+            padding: var(--space-xl);
+            text-align: center;
+        }
+
+        .pricing-card.featured .pricing-header {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            color: var(--white);
+        }
+
+        .pricing-card.featured .pricing-header h3,
+        .pricing-card.featured .pricing-header .price {
+            color: var(--white);
+        }
+
+        .pricing-header h3 {
+            margin-bottom: var(--space-sm);
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--gray-600);
+        }
+
+        .pricing-card.featured .price span {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .pricing-body {
+            padding: var(--space-xl);
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: var(--space-xl);
+        }
+
+        .pricing-features li {
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid var(--gray-100);
+            display: flex;
+            gap: var(--space-sm);
+            align-items: flex-start;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features .check {
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .pricing-body .btn {
+            width: 100%;
+        }
+
+        .programme-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3xl);
+            align-items: center;
+        }
+
+        .programme-details.reverse {
+            direction: rtl;
+        }
+
+        .programme-details.reverse>* {
+            direction: ltr;
+        }
+
+        .programme-image {
+            background: var(--gray-100);
+            border-radius: var(--radius-lg);
+            padding: var(--space-3xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            min-height: 300px;
+        }
+
+        .programme-content h3 {
+            margin-bottom: var(--space-md);
+            color: var(--primary);
+        }
+
+        .programme-list {
+            list-style: none;
+            margin-top: var(--space-lg);
+        }
+
+        .programme-list li {
+            padding: var(--space-sm) 0;
+            display: flex;
+            gap: var(--space-sm);
+            align-items: flex-start;
+        }
+
+        .programme-list .icon {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .programme-details {
+                grid-template-columns: 1fr;
+            }
+
+            .programme-details.reverse {
+                direction: ltr;
+            }
+
+            .programme-image {
+                min-height: 200px;
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Math<span>Pro</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="results.html">Results</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Services Hero -->
+    <section class="services-hero">
+        <div class="container">
+            <h1>Our Programmes</h1>
+            <p>Flexible options to fit your child's needs and learning style. All programmes focus on PSLE success.</p>
+        </div>
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Programme</h2>
+                <p>Transparent pricing with no hidden fees. All materials included.</p>
+            </div>
+            <div class="card-grid">
+                <!-- Group Class -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Small Group Class</h3>
+                        <div class="price">$280<span>/month</span></div>
+                        <p>4 sessions (2 hrs each)</p>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="pricing-features">
+                            <li><span class="check">✓</span> Max 6 students per class</li>
+                            <li><span class="check">✓</span> Weekly 2-hour sessions</li>
+                            <li><span class="check">✓</span> All materials included</li>
+                            <li><span class="check">✓</span> Monthly progress report</li>
+                            <li><span class="check">✓</span> WhatsApp homework support</li>
+                            <li><span class="check">✓</span> Monthly mock tests</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline">Enquire Now</a>
+                    </div>
+                </div>
+
+                <!-- 1-to-1 -->
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <h3>1-to-1 Tuition</h3>
+                        <div class="price">$480<span>/month</span></div>
+                        <p>4 sessions (1.5 hrs each)</p>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="pricing-features">
+                            <li><span class="check">✓</span> Fully personalized curriculum</li>
+                            <li><span class="check">✓</span> Flexible scheduling</li>
+                            <li><span class="check">✓</span> All materials included</li>
+                            <li><span class="check">✓</span> Weekly progress updates</li>
+                            <li><span class="check">✓</span> Unlimited WhatsApp support</li>
+                            <li><span class="check">✓</span> Custom mock tests</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-primary">Book Free Trial</a>
+                    </div>
+                </div>
+
+                <!-- Bootcamp -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Holiday Bootcamp</h3>
+                        <div class="price">$350<span>/week</span></div>
+                        <p>5 days (3 hrs each)</p>
+                    </div>
+                    <div class="pricing-body">
+                        <ul class="pricing-features">
+                            <li><span class="check">✓</span> Intensive revision</li>
+                            <li><span class="check">✓</span> Daily practice papers</li>
+                            <li><span class="check">✓</span> All materials included</li>
+                            <li><span class="check">✓</span> Mock exam simulation</li>
+                            <li><span class="check">✓</span> Exam techniques focus</li>
+                            <li><span class="check">✓</span> Small group (max 8)</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline">Check Availability</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programme Details -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>What's Covered in Each Lesson</h2>
+                <p>A structured approach to PSLE Math mastery.</p>
+            </div>
+
+            <div class="programme-details">
+                <div class="programme-image">📝</div>
+                <div class="programme-content">
+                    <h3>Concept Teaching</h3>
+                    <p>Every lesson begins with clear explanation of concepts using visual aids and real-world examples.
+                        We ensure students understand the "why" behind every formula and method.</p>
+                    <ul class="programme-list">
+                        <li><span class="icon">→</span> Step-by-step worked examples</li>
+                        <li><span class="icon">→</span> Visual diagrams and models</li>
+                        <li><span class="icon">→</span> Connection to real-world scenarios</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="programme-details reverse">
+                <div class="programme-image">✏️</div>
+                <div class="programme-content">
+                    <h3>Guided Practice</h3>
+                    <p>Students work through problems with teacher guidance, building confidence before attempting
+                        questions independently. We focus on common mistakes and how to avoid them.</p>
+                    <ul class="programme-list">
+                        <li><span class="icon">→</span> Scaffolded problem-solving</li>
+                        <li><span class="icon">→</span> Immediate feedback</li>
+                        <li><span class="icon">→</span> Error analysis and correction</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-light">
+        <div class="container">
+            <div class="programme-details">
+                <div class="programme-image">📊</div>
+                <div class="programme-content">
+                    <h3>Independent Practice & Assessment</h3>
+                    <p>Regular timed practice papers and mock exams build exam readiness. Students learn time management
+                        and strategies for tackling tough questions under pressure.</p>
+                    <ul class="programme-list">
+                        <li><span class="icon">→</span> Top school papers</li>
+                        <li><span class="icon">→</span> Timed practice sessions</li>
+                        <li><span class="icon">→</span> Detailed marking and feedback</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Not Sure Which Programme is Right?</h2>
+            <p>Contact us for a free assessment and we'll recommend the best fit for your child.</p>
+            <a href="contact.html" class="btn btn-secondary">Get Free Assessment</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>MathPro Tuition</h4>
+                    <p>Singapore's trusted P6 Math specialists since 2016. We help students build confidence and achieve
+                        their best in PSLE Math.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Programmes</a></li>
+                        <li><a href="results.html">Results</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Programmes</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">P6 PSLE Prep</a></li>
+                        <li><a href="services.html">Small Group Classes</a></li>
+                        <li><a href="services.html">1-to-1 Tuition</a></li>
+                        <li><a href="services.html">Holiday Bootcamps</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li>📍 Bishan, Singapore</li>
+                        <li>📞 +65 9123 4567</li>
+                        <li>✉️ hello@mathpro.sg</li>
+                        <li>🕐 Mon-Sat: 10am-8pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MathPro Tuition. All rights reserved. | <em>Demo site by <a
+                            href="https://winstonkoh87.github.io" style="color: var(--accent);">Winston Koh</a></em></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

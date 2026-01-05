@@ -1,0 +1,195 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/athena.css';
+---
+
+<Layout title="Project Athena | Winston Koh" description="My person AI architecture. Zero babysitting. The autonomous 'Second Brain' that makes engineering context durable." showAthenaWidget={true}>
+    <!-- HERO -->
+    <section class="athena-hero">
+        <div class="athena-hero-content">
+            <h1 class="athena-headline">4,000 Memories.<br><span class="text-gradient">Zero Babysitting.</span></h1>
+            <p class="athena-subhead">The autonomous "Second Brain" that makes engineering context durable.</p>
+            <p class="athena-micro">Local-first. Logged. Repeatable.</p>
+
+            <!-- Terminal Preview -->
+            <div class="athena-terminal">
+                <p><span class="prompt">></span> <span class="output">/start</span></p>
+                <p><span class="output">✅ Core Identity loaded.</span></p>
+                <p><span class="output">✅ Project State synced. (4,203 nodes)</span></p>
+                <p><span class="output">✅ Semantic Memory primed.</span></p>
+                <p><span class="output">🟢 SYSTEM READY.</span></p>
+                <p><span class="prompt">></span> <span class="output">Waiting for command...</span><span
+                        class="cursor"></span></p>
+                <p class="timestamp">Last run: 2025-12-30 21:30 SGT</p>
+            </div>
+
+            <!-- Demo Embed (Show Don't Tell) -->
+            <div class="demo-embed-container">
+                <div class="video-container"
+                    style="padding-bottom: 56.25%; position: relative; height: 0; background: #0a0a0f;">
+                    <iframe src="/assets/images/athena-demo-live.html"
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                        title="Athena Terminal Demo">
+                    </iframe>
+                </div>
+
+            </div>
+
+            <div class="athena-cta-row">
+                <a class="btn btn-primary" href="https://github.com/winstonkoh87/Athena-Public" target="_blank"
+                    rel="noopener">View the Code →</a>
+                <a href="#receipts" class="secondary-link">See what it does ↓</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE PROBLEM -->
+    <section class="athena-section">
+        <h2>The Problem</h2>
+        <p style="color: #ccd6f6; font-size: 1.1rem;">Codebases rot. Context gets lost. Same problems solved twice.
+        </p>
+        <ul class="pain-list">
+            <li>Notes scattered across docs, chats, terminals, repos</li>
+            <li>Same questions re-researched weekly</li>
+            <li>No consistent memory + no consistent execution loop</li>
+        </ul>
+        <p style="color: #8892b0;">Athena is my attempt to make engineering context <strong
+                style="color: #ccd6f6;">durable</strong>.</p>
+    </section>
+
+    <!-- THE RECEIPTS (PROOF) -->
+    <section id="receipts" class="athena-section">
+        <h2>The Receipts</h2>
+        <p style="color: #8892b0;">Query in. Context out. Action logged.</p>
+
+        <div class="proof-grid">
+            <div class="proof-card">
+                <div class="value metric-value">4,203</div>
+                <div class="label">Vector Memories</div>
+                <div class="meaning">Older decisions recalled without hunting</div>
+            </div>
+            <div class="proof-card">
+                <div class="value metric-value">200</div>
+                <div class="label">Protocols Indexed</div>
+                <div class="meaning">Reusable playbooks for debugging, shipping, ops</div>
+            </div>
+            <div class="proof-card">
+                <div class="value">~1.2s</div>
+                <div class="label">Avg Query Time</div>
+                <div class="meaning">Hybrid search: BM25 + semantic</div>
+            </div>
+        </div>
+
+        <p style="color: #64ffda; margin-top: 1.5rem; display: flex; gap: 1.5rem;">
+            <a href="https://github.com/winstonkoh87/Athena-Public" target="_blank" rel="noopener"
+                style="color: inherit;">Explore the codebase →</a>
+            <a href="/articles/athena-public-launch" style="color: inherit;">Read the Launch Story →</a>
+        </p>
+    </section>
+
+    <!-- WHAT IT IS / ISN'T -->
+    <section class="athena-section" style="padding-top: 0;">
+        <div class="boundary-box">
+            <h3>What Athena Is (and Isn't)</h3>
+            <ul>
+                <li><strong>Is:</strong> A personal RAG system for knowledge recall + agentic execution</li>
+                <li><strong>Is:</strong> An operating system for my engineering workflow</li>
+                <li><strong>Isn't:</strong> A chatbot or consumer product</li>
+                <li><strong>Isn't:</strong> Magic — everything is logged, repeatable, auditable</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- THE LOOP (ARCHITECTURE) -->
+    <section class="athena-section">
+        <h2>The Loop</h2>
+        <p style="color: #8892b0;">How data moves through Athena.</p>
+
+        <div class="mermaid-container"
+            style="background: rgba(10, 10, 10, 0.5); padding: 2rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); margin: 2rem 0;">
+            <pre class="mermaid">
+graph LR
+A[Query] --> B[Hybrid Retrieval]
+B --> C[Context Pack]
+C --> D[LLM Reason]
+D --> E[Execute]
+E --> F[Log + Write-back]
+F -.-> A
+            </pre>
+        </div>
+
+        <div class="design-note">
+            <h4>Why Hybrid Search?</h4>
+            <p>Semantic alone misses keywords. BM25 alone misses intent. Hybrid (RRF) gives best recall.</p>
+        </div>
+        <div class="design-note" style="margin-top: 1rem;">
+            <h4>Why Write-back Memory?</h4>
+            <p>Every decision is quicksaved. Tomorrow's Athena knows what today's Athena decided.</p>
+        </div>
+    </section>
+
+    <!-- OPERATOR EVIDENCE -->
+    <section class="athena-section">
+        <h2>Operator Evidence</h2>
+        <p style="color: #8892b0;">This isn't a demo. I use it daily.</p>
+
+        <div class="operator-grid">
+            <div class="operator-stat">
+                <div class="num">17</div>
+                <div class="desc">Sessions this month</div>
+            </div>
+            <div class="operator-stat">
+                <div class="num">99.9%</div>
+                <div class="desc">Uptime (local)</div>
+            </div>
+            <div class="operator-stat">
+                <div class="num">~50</div>
+                <div class="desc">Quicksaves/week</div>
+            </div>
+            <div class="operator-stat">
+                <div class="num">0</div>
+                <div class="desc">Data sent to cloud storage</div>
+            </div>
+        </div>
+
+        <!-- Day in the Life timeline -->
+        <div class="athena-terminal" style="margin-top: 2rem;">
+            <p class="timestamp">// Day in the life</p>
+            <p><span class="prompt">09:12</span> <span class="output">/start sprint</span></p>
+            <p><span class="prompt">10:47</span> <span class="output">/recall portfolio-v2.1-spec</span></p>
+            <p><span class="prompt">14:03</span> <span class="output">/quicksave "Deployed Athena page
+                    rebuild"</span></p>
+            <p><span class="prompt">22:18</span> <span class="output">/end</span></p>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="athena-cta-section">
+        <h2>Want to build something like this?</h2>
+        <p class="subtext">Internal AI systems. Ops automation. Knowledge engines.</p>
+        <a class="btn btn-primary" href="https://tally.so/r/3xjo1O" target="_blank">Initialize Project</a>
+        <ul class="cta-bullets">
+            <li>Best for teams with repeated research + SOPs</li>
+            <li>Works with your docs + repos</li>
+            <li>Can be local-first / private</li>
+        </ul>
+    </section>
+
+    <!-- Mermaid.js -->
+    <script type="module" is:inline>
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            fontFamily: 'JetBrains Mono',
+            themeVariables: {
+                lineColor: '#64ffda',
+                primaryColor: '#1a1a2e',
+                primaryTextColor: '#ccd6f6',
+                primaryBorderColor: '#64ffda',
+                secondaryColor: '#0a0a0f',
+                tertiaryColor: '#1a1a2e'
+            }
+        });
+    </script>
+</Layout>

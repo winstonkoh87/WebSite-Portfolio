@@ -1,0 +1,257 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Portfolio | AI Systems & Full-stack Projects | Winston Koh" description="Explore my portfolio of AI-driven systems, custom web applications, and technical case studies. Production-ready solutions for SMEs and engineering teams.">
+    <section class="page-content">
+        <div class="page-header">
+            <h1>Portfolio</h1>
+            <p class="page-subtitle">Projects, demos, and case studies</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="portfolio-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="systems">AI Systems</button>
+            <button class="filter-btn" data-filter="sme">SME Solutions</button>
+            <button class="filter-btn" data-filter="personal">Personal Branding</button>
+        </div>
+
+        <!-- Portfolio Grid -->
+        <div class="portfolio-grid">
+
+            <!-- Project Athena -->
+            <a href="/athena" class="portfolio-card" data-category="systems">
+                <div class="project-header">
+                    <span class="card-icon" aria-hidden="true">⚡</span>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <span class="project-status production">Production</span>
+                        <span class="live-badge">● LIVE</span>
+                    </div>
+                </div>
+                <h3>Project Athena</h3>
+                <p class="project-role"><em>Role: Architect + Full Stack</em></p>
+                <p>
+                    <strong>The Outcome:</strong> An autonomous "Second Brain" that reduces engineering research
+                    time by 60%.
+                    Leverages RAG and Supabase Vector to recall, reason, and execute.
+                </p>
+                <div class="project-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Supabase Vector</span>
+                    <span class="tech-tag">Gemini 3 Pro</span>
+                    <span class="tech-tag">System Architecture</span>
+                </div>
+            </a>
+
+            <!-- Melvin Lim Portfolio -->
+            <a href="/projects/melvin" class="portfolio-card" data-category="personal">
+                <div class="project-header">
+                    <span class="card-icon" aria-hidden="true">🫡</span>
+                    <span class="project-status production">Production</span>
+                </div>
+                <h3>Melvin Lim Portfolio</h3>
+                <p class="project-role"><em>Role: Design + Development</em></p>
+                <p>Personal portfolio for an SAF Officer and Scholar. Features a calm, high-trust design with
+                    bento-grid layout for milestones.</p>
+                <div class="project-tags">
+                    <span class="tech-tag">HTML/CSS</span>
+                    <span class="tech-tag">Design</span>
+                    <span class="tech-tag">Leadership</span>
+                    <span class="tech-tag">Bento Grid</span>
+                </div>
+            </a>
+
+            <!-- Demo: P6 Math Tuition -->
+            <a href="/projects/p6-math-tuition" class="portfolio-card" data-category="sme">
+                <div class="project-header">
+                    <span class="card-icon" aria-hidden="true">📐</span>
+                    <span class="project-status demo">Demo</span>
+                </div>
+                <h3>MathPro Tuition</h3>
+                <p class="project-role"><em>Role: Design + Full Stack</em></p>
+                <p>5-page static website for a P6 Math tuition centre. Clean design, 3-tier pricing, lead capture
+                    form. Demonstrates SME web service quality.</p>
+                <div class="project-tags">
+                    <span class="tech-tag">Static HTML/CSS</span>
+                    <span class="tech-tag">Mobile Responsive</span>
+                    <span class="tech-tag">SEO Optimized</span>
+                    <span class="tech-tag">Education</span>
+                </div>
+            </a>
+
+            <!-- ThatBioTutor Proposal -->
+            <a href="/projects/thatbiotutor" class="portfolio-card" data-category="sme">
+                <div class="project-header">
+                    <span class="card-icon" aria-hidden="true">🧬</span>
+                    <span class="project-status demo">Demo</span>
+                </div>
+                <h3>ThatBioTutor Growth Proposal</h3>
+                <p class="project-role"><em>Role: Strategy + Design + Dev</em></p>
+                <p>Multi-page digital marketing proposal with SEO strategy, content recommendations, and
+                    pricing packages. Dark glassmorphism design with mobile nav.</p>
+                <div class="project-tags">
+                    <span class="tech-tag">Digital Marketing</span>
+                    <span class="tech-tag">SEO Proposal</span>
+                    <span class="tech-tag">Glassmorphism</span>
+                    <span class="tech-tag">Education</span>
+                </div>
+            </a>
+
+            <!-- Brew & Bean Café Demo -->
+            <a href="/projects/brew" class="portfolio-card" data-category="sme">
+                <div class="project-header">
+                    <span class="card-icon" aria-hidden="true">☕</span>
+                    <span class="project-status demo">Demo</span>
+                </div>
+                <h3>Brew & Bean Café</h3>
+                <p class="project-role"><em>Role: Design + Development</em></p>
+                <p>Artisan coffee shop landing page with menu showcase, story section, testimonials, and reservation
+                    CTA. Premium F&B design.</p>
+                <div class="project-tags">
+                    <span class="tech-tag">F&B</span>
+                    <span class="tech-tag">Landing Page</span>
+                    <span class="tech-tag">Mobile Responsive</span>
+                </div>
+            </a>
+
+            <!-- StickerLah E-commerce Demo -->
+            <a href="/projects/sticker-shop" class="portfolio-card" data-category="sme">
+                <div class="project-header">
+                    <span class="card-icon" aria-hidden="true">🛒</span>
+                    <span class="project-status demo">Demo</span>
+                </div>
+                <h3>StickerLah E-commerce</h3>
+                <p class="project-role"><em>Role: Design + Full Stack</em></p>
+                <p>Cute SG sticker shop with product grid, cart drawer, bulk discounts, and checkout flow. Inspired
+                    by DCHtoons.</p>
+                <div class="project-tags">
+                    <span class="tech-tag">E-commerce</span>
+                    <span class="tech-tag">Cart System</span>
+                    <span class="tech-tag">Mobile Responsive</span>
+                </div>
+            </a>
+
+            <!-- Coming Soon: Dental Clinic -->
+            <div class="portfolio-card coming-soon" data-category="sme">
+                <div class="project-header">
+                    <span class="card-icon" aria-hidden="true">🦷</span>
+                    <span class="project-status upcoming">Coming Soon</span>
+                </div>
+                <h3>Dental Clinic</h3>
+                <p>Healthcare website with appointment booking, service showcase, and trust signals.</p>
+                <div class="project-tags">
+                    <span class="tech-tag">Healthcare</span>
+                    <span class="tech-tag">Booking</span>
+                </div>
+            </div>
+
+            <!-- Coming Soon: Law Firm -->
+            <div class="portfolio-card coming-soon" data-category="sme">
+                <div class="project-header">
+                    <span class="card-icon" aria-hidden="true">⚖️</span>
+                    <span class="project-status upcoming">Coming Soon</span>
+                </div>
+                <h3>Law Firm</h3>
+                <p>Professional services site with practice areas, team profiles, and consultation CTA.</p>
+                <div class="project-tags">
+                    <span class="tech-tag">Legal</span>
+                    <span class="tech-tag">B2B</span>
+                </div>
+            </div>
+
+            <!-- Coming Soon: Property Agent -->
+            <div class="portfolio-card coming-soon" data-category="personal">
+                <div class="project-header">
+                    <span class="card-icon" aria-hidden="true">🏠</span>
+                    <span class="project-status upcoming">Coming Soon</span>
+                </div>
+                <h3>Property Agent</h3>
+                <p>Lead-generation portfolio for real estate professionals with listing showcase.</p>
+                <div class="project-tags">
+                    <span class="tech-tag">Real Estate</span>
+                    <span class="tech-tag">Lead Gen</span>
+                </div>
+            </div>
+
+            <!-- Coming Soon: Fitness Studio -->
+            <div class="portfolio-card coming-soon" data-category="sme">
+                <div class="project-header">
+                    <span class="card-icon" aria-hidden="true">💪</span>
+                    <span class="project-status upcoming">Coming Soon</span>
+                </div>
+                <h3>Fitness Studio</h3>
+                <p>Gym/studio site with class schedules, membership tiers, and trial booking.</p>
+                <div class="project-tags">
+                    <span class="tech-tag">Fitness</span>
+                    <span class="tech-tag">Membership</span>
+                </div>
+            </div>
+
+            <!-- Coming Soon: AI Dashboard -->
+            <div class="portfolio-card coming-soon" data-category="systems">
+                <div class="project-header">
+                    <span class="card-icon" aria-hidden="true">📊</span>
+                    <span class="project-status upcoming">Coming Soon</span>
+                </div>
+                <h3>AI Analytics Dashboard</h3>
+                <p>Real-time metrics visualization with RAG-powered insights and anomaly detection.</p>
+                <div class="project-tags">
+                    <span class="tech-tag">AI/ML</span>
+                    <span class="tech-tag">Data Viz</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Stats Section -->
+        <div class="portfolio-stats">
+            <div class="stat-item">
+                <span class="stat-number metric-value">2</span>
+                <span class="stat-label">Production Systems</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number metric-value">4</span>
+                <span class="stat-label">Demo Sites</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number metric-value">5</span>
+                <span class="stat-label">Coming Soon</span>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="assets/js/counter.js" is:inline></script>
+    <script is:inline>
+        // Portfolio Filter Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const filter = this.dataset.filter;
+
+                    // Filter cards
+                    portfolioCards.forEach(card => {
+                        if (filter === 'all') {
+                            card.style.display = 'flex';
+                            card.style.opacity = '1';
+                        } else if (card.dataset.category === filter) {
+                            card.style.display = 'flex';
+                            card.style.opacity = '1';
+                        } else {
+                            card.style.display = 'none';
+                            card.style.opacity = '0';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</Layout>

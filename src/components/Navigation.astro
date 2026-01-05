@@ -1,0 +1,14 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.replace(/^\//, ''); // remove leading slash
+---
+<nav>
+    <a href="/" class="logo">WK</a>
+    <ul>
+        <li><a href="/portfolio" class={currentPath.startsWith("portfolio") ? "active" : ""}>Portfolio</a></li>
+        <li><a href="/writing" class={currentPath.startsWith("writing") ? "active" : ""}>Writing</a></li>
+        <li><a href="/services" class={currentPath.startsWith("services") ? "active" : ""}>Services</a></li>
+        <li><a href="/about" class={currentPath.startsWith("about") ? "active" : ""}>About</a></li>
+        <li><a href="/contact" class={currentPath.startsWith("contact") ? "active" : ""}>Contact</a></li>
+    </ul>
+</nav>

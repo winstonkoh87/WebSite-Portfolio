@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StickerLah | Cute SG Stickers & Keychains</title>
+    <meta name="description"
+        content="Shop cute, quirky Singaporean stickers and keychains. From kopi to merlion designs — celebrate local culture!">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://winstonkoh87.github.io/projects/sticker-shop/">
+    <meta property="og:title" content="StickerLah | Cute SG Stickers & Keychains">
+    <meta property="og:description"
+        content="Shop cute, quirky Singaporean stickers and keychains. From kopi to merlion designs!">
+    <meta property="og:image" content="https://winstonkoh87.github.io/projects/sticker-shop/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://winstonkoh87.github.io/projects/sticker-shop/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Store",
+        "name": "StickerLah",
+        "description": "Cute Singaporean stickers and keychains",
+        "url": "https://winstonkoh87.github.io/projects/sticker-shop/"
+    }
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar" role="banner">
+        🇸🇬 Free delivery for orders above $30! Use code <strong>SHIOK</strong> at checkout
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="./" class="logo">StickerLah</a>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="#products" class="nav-link">Shop All</a>
+                <a href="#bestsellers" class="nav-link">Best Sellers</a>
+                <a href="#keychains" class="nav-link">Keychains</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+            <button type="button" class="cart-btn" id="cartBtn" aria-label="Open shopping cart">
+                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span class="cart-count" id="cartCount" aria-live="polite">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <span class="hero-badge">✨ New Arrivals</span>
+                <h1>Cute Stickers.<br>Local Vibes.</h1>
+                <p class="hero-text">From kopi culture to merlion money — celebrate Singapore with our quirky, relatable
+                    designs!</p>
+                <a href="#products" class="btn btn-primary">Shop Now →</a>
+            </div>
+        </section>
+
+        <!-- Best Sellers -->
+        <section class="section" id="bestsellers" aria-labelledby="bestsellers-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="bestsellers-heading">🔥 Best Sellers</h2>
+                    <p>Our most loved designs — 76% of customers grab at least one!</p>
+                </div>
+                <div class="products-grid">
+                    <article class="product-card" data-id="1" data-name="Kopi is Life" data-price="2.00">
+                        <div class="product-image">
+                            <div class="product-placeholder" role="img"
+                                aria-label="Cute kopi coffee bag sticker design">☕</div>
+                            <span class="product-badge">Popular</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Kopi is Life</h3>
+                            <p class="product-price"><data value="2.00">$2.00</data> <span class="product-price-note">or
+                                    $1 each for 5+</span></p>
+                            <button type="button" class="btn btn-add-cart"
+                                aria-label="Add Kopi is Life sticker to cart">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="product-card" data-id="2" data-name="Merlion Money $1000" data-price="2.00">
+                        <div class="product-image">
+                            <div class="product-placeholder" role="img"
+                                aria-label="Merlion thousand dollar note sticker design">🦁</div>
+                            <span class="product-badge">Trending</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Merlion Money $1000</h3>
+                            <p class="product-price"><data value="2.00">$2.00</data> <span class="product-price-note">or
+                                    $1 each for 5+</span></p>
+                            <button type="button" class="btn btn-add-cart"
+                                aria-label="Add Merlion Money $1000 sticker to cart">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="product-card" data-id="3" data-name="Delulu Juice" data-price="2.00">
+                        <div class="product-image">
+                            <div class="product-placeholder" role="img" aria-label="Delulu juice box sticker design">🧃
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Delulu Juice</h3>
+                            <p class="product-price"><data value="2.00">$2.00</data> <span class="product-price-note">or
+                                    $1 each for 5+</span></p>
+                            <button type="button" class="btn btn-add-cart"
+                                aria-label="Add Delulu Juice sticker to cart">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="product-card" data-id="4" data-name="Look Ondeh Bright Side" data-price="2.00">
+                        <div class="product-image">
+                            <div class="product-placeholder" role="img"
+                                aria-label="Ondeh ondeh kueh sticker with motivational message">🟢</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Look Ondeh Bright Side</h3>
+                            <p class="product-price"><data value="2.00">$2.00</data> <span class="product-price-note">or
+                                    $1 each for 5+</span></p>
+                            <button type="button" class="btn btn-add-cart"
+                                aria-label="Add Look Ondeh Bright Side sticker to cart">Add to Cart</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- All Products -->
+        <section class="section section-alt" id="products" aria-labelledby="products-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="products-heading">🎨 Shop All Stickers</h2>
+                    <p>Pick your favourites — only $1 each when you grab 5 or more!</p>
+                </div>
+                <div class="products-grid">
+                    <article class="product-card" data-id="5" data-name="BBT is Life" data-price="2.00">
+                        <div class="product-image">
+                            <div class="product-placeholder" role="img" aria-label="Bubble tea sticker design">🧋</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">BBT is Life</h3>
+                            <p class="product-price"><data value="2.00">$2.00</data></p>
+                            <button type="button" class="btn btn-add-cart"
+                                aria-label="Add BBT is Life sticker to cart">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="product-card" data-id="6" data-name="Kopi-ing With Stress" data-price="2.00">
+                        <div class="product-image">
+                            <div class="product-placeholder" role="img" aria-label="Stressed kopi cup sticker design">😅
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Kopi-ing With Stress</h3>
+                            <p class="product-price"><data value="2.00">$2.00</data></p>
+                            <button type="button" class="btn btn-add-cart"
+                                aria-label="Add Kopi-ing With Stress sticker to cart">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="product-card" data-id="7" data-name="Ay-am Trying My Best" data-price="2.00">
+                        <div class="product-image">
+                            <div class="product-placeholder" role="img"
+                                aria-label="Chicken ayam sticker with motivational message">🍗</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Ay-am Trying My Best</h3>
+                            <p class="product-price"><data value="2.00">$2.00</data></p>
+                            <button type="button" class="btn btn-add-cart"
+                                aria-label="Add Ay-am Trying My Best sticker to cart">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="product-card" data-id="8" data-name="Unpacking My Trau-mala" data-price="2.00">
+                        <div class="product-image">
+                            <div class="product-placeholder" role="img"
+                                aria-label="Tumala bag sticker with therapy pun">🎒</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Unpacking My Trau-mala</h3>
+                            <p class="product-price"><data value="2.00">$2.00</data></p>
+                            <button type="button" class="btn btn-add-cart"
+                                aria-label="Add Unpacking My Trau-mala sticker to cart">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="product-card" data-id="9" data-name="Peas Be With You" data-price="2.00">
+                        <div class="product-image">
+                            <div class="product-placeholder" role="img" aria-label="Pea pod sticker with peace message">
+                                🫛</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Peas Be With You</h3>
+                            <p class="product-price"><data value="2.00">$2.00</data></p>
+                            <button type="button" class="btn btn-add-cart"
+                                aria-label="Add Peas Be With You sticker to cart">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="product-card" data-id="10" data-name="Life is Tough (But So Are You)"
+                        data-price="2.00">
+                        <div class="product-image">
+                            <div class="product-placeholder" role="img"
+                                aria-label="Flexing arm sticker with motivational message">💪</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Life is Tough (But So Are You)</h3>
+                            <p class="product-price"><data value="2.00">$2.00</data></p>
+                            <button type="button" class="btn btn-add-cart"
+                                aria-label="Add Life is Tough sticker to cart">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="product-card" data-id="11" data-name="In This Econo-mee?!" data-price="2.00">
+                        <div class="product-image">
+                            <div class="product-placeholder" role="img"
+                                aria-label="Mee noodles sticker with economy pun">📉</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">In This Econo-mee?!</h3>
+                            <p class="product-price"><data value="2.00">$2.00</data></p>
+                            <button type="button" class="btn btn-add-cart"
+                                aria-label="Add In This Econo-mee sticker to cart">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="product-card" data-id="12" data-name="Don't Crumble Under Pressure"
+                        data-price="2.00">
+                        <div class="product-image">
+                            <div class="product-placeholder" role="img"
+                                aria-label="Cookie sticker with motivational message">🍪</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Don't Crumble Under Pressure</h3>
+                            <p class="product-price"><data value="2.00">$2.00</data></p>
+                            <button type="button" class="btn btn-add-cart"
+                                aria-label="Add Don't Crumble Under Pressure sticker to cart">Add to Cart</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Keychains Section -->
+        <section class="section" id="keychains" aria-labelledby="keychains-heading">
+            <div class="container">
+                <div class="section-header">
+                    <h2 id="keychains-heading">🔑 Keychains</h2>
+                    <p>Your favourite designs, now in keychain form!</p>
+                </div>
+                <div class="products-grid products-grid-small">
+                    <article class="product-card" data-id="101" data-name="Kopi is Life Keychain" data-price="8.00">
+                        <div class="product-image">
+                            <div class="product-placeholder" role="img" aria-label="Kopi is Life acrylic keychain">☕🔑
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Kopi is Life Keychain</h3>
+                            <p class="product-price"><data value="8.00">$8.00</data></p>
+                            <button type="button" class="btn btn-add-cart"
+                                aria-label="Add Kopi is Life Keychain to cart">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="product-card" data-id="102" data-name="Delulu Juice Keychain" data-price="8.00">
+                        <div class="product-image">
+                            <div class="product-placeholder" role="img" aria-label="Delulu Juice acrylic keychain">🧃🔑
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Delulu Juice Keychain</h3>
+                            <p class="product-price"><data value="8.00">$8.00</data></p>
+                            <button type="button" class="btn btn-add-cart"
+                                aria-label="Add Delulu Juice Keychain to cart">Add to Cart</button>
+                        </div>
+                    </article>
+                    <article class="product-card" data-id="103" data-name="Merlion $1000 Keychain" data-price="8.00">
+                        <div class="product-image">
+                            <div class="product-placeholder" role="img" aria-label="Merlion thousand dollar keychain">
+                                🦁🔑</div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Merlion $1000 Keychain</h3>
+                            <p class="product-price"><data value="8.00">$8.00</data></p>
+                            <button type="button" class="btn btn-add-cart"
+                                aria-label="Add Merlion $1000 Keychain to cart">Add to Cart</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="section section-about" id="about" aria-labelledby="about-heading">
+            <div class="container">
+                <div class="about-content">
+                    <h2 id="about-heading">About StickerLah</h2>
+                    <p>We're a small Singaporean brand creating cute, quirky stickers and merchandise that celebrate
+                        local culture. From kopi jokes to merlion money, we aim to bring a smile to your day!</p>
+                    <p><strong>Every sticker is waterproof, UV-resistant, and made with love. 🇸🇬</strong></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <span class="logo">StickerLah</span>
+                <p>Cute stickers. Local vibes.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">TikTok</a>
+                <a href="mailto:hello@stickerlah.sg">Contact</a>
+            </div>
+            <div class="footer-note">
+                <p>Demo site for <a href="https://winstonkoh87.github.io/portfolio.html">Winston Koh's Portfolio</a></p>
+                <p>Inspired by <a href="https://dchtoons.com" target="_blank" rel="noopener noreferrer">DCHtoons</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle"
+        aria-hidden="true">
+        <div class="cart-header">
+            <h3 id="cartTitle">Your Cart</h3>
+            <button type="button" class="cart-close" id="cartClose" aria-label="Close cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="cart-empty">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button type="button" class="btn btn-primary btn-checkout" id="checkoutBtn">Checkout →</button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true">
+        <span class="toast-icon" aria-hidden="true">✓</span>
+        <span class="toast-message" id="toastMessage">Added to cart!</span>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>

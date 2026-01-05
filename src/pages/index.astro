@@ -1,0 +1,325 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Winston Koh | AI Systems Architect & Full-stack Engineer" showAthenaWidget={true}>
+    <section class="hero">
+        <div class="hero-content">
+            <!-- Intent Engine Toggle -->
+            <div class="intent-toggle-container fade-in-delayed">
+                <h2 class="hire-me-headline">Hire Me</h2>
+                <div class="intent-switch">
+                    <button class="intent-btn active" onclick="setIntent('freelance')"
+                        id="btn-freelance">Freelance</button>
+                    <button class="intent-btn" onclick="setIntent('fulltime')" id="btn-fulltime">Full-time</button>
+                    <div class="intent-bg"></div>
+                </div>
+            </div>
+
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="terminal-dot red"></span>
+                    <span class="terminal-dot yellow"></span>
+                    <span class="terminal-dot green"></span>
+                </div>
+                <div class="terminal-body">
+                    <p class="console-line"><span class="prompt">></span> <span id="typewriter"></span><span
+                            class="cursor">_</span></p>
+                </div>
+            </div>
+
+            <h1 id="hero-headline" class="fade-in-delayed">I build systems<br>that <span class="text-gradient">run
+                    themselves.</span>
+            </h1>
+            <p id="hero-subtitle" class="hero-subtitle fade-in-delayed-2">Strategic Systems Architect</p>
+            <p id="hero-description" class="hero-description fade-in-delayed-3">
+                I turn messy AI tools into reliable business workflows. No constant babysitting. No jargon. Just
+                results.
+            </p>
+
+            <div class="hero-cta fade-in-delayed-3">
+                <a id="hero-cta-btn" class="btn btn-primary"
+                    href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I%20came%20across%20your%20site%20and%20wanted%20to%20connect."
+                    target="_blank" rel="noopener noreferrer">Let's Talk</a>
+                <a id="hero-cta-secondary" class="btn btn-secondary" href="/Winston%20Koh%20-%20Resume.pdf"
+                    target="_blank" rel="noopener noreferrer" style="display: none;">Download CV ↓</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MULTI-PILLAR PROOF STRIP -->
+    <section class="metrics-section fade-in-delayed-3">
+        <div class="metrics-grid">
+            <!-- Athena (AI Systems) -->
+            <div class="metric-item">
+                <span class="metric-pillar">AI Systems</span>
+                <span class="metric-value">4,203</span>
+                <span class="metric-label">Memories Indexed</span>
+            </div>
+            <!-- Brew & Bean (SME Solutions) -->
+            <div class="metric-item">
+                <span class="metric-pillar">SME Solutions</span>
+                <span class="metric-value">95+</span>
+                <span class="metric-label">Lighthouse Score</span>
+            </div>
+            <!-- Melvin (Personal Branding) -->
+            <div class="metric-item">
+                <span class="metric-pillar">Personal Branding</span>
+                <span class="metric-value">100</span>
+                <span class="metric-label">Accessibility Score</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED PROJECTS -->
+    <section class="projects-section" aria-labelledby="featured-work">
+        <h2 id="featured-work" class="section-label">Featured Work (The Engine Room)</h2>
+        <div class="project-grid">
+            <!-- Project Athena (Systems) -->
+            <a href="/athena" class="project-card">
+                <div class="project-header">
+                    <span class="card-icon" aria-hidden="true">⚡</span>
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <span class="project-status production">AI Systems</span>
+                        <span class="live-badge">● LIVE</span>
+                    </div>
+                </div>
+                <h3>Project Athena</h3>
+                <p>
+                    <strong>The Outcome:</strong> Personal AI OS with "commit semantics" — 471+ sessions of
+                    persistent memory.
+                    <br><br>
+                    <strong>The System:</strong> Hybrid RAG + Local-first Vector Store + Agentic Workflow.
+                </p>
+                <div class="project-tags">
+                    <span class="tech-tag">View System →</span>
+                </div>
+            </a>
+
+            <!-- Brew & Bean (SME) -->
+            <a href="/projects/brew" class="project-card">
+                <div class="project-header">
+                    <span class="card-icon" aria-hidden="true">☕</span>
+                    <span class="project-status demo">SME Solutions</span>
+                </div>
+                <h3>Brew & Bean</h3>
+                <p>
+                    <strong>The Outcome:</strong> High-conversion F&B landing page optimized for lead capture.
+                    <br><br>
+                    <strong>The System:</strong> Funnel Architecture + WhatsApp Integration.
+                </p>
+                <div class="project-tags">
+                    <span class="tech-tag">View System →</span>
+                </div>
+            </a>
+
+            <!-- Melvin Lim (Personal) -->
+            <a href="/projects/melvin" class="project-card">
+                <div class="project-header">
+                    <span class="card-icon" aria-hidden="true">🫡</span>
+                    <span class="project-status production">Personal Branding</span>
+                </div>
+                <h3>Melvin Lim</h3>
+                <p>
+                    <strong>The Outcome:</strong> High-trust portfolio for an SAF Officer.
+                    <br><br>
+                    <strong>The System:</strong> Narrative Design + Bento Grid Layout.
+                </p>
+                <div class="project-tags">
+                    <span class="tech-tag">View System →</span>
+                </div>
+            </a>
+
+            <!-- ThatBioTutor (SME) -->
+            <a href="/projects/thatbiotutor" class="project-card">
+                <div class="project-header">
+                    <span class="card-icon" aria-hidden="true">🧬</span>
+                    <span class="project-status demo">SME Solutions</span>
+                </div>
+                <h3>ThatBioTutor</h3>
+                <p>
+                    <strong>The Outcome:</strong> Full-stack digital marketing proposal for a Singapore tuition
+                    centre.
+                    <br><br>
+                    <strong>The System:</strong> SEO Strategy + Glassmorphism UI + PDF Export.
+                </p>
+                <div class="project-tags">
+                    <span class="tech-tag">View System →</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="centered" style="margin-top: 2rem;">
+            <a href="/portfolio" class="text-link">View Full Portfolio →</a>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS (Social Proof) -->
+    <section class="testimonials-section" aria-labelledby="testimonials">
+        <h2 id="testimonials" class="section-label">What Clients Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-quote">Winston delivered exactly what we needed — a clean, fast website that
+                    actually converts. No fluff, just results.</p>
+                <div class="testimonial-author">
+                    <img src="/assets/images/client-melvin.png" alt="Melvin Lim" class="testimonial-avatar-img">
+                    <div class="testimonial-info">
+                        <span class="testimonial-name">Melvin Lim</span>
+                        <span class="testimonial-role">SAF Officer</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-quote">The turnaround was insane. From brief to live site in under a day. The
+                    AI-augmented workflow is real.</p>
+                <div class="testimonial-author">
+                    <img src="/assets/images/client-tuition.png" alt="Education SME" class="testimonial-avatar-img">
+                    <div class="testimonial-info">
+                        <span class="testimonial-name">Tuition Centre Owner</span>
+                        <span class="testimonial-role">Education SME</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-quote">Finally, someone who gets it. Not just a website, but a system that
+                    works while I focus on my business.</p>
+                <div class="testimonial-author">
+                    <img src="/assets/images/client-sme.png" alt="F&B Industry" class="testimonial-avatar-img">
+                    <div class="testimonial-info">
+                        <span class="testimonial-name">Small Business Owner</span>
+                        <span class="testimonial-role">F&B Industry</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHILOSOPHY / PILLARS -->
+    <section class="cards-section" aria-labelledby="operating-system">
+        <h2 id="operating-system" class="section-label">The Operating System (Philosophy)</h2>
+        <div class="card-grid">
+            <a href="/about" class="card">
+                <span class="card-icon" aria-hidden="true">→</span>
+                <h3>About</h3>
+                <p>The philosophy, the background, the operating model.</p>
+            </a>
+            <a href="/services" class="card">
+                <span class="card-icon" aria-hidden="true">→</span>
+                <h3>Services</h3>
+                <p>Fixed pricing. Fast delivery. Systems that work.</p>
+            </a>
+            <a href="/writing" class="card">
+                <span class="card-icon" aria-hidden="true">→</span>
+                <h3>Writing</h3>
+                <p>Thoughts on systems, strategy, and survival.</p>
+            </a>
+        </div>
+    </section>
+
+    <script src="/assets/js/typewriter.js" is:inline></script>
+    <script src="/assets/js/counter.js" is:inline></script>
+
+    <!-- Intent Engine Script -->
+    <script is:inline>
+        const INTENT_DATA = {
+            freelance: {
+                headline: "I build systems<br>that <span class='text-gradient'>run themselves.</span>",
+                subtitle: "Strategic Systems Architect",
+                desc: "I turn messy AI tools into reliable business workflows. No constant babysitting. No jargon. Just results.",
+                cta: "Let's Talk",
+                ctaLink: "https://wa.me/6583581066?text=Hi%20Winston%2C%20I%20came%20across%20your%20site%20and%20wanted%20to%20connect.",
+                showSecondary: false
+            },
+            fulltime: {
+                headline: "Full-Stack Engineer<br>with <span class='text-gradient'>AI Specialization.</span>",
+                subtitle: "Python • JavaScript • RAG Systems",
+                desc: "I build production-grade applications that integrate LLMs with reliable business logic. Open to technical leadership roles.",
+                cta: "View Architecture",
+                ctaLink: "/athena", // Fixed link to internal Astro route
+                showSecondary: true
+            }
+        };
+
+        function setIntent(mode, animate = true) {
+            // 1. Visual Toggle State
+            const btns = document.querySelectorAll('.intent-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            document.getElementById(`btn-${mode}`).classList.add('active');
+
+            // 2. CSS Theme Swap
+            if (mode === 'fulltime') {
+                document.body.classList.add('fulltime-mode');
+            } else {
+                document.body.classList.remove('fulltime-mode');
+            }
+
+            // 3. Content Injection
+            const data = INTENT_DATA[mode];
+            const elements = [
+                document.getElementById('hero-headline'),
+                document.getElementById('hero-subtitle'),
+                document.getElementById('hero-description'),
+                document.getElementById('hero-cta-btn')
+            ];
+            const secondaryBtn = document.getElementById('hero-cta-secondary');
+
+            // Helper to swap text
+            const swapText = () => {
+                const headline = document.getElementById('hero-headline');
+                const subtitle = document.getElementById('hero-subtitle');
+                const description = document.getElementById('hero-description');
+                const ctaBtn = document.getElementById('hero-cta-btn');
+
+                if (headline) headline.innerHTML = data.headline;
+                if (subtitle) subtitle.innerHTML = data.subtitle;
+                if (description) description.innerHTML = data.desc;
+                if (ctaBtn) {
+                    ctaBtn.innerHTML = data.cta;
+                    ctaBtn.href = data.ctaLink;
+                }
+                if (secondaryBtn) {
+                    secondaryBtn.style.display = data.showSecondary ? 'inline-block' : 'none';
+                }
+            };
+
+            if (animate) {
+                // Fade out
+                elements.forEach(el => {
+                    if (el) el.style.opacity = '0';
+                });
+
+                setTimeout(() => {
+                    swapText();
+                    // Fade in
+                    elements.forEach(el => {
+                        if (el) {
+                            el.style.opacity = '1';
+                            el.style.transition = 'opacity 0.4s ease';
+                        }
+                    });
+                }, 250);
+            } else {
+                // Instant update (No animation)
+                swapText();
+                // Ensure visibility and clean styles
+                elements.forEach(el => {
+                    if (el) {
+                        el.style.opacity = '';
+                        el.style.transition = '';
+                    }
+                });
+            }
+
+            // 4. Save preference
+            localStorage.setItem('intent_mode', mode);
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            // Force default to freelance as per user request, without animation
+            // const savedMode = localStorage.getItem('intent_mode') || 'freelance'; // Reverting to forced freelance
+            const savedMode = 'freelance';
+            setIntent(savedMode, false);
+        });
+    </script>
+</Layout>

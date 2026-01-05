@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="MathPro Tuition results - 92% of our students achieve A or A* in PSLE Math. Read testimonials from happy parents and students.">
+
+    <title>Results & Testimonials | MathPro Tuition - P6 Math Specialists</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .results-hero {
+            padding: 8rem 0 4rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .results-hero h1 {
+            color: var(--white);
+            margin-bottom: var(--space-md);
+        }
+
+        .results-hero p {
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .results-highlight {
+            background: var(--accent);
+            padding: var(--space-3xl) 0;
+            text-align: center;
+        }
+
+        .results-highlight h2 {
+            font-size: 4rem;
+            color: var(--gray-900);
+            margin-bottom: var(--space-sm);
+        }
+
+        .results-highlight p {
+            font-size: 1.25rem;
+            color: var(--gray-800);
+            margin: 0;
+        }
+
+        .grade-breakdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+
+        .grade-item {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+        }
+
+        .grade-item h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .grade-item .grade {
+            display: inline-block;
+            background: var(--success);
+            color: var(--white);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            font-size: 0.875rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .grade-item .grade.a-star {
+            background: var(--accent);
+            color: var(--gray-900);
+        }
+
+        .grade-item p {
+            color: var(--gray-600);
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+        .success-story {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: var(--space-2xl);
+            padding: var(--space-2xl);
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            margin-bottom: var(--space-xl);
+        }
+
+        .story-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto;
+        }
+
+        .story-meta {
+            text-align: center;
+        }
+
+        .story-name {
+            font-weight: 700;
+            margin-top: var(--space-md);
+        }
+
+        .story-grade {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--gray-900);
+            padding: var(--space-xs) var(--space-sm);
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            font-size: 0.75rem;
+            margin-top: var(--space-sm);
+        }
+
+        .story-content h4 {
+            margin-bottom: var(--space-md);
+            color: var(--primary);
+        }
+
+        .story-journey {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+            padding: var(--space-md);
+            background: var(--gray-50);
+            border-radius: var(--radius-md);
+        }
+
+        .journey-grade {
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .journey-grade.before {
+            background: var(--gray-200);
+            color: var(--gray-600);
+        }
+
+        .journey-grade.after {
+            background: var(--success);
+            color: var(--white);
+        }
+
+        .journey-arrow {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-xl);
+        }
+
+        @media (max-width: 992px) {
+            .grade-breakdown {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .success-story {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .story-content h4 {
+                text-align: center;
+            }
+
+            .results-highlight h2 {
+                font-size: 3rem;
+            }
+
+            .grade-breakdown {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Math<span>Pro</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="results.html" class="active">Results</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Results Hero -->
+    <section class="results-hero">
+        <div class="container">
+            <h1>Our Results Speak for Themselves</h1>
+            <p>We measure our success by our students' achievements. Here's what our P6 students have accomplished.</p>
+        </div>
+    </section>
+
+    <!-- Results Highlight -->
+    <section class="results-highlight">
+        <div class="container">
+            <h2>92%</h2>
+            <p>of our P6 students achieved A or A* in PSLE Math (2024)</p>
+        </div>
+    </section>
+
+    <!-- Grade Breakdown -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>PSLE 2024 Results Breakdown</h2>
+                <p>Out of 87 P6 students who took PSLE with us in 2024.</p>
+            </div>
+            <div class="grade-breakdown">
+                <div class="grade-item">
+                    <span class="grade a-star">A*</span>
+                    <h3>42%</h3>
+                    <p>Achieved Distinction (A*)</p>
+                </div>
+                <div class="grade-item">
+                    <span class="grade">A</span>
+                    <h3>50%</h3>
+                    <p>Achieved Grade A</p>
+                </div>
+                <div class="grade-item">
+                    <span class="grade" style="background: var(--primary-light);">B</span>
+                    <h3>6%</h3>
+                    <p>Achieved Grade B</p>
+                </div>
+                <div class="grade-item">
+                    <span class="grade" style="background: var(--gray-400);">C+</span>
+                    <h3>2%</h3>
+                    <p>Grade C or below</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Success Stories</h2>
+                <p>Real transformations from struggling to succeeding.</p>
+            </div>
+
+            <div class="success-story">
+                <div class="story-meta">
+                    <div class="story-avatar">👧</div>
+                    <p class="story-name">Sarah T.</p>
+                    <span class="story-grade">PSLE 2024 - A*</span>
+                </div>
+                <div class="story-content">
+                    <h4>"I never thought Math could be my best subject"</h4>
+                    <p>Sarah joined MathPro in P5 after struggling with fractions and ratio. Through patient guidance
+                        and lots of practice, she not only caught up but excelled. Her parents were amazed when she
+                        scored A* in PSLE after getting C in her P5 final exams.</p>
+                    <div class="story-journey">
+                        <div class="journey-grade before">C<br><small>P5 Final</small></div>
+                        <span class="journey-arrow">→</span>
+                        <div class="journey-grade after">A*<br><small>PSLE</small></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="success-story">
+                <div class="story-meta">
+                    <div class="story-avatar">👦</div>
+                    <p class="story-name">Ryan L.</p>
+                    <span class="story-grade">PSLE 2024 - A</span>
+                </div>
+                <div class="story-content">
+                    <h4>"The small class size made all the difference"</h4>
+                    <p>Ryan was always too shy to ask questions in school. At MathPro, with only 6 students per class,
+                        he finally felt comfortable seeking help. His confidence grew along with his grades.</p>
+                    <div class="story-journey">
+                        <div class="journey-grade before">D<br><small>P5 SA1</small></div>
+                        <span class="journey-arrow">→</span>
+                        <div class="journey-grade after">A<br><small>PSLE</small></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="success-story">
+                <div class="story-meta">
+                    <div class="story-avatar">👧</div>
+                    <p class="story-name">Michelle C.</p>
+                    <span class="story-grade">PSLE 2024 - A*</span>
+                </div>
+                <div class="story-content">
+                    <h4>"Already good, but wanted to be the best"</h4>
+                    <p>Michelle was already scoring B+ but her parents wanted her to reach her full potential. Our
+                        1-to-1 programme helped her master challenging problem sums and heuristics. She achieved her
+                        goal of A* with room to spare.</p>
+                    <div class="story-journey">
+                        <div class="journey-grade before" style="background: var(--primary-light); color: white;">
+                            B+<br><small>Before</small></div>
+                        <span class="journey-arrow">→</span>
+                        <div class="journey-grade after">A*<br><small>PSLE</small></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parent Testimonials -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Parents Say</h2>
+                <p>Hear from families who trusted MathPro with their child's education.</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p class="testimonial-content">"We tried 3 different tuition centres before finding MathPro. The
+                        difference was night and day. Finally, a place that truly cares about each student's progress."
+                    </p>
+                    <p class="testimonial-author">Mrs. Tan Wei Ling</p>
+                    <p class="testimonial-role">Parent of PSLE 2024 student (A*)</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-content">"The monthly progress reports are so detailed. I always know exactly
+                        where my son stands and what he needs to work on. No other tuition centre does this."</p>
+                    <p class="testimonial-author">Mr. Kumar Ravi</p>
+                    <p class="testimonial-role">Parent of PSLE 2024 student (A)</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-content">"Mr. David has a gift for explaining Math. My daughter used to hate
+                        the subject. Now she actually looks forward to lessons. That's worth more than any grade."</p>
+                    <p class="testimonial-author">Mrs. Lee Hui Min</p>
+                    <p class="testimonial-role">Parent of PSLE 2023 student (A)</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-content">"The holiday bootcamp was incredible value. 5 days of intensive
+                        revision that covered more than a month of regular lessons. My son's confidence shot up."</p>
+                    <p class="testimonial-author">Mr. Wong Keng Leong</p>
+                    <p class="testimonial-role">Parent of PSLE 2024 student (A*)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Your Child Could Be Our Next Success Story</h2>
+            <p>Book a free trial lesson and see what MathPro can do for your child.</p>
+            <a href="contact.html" class="btn btn-secondary">Book Free Trial Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>MathPro Tuition</h4>
+                    <p>Singapore's trusted P6 Math specialists since 2016. We help students build confidence and achieve
+                        their best in PSLE Math.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Programmes</a></li>
+                        <li><a href="results.html">Results</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Programmes</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">P6 PSLE Prep</a></li>
+                        <li><a href="services.html">Small Group Classes</a></li>
+                        <li><a href="services.html">1-to-1 Tuition</a></li>
+                        <li><a href="services.html">Holiday Bootcamps</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li>📍 Bishan, Singapore</li>
+                        <li>📞 +65 9123 4567</li>
+                        <li>✉️ hello@mathpro.sg</li>
+                        <li>🕐 Mon-Sat: 10am-8pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MathPro Tuition. All rights reserved. | <em>Demo site by <a
+                            href="https://winstonkoh87.github.io" style="color: var(--accent);">Winston Koh</a></em></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
