@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library | Melvin Lim</title>
+    <meta name="description" content="Melvin Lim's curated library of books and resources.">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- NAV -->
+    <nav class="nav-container">
+        <a href="index.html" class="logo">MELVIN.</a>
+        <div class="nav-links">
+            <a href="index.html#work">Work</a>
+            <a href="essays.html">Essays</a>
+            <a href="now.html">Now</a>
+            <a href="library.html" class="active">Library</a>
+            <a href="index.html#contact" class="btn-primary">Connect</a>
+        </div>
+    </nav>
+
+    <main id="main">
+        <section class="page-container container">
+            <header class="notebook-header">
+                <h1 class="notebook-title">Library.</h1>
+                <p class="notebook-subtitle">Ideas that have shaped my thinking.</p>
+            </header>
+
+            <div class="book-list">
+                <!-- Book 1 -->
+                <div class="book-item">
+                    <a href="https://www.amazon.com/Antifragile-Things-That-Disorder-Incerto/dp/0812979680"
+                        target="_blank" rel="noopener noreferrer">
+                        <span class="book-title">Antifragile</span>
+                        <span class="book-author">Nassim Taleb</span>
+                    </a>
+                    <button class="ai-btn" onclick="askBookAI(this, 'Antifragile', 'Nassim Taleb')">
+                        <i data-lucide="sparkles" width="14" height="14"></i> Why read?
+                    </button>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="book-item">
+                    <a href="https://www.amazon.com/Thinking-Systems-Donella-H-Meadows/dp/1603580557" target="_blank"
+                        rel="noopener noreferrer">
+                        <span class="book-title">Thinking in Systems</span>
+                        <span class="book-author">Donella Meadows</span>
+                    </a>
+                    <button class="ai-btn" onclick="askBookAI(this, 'Thinking in Systems', 'Donella Meadows')">
+                        <i data-lucide="sparkles" width="14" height="14"></i> Why read?
+                    </button>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="book-item">
+                    <a href="https://www.amazon.com/Team-Teams-Rules-Engagement-Complex/dp/1591847486" target="_blank"
+                        rel="noopener noreferrer">
+                        <span class="book-title">Team of Teams</span>
+                        <span class="book-author">Gen. Stanley McChrystal</span>
+                    </a>
+                    <button class="ai-btn" onclick="askBookAI(this, 'Team of Teams', 'Gen. Stanley McChrystal')">
+                        <i data-lucide="sparkles" width="14" height="14"></i> Why read?
+                    </button>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="book-item">
+                    <a href="https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299" target="_blank"
+                        rel="noopener noreferrer">
+                        <span class="book-title">Atomic Habits</span>
+                        <span class="book-author">James Clear</span>
+                    </a>
+                    <button class="ai-btn" onclick="askBookAI(this, 'Atomic Habits', 'James Clear')">
+                        <i data-lucide="sparkles" width="14" height="14"></i> Why read?
+                    </button>
+                </div>
+
+                <!-- Book 5 -->
+                <div class="book-item">
+                    <a href="https://www.amazon.com/Meditations-New-Translation-Marcus-Aurelius/dp/0812968255"
+                        target="_blank" rel="noopener noreferrer">
+                        <span class="book-title">Meditations</span>
+                        <span class="book-author">Marcus Aurelius</span>
+                    </a>
+                    <button class="ai-btn" onclick="askBookAI(this, 'Meditations', 'Marcus Aurelius')">
+                        <i data-lucide="sparkles" width="14" height="14"></i> Why read?
+                    </button>
+                </div>
+
+                <!-- Book 6 -->
+                <div class="book-item">
+                    <a href="https://www.amazon.com/Zero-One-Notes-Startups-Future/dp/0804139296" target="_blank"
+                        rel="noopener noreferrer">
+                        <span class="book-title">Zero to One</span>
+                        <span class="book-author">Peter Thiel</span>
+                    </a>
+                    <button class="ai-btn" onclick="askBookAI(this, 'Zero to One', 'Peter Thiel')">
+                        <i data-lucide="sparkles" width="14" height="14"></i> Why read?
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="footer-section">
+        <div class="container">
+            <h2 class="footer-cta">Let's build something.</h2>
+            <p class="footer-sub">Open to leadership, strategy, and community projects.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/melvinlimjunwei/" class="social-link" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a>
+                <a href="mailto:melvinlim976@gmail.com" class="social-link">Email</a>
+                <a href="https://www.instagram.com/melv._.innnn/" class="social-link" target="_blank"
+                    rel="noopener noreferrer">Instagram</a>
+            </div>
+            <p class="copyright">© 2026 Melvin Lim.</p>
+        </div>
+    </footer>
+
+    <!-- AI Features Script -->
+    <script src="ai-features.js"></script>
+</body>
+
+</html>
