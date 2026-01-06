@@ -71,9 +71,15 @@ const {
 
     {showAthenaWidget && (
         <>
-            <!-- Athena Live Widget -->
-            <div id="athena-widget" class="athena-widget minimized">
-                <div class="athena-header" onclick="toggleAthena()">
+            {/* Athena Chat Bubble Trigger */}
+            <div id="athena-bubble" class="athena-bubble" onclick="openAthenaChat()">
+                <div class="bubble-pulse"></div>
+                <img src="/assets/images/winston-avatar.jpg" alt="Chat with me" class="bubble-avatar" />
+            </div>
+
+            {/* Athena Live Widget (Hidden initially) */}
+            <div id="athena-widget" class="athena-widget hidden">
+                <div class="athena-header" onclick="closeAthenaChat()">
                     <div class="header-left">
                         <img src="/assets/images/winston-avatar.jpg" alt="Athena" class="brand-avatar-mini"
                             style="width: 30px; height: 30px; border-width: 1px;">
@@ -83,7 +89,7 @@ const {
                         </div>
                     </div>
                     <div class="header-controls">
-                        <span class="toggle-icon">−</span>
+                        <span class="toggle-icon">×</span>
                     </div>
                 </div>
 
@@ -102,6 +108,19 @@ const {
             </div>
             
             <script src="/assets/js/athena-lite.js" is:inline></script>
+            <script is:inline>
+                function openAthenaChat() {
+                    document.getElementById('athena-bubble').classList.add('hidden');
+                    document.getElementById('athena-widget').classList.remove('hidden');
+                    document.getElementById('athena-widget').classList.add('open');
+                }
+                
+                function closeAthenaChat() {
+                    document.getElementById('athena-widget').classList.add('hidden');
+                    document.getElementById('athena-widget').classList.remove('open');
+                    document.getElementById('athena-bubble').classList.remove('hidden');
+                }
+            </script>
         </>
     )}
 
