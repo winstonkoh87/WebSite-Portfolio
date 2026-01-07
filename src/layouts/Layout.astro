@@ -17,14 +17,12 @@ interface Props {
 	title: string;
 	description?: string;
     showFloatingButtons?: boolean;
-    showAthenaWidget?: boolean;
 }
 
 const { 
     title, 
     description = "I build production-grade AI systems and reliable business workflows.",
-    showFloatingButtons = true,
-    showAthenaWidget = false
+    showFloatingButtons = true
 } = Astro.props;
 ---
 
@@ -73,60 +71,7 @@ const {
 
     <Footer />
 
-    {showAthenaWidget && (
-        <>
-            {/* Athena Chat Bubble Trigger */}
-            <div id="athena-bubble" class="athena-bubble" onclick="openAthenaChat()">
-                <div class="bubble-pulse"></div>
-                <img src="/assets/images/winston-avatar.jpg" alt="Chat with me" class="bubble-avatar" />
-            </div>
 
-            {/* Athena Live Widget (Hidden initially) */}
-            <div id="athena-widget" class="athena-widget hidden">
-                <div class="athena-header" onclick="closeAthenaChat()">
-                    <div class="header-left">
-                        <img src="/assets/images/winston-avatar.jpg" alt="Athena" class="brand-avatar-mini"
-                            style="width: 30px; height: 30px; border-width: 1px;">
-                        <div class="header-info">
-                            <span class="header-title">Athena Assistant</span>
-                            <span class="header-status">● Online</span>
-                        </div>
-                    </div>
-                    <div class="header-controls">
-                        <span class="toggle-icon">×</span>
-                    </div>
-                </div>
-
-                <div class="athena-body">
-                    <div class="chat-history" id="chat-history"></div>
-                    <div class="suggestion-area" id="suggestion-area"></div>
-                    <div class="input-area">
-                        <input type="text" id="user-input" placeholder="Type your message..." onkeypress="handleEnter(event)">
-                        <button class="send-btn" onclick="sendFromButton()" aria-label="Send message">
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <script src="/assets/js/athena-lite.js" is:inline></script>
-            <script is:inline>
-                function openAthenaChat() {
-                    document.getElementById('athena-bubble').classList.add('hidden');
-                    document.getElementById('athena-widget').classList.remove('hidden');
-                    document.getElementById('athena-widget').classList.add('open');
-                }
-                
-                function closeAthenaChat() {
-                    document.getElementById('athena-widget').classList.add('hidden');
-                    document.getElementById('athena-widget').classList.remove('open');
-                    document.getElementById('athena-bubble').classList.remove('hidden');
-                }
-            </script>
-        </>
-    )}
 
     {showFloatingButtons && (
         <>
