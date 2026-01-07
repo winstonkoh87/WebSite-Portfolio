@@ -154,3 +154,104 @@
     border: 1px solid rgba(247, 183, 49, 0.3);
     background: rgba(247, 183, 49, 0.1);
 }
+
+/* =========================================
+   INTERACTIVE TERMINAL ENHANCEMENTS
+   ========================================= */
+
+/* AI Badge in Terminal Header */
+.ai-badge {
+    margin-left: auto;
+    color: #10b981;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    background: rgba(16, 185, 129, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+/* Terminal Body - Interactive Mode */
+.terminal-body {
+    height: 220px;
+    overflow-y: auto;
+    cursor: text;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Custom Scrollbar for Terminal */
+.terminal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.terminal-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.terminal-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.terminal-body::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Terminal History */
+#terminal-history {
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* Log Entry Styles */
+.log-entry {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+}
+
+.log-entry.user {
+    color: #e8e8e8;
+}
+
+.log-entry.ai {
+    color: #64ffda;
+}
+
+.log-entry.system {
+    color: #6b7280;
+    font-style: italic;
+}
+
+/* Input Line */
+.input-line {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.input-line .prompt {
+    color: var(--accent-color, #64ffda);
+    margin-right: 8px;
+    white-space: nowrap;
+    font-size: 0.85rem;
+}
+
+#term-input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    flex-grow: 1;
+    outline: none;
+    caret-color: #64ffda;
+}
+
+#term-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}

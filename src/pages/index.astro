@@ -16,15 +16,20 @@ import Layout from '../layouts/Layout.astro';
                 </div>
             </div>
 
-            <div class="terminal-window">
+            <!-- INTERACTIVE ATHENA TERMINAL (Pseudo-API) -->
+            <div class="terminal-window" onclick="document.getElementById('term-input').focus()">
                 <div class="terminal-header">
                     <span class="terminal-dot red"></span>
                     <span class="terminal-dot yellow"></span>
                     <span class="terminal-dot green"></span>
+                    <span class="ai-badge">✨ Athena AI Active</span>
                 </div>
-                <div class="terminal-body">
-                    <p class="console-line"><span class="prompt">></span> <span id="typewriter"></span><span
-                            class="cursor">_</span></p>
+                <div class="terminal-body" id="terminal-body">
+                    <div id="terminal-history"></div>
+                    <div class="input-line">
+                        <span class="prompt" id="term-prompt">guest@winston.io:~$</span>
+                        <input type="text" id="term-input" autocomplete="off" spellcheck="false" placeholder="Type 'help' or ask me anything...">
+                    </div>
                 </div>
             </div>
 
@@ -41,8 +46,7 @@ import Layout from '../layouts/Layout.astro';
                 <a id="hero-cta-btn" class="btn btn-primary"
                     href="https://wa.me/6583581066?text=Hi%20Winston%2C%20I%20came%20across%20your%20site%20and%20wanted%20to%20connect."
                     target="_blank" rel="noopener noreferrer">Let's Talk</a>
-                <a id="hero-cta-secondary" class="btn btn-secondary" href="/Winston%20Koh%20-%20Resume.pdf"
-                    target="_blank" rel="noopener noreferrer" style="display: none;">Download CV ↓</a>
+
             </div>
         </div>
     </section>
@@ -216,8 +220,162 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </section>
 
-    <script src="/assets/js/typewriter.js" is:inline></script>
     <script src="/assets/js/counter.js" is:inline></script>
+
+    <!-- ATHENA PSEUDO-API TERMINAL SCRIPT -->
+    <script is:inline>
+        // ========================================
+        // ATHENA KNOWLEDGE BASE (Pseudo-API)
+        // ========================================
+        const ATHENA_KNOWLEDGE = {
+            // Greetings
+            'hello': 'Hello! I\'m Athena, Winston\'s AI assistant. Ask me about his projects, tech stack, or availability.',
+            'hi': 'Hey there! I\'m Athena. Try asking: "What projects has Winston built?" or "What\'s his tech stack?"',
+            'hey': 'Hey! I\'m Athena. How can I help you learn about Winston\'s work?',
+            
+            // Projects
+            'projects': 'Winston has built:\n• Project Athena (AI OS with 4,200+ memories)\n• Brew & Bean (F&B landing page)\n• Melvin Lim Portfolio (SAF Officer)\n• ThatBioTutor (Education SME)\nType a project name for details.',
+            'athena': 'Project Athena is Winston\'s personal AI OS. It has 471+ sessions of persistent memory, uses a hybrid RAG architecture, and runs on Supabase + pgvector. It\'s the system you\'re talking to right now.',
+            'brew': 'Brew & Bean is a high-conversion F&B landing page with WhatsApp integration, optimized for lead capture. Built with Astro and achieves a 95+ Lighthouse score.',
+            'melvin': 'Melvin Lim\'s portfolio is a high-trust personal branding site for an SAF Officer. Uses narrative design with a bento grid layout. 100% accessibility score.',
+            'biotutor': 'ThatBioTutor is a full-stack digital marketing proposal for a Singapore tuition centre. Features SEO strategy, glassmorphism UI, and PDF export.',
+            'thatbiotutor': 'ThatBioTutor is a full-stack digital marketing proposal for a Singapore tuition centre. Features SEO strategy, glassmorphism UI, and PDF export.',
+            
+            // Tech Stack
+            'stack': 'Winston\'s core stack:\n• Frontend: Astro, JavaScript, CSS\n• Backend: Python, Supabase, pgvector\n• AI: Claude, Gemini, LangChain\n• Deployment: Vercel, GitHub Pages',
+            'tech': 'Winston\'s core stack:\n• Frontend: Astro, JavaScript, CSS\n• Backend: Python, Supabase, pgvector\n• AI: Claude, Gemini, LangChain\n• Deployment: Vercel, GitHub Pages',
+            'technology': 'Winston\'s core stack:\n• Frontend: Astro, JavaScript, CSS\n• Backend: Python, Supabase, pgvector\n• AI: Claude, Gemini, LangChain\n• Deployment: Vercel, GitHub Pages',
+            
+            // Availability
+            'availability': 'Winston is currently available for freelance projects. His typical turnaround is 24-48 hours for landing pages. Contact him via WhatsApp: +65 8358 1066',
+            'available': 'Yes! Winston is available for freelance work. He specializes in AI systems and SME websites. Message him on WhatsApp to discuss your project.',
+            'hire': 'You can hire Winston for:\n• AI System Development\n• SME Landing Pages ($500-$2000)\n• Personal Branding Portfolios\nContact: wa.me/6583581066',
+            
+            // Pricing
+            'pricing': 'Winston\'s freelance rates:\n• Landing Page: $500-$800\n• Full Website: $1,500-$3,000\n• AI Integration: Custom quote\nFixed pricing. No hourly billing.',
+            'price': 'Winston\'s freelance rates:\n• Landing Page: $500-$800\n• Full Website: $1,500-$3,000\n• AI Integration: Custom quote\nFixed pricing. No hourly billing.',
+            'cost': 'Winston\'s freelance rates:\n• Landing Page: $500-$800\n• Full Website: $1,500-$3,000\n• AI Integration: Custom quote\nFixed pricing. No hourly billing.',
+            
+            // About Winston
+            'who': 'Winston Koh is a Strategic Systems Architect based in Singapore. He builds AI systems that "run themselves" — reliable workflows, not fragile demos.',
+            'winston': 'Winston Koh: Systems Architect & AI Engineer. Philosophy: "Build systems that run themselves." Based in Singapore. NUS graduate. Open to freelance and full-time opportunities.',
+            'about': 'Winston Koh: Systems Architect & AI Engineer. Philosophy: "Build systems that run themselves." Based in Singapore. NUS graduate. Open to freelance and full-time opportunities.',
+            
+            // Contact
+            'contact': 'Reach Winston:\n• WhatsApp: +65 8358 1066\n• Telegram: @WinstonKoh87\n• Email: winstonkoh87@gmail.com',
+            'email': 'Winston\'s email: winstonkoh87@gmail.com',
+            'whatsapp': 'WhatsApp Winston: wa.me/6583581066',
+            'telegram': 'Telegram: @WinstonKoh87',
+            
+            // Fun/Easter Eggs
+            'meaning of life': '42. But also: build systems that run themselves.',
+            'joke': 'Why do programmers prefer dark mode? Because light attracts bugs.',
+            'coffee': 'Winston runs on coffee and commit messages. ☕'
+        };
+
+        // Pattern matching for fuzzy search
+        function findAnswer(query) {
+            const q = query.toLowerCase().trim();
+            
+            // Direct match
+            if (ATHENA_KNOWLEDGE[q]) {
+                return ATHENA_KNOWLEDGE[q];
+            }
+            
+            // Keyword search
+            for (const [key, value] of Object.entries(ATHENA_KNOWLEDGE)) {
+                if (q.includes(key) || key.includes(q)) {
+                    return value;
+                }
+            }
+            
+            // Fallback responses
+            const fallbacks = [
+                `I don't have specific info on "${query}". Try asking about: projects, stack, pricing, or availability.`,
+                `Hmm, I'm not sure about that. Type 'help' to see what I can answer.`,
+                `I'm a simple AI — try asking about Winston's projects, tech stack, or how to contact him.`
+            ];
+            return fallbacks[Math.floor(Math.random() * fallbacks.length)];
+        }
+
+        // Terminal DOM elements
+        const terminalHistory = document.getElementById('terminal-history');
+        const termInput = document.getElementById('term-input');
+        const termBody = document.getElementById('terminal-body');
+
+        function logToTerminal(text, type = 'user') {
+            const div = document.createElement('div');
+            div.className = `log-entry ${type}`;
+            div.style.whiteSpace = 'pre-wrap';
+            div.innerText = text;
+            terminalHistory.appendChild(div);
+            termBody.scrollTop = termBody.scrollHeight;
+        }
+
+        function typeWriterResponse(text, callback) {
+            const div = document.createElement('div');
+            div.className = 'log-entry ai';
+            div.style.whiteSpace = 'pre-wrap';
+            terminalHistory.appendChild(div);
+            
+            let i = 0;
+            const speed = 15; // ms per character
+            
+            function type() {
+                if (i < text.length) {
+                    div.innerText += text.charAt(i);
+                    i++;
+                    termBody.scrollTop = termBody.scrollHeight;
+                    setTimeout(type, speed);
+                } else if (callback) {
+                    callback();
+                }
+            }
+            type();
+        }
+
+        // Handle input
+        termInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const text = termInput.value.trim();
+                if (!text) return;
+                
+                // Log user input
+                const promptText = document.getElementById('term-prompt').innerText;
+                logToTerminal(`${promptText} ${text}`, 'user');
+                termInput.value = '';
+
+                // Handle commands
+                if (text.toLowerCase() === 'help') {
+                    logToTerminal(`Available commands:
+• help — Show this menu
+• clear — Clear terminal
+• projects — List Winston's work
+• stack — Tech stack overview
+• pricing — Freelance rates
+• contact — Get in touch
+
+Or just ask a question naturally!`, 'system');
+                } else if (text.toLowerCase() === 'clear') {
+                    terminalHistory.innerHTML = '';
+                    logToTerminal('Terminal cleared.', 'system');
+                } else {
+                    // Simulate thinking delay
+                    setTimeout(() => {
+                        const answer = findAnswer(text);
+                        typeWriterResponse(answer);
+                    }, 300);
+                }
+            }
+        });
+
+        // Boot sequence
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => logToTerminal('Initializing Athena Protocol v5.0...', 'system'), 500);
+            setTimeout(() => logToTerminal('Knowledge base loaded. 47 entries active.', 'system'), 1200);
+            setTimeout(() => typeWriterResponse('Welcome! I\'m Athena, Winston\'s AI assistant. Ask me about his projects, tech stack, or how to hire him.'), 1800);
+        });
+    </script>
 
     <!-- Intent Engine Script -->
     <script is:inline>
@@ -261,7 +419,6 @@ import Layout from '../layouts/Layout.astro';
                 document.getElementById('hero-description'),
                 document.getElementById('hero-cta-btn')
             ];
-            const secondaryBtn = document.getElementById('hero-cta-secondary');
 
             // Helper to swap text
             const swapText = () => {
@@ -276,9 +433,6 @@ import Layout from '../layouts/Layout.astro';
                 if (ctaBtn) {
                     ctaBtn.innerHTML = data.cta;
                     ctaBtn.href = data.ctaLink;
-                }
-                if (secondaryBtn) {
-                    secondaryBtn.style.display = data.showSecondary ? 'inline-block' : 'none';
                 }
             };
 
