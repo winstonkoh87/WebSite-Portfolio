@@ -1,6 +1,6 @@
 # Building a Portfolio Website (Astro v2)
 
-> **Last Updated**: 6 January 2026
+> **Last Updated**: 7 January 2026
 > **Status**: Migrated to Astro Framework 🚀
 
 [![Live Site](https://img.shields.io/badge/Live-winstonkoh87.github.io-00C853?style=flat-square)](https://winstonkoh87.github.io/)
@@ -10,7 +10,7 @@
 
 A personal portfolio website built with **Astro**, focusing on performance, component reusability, and zero-JavaScript defaults.
 
-This is a documentation of how I built (and evolved) a complete portfolio website with AI-augmented execution using [Project Athena](https://github.com/winstonkoh87/Athena-Public).
+This documents how I built (and evolved) a complete portfolio website with AI-augmented execution using [Project Athena](https://github.com/winstonkoh87/Athena-Public).
 
 ---
 
@@ -199,4 +199,4 @@ System architectures and strategic frameworks are hosted on the **[Athena-Public
 
 ---
 
-*Built with Astro. Efficient. Scalable. No bullshit.*
+*Built with Astro. Efficient. Scalable. Ships fast.*
