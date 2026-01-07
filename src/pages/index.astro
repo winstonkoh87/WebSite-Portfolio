@@ -309,7 +309,8 @@ import Layout from '../layouts/Layout.astro';
             div.style.whiteSpace = 'pre-wrap';
             div.innerText = text;
             terminalHistory.appendChild(div);
-            termBody.scrollTop = termBody.scrollHeight;
+            // Smooth scroll to bottom
+            div.scrollIntoView({ behavior: 'smooth', block: 'end' });
         }
 
         function typeWriterResponse(text, callback) {
@@ -325,7 +326,8 @@ import Layout from '../layouts/Layout.astro';
                 if (i < text.length) {
                     div.innerText += text.charAt(i);
                     i++;
-                    termBody.scrollTop = termBody.scrollHeight;
+                    // Smooth scroll to keep response visible
+                    div.scrollIntoView({ behavior: 'smooth', block: 'end' });
                     setTimeout(type, speed);
                 } else if (callback) {
                     callback();
