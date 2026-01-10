@@ -9,6 +9,11 @@ import Layout from '../layouts/Layout.astro';
             <p class="page-subtitle">Projects, demos, and case studies</p>
         </div>
 
+        <!-- Disclaimer Note -->
+        <div class="portfolio-disclaimer" style="background: rgba(234, 179, 8, 0.1); border: 1px solid rgba(234, 179, 8, 0.3); border-radius: 8px; padding: 1rem; margin-bottom: 2rem; font-size: 0.875rem; color: var(--text-muted);">
+            <strong>⚠️ Note:</strong> Demo projects marked with real names (e.g., "Melvin Lim", "Coach Derrick Lim") are <strong>inspired by</strong> real individuals or businesses. All financial projections and business metrics are AI-generated estimates for demonstration purposes. These are not actual client engagements.
+        </div>
+
         <!-- Filter Buttons -->
         <div class="portfolio-filters">
             <button class="filter-btn active" data-filter="all">All</button>
@@ -50,9 +55,9 @@ import Layout from '../layouts/Layout.astro';
                     <span class="card-icon" aria-hidden="true">🫡</span>
                     <span class="project-status production">Production</span>
                 </div>
-                <h3>Melvin Lim Portfolio</h3>
+                <h3>Melvin Lim Portfolio <span style="font-size: 0.7em; opacity: 0.7;">(inspired)</span></h3>
                 <p class="project-role"><em>Role: Design + Development</em></p>
-                <p>Personal portfolio for an SAF Officer and Scholar. Features a calm, high-trust design with
+                <p>Personal portfolio inspired by an SAF Officer and Scholar. Features a calm, high-trust design with
                     bento-grid layout for milestones.</p>
                 <div class="project-tags">
                     <span class="tech-tag">HTML/CSS</span>
@@ -99,14 +104,14 @@ import Layout from '../layouts/Layout.astro';
             </a>
 
             <!-- Coach Derrick Lim Proposal -->
-            <a href="/coach-derrick" class="portfolio-card" data-category="sme">
+            <a href="/swim-coach-demo" class="portfolio-card" data-category="sme">
                 <div class="project-header">
                     <span class="card-icon" aria-hidden="true">🏊</span>
                     <span class="project-status demo">Demo</span>
                 </div>
-                <h3>Coach Derrick Lim</h3>
+                <h3>Coach Derrick Lim <span style="font-size: 0.7em; opacity: 0.7;">(inspired)</span></h3>
                 <p class="project-role"><em>Role: Strategy + Design + Dev</em></p>
-                <p>90-day digital transformation proposal for a swim coach. Interactive slides, AI demo, ROI projections, and full PDF marketing plan.</p>
+                <p>90-day digital transformation proposal inspired by a real swim coach. Interactive slides, AI demo, ROI projections, and full PDF marketing plan.</p>
                 <div class="project-tags">
                     <span class="tech-tag">Digital Marketing</span>
                     <span class="tech-tag">Interactive Slides</span>

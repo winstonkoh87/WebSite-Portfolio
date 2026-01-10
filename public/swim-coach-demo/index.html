@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coach Derrick Lim | Digital Transformation Proposal</title>
+    <title>Coach Derrick Lim | Digital Transformation Proposal (Demo)</title>
 
     <!-- Tailwind CSS (Styling) with Configuration -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -105,9 +105,16 @@
 
 <body class="bg-slate-950 text-slate-100 overflow-hidden h-screen flex flex-col">
 
+    <!-- DISCLAIMER BANNER -->
+    <div class="fixed top-0 left-0 right-0 z-[60] bg-amber-500/90 text-black text-xs text-center py-1 px-4 font-medium">
+        ⚠️ PORTFOLIO DEMO: Inspired by Coach Derrick Lim. All financial figures are AI-generated estimates for
+        demonstration purposes. <a href="/articles/ai-marketing-workflow" class="underline font-bold">Read the case
+            study →</a>
+    </div>
+
     <!-- NAVIGATION BAR -->
     <nav
-        class="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-lg h-16 flex items-center justify-between px-4 md:px-12">
+        class="fixed top-4 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-lg h-16 flex items-center justify-between px-4 md:px-12">
         <a href="#" onclick="goToSlide(0); return false;"
             class="font-bold text-lg flex items-center gap-3 text-white shrink-0 hover:opacity-80 transition-opacity cursor-pointer">
             <div
@@ -124,15 +131,20 @@
 
         <!-- Right Actions -->
         <div class="flex items-center gap-3 shrink-0">
-            <a href="/portfolio"
+            <a href="/writing"
                 class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-slate-400 hover:text-white transition-colors">
                 <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                <span class="hidden md:inline">Portfolio</span>
+                <span class="hidden md:inline">Back</span>
             </a>
-            <a href="Markdown to PDF.pdf" target="_blank"
+            <a href="Digital%20Marketing%20Plan.pdf" target="_blank"
                 class="flex items-center gap-2 px-4 py-2 text-sm font-bold text-white bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors border border-slate-700">
                 <i data-lucide="file-text" class="w-4 h-4"></i>
-                <span class="hidden md:inline">Full Plan</span>
+                <span class="hidden md:inline">Full Report</span>
+            </a>
+            <a href="Digital%20Marketing%20Plan%20-%20Coach%20Derrick%20Lim.%20(Slide%20Deck).pdf" target="_blank"
+                class="flex items-center gap-2 px-4 py-2 text-sm font-bold text-white bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors border border-slate-700">
+                <i data-lucide="presentation" class="w-4 h-4"></i>
+                <span class="hidden md:inline">Slides PDF</span>
             </a>
 
             <button onclick="openAIModal()"
@@ -148,7 +160,7 @@
     </nav>
 
     <!-- MAIN CONTENT AREA -->
-    <main class="flex-grow relative w-full h-full pt-16">
+    <main class="flex-grow relative w-full h-full pt-20">
 
         <!-- SLIDE 1: HERO (Always Dark Style, preserves impact) -->
         <div id="slide-0"
@@ -509,9 +521,9 @@
                                 </div>
                             </div>
                         </div>
-                        <button onclick="alert('Proceeding to contract signing...')"
-                            class="w-full py-4 bg-green-500 hover:bg-green-600 text-white rounded-xl font-bold text-lg shadow-lg shadow-green-900/20 transition-all">Accept
-                            Proposal</button>
+                        <a href="Digital%20Marketing%20Plan.pdf" target="_blank"
+                            class="w-full py-4 bg-green-500 hover:bg-green-600 text-white rounded-xl font-bold text-lg shadow-lg shadow-green-900/20 transition-all text-center block">Download
+                            Full Proposal</a>
                     </div>
                 </div>
             </div>
