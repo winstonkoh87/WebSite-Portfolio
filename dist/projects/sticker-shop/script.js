@@ -115,23 +115,68 @@ function updateCartUI() {
 
     // Update cart items display
     if (cart.length === 0) {
-        cartItems.innerHTML = '<p class="cart-empty">Your cart is empty</p>';
+        cartItems.innerHTML = '';
+        const emptyMsg = document.createElement('p');
+        emptyMsg.className = 'cart-empty';
+        emptyMsg.textContent = 'Your cart is empty';
+        cartItems.appendChild(emptyMsg);
     } else {
-        cartItems.innerHTML = cart.map(item => `
-            <div class="cart-item">
-                <div class="cart-item-image">${productEmojis[item.id] || '🏷️'}</div>
-                <div class="cart-item-details">
-                    <div class="cart-item-name">${item.name}</div>
-                    <div class="cart-item-price">$${item.price.toFixed(2)}</div>
-                    <div class="cart-item-qty">
-                        <button class="qty-btn" onclick="updateQty(${item.id}, -1)">−</button>
-                        <span>${item.qty}</span>
-                        <button class="qty-btn" onclick="updateQty(${item.id}, 1)">+</button>
-                    </div>
-                </div>
-                <button class="cart-item-remove" onclick="removeFromCart(${item.id})" aria-label="Remove">×</button>
-            </div>
-        `).join('');
+        cartItems.innerHTML = '';
+        cart.forEach(item => {
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'cart-item';
+
+            const imageDiv = document.createElement('div');
+            imageDiv.className = 'cart-item-image';
+            imageDiv.textContent = productEmojis[item.id] || '🏷️';
+
+            const detailsDiv = document.createElement('div');
+            detailsDiv.className = 'cart-item-details';
+
+            const nameDiv = document.createElement('div');
+            nameDiv.className = 'cart-item-name';
+            nameDiv.textContent = item.name;
+
+            const priceDiv = document.createElement('div');
+            priceDiv.className = 'cart-item-price';
+            priceDiv.textContent = `$${item.price.toFixed(2)}`;
+
+            const qtyDiv = document.createElement('div');
+            qtyDiv.className = 'cart-item-qty';
+
+            const minusBtn = document.createElement('button');
+            minusBtn.className = 'qty-btn';
+            minusBtn.textContent = '−';
+            minusBtn.onclick = () => updateQty(item.id, -1);
+
+            const qtySpan = document.createElement('span');
+            qtySpan.textContent = item.qty;
+
+            const plusBtn = document.createElement('button');
+            plusBtn.className = 'qty-btn';
+            plusBtn.textContent = '+';
+            plusBtn.onclick = () => updateQty(item.id, 1);
+
+            qtyDiv.appendChild(minusBtn);
+            qtyDiv.appendChild(qtySpan);
+            qtyDiv.appendChild(plusBtn);
+
+            detailsDiv.appendChild(nameDiv);
+            detailsDiv.appendChild(priceDiv);
+            detailsDiv.appendChild(qtyDiv);
+
+            const removeBtn = document.createElement('button');
+            removeBtn.className = 'cart-item-remove';
+            removeBtn.setAttribute('aria-label', 'Remove');
+            removeBtn.textContent = '×';
+            removeBtn.onclick = () => removeFromCart(item.id);
+
+            itemDiv.appendChild(imageDiv);
+            itemDiv.appendChild(detailsDiv);
+            itemDiv.appendChild(removeBtn);
+
+            cartItems.appendChild(itemDiv);
+        });
     }
 
     // Update total
