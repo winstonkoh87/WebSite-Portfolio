@@ -1,6 +1,6 @@
 # Building a Portfolio Website (Astro v2)
 
-> **Last Updated**: 7 January 2026
+> **Last Updated**: 10 January 2026
 > **Status**: Migrated to Astro Framework 🚀
 
 [![Live Site](https://img.shields.io/badge/Live-winstonkoh87.github.io-00C853?style=flat-square)](https://winstonkoh87.github.io/)
@@ -20,7 +20,7 @@ This documents how I built (and evolved) a complete portfolio website with AI-au
 |--------|-------|
 | **Pages** | 8 |
 | **Articles** | 6 |
-| **Live Demo Sites** | 5 |
+| **Live Demo Sites** | 6 |
 | **AI Widget** | ✅ Athena Live |
 | **Framework** | Astro 5.0 |
 
@@ -130,7 +130,7 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 | [About](https://winstonkoh87.github.io/about) | Identity, philosophy, Bionic Operating Model |
 | [Framework](https://winstonkoh87.github.io/framework) | Three-Pillar Leadership, Arena Physics, Laws, SDR |
 | [Writing](https://winstonkoh87.github.io/writing) | Blog with 6 published articles |
-| [Portfolio](https://winstonkoh87.github.io/portfolio) | 5 live demo sites + coming soon projects |
+| [Portfolio](https://winstonkoh87.github.io/portfolio) | 6 live demo sites |
 | [Athena](https://winstonkoh87.github.io/athena) | Product page: What Athena is and how it works |
 | [Services](https://winstonkoh87.github.io/services) | Fixed pricing. Fast delivery. Systems that work. |
 | [Contact](https://winstonkoh87.github.io/contact) | WhatsApp CTA + social links |
@@ -159,6 +159,7 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 | **Sticker Shop** | E-commerce | [View Site](https://winstonkoh87.github.io/projects/sticker-shop/) |
 | **That Bio Tutor** | Education | [View Site](https://winstonkoh87.github.io/projects/thatbiotutor/) |
 | **Melvin Lim Portfolio** | Personal | [View Site](https://winstonkoh87.github.io/projects/melvin/) |
+| **Coach Derrick Lim** | Digital Marketing | [View Site](https://winstonkoh87.github.io/coach-derrick/) |
 
 ---
 
