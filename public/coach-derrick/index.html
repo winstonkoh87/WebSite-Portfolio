@@ -108,13 +108,14 @@
     <!-- NAVIGATION BAR -->
     <nav
         class="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-lg h-16 flex items-center justify-between px-4 md:px-12">
-        <div class="font-bold text-lg flex items-center gap-3 text-white shrink-0">
+        <a href="#" onclick="goToSlide(0); return false;"
+            class="font-bold text-lg flex items-center gap-3 text-white shrink-0 hover:opacity-80 transition-opacity cursor-pointer">
             <div
                 class="p-2 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl text-white shadow-lg shadow-blue-500/25">
                 <i data-lucide="waves" class="w-5 h-5"></i>
             </div>
             <span class="hidden sm:inline">Coach Derrick Lim</span>
-        </div>
+        </a>
 
         <!-- Tabs -->
         <div class="flex items-center gap-2 overflow-x-auto px-2 mx-2 scrollbar-hide" id="nav-tabs">
