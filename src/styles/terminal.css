@@ -82,24 +82,23 @@
     }
 }
 
-/* Fade In Animations */
+/* Fade In Animations - Elements visible immediately for scrollability */
 .fade-in-delayed {
-    opacity: 0;
-    animation: fadeIn 0.8s ease-out forwards;
-    animation-delay: 2.5s;
-    /* Wait for typewriter */
+    opacity: 1;
+    animation: fadeIn 0.6s ease-out forwards;
+    animation-delay: 0.3s;
 }
 
 .fade-in-delayed-2 {
-    opacity: 0;
-    animation: fadeIn 0.8s ease-out forwards;
-    animation-delay: 2.8s;
+    opacity: 1;
+    animation: fadeIn 0.6s ease-out forwards;
+    animation-delay: 0.5s;
 }
 
 .fade-in-delayed-3 {
-    opacity: 0;
-    animation: fadeIn 0.8s ease-out forwards;
-    animation-delay: 3.1s;
+    opacity: 1;
+    animation: fadeIn 0.6s ease-out forwards;
+    animation-delay: 0.7s;
 }
 
 @keyframes fadeIn {
