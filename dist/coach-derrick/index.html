@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="light"> <!-- Default to light mode -->
+<html lang="en" class="dark"> <!-- Locked to dark mode for pitch deck -->
 
 <head>
     <meta charset="UTF-8">
@@ -103,15 +103,15 @@
     </style>
 </head>
 
-<body
-    class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 overflow-hidden h-screen flex flex-col transition-colors duration-300">
+<body class="bg-slate-950 text-slate-100 overflow-hidden h-screen flex flex-col">
 
     <!-- NAVIGATION BAR -->
     <nav
-        class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm h-16 flex items-center justify-between px-4 md:px-12 transition-colors duration-300">
-        <div class="font-bold text-lg flex items-center gap-2 text-slate-900 dark:text-white shrink-0">
-            <div class="p-1.5 bg-blue-600 rounded-lg text-white">
-                <i data-lucide="droplets" class="w-4 h-4"></i>
+        class="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-lg h-16 flex items-center justify-between px-4 md:px-12">
+        <div class="font-bold text-lg flex items-center gap-3 text-white shrink-0">
+            <div
+                class="p-2 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl text-white shadow-lg shadow-blue-500/25">
+                <i data-lucide="waves" class="w-5 h-5"></i>
             </div>
             <span class="hidden sm:inline">Coach Derrick Lim</span>
         </div>
@@ -122,27 +122,20 @@
         </div>
 
         <!-- Right Actions -->
-        <div class="flex items-center gap-2 shrink-0">
-            <!-- Dark Mode Toggle -->
-            <button onclick="toggleDarkMode()"
-                class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors mr-1">
-                <i data-lucide="moon" id="theme-icon" class="w-4 h-4"></i>
-            </button>
+        <div class="flex items-center gap-3 shrink-0">
+            <a href="Markdown to PDF.pdf" target="_blank"
+                class="flex items-center gap-2 px-4 py-2 text-sm font-bold text-white bg-slate-800 hover:bg-slate-700 rounded-lg transition-colors border border-slate-700">
+                <i data-lucide="file-text" class="w-4 h-4"></i>
+                <span class="hidden md:inline">Full Plan</span>
+            </a>
 
             <button onclick="openAIModal()"
-                class="flex items-center gap-2 px-3 py-1.5 text-xs font-bold text-white bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-600 hover:to-blue-700 rounded-lg transition-all shadow-md shadow-blue-500/20">
-                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-yellow-300"></i>
+                class="flex items-center gap-2 px-4 py-2 text-sm font-bold text-white bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-600 hover:to-blue-700 rounded-lg transition-all shadow-lg shadow-blue-500/25">
+                <i data-lucide="sparkles" class="w-4 h-4 text-yellow-300"></i>
                 <span class="hidden md:inline">AI Demo</span>
             </button>
 
-            <a href="Markdown to PDF.pdf" target="_blank"
-                class="flex items-center gap-2 px-3 py-1.5 text-xs font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg transition-colors border border-transparent dark:border-slate-700">
-                <i data-lucide="file-text" class="w-4 h-4"></i>
-                <span class="hidden lg:inline">Full Plan</span>
-            </a>
-
-            <div
-                class="text-sm font-medium text-slate-500 dark:text-slate-400 hidden xl:block border-l pl-3 border-slate-200 dark:border-slate-700 ml-1">
+            <div class="text-sm font-mono text-slate-500 hidden lg:block border-l pl-4 border-slate-700 ml-1">
                 <span id="slide-counter">1 / 5</span>
             </div>
         </div>
@@ -165,8 +158,8 @@
             <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
                 <div>
                     <div
-                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/50 border border-blue-700/50 text-blue-300 text-xs font-bold uppercase tracking-wider mb-8">
-                        <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-sm font-bold uppercase tracking-wider mb-8 animate-pulse">
+                        <span class="w-2 h-2 rounded-full bg-blue-400"></span>
                         90-Day Pilot Proposal
                     </div>
                     <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-none mb-6">
@@ -212,7 +205,7 @@
 
         <!-- SLIDE 2: AUDIT -->
         <div id="slide-1"
-            class="slide absolute inset-0 flex-col justify-center px-4 md:px-12 lg:px-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+            class="slide absolute inset-0 flex-col justify-center px-4 md:px-12 lg:px-24 bg-slate-900 text-white">
             <div class="max-w-7xl mx-auto w-full">
                 <div class="mb-8 md:mb-12 max-w-4xl">
                     <div class="flex items-center gap-2 mb-3">
@@ -221,59 +214,50 @@
                             class="font-bold tracking-widest uppercase text-sm text-blue-600 dark:text-blue-400">Current
                             State Audit</span>
                     </div>
-                    <h2
-                        class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900 dark:text-white">
-                        Profitable, But Fragile.</h2>
+                    <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white">Profitable, But
+                        Fragile.</h2>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div class="space-y-6">
-                        <p class="text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <p class="text-xl text-slate-300 leading-relaxed">
                             The verdict: You are operating in a <span
-                                class="text-red-500 dark:text-red-400 font-bold bg-red-50 dark:bg-red-900/30 px-1 rounded">"Red
-                                Ocean"</span>.
+                                class="text-red-400 font-bold bg-red-500/20 px-2 py-0.5 rounded">"Red Ocean"</span>.
                         </p>
                         <!-- Audit Points -->
                         <div class="space-y-4">
-                            <div
-                                class="flex gap-4 p-4 rounded-xl bg-red-50 border border-red-100 dark:bg-red-900/10 dark:border-red-900/30 transition-colors">
-                                <div
-                                    class="p-3 bg-white dark:bg-red-900/20 rounded-full shadow-sm text-red-500 dark:text-red-400 h-fit">
-                                    <i data-lucide="alert-triangle" class="w-5 h-5"></i></div>
+                            <div class="flex gap-4 p-4 rounded-xl bg-red-500/10 border border-red-500/20">
+                                <div class="p-3 bg-red-500/20 rounded-full text-red-400 h-fit">
+                                    <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+                                </div>
                                 <div>
-                                    <h4 class="font-bold text-slate-900 dark:text-white text-lg">Time-Capped Income</h4>
-                                    <p class="text-slate-600 dark:text-slate-400 text-sm">Selling hours. Scaling =
-                                        Burnout.</p>
+                                    <h4 class="font-bold text-white text-lg">Time-Capped Income</h4>
+                                    <p class="text-slate-400 text-sm">Selling hours. Scaling = Burnout.</p>
                                 </div>
                             </div>
-                            <div
-                                class="flex gap-4 p-4 rounded-xl bg-orange-50 border border-orange-100 dark:bg-orange-900/10 dark:border-orange-900/30 transition-colors">
-                                <div
-                                    class="p-3 bg-white dark:bg-orange-900/20 rounded-full shadow-sm text-orange-500 dark:text-orange-400 h-fit">
-                                    <i data-lucide="anchor" class="w-5 h-5"></i></div>
+                            <div class="flex gap-4 p-4 rounded-xl bg-orange-500/10 border border-orange-500/20">
+                                <div class="p-3 bg-orange-500/20 rounded-full text-orange-400 h-fit">
+                                    <i data-lucide="anchor" class="w-5 h-5"></i>
+                                </div>
                                 <div>
-                                    <h4 class="font-bold text-slate-900 dark:text-white text-lg">Venue Dependency</h4>
-                                    <p class="text-slate-600 dark:text-slate-400 text-sm">ActiveSG & MCSTs control your
-                                        "factory floor".</p>
+                                    <h4 class="font-bold text-white text-lg">Venue Dependency</h4>
+                                    <p class="text-slate-400 text-sm">ActiveSG & MCSTs control your "factory floor".</p>
                                 </div>
                             </div>
-                            <div
-                                class="flex gap-4 p-4 rounded-xl bg-slate-100 border border-slate-200 dark:bg-slate-800 dark:border-slate-700 transition-colors">
-                                <div
-                                    class="p-3 bg-white dark:bg-slate-700 rounded-full shadow-sm text-slate-500 dark:text-slate-300 h-fit">
-                                    <i data-lucide="users" class="w-5 h-5"></i></div>
+                            <div class="flex gap-4 p-4 rounded-xl bg-slate-800 border border-slate-700">
+                                <div class="p-3 bg-slate-700 rounded-full text-slate-300 h-fit">
+                                    <i data-lucide="users" class="w-5 h-5"></i>
+                                </div>
                                 <div>
-                                    <h4 class="font-bold text-slate-900 dark:text-white text-lg">Passive Growth</h4>
-                                    <p class="text-slate-600 dark:text-slate-400 text-sm">No control over lead flow
-                                        (referrals only).</p>
+                                    <h4 class="font-bold text-white text-lg">Passive Growth</h4>
+                                    <p class="text-slate-400 text-sm">No control over lead flow (referrals only).</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Business Snapshot -->
-                    <div
-                        class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 overflow-hidden transition-colors">
+                    <div class="bg-slate-800 rounded-2xl shadow-2xl border border-slate-700 overflow-hidden">
                         <div class="bg-slate-900 dark:bg-slate-950 px-6 py-4 flex justify-between items-center">
                             <span class="text-white font-bold tracking-wide">Business Snapshot</span>
                             <span class="text-slate-400 text-sm">Monthly</span>
@@ -281,11 +265,11 @@
                         <div class="p-8 grid grid-cols-2 gap-8">
                             <div>
                                 <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Revenue</p>
-                                <p class="text-3xl font-bold text-slate-800 dark:text-white">~$7,800</p>
+                                <p class="text-3xl font-bold text-white">~$7,800</p>
                             </div>
                             <div>
                                 <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Ad Spend</p>
-                                <p class="text-3xl font-bold text-red-500 dark:text-red-400">$0</p>
+                                <p class="text-3xl font-bold text-red-400">$0</p>
                             </div>
                             <div class="col-span-2 pt-4 border-t border-slate-100 dark:border-slate-700">
                                 <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Key Asset
@@ -308,7 +292,7 @@
 
         <!-- SLIDE 3: STRATEGY -->
         <div id="slide-2"
-            class="slide absolute inset-0 flex-col justify-center px-4 md:px-12 lg:px-24 bg-slate-100 dark:bg-slate-900 transition-colors duration-300">
+            class="slide absolute inset-0 flex-col justify-center px-4 md:px-12 lg:px-24 bg-slate-900 text-white">
             <div class="max-w-7xl mx-auto w-full">
                 <div class="mb-8 md:mb-12 max-w-4xl">
                     <div class="flex items-center gap-2 mb-3">
@@ -317,15 +301,13 @@
                             class="font-bold tracking-widest uppercase text-sm text-blue-600 dark:text-blue-400">Strategic
                             Solution</span>
                     </div>
-                    <h2
-                        class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900 dark:text-white">
-                        The 4-Pillar Transformation</h2>
+                    <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white">The 4-Pillar
+                        Transformation</h2>
                 </div>
 
                 <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
                     <!-- Card 1 -->
-                    <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg border-l-4 border-blue-500 h-full transition-colors">
+                    <div class="bg-slate-800 p-6 rounded-xl shadow-lg border-l-4 border-blue-500 h-full">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="p-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg"><i data-lucide="bar-chart"
                                     class="w-6 h-6 text-blue-600 dark:text-blue-400"></i></div>
@@ -337,8 +319,7 @@
                             clients with a mobile-first site.</p>
                     </div>
                     <!-- Card 2 -->
-                    <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg border-l-4 border-blue-500 h-full transition-colors">
+                    <div class="bg-slate-800 p-6 rounded-xl shadow-lg border-l-4 border-blue-500 h-full">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="p-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg"><i data-lucide="target"
                                     class="w-6 h-6 text-blue-600 dark:text-blue-400"></i></div>
@@ -349,15 +330,15 @@
                         <div
                             class="bg-slate-50 dark:bg-slate-700/50 p-3 rounded-lg border border-slate-200 dark:border-slate-600 mb-2 space-y-2">
                             <div class="flex justify-between text-sm font-semibold dark:text-slate-200">
-                                <span>Weekend</span> <span class="text-green-600 dark:text-green-400">$500</span></div>
+                                <span>Weekend</span> <span class="text-green-600 dark:text-green-400">$500</span>
+                            </div>
                             <div class="flex justify-between text-sm font-semibold dark:text-slate-200">
                                 <span>Swim-Safe</span> <span class="text-green-600 dark:text-green-400">$1,500</span>
                             </div>
                         </div>
                     </div>
                     <!-- Card 3 -->
-                    <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg border-l-4 border-blue-500 h-full transition-colors">
+                    <div class="bg-slate-800 p-6 rounded-xl shadow-lg border-l-4 border-blue-500 h-full">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="p-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg"><i data-lucide="trending-up"
                                     class="w-6 h-6 text-blue-600 dark:text-blue-400"></i></div>
@@ -369,8 +350,7 @@
                             referrals.</p>
                     </div>
                     <!-- Card 4 -->
-                    <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg border-l-4 border-blue-500 h-full transition-colors">
+                    <div class="bg-slate-800 p-6 rounded-xl shadow-lg border-l-4 border-blue-500 h-full">
                         <div class="flex items-center gap-3 mb-4">
                             <div class="p-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg"><i data-lucide="shield"
                                     class="w-6 h-6 text-blue-600 dark:text-blue-400"></i></div>
@@ -386,7 +366,7 @@
 
         <!-- SLIDE 4: ROADMAP -->
         <div id="slide-3"
-            class="slide absolute inset-0 flex-col justify-center px-4 md:px-12 lg:px-24 bg-slate-50 dark:bg-slate-950 transition-colors">
+            class="slide absolute inset-0 flex-col justify-center px-4 md:px-12 lg:px-24 bg-slate-950 text-white">
             <div class="max-w-7xl mx-auto w-full">
                 <div class="mb-8 md:mb-12 max-w-4xl">
                     <div class="flex items-center gap-2 mb-3">
@@ -395,15 +375,14 @@
                             class="font-bold tracking-widest uppercase text-sm text-blue-600 dark:text-blue-400">Execution
                             Plan</span>
                     </div>
-                    <h2
-                        class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900 dark:text-white">
-                        The 90-Day Sprint</h2>
+                    <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white">The 90-Day
+                        Sprint</h2>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-6">
                     <!-- Month 1 -->
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-all">
+                        class="bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-lg hover:shadow-xl transition-all">
                         <div
                             class="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-lg mb-4">
                             1</div>
@@ -421,7 +400,7 @@
                     </div>
                     <!-- Month 2 -->
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-all">
+                        class="bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-lg hover:shadow-xl transition-all">
                         <div
                             class="w-10 h-10 bg-purple-600 text-white rounded-lg flex items-center justify-center font-bold text-lg mb-4">
                             2</div>
@@ -439,7 +418,7 @@
                     </div>
                     <!-- Month 3 -->
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-all">
+                        class="bg-slate-800 p-6 rounded-2xl border border-slate-700 shadow-lg hover:shadow-xl transition-all">
                         <div
                             class="w-10 h-10 bg-green-600 text-white rounded-lg flex items-center justify-center font-bold text-lg mb-4">
                             3</div>
@@ -535,14 +514,14 @@
 
     <!-- FOOTER CONTROLS -->
     <footer
-        class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 p-4 flex justify-between items-center z-50 transition-colors">
+        class="fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 p-4 flex justify-between items-center z-50">
         <button onclick="prevSlide()" id="btn-prev"
-            class="flex items-center gap-2 px-6 py-3 rounded-lg font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
+            class="flex items-center gap-2 px-6 py-3 rounded-lg font-bold text-slate-300 hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
             <i data-lucide="chevron-left" class="w-5 h-5"></i> Previous
         </button>
-        <div class="text-xs text-slate-400 hidden sm:block">Use Arrow Keys ⬅️ ➡️</div>
+        <div class="text-xs text-slate-500 hidden sm:block">Use Arrow Keys ⬅️ ➡️</div>
         <button onclick="nextSlide()" id="btn-next"
-            class="flex items-center gap-2 px-6 py-3 rounded-lg font-bold bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-200 disabled:opacity-50 disabled:cursor-not-allowed transition-all">
+            class="flex items-center gap-2 px-6 py-3 rounded-lg font-bold bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-500/25 disabled:opacity-50 disabled:cursor-not-allowed transition-all">
             Next <i data-lucide="chevron-right" class="w-5 h-5"></i>
         </button>
     </footer>
@@ -606,7 +585,8 @@
                 <div id="ai-placeholder" class="text-center space-y-4 mt-10">
                     <div
                         class="p-4 bg-blue-100 dark:bg-blue-900/30 rounded-full text-blue-600 dark:text-blue-400 inline-block">
-                        <i data-lucide="message-square" class="w-8 h-8"></i></div>
+                        <i data-lucide="message-square" class="w-8 h-8"></i>
+                    </div>
                     <p class="text-slate-500 dark:text-slate-400">Select a task to generate content:</p>
                     <div class="grid gap-2 max-w-md mx-auto">
                         <button onclick="runAIPrompt('Write a 30s TikTok script for Laser Eye diagnosis')"
