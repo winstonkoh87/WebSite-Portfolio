@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en" class="light"> <!-- Default to light mode -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coach Derrick Lim | Digital Transformation Proposal</title>
+
+    <!-- Tailwind CSS (Styling) with Configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // Enables toggling via class on <html>
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            850: '#1e293b',
+                            950: '#020617',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .slide {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        /* Custom Scrollbar */
+        .prose::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .prose::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .prose::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .dark .prose::-webkit-scrollbar-thumb {
+            background: #475569;
+        }
+
+        /* Animations */
+        @keyframes blob {
+            0% {
+                transform: translate(0px, 0px) scale(1);
+            }
+
+            33% {
+                transform: translate(30px, -50px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+
+            100% {
+                transform: translate(0px, 0px) scale(1);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        /* Hide scrollbar for tabs */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 overflow-hidden h-screen flex flex-col transition-colors duration-300">
+
+    <!-- NAVIGATION BAR -->
+    <nav
+        class="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm h-16 flex items-center justify-between px-4 md:px-12 transition-colors duration-300">
+        <div class="font-bold text-lg flex items-center gap-2 text-slate-900 dark:text-white shrink-0">
+            <div class="p-1.5 bg-blue-600 rounded-lg text-white">
+                <i data-lucide="droplets" class="w-4 h-4"></i>
+            </div>
+            <span class="hidden sm:inline">Coach Derrick Lim</span>
+        </div>
+
+        <!-- Tabs -->
+        <div class="flex items-center gap-2 overflow-x-auto px-2 mx-2 scrollbar-hide" id="nav-tabs">
+            <!-- Tabs injected by JS -->
+        </div>
+
+        <!-- Right Actions -->
+        <div class="flex items-center gap-2 shrink-0">
+            <!-- Dark Mode Toggle -->
+            <button onclick="toggleDarkMode()"
+                class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors mr-1">
+                <i data-lucide="moon" id="theme-icon" class="w-4 h-4"></i>
+            </button>
+
+            <button onclick="openAIModal()"
+                class="flex items-center gap-2 px-3 py-1.5 text-xs font-bold text-white bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-600 hover:to-blue-700 rounded-lg transition-all shadow-md shadow-blue-500/20">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-yellow-300"></i>
+                <span class="hidden md:inline">AI Demo</span>
+            </button>
+
+            <a href="Markdown to PDF.pdf" target="_blank"
+                class="flex items-center gap-2 px-3 py-1.5 text-xs font-bold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg transition-colors border border-transparent dark:border-slate-700">
+                <i data-lucide="file-text" class="w-4 h-4"></i>
+                <span class="hidden lg:inline">Full Plan</span>
+            </a>
+
+            <div
+                class="text-sm font-medium text-slate-500 dark:text-slate-400 hidden xl:block border-l pl-3 border-slate-200 dark:border-slate-700 ml-1">
+                <span id="slide-counter">1 / 5</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="flex-grow relative w-full h-full pt-16">
+
+        <!-- SLIDE 1: HERO (Always Dark Style, preserves impact) -->
+        <div id="slide-0"
+            class="slide active absolute inset-0 bg-slate-900 text-white flex-col justify-center px-4 md:px-12 lg:px-24">
+            <!-- Background Shapes -->
+            <div
+                class="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600 rounded-full mix-blend-multiply filter blur-[120px] opacity-20 animate-blob">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-500 rounded-full mix-blend-multiply filter blur-[120px] opacity-20 animate-blob animation-delay-2000">
+            </div>
+
+            <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
+                <div>
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-900/50 border border-blue-700/50 text-blue-300 text-xs font-bold uppercase tracking-wider mb-8">
+                        <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                        90-Day Pilot Proposal
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-none mb-6">
+                        From Freelance <br />
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">To
+                            Empire.</span>
+                    </h1>
+                    <p class="text-xl text-slate-400 max-w-lg mb-10 leading-relaxed">
+                        A strategic blueprint to shift Coach Derrick Lim from trading time for money to building a
+                        scalable, high-margin digital asset.
+                    </p>
+                    <button onclick="nextSlide()"
+                        class="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-full font-bold text-lg shadow-lg shadow-blue-600/25 transition-all flex items-center gap-3 group">
+                        Start Presentation <i data-lucide="arrow-right"
+                            class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+                <!-- Hero Stats -->
+                <div class="hidden lg:block relative">
+                    <div class="bg-slate-800/80 backdrop-blur-xl border border-slate-700 rounded-2xl p-8 shadow-2xl">
+                        <div class="flex items-center justify-between mb-8 border-b border-slate-700 pb-4">
+                            <h3 class="text-slate-300 font-bold uppercase tracking-wider text-sm">Projected Outcomes
+                                (Year 1)</h3>
+                            <i data-lucide="trending-up" class="text-green-400 w-5 h-5"></i>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="flex items-end justify-between">
+                                <div>
+                                    <p class="text-slate-400 text-sm mb-1">Net Profit Added</p>
+                                    <p class="text-4xl font-bold text-white">+$28,000</p>
+                                </div>
+                                <span class="bg-green-500/20 text-green-400 px-2 py-1 rounded text-xs font-bold">+164%
+                                    ROI</span>
+                            </div>
+                            <div class="w-full bg-slate-700 rounded-full h-2">
+                                <div class="bg-gradient-to-r from-blue-500 to-green-400 h-2 rounded-full w-[85%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: AUDIT -->
+        <div id="slide-1"
+            class="slide absolute inset-0 flex-col justify-center px-4 md:px-12 lg:px-24 bg-slate-50 dark:bg-slate-950 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto w-full">
+                <div class="mb-8 md:mb-12 max-w-4xl">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="h-px w-8 bg-blue-600"></span>
+                        <span
+                            class="font-bold tracking-widest uppercase text-sm text-blue-600 dark:text-blue-400">Current
+                            State Audit</span>
+                    </div>
+                    <h2
+                        class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900 dark:text-white">
+                        Profitable, But Fragile.</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <p class="text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+                            The verdict: You are operating in a <span
+                                class="text-red-500 dark:text-red-400 font-bold bg-red-50 dark:bg-red-900/30 px-1 rounded">"Red
+                                Ocean"</span>.
+                        </p>
+                        <!-- Audit Points -->
+                        <div class="space-y-4">
+                            <div
+                                class="flex gap-4 p-4 rounded-xl bg-red-50 border border-red-100 dark:bg-red-900/10 dark:border-red-900/30 transition-colors">
+                                <div
+                                    class="p-3 bg-white dark:bg-red-900/20 rounded-full shadow-sm text-red-500 dark:text-red-400 h-fit">
+                                    <i data-lucide="alert-triangle" class="w-5 h-5"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 dark:text-white text-lg">Time-Capped Income</h4>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm">Selling hours. Scaling =
+                                        Burnout.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex gap-4 p-4 rounded-xl bg-orange-50 border border-orange-100 dark:bg-orange-900/10 dark:border-orange-900/30 transition-colors">
+                                <div
+                                    class="p-3 bg-white dark:bg-orange-900/20 rounded-full shadow-sm text-orange-500 dark:text-orange-400 h-fit">
+                                    <i data-lucide="anchor" class="w-5 h-5"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 dark:text-white text-lg">Venue Dependency</h4>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm">ActiveSG & MCSTs control your
+                                        "factory floor".</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex gap-4 p-4 rounded-xl bg-slate-100 border border-slate-200 dark:bg-slate-800 dark:border-slate-700 transition-colors">
+                                <div
+                                    class="p-3 bg-white dark:bg-slate-700 rounded-full shadow-sm text-slate-500 dark:text-slate-300 h-fit">
+                                    <i data-lucide="users" class="w-5 h-5"></i></div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 dark:text-white text-lg">Passive Growth</h4>
+                                    <p class="text-slate-600 dark:text-slate-400 text-sm">No control over lead flow
+                                        (referrals only).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Business Snapshot -->
+                    <div
+                        class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-700 overflow-hidden transition-colors">
+                        <div class="bg-slate-900 dark:bg-slate-950 px-6 py-4 flex justify-between items-center">
+                            <span class="text-white font-bold tracking-wide">Business Snapshot</span>
+                            <span class="text-slate-400 text-sm">Monthly</span>
+                        </div>
+                        <div class="p-8 grid grid-cols-2 gap-8">
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Revenue</p>
+                                <p class="text-3xl font-bold text-slate-800 dark:text-white">~$7,800</p>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Ad Spend</p>
+                                <p class="text-3xl font-bold text-red-500 dark:text-red-400">$0</p>
+                            </div>
+                            <div class="col-span-2 pt-4 border-t border-slate-100 dark:border-slate-700">
+                                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Key Asset
+                                    (Underutilized)</p>
+                                <div class="flex items-center gap-3 bg-slate-50 dark:bg-slate-700/50 p-4 rounded-xl">
+                                    <i data-lucide="play-circle"
+                                        class="w-8 h-8 text-black dark:text-white fill-current"></i>
+                                    <div>
+                                        <p class="text-xl font-bold text-slate-900 dark:text-white">31.3K Followers</p>
+                                        <p class="text-sm text-slate-500 dark:text-slate-400">TikTok Audience
+                                            (Unmonetized)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: STRATEGY -->
+        <div id="slide-2"
+            class="slide absolute inset-0 flex-col justify-center px-4 md:px-12 lg:px-24 bg-slate-100 dark:bg-slate-900 transition-colors duration-300">
+            <div class="max-w-7xl mx-auto w-full">
+                <div class="mb-8 md:mb-12 max-w-4xl">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="h-px w-8 bg-blue-600"></span>
+                        <span
+                            class="font-bold tracking-widest uppercase text-sm text-blue-600 dark:text-blue-400">Strategic
+                            Solution</span>
+                    </div>
+                    <h2
+                        class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900 dark:text-white">
+                        The 4-Pillar Transformation</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+                    <!-- Card 1 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg border-l-4 border-blue-500 h-full transition-colors">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg"><i data-lucide="bar-chart"
+                                    class="w-6 h-6 text-blue-600 dark:text-blue-400"></i></div>
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-white">Digital Storefront</h3>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400 font-bold mb-2 uppercase text-xs">Fix the "Leaky
+                            Bucket"</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">Convert TikTok traffic into paying
+                            clients with a mobile-first site.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg border-l-4 border-blue-500 h-full transition-colors">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg"><i data-lucide="target"
+                                    class="w-6 h-6 text-blue-600 dark:text-blue-400"></i></div>
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-white">Product Pivot</h3>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400 font-bold mb-2 uppercase text-xs">Sell Outcomes,
+                            Not Hours</p>
+                        <div
+                            class="bg-slate-50 dark:bg-slate-700/50 p-3 rounded-lg border border-slate-200 dark:border-slate-600 mb-2 space-y-2">
+                            <div class="flex justify-between text-sm font-semibold dark:text-slate-200">
+                                <span>Weekend</span> <span class="text-green-600 dark:text-green-400">$500</span></div>
+                            <div class="flex justify-between text-sm font-semibold dark:text-slate-200">
+                                <span>Swim-Safe</span> <span class="text-green-600 dark:text-green-400">$1,500</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg border-l-4 border-blue-500 h-full transition-colors">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg"><i data-lucide="trending-up"
+                                    class="w-6 h-6 text-blue-600 dark:text-blue-400"></i></div>
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-white">Traffic Engine</h3>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400 font-bold mb-2 uppercase text-xs">Control the Tap
+                        </p>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">Deploy paid ads. Don't wait for
+                            referrals.</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg border-l-4 border-blue-500 h-full transition-colors">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-2 bg-blue-50 dark:bg-blue-900/30 rounded-lg"><i data-lucide="shield"
+                                    class="w-6 h-6 text-blue-600 dark:text-blue-400"></i></div>
+                            <h3 class="text-xl font-bold text-slate-800 dark:text-white">Venue Strategy</h3>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400 font-bold mb-2 uppercase text-xs">Mitigate Risk</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">Shift focus to private Condo
+                            residents.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: ROADMAP -->
+        <div id="slide-3"
+            class="slide absolute inset-0 flex-col justify-center px-4 md:px-12 lg:px-24 bg-slate-50 dark:bg-slate-950 transition-colors">
+            <div class="max-w-7xl mx-auto w-full">
+                <div class="mb-8 md:mb-12 max-w-4xl">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="h-px w-8 bg-blue-600"></span>
+                        <span
+                            class="font-bold tracking-widest uppercase text-sm text-blue-600 dark:text-blue-400">Execution
+                            Plan</span>
+                    </div>
+                    <h2
+                        class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900 dark:text-white">
+                        The 90-Day Sprint</h2>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Month 1 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-all">
+                        <div
+                            class="w-10 h-10 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-lg mb-4">
+                            1</div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">The Build</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wide mb-4">
+                            Infrastructure</p>
+                        <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i>
+                                Finalize Offers</li>
+                            <li class="flex gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i>
+                                Launch Website</li>
+                            <li class="flex gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-blue-500"></i> Film
+                                5x Ads</li>
+                        </ul>
+                    </div>
+                    <!-- Month 2 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-all">
+                        <div
+                            class="w-10 h-10 bg-purple-600 text-white rounded-lg flex items-center justify-center font-bold text-lg mb-4">
+                            2</div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">The Launch</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wide mb-4">
+                            Traffic</p>
+                        <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex gap-2"><i data-lucide="play-circle" class="w-4 h-4 text-purple-500"></i> Ads
+                                Go Live</li>
+                            <li class="flex gap-2"><i data-lucide="calendar" class="w-4 h-4 text-purple-500"></i> First
+                                Intake</li>
+                            <li class="flex gap-2"><i data-lucide="trending-up" class="w-4 h-4 text-purple-500"></i>
+                                Triage Leads</li>
+                        </ul>
+                    </div>
+                    <!-- Month 3 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-all">
+                        <div
+                            class="w-10 h-10 bg-green-600 text-white rounded-lg flex items-center justify-center font-bold text-lg mb-4">
+                            3</div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">The Scale</h3>
+                        <p class="text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wide mb-4">
+                            Optimization</p>
+                        <ul class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                            <li class="flex gap-2"><i data-lucide="bar-chart" class="w-4 h-4 text-green-500"></i> Cut
+                                Losers</li>
+                            <li class="flex gap-2"><i data-lucide="users" class="w-4 h-4 text-green-500"></i>
+                                Retargeting</li>
+                            <li class="flex gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i>
+                                Handoff/Retainer</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: INVESTMENT (Always Dark) -->
+        <div id="slide-4"
+            class="slide absolute inset-0 flex-col justify-center px-4 md:px-12 lg:px-24 bg-slate-900 text-white">
+            <div class="max-w-7xl mx-auto w-full">
+                <div class="mb-8 md:mb-12 max-w-4xl">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="h-px w-8 bg-blue-400"></span>
+                        <span class="font-bold tracking-widest uppercase text-sm text-blue-400">The Bottom Line</span>
+                    </div>
+                    <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-white">Investment &
+                        Returns</h2>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-8 lg:gap-12">
+                    <!-- The Ask -->
+                    <div
+                        class="lg:col-span-5 bg-gradient-to-br from-slate-800 to-slate-900 p-8 rounded-3xl border border-slate-700 relative overflow-hidden">
+                        <i data-lucide="dollar-sign"
+                            class="absolute top-0 right-0 p-4 w-32 h-32 text-white opacity-10"></i>
+                        <h3 class="text-2xl font-bold mb-2">The Pilot Investment</h3>
+                        <div class="text-5xl lg:text-6xl font-black text-white mb-2 tracking-tight">$5,000</div>
+                        <p class="text-sm text-slate-500 font-mono mb-8">90-Day All-Inclusive Fee</p>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex justify-between border-b border-slate-700 pb-3"><span
+                                    class="text-slate-400">Deposit</span><span
+                                    class="font-bold text-blue-400">$2,500</span></div>
+                            <div class="flex justify-between border-b border-slate-700 pb-3"><span
+                                    class="text-slate-400">Completion</span><span
+                                    class="font-bold text-blue-400">$2,500</span></div>
+                        </div>
+                        <div class="bg-blue-500/10 border border-blue-500/20 p-4 rounded-xl">
+                            <p class="text-xs font-bold text-blue-400 uppercase mb-1">Safety Net Guarantee</p>
+                            <p class="text-xs text-slate-300">If ads generate ZERO leads after $500 spend, final payment
+                                is waived.</p>
+                        </div>
+                    </div>
+                    <!-- ROI -->
+                    <div class="lg:col-span-7 flex flex-col justify-center space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="bg-white/10 p-6 rounded-xl text-center border border-white/10">
+                                <p class="text-slate-400 text-xs uppercase mb-2">New Revenue</p>
+                                <p class="text-3xl font-bold">$48,000</p>
+                            </div>
+                            <div class="bg-blue-600 p-6 rounded-xl text-center shadow-lg transform scale-105">
+                                <p class="text-blue-100 text-xs uppercase mb-2">Net Profit Added</p>
+                                <p class="text-3xl font-bold">$28,000</p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 p-6 rounded-2xl border border-slate-700">
+                            <h3 class="text-lg font-bold text-white mb-4">The "Asymmetric Bet"</h3>
+                            <div class="grid grid-cols-3 gap-4 text-center">
+                                <div>
+                                    <p class="text-xs text-slate-500 uppercase">Risk</p>
+                                    <p class="text-red-400 font-bold">$5k Cap</p>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-500 uppercase">Reward</p>
+                                    <p class="text-green-400 font-bold">Uncapped</p>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-slate-500 uppercase">Asset</p>
+                                    <p class="text-blue-400 font-bold">Own Forever</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="alert('Proceeding to contract signing...')"
+                            class="w-full py-4 bg-green-500 hover:bg-green-600 text-white rounded-xl font-bold text-lg shadow-lg shadow-green-900/20 transition-all">Accept
+                            Proposal</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER CONTROLS -->
+    <footer
+        class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 p-4 flex justify-between items-center z-50 transition-colors">
+        <button onclick="prevSlide()" id="btn-prev"
+            class="flex items-center gap-2 px-6 py-3 rounded-lg font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
+            <i data-lucide="chevron-left" class="w-5 h-5"></i> Previous
+        </button>
+        <div class="text-xs text-slate-400 hidden sm:block">Use Arrow Keys ⬅️ ➡️</div>
+        <button onclick="nextSlide()" id="btn-next"
+            class="flex items-center gap-2 px-6 py-3 rounded-lg font-bold bg-blue-600 text-white hover:bg-blue-700 shadow-lg shadow-blue-200 disabled:opacity-50 disabled:cursor-not-allowed transition-all">
+            Next <i data-lucide="chevron-right" class="w-5 h-5"></i>
+        </button>
+    </footer>
+
+    <!-- PROPOSAL MODAL -->
+    <div id="proposal-modal"
+        class="fixed inset-0 z-[60] bg-slate-900/50 backdrop-blur-sm hidden justify-center items-start pt-10 pb-10 px-4 overflow-y-auto">
+        <div
+            class="bg-white dark:bg-slate-900 w-full max-w-4xl rounded-2xl shadow-2xl flex flex-col max-h-[90vh] animate-in zoom-in-95 duration-200 border border-transparent dark:border-slate-800">
+            <div
+                class="flex items-center justify-between p-6 border-b border-slate-100 dark:border-slate-800 sticky top-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur rounded-t-2xl z-10 transition-colors">
+                <div class="flex items-center gap-3">
+                    <div class="p-2 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg"><i
+                            data-lucide="file-text" class="w-6 h-6"></i></div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Full Digital Marketing Plan</h2>
+                    </div>
+                </div>
+                <button onclick="closeProposalModal()"
+                    class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full text-slate-500 dark:text-slate-400"><i
+                        data-lucide="x" class="w-6 h-6"></i></button>
+            </div>
+            <div class="p-8 overflow-y-auto prose dark:prose-invert max-w-none text-slate-700 dark:text-slate-300">
+                <!-- Shortened content for demo purposes -->
+                <div
+                    class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg border border-blue-100 dark:border-blue-900/30 mb-8">
+                    <h3 class="text-blue-800 dark:text-blue-300 font-bold text-lg m-0">Executive Summary</h3>
+                    <p class="text-blue-700 dark:text-blue-400 text-sm m-0">Industry is Red Ocean. Move from hours to
+                        outcomes.</p>
+                </div>
+                <h3>1. Marketing Audit (PESTLE)</h3>
+                <p><strong>Political:</strong> ActiveSG regulations tightening.<br><strong>Economic:</strong> Inflation
+                    hurting middle class.<br><strong>Social:</strong> "Kiasu" culture drives demand.</p>
+                <h3>2. Recommendations</h3>
+                <ul>
+                    <li><strong>Digital Storefront:</strong> Fix leaky bucket website.</li>
+                    <li><strong>Product Pivot:</strong> $500 Intensive / $1,500 Guarantee.</li>
+                    <li><strong>Ads:</strong> Geo-fence condos.</li>
+                </ul>
+                <p class="italic text-xs text-slate-400">See full document for details.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI DEMO MODAL -->
+    <div id="ai-modal"
+        class="fixed inset-0 z-[70] bg-slate-900/60 backdrop-blur-sm hidden justify-center items-center px-4">
+        <div
+            class="bg-white dark:bg-slate-900 w-full max-w-2xl rounded-2xl shadow-2xl flex flex-col max-h-[85vh] overflow-hidden border border-transparent dark:border-slate-800">
+            <div class="bg-gradient-to-r from-blue-600 to-indigo-600 p-6 text-white flex justify-between items-start">
+                <div>
+                    <h2 class="text-xl font-bold flex items-center gap-2"><i data-lucide="sparkles"
+                            class="w-5 h-5 text-yellow-300"></i> AI Strategy Assistant</h2>
+                    <p class="text-blue-100 text-sm">Test drive the content engine.</p>
+                </div>
+                <button onclick="closeAIModal()" class="p-1 hover:bg-white/20 rounded-full"><i data-lucide="x"
+                        class="w-6 h-6"></i></button>
+            </div>
+            <div id="ai-chat-area"
+                class="flex-1 overflow-y-auto p-6 bg-slate-50 dark:bg-slate-950 min-h-[300px] transition-colors">
+                <div id="ai-placeholder" class="text-center space-y-4 mt-10">
+                    <div
+                        class="p-4 bg-blue-100 dark:bg-blue-900/30 rounded-full text-blue-600 dark:text-blue-400 inline-block">
+                        <i data-lucide="message-square" class="w-8 h-8"></i></div>
+                    <p class="text-slate-500 dark:text-slate-400">Select a task to generate content:</p>
+                    <div class="grid gap-2 max-w-md mx-auto">
+                        <button onclick="runAIPrompt('Write a 30s TikTok script for Laser Eye diagnosis')"
+                            class="p-3 bg-white dark:bg-slate-800 border dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500 rounded-lg text-sm text-left shadow-sm dark:text-slate-200 transition-colors">Draft
+                            "Laser Eye" Script</button>
+                        <button onclick="runAIPrompt('Handle objection: $1500 is too expensive')"
+                            class="p-3 bg-white dark:bg-slate-800 border dark:border-slate-700 hover:border-blue-500 dark:hover:border-blue-500 rounded-lg text-sm text-left shadow-sm dark:text-slate-200 transition-colors">Handle
+                            Price Objection</button>
+                    </div>
+                </div>
+                <div id="ai-response"
+                    class="hidden bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm whitespace-pre-line text-sm leading-relaxed text-slate-700 dark:text-slate-200">
+                </div>
+                <div id="ai-loading" class="hidden text-center text-blue-600 dark:text-blue-400 py-10"><i
+                        data-lucide="loader-2" class="w-8 h-8 animate-spin mx-auto"></i>
+                    <p class="mt-2 text-sm">Generating Strategy...</p>
+                </div>
+            </div>
+            <div
+                class="p-4 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 transition-colors">
+                <input type="text" id="ai-input" placeholder="Or ask a custom question..."
+                    class="w-full p-3 bg-slate-100 dark:bg-slate-800 dark:text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+                    onkeydown="if(event.key==='Enter') runAIPrompt(this.value)">
+
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // --- CONFIGURATION ---
+        let currentSlide = 0;
+        const totalSlides = 5;
+        const slides = [
+            { label: 'Start' }, { label: 'Audit' }, { label: 'Strategy' }, { label: 'Roadmap' }, { label: 'Investment' }
+        ];
+
+        // --- INITIALIZATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            renderTabs();
+            updateUI();
+
+            // Check Local Storage for Dark Mode
+            if (localStorage.getItem('theme') === 'dark' ||
+                (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                updateThemeIcon();
+            }
+        });
+
+        // --- DARK MODE LOGIC ---
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+            updateThemeIcon();
+        }
+
+        function updateThemeIcon() {
+            const icon = document.getElementById('theme-icon');
+            const isDark = document.documentElement.classList.contains('dark');
+            const btn = icon.parentElement;
+            if (isDark) {
+                btn.innerHTML = '<i data-lucide="sun" id="theme-icon" class="w-4 h-4"></i>';
+            } else {
+                btn.innerHTML = '<i data-lucide="moon" id="theme-icon" class="w-4 h-4"></i>';
+            }
+            lucide.createIcons();
+        }
+
+        // --- NAVIGATION LOGIC ---
+        function renderTabs() {
+            const container = document.getElementById('nav-tabs');
+            container.innerHTML = slides.map((slide, index) => `
+                <button onclick="goToSlide(${index})" class="tab-btn px-3 py-1.5 rounded-full text-xs font-medium transition-all whitespace-nowrap ${index === currentSlide ? 'bg-blue-600 text-white shadow-md' : 'text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'}">
+                    ${slide.label}
+                </button>
+            `).join('');
+        }
+
+        function updateUI() {
+            // Hide all slides
+            document.querySelectorAll('.slide').forEach(el => {
+                el.classList.remove('active');
+                setTimeout(() => { if (!el.classList.contains('active')) el.style.display = 'none'; }, 500); // Wait for fade out
+                el.style.display = 'none'; // Force hide for instant snap
+            });
+
+            // Show current slide
+            const activeSlide = document.getElementById(`slide-${currentSlide}`);
+            activeSlide.style.display = 'flex';
+            setTimeout(() => activeSlide.classList.add('active'), 10);
+
+            // Update Counter
+            document.getElementById('slide-counter').innerText = `${currentSlide + 1} / ${totalSlides}`;
+
+            // Update Buttons
+            document.getElementById('btn-prev').disabled = currentSlide === 0;
+            document.getElementById('btn-next').disabled = currentSlide === totalSlides - 1;
+            document.getElementById('btn-next').innerHTML = currentSlide === totalSlides - 1 ? 'End <i data-lucide="check" class="w-4 h-4 ml-2"></i>' : 'Next <i data-lucide="chevron-right" class="w-4 h-4 ml-2"></i>';
+
+            renderTabs();
+            lucide.createIcons();
+        }
+
+        function nextSlide() { if (currentSlide < totalSlides - 1) { currentSlide++; updateUI(); } }
+        function prevSlide() { if (currentSlide > 0) { currentSlide--; updateUI(); } }
+        function goToSlide(index) { currentSlide = index; updateUI(); }
+
+        // Keyboard Nav
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('ai-modal').classList.contains('hidden') &&
+                document.getElementById('proposal-modal').classList.contains('hidden')) {
+                if (e.key === 'ArrowRight') nextSlide();
+                if (e.key === 'ArrowLeft') prevSlide();
+            }
+        });
+
+        // --- MODAL LOGIC ---
+        function openProposalModal() { document.getElementById('proposal-modal').classList.replace('hidden', 'flex'); }
+        function closeProposalModal() { document.getElementById('proposal-modal').classList.replace('flex', 'hidden'); }
+
+        function openAIModal() { document.getElementById('ai-modal').classList.replace('hidden', 'flex'); }
+        function closeAIModal() { document.getElementById('ai-modal').classList.replace('flex', 'hidden'); }
+
+        // --- PSEUDO-AI LOGIC (MOCKED) ---
+        async function runAIPrompt(promptText) {
+
+            // UI State: Loading
+            const placeholder = document.getElementById('ai-placeholder');
+            const responseDiv = document.getElementById('ai-response');
+            const loadingDiv = document.getElementById('ai-loading');
+
+            placeholder.classList.add('hidden');
+            responseDiv.classList.add('hidden');
+            loadingDiv.classList.remove('hidden');
+
+            // Simulate Network Delay (1.5s)
+            await new Promise(resolve => setTimeout(resolve, 1500));
+
+            const p = promptText.toLowerCase();
+            let response = "";
+
+            if (p.includes("laser") || p.includes("script")) {
+                response = "**TikTok Ad Script: 'The Laser Eye'**\n\n**Hook (0:00-0:03):**\n(Close up of Derrick poolside, pointing at water)\n'Stop! You're kicking from your knees. That's why you're sinking.'\n\n**Body (0:03-0:12):**\n(Montage of underwater footage showing bad kick vs. good kick)\n'Most coaches wait 30 minutes to tell you this. I see it in 3 seconds. It's called Laser Eyes—my signature diagnostic method.'\n\n**CTA (0:12-0:15):**\n'Want to swim faster instantly? Book a diagnostic session. Link in bio.'";
+            } else if (p.includes("expensive") || p.includes("1500")) {
+                response = "**Objection Handling Script: 'Too Expensive'**\n\n**Listen & Validate:**\n'I completely understand. $1,500 is a significant investment compared to standard monthly lessons.'\n\n**Reframe (Value > Cost):**\n'Think of it this way: In a standard $300/month class, your child might take 2 years to become water-safe because of split attention. That's $7,200 total.\n\nWith the Swim-Safe Guarantee, we get that result in 12 weeks. You're saving ~$5,700 in long-term fees and buying back 1.5 years of your weekends. Does speed and certainty matter to you?'";
+            } else if (p.includes("flyer") || p.includes("costa")) {
+                response = "**Flyer Headlines for Costa Del Sol Residents:**\n\n1. 'The Only Swim Coach Who Comes to Costa Del Sol.' (Exclusivity)\n2. 'Your Condo Pool is a Gym. Use It.' (Utility)\n3. 'Costa Del Sol Parents: Stop Dragging Your Kids to Bedok Complex.' (Pain Point)\n4. 'Private Coaching. Your Pool. Zero Commute.' (Convenience)\n5. 'Certified NROC Coaching, Right Downstairs.' (Trust + Reduced Friction)";
+            } else {
+                response = "**Gemini Strategy Engine:**\n\nBased on your query \"" + promptText + "\", the recommended strategy is to focusing on **High-Value Differentiation**.\n\n1. **Target Pain Point**: Identify the specific friction (e.g., commute, slow progress).\n2. **Offer Solution**: Position the 'Weekend Intensive' as the time-saving fix.\n3. **Proof**: Use video testimonials to validate results.\n\n(Note: This is a demo response. In the full version, this would pull live market data.)";
+            }
+
+            loadingDiv.classList.add('hidden');
+            responseDiv.innerText = response;
+            responseDiv.classList.remove('hidden');
+        }
+    </script>
+</body>
+
+</html>
