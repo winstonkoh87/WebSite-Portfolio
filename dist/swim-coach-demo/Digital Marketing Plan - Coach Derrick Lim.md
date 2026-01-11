@@ -1,6 +1,6 @@
-**Digital Marketing Plan \- Coach Derrick Lim** 
+**Digital Marketing Plan \- Coach Derrick Lim**
 
-Marketing Audit 
+Marketing Audit
 
 1. PESTLE
 
@@ -87,7 +87,7 @@ The analysis shows the only safe harbor is **Up-Market**:
 
 This justifies why we need to charge **$5,000** for this project. We aren't just making a website; we are re-engineering your business to survive the recession by targeting people who are recession-proof."
 
-2. Five Forces
+1. Five Forces
 
 Here is the **Porter’s Five Forces Analysis** for Coach Derrick.
 
@@ -169,10 +169,7 @@ My strategy is designed to neutralize both:
 
 That is how we win."
 
- 
-
-3. BMC \+ Financials \+ SWOT/TOWS     
-   
+1. BMC \+ Financials \+ SWOT/TOWS
 
 Here is the **Business Model Canvas (BMC)**, **Financial Projections**, and **SWOT/TOWS** Analysis for the "New" Coach Derrick Lim Academy.
 
@@ -194,24 +191,23 @@ Here is the **Business Model Canvas (BMC)**, **Financial Projections**, and **SW
 
 ---
 
-### 
+###
 
-### 
+###
 
-### 
+###
 
-### 
+###
 
-### 
+###
 
-### 
+###
 
-### 
+###
 
-### 
+###
 
 ### **2\. Current Financial Projections**
-
 
 ***Pro Forma Income Statement (Monthly)** for his current business operations.*
 
@@ -358,7 +354,7 @@ My plan fixes the Weakness (Website) to exploit the Opportunity (High-SES Client
 
 If we execute this, we shift you from a **$5k/month Freelancer** to a **$10k/month Academy Owner**."
 
-4. Recommendations (MCDA)
+1. Recommendations (MCDA)
 
 ---
 
@@ -403,35 +399,46 @@ You can use this graphic description to summarize how the 3 recommendations work
 
 You cannot do just one. If you run Ads without the Website, you waste money. If you build the Website without the Product, you make less profit. We must do all three."
 
-5. Execution (Timeline and Scope of Work) 
+1. Execution (Timeline and Scope of Work)
 
 You present this as a **"90-Day Digital Transformation Pilot."** This framing makes the $5,000 feel like a defined project rather than an open-ended cost.
 
 ---
 
-### **1\. The Investment (The Price)**
+### **1\. The Investment (Two Options)**
 
-Don't just say "$5,000." Break it down so he sees he is getting a discount on the "Market Rate."
+We have structured two options to best fit your cash flow preference.
 
-Package Name: The "High-Performance Academy" Pilot
+#### **Option A: The "Bilateral Safety" Plan (Installment)**
 
-Duration: 3 Months (90 Days)
+*Best for: Managing cash flow & ensuring long-term partnership.*
 
-Total Investment: SGD $5,000 (excludes Ad Spend paid to Meta)
+* **Upfront Setup**: **$1,000** (Covers hard costs & initial build).
+* **Monthly Retainer**: **$350/month** (x 12 Months).
+* **Total Annual Cost**: **$5,200**.
+* **Benefit**: You pay a smaller amount to start. We are incentivized to keep the system performing every month to earn our retainer.
 
-| Deliverable | Market Value | Your "Pilot" Price |
+#### **Option B: The "Cash Flow King" Plan (Upfront)**
+
+*Best for: Maximum savings & "One-and-Done" simplicity.*
+
+* **Upfront Payment**: **$4,000** (One-time).
+* **Monthly Retainer**: **$0**.
+* **Total Annual Cost**: **$4,000**.
+* **Benefit**: You **save $1,200 (23%)** instantly. No monthly bills to worry about.
+
+| Deliverable | Market Value | Your Price (Option B) |
 | :---- | :---- | :---- |
-| **1\. Strategic Audit & Product Design**  *(Competitor Analysis \+ Structuring the $500 Course)* | $1,500 | **INCLUDED** |
-| **2\. "Conversion Engine" Website**  *(Mobile-first, WhatsApp API, Copywriting)* | $3,500 | **INCLUDED** |
-| **3\. Content Production**  *(Scripting & Editing 5x High-Performance Video Ads)* | $1,500 | **INCLUDED** |
-| **4\. Ad Campaign Management (3 Months)**  *(Setup, A/B Testing, Optimization)* | $3,000 | **INCLUDED** |
-| **TOTAL VALUE** | \*\*$9,500\*\* | **\--** |
-| **YOU PAY** |  | **$5,000** |
+| **1\. Strategic Audit & Product Design** | $1,500 | **INCLUDED** |
+| **2\. "Conversion Engine" Website** | $3,500 | **INCLUDED** |
+| **3\. Content Production** (Ads) | $1,500 | **INCLUDED** |
+| **4\. Ad Campaign Management (3 Mo)** | $3,000 | **INCLUDED** |
+| **TOTAL VALUE** | **$9,500** | **$4,000** |
 
 **Payment Terms:**
 
-* **50% Deposit ($2,500):** To start work (covers Website & Strategy).  
-* **50% Completion ($2,500):** Due at the end of Month 2 (Once ads are running and leads are flowing).
+* **Option A**: $1,000 deposit to start. $350 billed on the 1st of each month.
+* **Option B**: $2,000 deposit to start. $2,000 upon completion (Month 2).
 
 ---
 
@@ -710,4 +717,3 @@ We compared the "Do Nothing" path vs. the "Invest" path over **1 Year**:
 You have constructed an **"Asymmetric Bet"** for him. The downside is a flesh wound ($5k). The upside is a completely modernized, scalable business.
 
 **You are ready. Go get the "Yes."**
-
