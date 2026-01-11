@@ -1,4 +1,4 @@
-# Building a Portfolio Website (Astro v2)
+# Building a Portfolio Website (Astro v5)
 
 > **Last Updated**: 10 January 2026
 > **Status**: Migrated to Astro Framework 🚀
