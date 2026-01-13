@@ -1,0 +1,247 @@
+
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/article.css';
+---
+
+<Layout title="Case Study: How I Compressed a Week of Agency R&D into a Single Day with Gemini Gems | Winston Koh" description="I thought replacing myself with an AI agent would take a week. It took me 24 hours. A case study in rapid logic prototyping." showFloatingButtons={false}>
+    <main class="article-container">
+        <a href="/writing" class="back-link">← Back to Writing</a>
+        <article>
+            <header class="article-header">
+                <h1>How I Compressed a Week of Agency R&D into a Single Day with Gemini Gems</h1>
+                <div class="article-meta">
+                    <span>🏷️ Case Study</span>
+                    <span>⚡ AI Workflow</span>
+                </div>
+                <div class="article-dates">
+                    <span>Published: <time datetime="2026-01-14">14 January 2026</time></span>
+                </div>
+            </header>
+            <div class="article-content">
+                
+                <!-- Transparency Note -->
+                <div class="exec-summary" style="background: rgba(234, 179, 8, 0.1); border-color: rgba(234, 179, 8, 0.3);">
+                    <h4>⚠️ Transparency Note</h4>
+                    <p>This agent runs on <strong>Google Gemini</strong>. While the logic is robust, it builds on a public LLM. For production use with sensitive client data, I recommend deploying on an <strong>Enterprise Instance</strong> for GDPR compliance. For this demo, please use pseudonyms and estimated figures.</p>
+                </div>
+
+                <!-- Executive Summary -->
+                <div class="exec-summary">
+                    <h4>📋 Executive Summary</h4>
+                    <ul>
+                        <li><strong>Problem:</strong> "The Fact-Find" — the unbillable 2 hours spent qualifying leads.</li>
+                        <li><strong>Solution:</strong> A "Service-Led Diagnostic" Agent that reasons, qualifies, and produces a brief.</li>
+                        <li><strong>Mechanism:</strong> "Integrity Gate" logic that rejects bad fits instead of selling.</li>
+                        <li><strong>Deliverables:</strong> Customizable Gemini Gem + Confidential Analyst Brief template.</li>
+                        <li><strong>Time to Build:</strong> 24 Hours (vs ~5 Days for a custom React app).</li>
+                    </ul>
+                </div>
+
+                <h2>The Setup</h2>
+                <img src="/assets/images/gem-agent/header.png" alt="Digital Brain Concept" style="width: 100%; border-radius: 8px; margin: 1.5rem 0; border: 1px solid rgba(255,255,255,0.1);">
+                
+                <p>In professional services, there is a hidden killer of profitability: <strong>The Fact-Find.</strong></p>
+                <p>We usually call it "onboarding" or "discovery," but let’s call it what it really is: a 2-hour interrogation where you ask the same 20 questions ("What's your budget?", "Who are your competitors?") to figure out if a client is even worth working with.</p>
+                <p>If you do this manually, it burns hours of senior partner time. If you delegate it to a junior, they miss the nuance.</p>
+                <p>I decided to automate myself out of this loop. Not with a static form, but with an <strong>AI Agent</strong> that could <em>reason</em>.</p>
+
+                <div class="toc-box">
+                    <h4>Table of Contents</h4>
+                    <ul class="toc-list">
+                        <li><a href="#methodology">Part 1: The Methodology Stack</a></li>
+                        <li><a href="#output">Part 2: What I Actually Built</a></li>
+                        <li><a href="#time">Part 3: The Time Breakdown</a></li>
+                        <li><a href="#integrity">Part 4: The Integrity Gate</a></li>
+                        <li><a href="#comparison">Part 5: ROI vs Traditional Dev</a></li>
+                        <li><a href="#limits">Part 6: Limitations</a></li>
+                        <li><a href="#steal">Part 7: What You Can Steal</a></li>
+                    </ul>
+                </div>
+
+                <h2 id="methodology">Part 1: The Methodology Stack</h2>
+                <p>Building an agent isn't just "writing a prompt." It follows a product development lifecycle:</p>
+
+                <div class="table-wrapper">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Layer</th>
+                                <th scope="col">Component</th>
+                                <th scope="col">Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1. Identity Core</td>
+                                <td>System Instructions</td>
+                                <td>Define the role (Senior Analyst) and the tone (Direct, Professional).</td>
+                            </tr>
+                            <tr>
+                                <td>2. Logic Gates</td>
+                                <td>Conditional Routing</td>
+                                <td>"If revenue < $10k, ask X. If > $100k, ask Y."</td>
+                            </tr>
+                            <tr>
+                                <td>3. Integrity Layer</td>
+                                <td>Ethical Constraints</td>
+                                <td>Force the agent to say "No" if the client isn't a fit.</td>
+                            </tr>
+                            <tr>
+                                <td>4. Output Formatter</td>
+                                <td>Markdown Template</td>
+                                <td>Ensure the final brief is a structured document, not a chat log.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2 id="output">Part 2: What I Actually Built</h2>
+                <p>A functional "Senior Intake Analyst" that operates autonomously.</p>
+
+                <div class="checklist-box">
+                    <h4>💎 The Gemini Gem</h4>
+                    <ul>
+                        <li><strong>Dynamic Context:</strong> Adapts questions based on industry (Gym vs. E-com).</li>
+                        <li><strong>Base-Rate Logic:</strong> Fills in gaps when users don't know their numbers ("Industry avg is 20%, is that close?").</li>
+                        <li><strong>Hard-coded Ethics:</strong> Rejects clients who need operational help, not marketing scales.</li>
+                    </ul>
+                    <p><a href="https://gemini.google.com/gem/1liV5V9KHOIwdXT8X700096qwAleGNOb9?usp=sharing" class="demo-link" target="_blank">Try the Gem →</a></p>
+                </div>
+
+                <div class="checklist-box">
+                    <h4>📄 The Deliverable</h4>
+                    <img src="/assets/images/gem-agent/mockup.png" alt="Analyst Brief Mockup" style="width: 100%; border-radius: 8px; margin: 1rem 0; border: 1px solid rgba(255,255,255,0.1);">
+                    <p>A formatted <strong>Confidential Analyst Brief</strong>. It organizes the chaotic chat into:</p>
+                    <ul>
+                        <li>Current State Analysis</li>
+                        <li>Unit Economics Review</li>
+                        <li>Gap Identification</li>
+                        <li>Go/No-Go Recommendation</li>
+                    </ul>
+                </div>
+
+                <h2 id="time">Part 3: The Time Breakdown</h2>
+                <p>How I collapsed a week of R&D into 24 hours:</p>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <strong>Morning: Identity & Failures</strong>
+                        <p>Drafted the "System Identity". First version was a disaster—sycophantic and hallucinated pricing. Realized "chat" is not "logic".</p>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Afternoon: Structured Specs</strong>
+                        <p>Pivoted to hard specifications. Wrote the "Integrity Gate" logic. Hard-coded the sequential questioning rule ("Ask one thing at a time").</p>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Evening: Case Study Stress Test</strong>
+                        <p>Tested against a live case study (Davin Choo). The agent failed to recognize his time constraints, so I programmed a new rule: <em>"Check capacity before suggesting ads."</em></p>
+                    </div>
+                    <div class="timeline-item">
+                        <strong>Night: Polish & Ship</strong>
+                        <p>Finalized the output template. Published the Gem.</p>
+                    </div>
+                </div>
+
+                <h2 id="integrity">Part 4: The Integrity Gate</h2>
+                <p>This is the most critical innovation. An AI that always says "Yes" is useless as a consultant.</p>
+                
+                <img src="/assets/images/gem-agent/logic.png" alt="Integrity Gate Logic Diagram" style="width: 100%; border-radius: 8px; margin: 2rem 0; border: 1px solid rgba(255,255,255,0.1);">
+                
+                <p>I explicitly programmed it to <strong>not sell</strong>. If a lead has bad unit economics, the Agent is hard-coded to say: <em>"Winston's services may not be the right fit at this stage."</em> This builds more trust than any sales pitch.</p>
+
+                <h2 id="comparison">Part 5: ROI vs Traditional Dev</h2>
+                <p>The "Junior Marketer" question: Could I have just done this with a Typeform?</p>
+                
+                <div class="table-wrapper">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Feature</th>
+                                <th scope="col">Typeform / Custom App</th>
+                                <th scope="col">Gemini Gem</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Build Time</strong></td>
+                                <td>5 Days (Concept -> Code -> debug)</td>
+                                <td>24 Hours (Prompt -> Iterate)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Logic</strong></td>
+                                <td>Static Branches (If A then B)</td>
+                                <td>Semantic Reasoning ("That margin looks low...")</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Maintenance</strong></td>
+                                <td>High (Code changes required)</td>
+                                <td>Zero (Natural language updates)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cost</strong></td>
+                                <td>Dev Time + Hosting</td>
+                                <td>$0 (Free Tier)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="key-insight">
+                    <h4>💡 The Unlock</h4>
+                    <p>The bottleneck isn't "encoding" the logic anymore. The bottleneck is <strong>knowing the logic in the first place</strong>. If you have the domain expertise, the implementation cost is now near-zero.</p>
+                </div>
+
+                <h2 id="limits">Part 6: What This Doesn't Prove</h2>
+                <div class="exec-summary" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3);">
+                    <h4>🚫 Limitations</h4>
+                    <ul>
+                        <li><strong>Hallucination Risk:</strong> It's an LLM. It can simulate reasoning, but it can still make up facts if not grounded.</li>
+                        <li><strong>Privacy:</strong> This public demo is not for trade secrets. Enterprise usage requires private instances.</li>
+                        <li><strong>Integration:</strong> It currently lives in Gemini. It doesn't auto-sync to a CRM (yet).</li>
+                    </ul>
+                </div>
+
+                <h2 id="steal">Part 7: What You Can Steal</h2>
+                <p>To build your own diagnostic agent, use this Prompt Structure:</p>
+
+                <div class="checklist-box">
+                    <h4>🧬 The "Consultant" System Prompt</h4>
+                    <ul>
+                        <li><strong>[IDENTITY]:</strong> "You are a Senior Analyst. You are skeptical, direct, and protective of the user's P&L."</li>
+                        <li><strong>[CONTEXT]:</strong> "The user is likely a small business owner. They may not know their numbers."</li>
+                        <li><strong>[RULES]:</strong>
+                            <ul>
+                                <li>Never ask more than 1 question at a time.</li>
+                                <li>Always validate the previous answer.</li>
+                                <li>If [Margin < 20%], trigget [Warning Protocol].</li>
+                            </ul>
+                        </li>
+                        <li><strong>[OUTPUT]:</strong> "At the end, generate a markdown report using THIS template..."</li>
+                    </ul>
+                    <div style="margin-top: 1.5rem; text-align: center;">
+                        <a href="/assets/docs/Gem_Agent_System_Instructions.pdf" download class="demo-link">Download My Full System Instructions (PDF) →</a>
+                    </div>
+                </div>
+
+                <h2>The Bottom Line</h2>
+                <p>I thought replacing my intake process would take a week of coding. It took a day of thinking.</p>
+                <p>The leverage isn't that AI writes the code. The leverage is that <strong>AI allows your logic to become software without the code step.</strong></p>
+                
+                <hr />
+                
+                <p><a href="/projects/gem-agent" class="demo-link">View the Portfolio Case Study →</a></p>
+            <footer class="article-footer">
+                <div class="author-bio">
+                    <div class="author-avatar">WK</div>
+                    <div class="author-info">
+                        <h4>Winston Koh & Project Athena</h4>
+                        <p>This case study was co-authored by Winston and <a href="/athena">Project
+                                Athena</a><br />— his AI-powered digital personal assistant.</p>
+                        <p><a href="/about">More about us →</a></p>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </main>
+</Layout>

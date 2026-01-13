@@ -1,0 +1,243 @@
+/* ========================================
+   GEM AGENT PAGE STYLES
+   Forked from athena.css
+   Theme: Gold (Agency/Premium) + Royal Blue (Corporate/Trust)
+======================================== */
+
+/* Content Variables */
+:root {
+    --gem-gold: #FFD700;
+    --gem-blue: #4169E1;
+    --gem-text-muted: #8892b0;
+    --gem-text-bright: #ccd6f6;
+    --gem-bg-dark: #0a0a0f;
+}
+
+/* Hero Section */
+.gem-hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.gem-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    z-index: 2;
+    position: relative;
+}
+
+.gem-headline {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    max-width: 1200px;
+}
+
+.gem-subhead {
+    font-size: 1.35rem;
+    color: var(--gem-text-muted);
+    margin-bottom: 0.5rem;
+    max-width: 650px;
+}
+
+.gem-micro {
+    font-size: 0.95rem;
+    color: var(--gem-gold);
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 2rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Image Containers */
+.gem-hero-image-container {
+    width: 100%;
+    margin: 2rem 0;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    box-shadow: 0 0 60px rgba(255, 215, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.gem-hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    mix-blend-mode: lighten;
+    opacity: 0.9;
+}
+
+/* CTA Row */
+.gem-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.gem-secondary-link {
+    font-size: 0.9rem;
+    color: var(--gem-text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.gem-secondary-link:hover {
+    color: var(--gem-gold);
+}
+
+/* Section Layout */
+.gem-section {
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.gem-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--gem-text-bright);
+    border-left: 3px solid var(--gem-gold);
+    padding-left: 1rem;
+}
+
+.gem-section p,
+.gem-section li {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--gem-text-muted);
+}
+
+/* Logic Gate Diagram Styling */
+.logic-diagram-container {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.logic-diagram-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.caption {
+    font-size: 0.9rem;
+    color: var(--gem-text-muted);
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Timeline */
+.gem-timeline {
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    padding-left: 2rem;
+    margin: 2rem 0;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.35rem;
+    top: 0.4rem;
+    width: 12px;
+    height: 12px;
+    background: var(--gem-bg-dark);
+    border: 2px solid var(--gem-gold);
+    border-radius: 50%;
+}
+
+.timeline-time {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--gem-gold);
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.timeline-content {
+    color: var(--gem-text-bright);
+}
+
+/* Result Mockup */
+.result-showcase {
+    position: relative;
+    margin: 3rem 0;
+}
+
+.result-img-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.result-img {
+    width: 100%;
+    display: block;
+}
+
+/* Callout Box (Used for Constraints) */
+.gem-callout {
+    background: rgba(255, 215, 0, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+}
+
+.gem-callout strong {
+    color: var(--gem-gold);
+}
+
+/* Text Gradient */
+.gem-text-gradient {
+    background: linear-gradient(90deg, var(--gem-gold) 0%, #F0E68C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Stats Grid */
+.gem-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.stat-box {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-val {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gem-gold);
+    display: block;
+}
+
+.stat-lbl {
+    font-size: 0.9rem;
+    color: var(--gem-text-muted);
+}
