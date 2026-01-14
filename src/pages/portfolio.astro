@@ -192,35 +192,5 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <script src="/assets/js/counter.js" is:inline></script>
-    <script is:inline>
-        // Portfolio Filter Functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const portfolioCards = document.querySelectorAll('.portfolio-card');
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function () {
-                    // Update active button
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-
-                    const filter = this.dataset.filter;
-
-                    // Filter cards
-                    portfolioCards.forEach(card => {
-                        if (filter === 'all') {
-                            card.style.display = 'flex';
-                            card.style.opacity = '1';
-                        } else if (card.dataset.category === filter) {
-                            card.style.display = 'flex';
-                            card.style.opacity = '1';
-                        } else {
-                            card.style.display = 'none';
-                            card.style.opacity = '0';
-                        }
-                    });
-                });
-            });
-        });
-    </script>
+    <script src="../assets/js/portfolio-filters.js"></script>
 </Layout>

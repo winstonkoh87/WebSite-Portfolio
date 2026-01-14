@@ -1,6 +1,8 @@
 
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import bionicStackDiagram from '../../assets/images/bionic-stack-diagram.png';
 import '../../styles/article.css';
 ---
 
@@ -67,9 +69,9 @@ import '../../styles/article.css';
                         spots — not a yes-machine.</li>
                 </ul>
                 <figure class="article-figure">
-                    <img src="/assets/images/bionic-stack-diagram.png"
+                    <Image src={bionicStackDiagram}
                         alt="Diagram showing three layers: Human Judgment (goals, stakes, context) at top, Interface Protocols in middle, AI Compute and Memory at bottom"
-                        loading="lazy" decoding="async" width="1200" height="675">
+                        loading="lazy" decoding="async" />
                     <figcaption>The Bionic Stack: Human judgment (the "Why") sits on top of AI infrastructure (the
                         "How"), connected by specific interface protocols.</figcaption>
                 </figure>

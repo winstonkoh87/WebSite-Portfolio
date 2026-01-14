@@ -1,10 +1,24 @@
 
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import adImg from '../../assets/images/2-day-efficiency-trap/ad.png';
+import chessImg from '../../assets/images/2-day-efficiency-trap/chess.png';
+import codingImg from '../../assets/images/2-day-efficiency-trap/coding.png';
+import mapImg from '../../assets/images/2-day-efficiency-trap/map.png';
 import '../../styles/article.css';
 ---
 
-<Layout title="The Efficiency Trap: A Systems Analysis of False Competence | Winston Koh" description="Deconstructing the mechanic of 'False Competence' in accelerated learning. Why efficient inputs (2-Day Courses) lead to fragile outputs." showFloatingButtons={false}>
+<Layout 
+    title="The Efficiency Trap: A Systems Analysis of False Competence | Winston Koh" 
+    description="Deconstructing the mechanic of 'False Competence' in accelerated learning. Why efficient inputs (2-Day Courses) lead to fragile outputs." 
+    showFloatingButtons={false} 
+    image="/assets/images/2-day-efficiency-trap/ad.png"
+    articleData={{
+        publishedTime: "2026-01-14T08:00:00Z",
+        tags: ["Systems Thinking", "Learning", "Productivity"]
+    }}
+>
     <main class="article-container">
         <a href="/writing" class="back-link">← Back to Writing</a>
         <article>
@@ -39,7 +53,9 @@ import '../../styles/article.css';
                     <p>This is attractive because it offers a <strong>High-Value Skill</strong> (Trading) for <strong>Low-Friction Input</strong> (13 Hours).</p>
                 </div>
 
-                <img src="/assets/images/2-day-efficiency-trap/ad.png" alt="The 2-Day Mastery Ad" style="width: 100%; border-radius: 8px; margin: 1.5rem 0; border: 1px solid rgba(255,255,255,0.1);">
+                <figure class="article-figure">
+                    <Image src={adImg} alt="The 2-Day Mastery Ad" style="width: 100%; border-radius: 8px; margin: 1.5rem 0; border: 1px solid rgba(255,255,255,0.1);" />
+                </figure>
 
                 <p>The problem isn't that the course is a scam. The problem is that it confuses <strong>Data Transmission</strong> with <strong>Skill Acquisition</strong>.</p>
 
@@ -57,7 +73,9 @@ import '../../styles/article.css';
 
                 <p>To understand why "accelerated learning" often fails in complex domains, we need to bifurcate "knowing" into two categories:</p>
 
-                <img src="/assets/images/2-day-efficiency-trap/chess.png" alt="Vocabulary vs Grammar" style="width: 100%; border-radius: 8px; margin: 1.5rem 0; border: 1px solid rgba(255,255,255,0.1);">
+                <figure class="article-figure">
+                    <Image src={chessImg} alt="Vocabulary vs Grammar" style="width: 100%; border-radius: 8px; margin: 1.5rem 0; border: 1px solid rgba(255,255,255,0.1);" />
+                </figure>
 
                 <div class="table-wrapper">
                     <table class="comparison-table">
@@ -102,7 +120,9 @@ import '../../styles/article.css';
 
                 <p>I tracked my own acquisition curve using Google's <strong>Antigravity</strong> agent to learn Python/System Architecture. The delta between "Vocabulary" and "Grammar" became apparent immediately.</p>
 
-                <img src="/assets/images/2-day-efficiency-trap/coding.png" alt="Coding Difficulty Curve" style="width: 100%; border-radius: 8px; margin: 1.5rem 0; border: 1px solid rgba(255,255,255,0.1);">
+                <figure class="article-figure">
+                    <Image src={codingImg} alt="Coding Difficulty Curve" style="width: 100%; border-radius: 8px; margin: 1.5rem 0; border: 1px solid rgba(255,255,255,0.1);" />
+                </figure>
 
                 <h3>The "Day 2" Plateau</h3>
                 <p>By Day 2, I had achieved "Vocabulary Competence." I could read the code. I knew the functions. I felt competent.</p>
@@ -130,7 +150,9 @@ import '../../styles/article.css';
 
                 <p>When evaluating any "Mastery" claim, apply this heuristic:</p>
 
-                <img src="/assets/images/2-day-efficiency-trap/map.png" alt="Map vs Territory" style="width: 100%; border-radius: 8px; margin: 1.5rem 0; border: 1px solid rgba(255,255,255,0.1);">
+                <figure class="article-figure">
+                    <Image src={mapImg} alt="Map vs Territory" style="width: 100%; border-radius: 8px; margin: 1.5rem 0; border: 1px solid rgba(255,255,255,0.1);" />
+                </figure>
 
                 <div class="exec-summary" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3);">
                     <h4>🗺️ The Navigation Rule</h4>

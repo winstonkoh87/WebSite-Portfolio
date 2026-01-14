@@ -1,10 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import winstonAvatar from '../assets/images/winston-avatar.jpg';
 ---
 
 <Layout title="About | Winston Koh | AI Systems Architect" description="Explore the technical framework and philosophy of Winston Koh. Building high-leverage AI systems and sovereign digital assets.">
     <section class="about-header-flex">
-        <img src="/assets/images/winston-avatar.jpg" alt="Winston Koh Illustration" class="brand-avatar">
+        <Image src={winstonAvatar} alt="Winston Koh Illustration" class="brand-avatar" loading="eager" />
         <div class="header-text">
             <h1>About</h1>
             <p class="page-subtitle">Strategic Systems Architect & Full-stack Engineer</p>

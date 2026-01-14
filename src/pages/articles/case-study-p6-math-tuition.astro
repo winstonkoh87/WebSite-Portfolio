@@ -1,10 +1,22 @@
 
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import mathproHero from '../../assets/images/mathpro-hero.png';
+import mathproLighthouse from '../../assets/images/mathpro-lighthouse.png';
 import '../../styles/article.css';
 ---
 
-<Layout title="Case Study: P6 Math Tuition (Building a Digital HQ) | Winston Koh" description="How we transformed a traditional tuition referral process into a digital powerhouse using the Athena Framework." showFloatingButtons={false}>
+<Layout 
+    title="Building a Tuition Centre's Lead Engine in Under One Hour | Winston Koh" 
+    description="From brief to deployment: a 5-page SME website and digital marketing launch plan built in under one hour." 
+    showFloatingButtons={false} 
+    image="/assets/images/mathpro-hero.png"
+    articleData={{
+        publishedTime: "2026-01-05T08:00:00Z",
+        tags: ["SME", "Lead Gen", "Astro"]
+    }}
+>
     <main class="article-container">
         <a href="/writing" class="back-link">← Back to Writing</a>
         <article>
@@ -144,11 +156,8 @@ import '../../styles/article.css';
                     </table>
                 </div>
                 <figure class="article-figure">
-                    <img src="/assets/images/mathpro-hero.png"
-                        alt="MathPro Tuition homepage hero section with trust signals and Book Free Trial CTA"
-                        loading="lazy">
-                    <figcaption>The finished homepage: clear value proposition, trust signals, and conversion-focused
-                        CTA. <em>(Note: Statistics shown are example positioning for demo purposes.)</em></figcaption>
+                    <Image src={mathproHero} alt="MathPro Tuition Homepage Mockup" loading="lazy" decoding="async" />
+                    <figcaption>The MathPro Tuition homepage: clean, high-trust, and built for conversion.</figcaption>
                 </figure>
                 <h3>Timeline</h3>
                 <div class="timeline">
@@ -334,9 +343,7 @@ import '../../styles/article.css';
                     </table>
                 </div>
                 <figure class="article-figure">
-                    <img src="/assets/images/mathpro-lighthouse.png"
-                        alt="Google Lighthouse performance score showing 100/100"
-                        loading="lazy" decoding="async" width="1200" height="200">
+                    <Image src={mathproLighthouse} alt="Google Lighthouse performance score showing 100/100" loading="lazy" decoding="async" width="1200" height="200" />
                     <figcaption>Lighthouse scores: 98/99/100/97 — static HTML outperforms most React sites</figcaption>
                 </figure>
                 <p>No React, no Next.js, no npm install. Just HTML, CSS, and JavaScript that will still render correctly

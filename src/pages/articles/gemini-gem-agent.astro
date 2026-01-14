@@ -1,10 +1,23 @@
 
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import gemHeader from '../../assets/images/gem-agent/header.png';
+import gemLogic from '../../assets/images/gem-agent/logic.png';
+import gemMockup from '../../assets/images/gem-agent/mockup.png';
 import '../../styles/article.css';
 ---
 
-<Layout title="Case Study: How I Compressed a Week of Agency R&D into a Single Day with Gemini Gems | Winston Koh" description="I thought replacing myself with an AI agent would take a week. It took me 24 hours. A case study in rapid logic prototyping." showFloatingButtons={false}>
+<Layout 
+    title="How I Compressed a Week of Agency R&D into a Single Day with Gemini Gems | Winston Koh" 
+    description="I thought replacing myself with an AI agent would take a week. It took me 24 hours. A case study in rapid logic prototyping and hard-coding ethics." 
+    showFloatingButtons={false} 
+    image="/assets/images/gem-agent/header.png"
+    articleData={{
+        publishedTime: "2026-01-08T08:00:00Z",
+        tags: ["AI", "Gemini", "Systems"]
+    }}
+>
     <main class="article-container">
         <a href="/writing" class="back-link">← Back to Writing</a>
         <article>
@@ -39,7 +52,9 @@ import '../../styles/article.css';
                 </div>
 
                 <h2>The Setup</h2>
-                <img src="/assets/images/gem-agent/header.png" alt="Digital Brain Concept" style="width: 100%; border-radius: 8px; margin: 1.5rem 0; border: 1px solid rgba(255,255,255,0.1);">
+                <figure class="article-figure">
+                    <Image src={gemHeader} alt="Digital Brain Concept" style="width: 100%; border-radius: 8px; margin: 1.5rem 0; border: 1px solid rgba(255,255,255,0.1);" />
+                </figure>
                 
                 <p>In professional services, there is a hidden killer of profitability: <strong>The Fact-Find.</strong></p>
                 <p>We usually call it "onboarding" or "discovery," but let’s call it what it really is: a 2-hour interrogation where you ask the same 20 questions ("What's your budget?", "Who are your competitors?") to figure out if a client is even worth working with.</p>
@@ -111,8 +126,9 @@ import '../../styles/article.css';
 
                 <div class="checklist-box">
                     <h4>📄 The Deliverable</h4>
-                    <img src="/assets/images/gem-agent/mockup.png" alt="Analyst Brief Mockup" style="width: 100%; border-radius: 8px; margin: 1rem 0; border: 1px solid rgba(255,255,255,0.1);">
-                    <p>A formatted <strong>Confidential Analyst Brief</strong>. It organizes the chaotic chat into:</p>
+                    <figure class="article-figure">
+                    <Image src={gemMockup} alt="Analyst Brief Mockup" style="width: 100%; border-radius: 8px; margin: 1rem 0; border: 1px solid rgba(255,255,255,0.1);" />
+                </figure>A formatted <strong>Confidential Analyst Brief</strong>. It organizes the chaotic chat into:</p>
                     <ul>
                         <li>Current State Analysis</li>
                         <li>Unit Economics Review</li>
@@ -146,7 +162,9 @@ import '../../styles/article.css';
                 <h2 id="integrity">Part 4: The Integrity Gate</h2>
                 <p>This is the most critical innovation. An AI that always says "Yes" is useless as a consultant.</p>
                 
-                <img src="/assets/images/gem-agent/logic.png" alt="Integrity Gate Logic Diagram" style="width: 100%; border-radius: 8px; margin: 2rem 0; border: 1px solid rgba(255,255,255,0.1);">
+                <figure class="article-figure">
+                    <Image src={gemLogic} alt="Integrity Gate Logic Diagram" style="width: 100%; border-radius: 8px; margin: 2rem 0; border: 1px solid rgba(255,255,255,0.1);" />
+                </figure>
                 
                 <p>I explicitly programmed it to <strong>not sell</strong>. If a lead has bad unit economics, the Agent is hard-coded to say: <em>"Winston's services may not be the right fit at this stage."</em> This builds more trust than any sales pitch.</p>
 

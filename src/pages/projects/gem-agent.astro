@@ -1,9 +1,13 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import gemHeader from '../../assets/images/gem-agent/header.png';
+import gemLogic from '../../assets/images/gem-agent/logic.png';
+import gemMockup from '../../assets/images/gem-agent/mockup.png';
 import '../../styles/gem-agent.css';
 ---
 
-<Layout title="Gem Agent Case Study | AI Systems | Winston Koh" description="How I built a Service-Led Diagnostic Agent in 24 hours using Gemini Gems. A case study in rapid AI prototyping and integrity-first logic design.">
+<Layout title="Gem Agent Case Study | AI Systems | Winston Koh" description="How I built a Service-Led Diagnostic Agent in 24 hours using Gemini Gems. A case study in rapid AI prototyping and integrity-first logic design." image="/assets/images/gem-agent/header.png">
     <!-- HERO -->
     <section class="gem-hero">
         <div class="gem-hero-content">
@@ -23,7 +27,7 @@ import '../../styles/gem-agent.css';
             </div>
 
             <div class="gem-hero-image-container">
-                <img src="/assets/images/gem-agent/header.png" alt="Digital Brain Concept" class="gem-hero-image">
+                <Image src={gemHeader} alt="Digital Brain Concept" class="gem-hero-image" loading="eager" />
                 <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1rem; background: linear-gradient(to top, #0a0a0f, transparent);">
                     <p class="caption">AI as the first line of defense in client intake.</p>
                 </div>
@@ -58,7 +62,7 @@ import '../../styles/gem-agent.css';
         </p>
 
         <div class="logic-diagram-container">
-            <img src="/assets/images/gem-agent/logic.png" alt="Integrity Gate Logic Diagram" class="logic-diagram-img">
+            <Image src={gemLogic} alt="Integrity Gate Logic Diagram" class="logic-diagram-img" />
             <p class="caption">The Integrity Gate: Hard-coding ethics into the logic flow.</p>
         </div>
 
@@ -120,7 +124,7 @@ import '../../styles/gem-agent.css';
 
         <div class="result-showcase">
             <div class="result-img-container">
-                <img src="/assets/images/gem-agent/mockup.png" alt="Analyst Brief Mockup" class="result-img">
+                <Image src={gemMockup} alt="Analyst Brief Mockup" class="result-img" />
             </div>
             <p class="caption" style="text-align: center; margin-top: 1rem;">The goal isn't a chat. The goal is a structured deliverable.</p>
         </div>

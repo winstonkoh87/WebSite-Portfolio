@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athena Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0f;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'JetBrains Mono', monospace;
+            overflow: hidden;
+            /* Prevent body scroll, let terminal scroll */
+        }
+
+        .terminal {
+            width: 100%;
+            max-width: 800px;
+            /* Slightly wider */
+            height: 100vh;
+            /* Full height of iframe */
+            max-height: 100vh;
+            background: linear-gradient(145deg, #12121a 0%, #0d0d14 100%);
+            border-radius: 0;
+            /* Remove radius for full bleed iframe */
+            border: none;
+            box-shadow: none;
+            /* Shadow handled by parent container */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .terminal-header {
+            background: linear-gradient(90deg, rgba(168, 85, 247, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot.red {
+            background: #ff5f56;
+        }
+
+        .dot.yellow {
+            background: #ffbd2e;
+        }
+
+        .dot.green {
+            background: #27c93f;
+        }
+
+        .terminal-title {
+            flex: 1;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 12px;
+        }
+
+        .terminal-body {
+            padding: 20px;
+            min-height: 400px;
+            color: #e2e8f0;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .line {
+            opacity: 0;
+            transform: translateY(5px);
+        }
+
+        .line.visible {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+
+        .prompt {
+            color: #a855f7;
+        }
+
+        .command {
+            color: #22d3ee;
+        }
+
+        .success {
+            color: #22c55e;
+        }
+
+        .info {
+            color: #94a3b8;
+        }
+
+        .highlight {
+            color: #f472b6;
+        }
+
+        .warning {
+            color: #fbbf24;
+        }
+
+        .dim {
+            color: #64748b;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 16px;
+            background: #a855f7;
+            animation: blink 1s infinite;
+            vertical-align: middle;
+            margin-left: 2px;
+        }
+
+        @keyframes blink {
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .typing {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+            <div class="terminal-title">athena — zsh — 80×24</div>
+        </div>
+        <div class="terminal-body" id="terminal">
+            <!-- Lines will be injected here -->
+        </div>
+    </div>
+
+    <script>
+        const terminal = document.getElementById('terminal');
+
+        const sequence = [
+            { type: 'prompt', text: '> ', delay: 500 },
+            { type: 'type', text: '/start', delay: 800 },
+            { type: 'newline', delay: 300 },
+            { type: 'line', html: '<span class="dim">────────────────────────────────────────</span>', delay: 100 },
+            { type: 'line', html: '<span class="highlight">⚡ ATHENA BOOT SEQUENCE</span>', delay: 200 },
+            { type: 'line', html: '<span class="dim">────────────────────────────────────────</span>', delay: 100 },
+            { type: 'newline', delay: 200 },
+            { type: 'line', html: '<span class="success">✅</span> Core Identity loaded', delay: 400 },
+            { type: 'line', html: '<span class="success">✅</span> Project State synced <span class="dim">(4,203 nodes)</span>', delay: 400 },
+            { type: 'line', html: '<span class="success">✅</span> Semantic Memory primed', delay: 400 },
+            { type: 'line', html: '<span class="success">✅</span> Session: <span class="command">2026-01-04-session-20</span>', delay: 400 },
+            { type: 'newline', delay: 300 },
+            { type: 'line', html: '<span class="success">🟢 SYSTEM READY</span>', delay: 500 },
+            { type: 'newline', delay: 800 },
+
+            // Semantic search
+            { type: 'prompt', text: '> ', delay: 300 },
+            { type: 'type', text: '/search "portfolio optimization"', delay: 1000 },
+            { type: 'newline', delay: 300 },
+            { type: 'line', html: '<span class="info">🔍 Searching 4,203 memories...</span>', delay: 600 },
+            { type: 'newline', delay: 200 },
+            { type: 'line', html: '<span class="highlight">📚 RESULTS</span> <span class="dim">(1.2s)</span>', delay: 400 },
+            { type: 'line', html: '  <span class="success">→</span> CS-242: Web Dev Tripwire Model <span class="dim">(0.89)</span>', delay: 300 },
+            { type: 'line', html: '  <span class="success">→</span> Protocol 221: High-Performance UX <span class="dim">(0.84)</span>', delay: 300 },
+            { type: 'line', html: '  <span class="success">→</span> Session 2026-01-03-19: SEO Strategy <span class="dim">(0.81)</span>', delay: 300 },
+            { type: 'newline', delay: 600 },
+
+            // Quicksave
+            { type: 'prompt', text: '> ', delay: 300 },
+            { type: 'type', text: '/quicksave "Reviewed portfolio strategy"', delay: 1200 },
+            { type: 'newline', delay: 300 },
+            { type: 'line', html: '<span class="success">✅</span> Quicksave <span class="dim">[21:15 SGT]</span> → session-20.md', delay: 400 },
+            { type: 'line', html: '<span class="info">🔥</span> Hot Sync: <span class="command">1 chunk</span> embedded', delay: 400 },
+            { type: 'newline', delay: 800 },
+
+            // End
+            { type: 'prompt', text: '> ', delay: 300 },
+            { type: 'type', text: '/end', delay: 600 },
+            { type: 'newline', delay: 300 },
+            { type: 'line', html: '<span class="dim">────────────────────────────────────────</span>', delay: 100 },
+            { type: 'line', html: '<span class="warning">📊 SESSION SUMMARY</span>', delay: 300 },
+            { type: 'line', html: '  Duration: <span class="command">12m 34s</span>', delay: 200 },
+            { type: 'line', html: '  Queries: <span class="command">3</span>', delay: 200 },
+            { type: 'line', html: '  Quicksaves: <span class="command">2</span>', delay: 200 },
+            { type: 'line', html: '  Memories created: <span class="command">1</span>', delay: 200 },
+            { type: 'line', html: '<span class="dim">────────────────────────────────────────</span>', delay: 100 },
+            { type: 'line', html: '<span class="success">✅</span> Session archived. See you next time.', delay: 500 },
+            { type: 'newline', delay: 300 },
+            { type: 'prompt', text: '> ', delay: 300 },
+            { type: 'cursor', delay: 0 },
+        ];
+
+        let currentLine = null;
+
+        async function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function typeText(text, element) {
+            for (let char of text) {
+                element.textContent += char;
+                await sleep(50 + Math.random() * 30);
+            }
+        }
+
+        async function runSequence() {
+            for (const item of sequence) {
+                await sleep(item.delay);
+
+                switch (item.type) {
+                    case 'prompt':
+                        currentLine = document.createElement('div');
+                        currentLine.className = 'line visible';
+                        currentLine.innerHTML = `<span class="prompt">${item.text}</span><span class="typing"></span>`;
+                        terminal.appendChild(currentLine);
+                        break;
+
+                    case 'type':
+                        const typingSpan = currentLine.querySelector('.typing');
+                        typingSpan.className = 'command';
+                        await typeText(item.text, typingSpan);
+                        break;
+
+                    case 'newline':
+                        currentLine = null;
+                        break;
+
+                    case 'line':
+                        const line = document.createElement('div');
+                        line.className = 'line';
+                        line.innerHTML = item.html;
+                        terminal.appendChild(line);
+                        await sleep(50);
+                        line.classList.add('visible');
+                        break;
+
+                    case 'cursor':
+                        const cursor = document.createElement('span');
+                        cursor.className = 'cursor';
+                        currentLine.appendChild(cursor);
+                        break;
+                }
+
+                terminal.scrollTop = terminal.scrollHeight;
+            }
+        }
+
+        // Start immediately when iframe loads
+        setTimeout(runSequence, 500);
+    </script>
+</body>
+
+</html>

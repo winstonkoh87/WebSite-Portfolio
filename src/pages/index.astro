@@ -1,5 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import clientMelvin from '../assets/images/client-melvin.png';
+import clientTuition from '../assets/images/client-tuition.png';
+import clientSme from '../assets/images/client-sme.png';
+import clientDerrick from '../assets/images/client-derrick.png';
 ---
 
 <Layout title="Winston Koh | AI Systems Architect & Full-stack Engineer" description="Singapore-based AI Systems Architect. I build autonomous agents, reliable business workflows, and production-grade software. Stop hiring tasks, start building assets.">
@@ -167,7 +172,7 @@ import Layout from '../layouts/Layout.astro';
                 <p class="testimonial-quote">Winston delivered exactly what we needed — a clean, fast website that
                     actually converts. No fluff, just results.</p>
                 <div class="testimonial-author">
-                    <img src="/assets/images/client-melvin.png" alt="SAF Officer" class="testimonial-avatar-img">
+                    <Image src={clientMelvin} alt="SAF Officer" class="testimonial-avatar-img" />
                     <div class="testimonial-info">
                         <span class="testimonial-name">SAF Officer</span>
                         <span class="testimonial-role">Personal Branding Client</span>
@@ -178,7 +183,7 @@ import Layout from '../layouts/Layout.astro';
                 <p class="testimonial-quote">The turnaround was insane. From brief to live site in under a day. The
                     AI-augmented workflow is real.</p>
                 <div class="testimonial-author">
-                    <img src="/assets/images/client-tuition.png" alt="Education SME" class="testimonial-avatar-img">
+                    <Image src={clientTuition} alt="Education SME" class="testimonial-avatar-img" />
                     <div class="testimonial-info">
                         <span class="testimonial-name">Tuition Centre Owner</span>
                         <span class="testimonial-role">Education SME</span>
@@ -189,7 +194,7 @@ import Layout from '../layouts/Layout.astro';
                 <p class="testimonial-quote">Finally, someone who gets it. Not just a website, but a system that
                     works while I focus on my business.</p>
                 <div class="testimonial-author">
-                    <img src="/assets/images/client-sme.png" alt="F&B Industry" class="testimonial-avatar-img">
+                    <Image src={clientSme} alt="F&B Industry" class="testimonial-avatar-img" />
                     <div class="testimonial-info">
                         <span class="testimonial-name">Small Business Owner</span>
                         <span class="testimonial-role">F&B Industry</span>
@@ -199,7 +204,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="testimonial-card">
                 <p class="testimonial-quote">The proposal blew me away. I went from not knowing where to start to having a complete 90-day roadmap with ROI projections. Professional, fast, and data-driven.</p>
                 <div class="testimonial-author">
-                    <img src="/assets/images/client-derrick.png" alt="Freelance Coach" class="testimonial-avatar-img">
+                    <Image src={clientDerrick} alt="Freelance Coach" class="testimonial-avatar-img" />
                     <div class="testimonial-info">
                         <span class="testimonial-name">Freelance Coach</span>
                         <span class="testimonial-role">Sports Industry</span>
@@ -262,11 +267,14 @@ import Layout from '../layouts/Layout.astro';
                 }
             }
             
+            // Capture Hook: Log missed queries for "Bionic" improvement
+            console.log(`[ATHENA CAPTURE] Thinking about: "${query}" (No direct match found. Logging for knowledge base expansion.)`);
+            
             // Fallback responses
             const fallbacks = [
-                `I don't have specific info on "${query}". Try asking about: projects, stack, pricing, or availability.`,
-                `Hmm, I'm not sure about that. Type 'help' to see what I can answer.`,
-                `I'm a simple AI — try asking about Winston's projects, tech stack, or how to contact him.`
+                `I don't have specific info on "${query}" yet. I've logged this to Winston's "Bionic Loop" for future updates. Try asking about: projects, stack, or pricing.`,
+                `Hmm, that's outside my current index. I've flagged "${query}" for Winston to review. Type 'help' to see my active protocols.`,
+                `Internal knowledge gap detected for "${query}". Protocol 102: Query logged. Try asking about Winston's AI systems or F&B work.`
             ];
             return fallbacks[Math.floor(Math.random() * fallbacks.length)];
         }

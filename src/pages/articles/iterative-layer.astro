@@ -1,10 +1,12 @@
 
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import iterativeLayerHero from '../../assets/images/iterative-layer-hero.png';
 import '../../styles/article.css';
 ---
 
-<Layout title="The Iterative Layer: Why AI Will Never One-Shot Your Problems | Winston Koh" description="Magic prompts don't exist. The real power of AI comes from iterative collaboration—Plan, Execute, Calibrate, Iterate. Here's the framework." showFloatingButtons={false}>
+<Layout title="The Iterative Layer: Why AI Will Never One-Shot Your Problems | Winston Koh" description="Magic prompts don't exist. The real power of AI comes from iterative collaboration—Plan, Execute, Calibrate, Iterate." showFloatingButtons={false} image="/assets/images/iterative-layer-hero.png">
     <main class="article-container">
         <a href="/writing" class="back-link">← Back to Writing</a>
         <article>
@@ -57,10 +59,11 @@ import '../../styles/article.css';
                 <p>I call it the <strong>Iterative Layer</strong>—a four-phase cycle that transforms AI from a coin flip into a reliable collaborator.</p>
                 <!-- Hero Image -->
                 <figure class="article-figure">
-                    <img src="/assets/images/iterative-layer-hero.png"
-                        alt="The Iterative Cycle: Plan, Execute, Calibrate, Iterate"
-                        loading="lazy" decoding="async">
-                    <figcaption>The Iterative Layer: Four phases, infinite reps.</figcaption>
+                    <Image src={iterativeLayerHero}
+                        alt="Diagram showing the iterative cycle: Goal -> Retreive -> Reason -> Execute -> Review -> Goal"
+                        loading="lazy" decoding="async" />
+                    <figcaption>The Iterative Layer: A continuous loop of grounding, reasoning, and error-correction.
+                    </figcaption>
                 </figure>
                 <div class="table-wrapper">
                     <table class="comparison-table">

@@ -175,21 +175,35 @@ F -.-> A
         </ul>
     </section>
 
-    <!-- Mermaid.js -->
-    <script type="module" is:inline>
-        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({
-            startOnLoad: true,
-            theme: 'dark',
-            fontFamily: 'JetBrains Mono',
-            themeVariables: {
-                lineColor: '#64ffda',
-                primaryColor: '#1a1a2e',
-                primaryTextColor: '#ccd6f6',
-                primaryBorderColor: '#64ffda',
-                secondaryColor: '#0a0a0f',
-                tertiaryColor: '#1a1a2e'
-            }
-        });
+    <!-- Mermaid.js with Lazy Loading -->
+    <script is:inline>
+        // Only load mermaid when in viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    import('https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs')
+                        .then(m => {
+                            const mermaid = m.default;
+                            mermaid.initialize({
+                                startOnLoad: true,
+                                theme: 'dark',
+                                fontFamily: 'JetBrains Mono',
+                                themeVariables: {
+                                    lineColor: '#64ffda',
+                                    primaryColor: '#1a1a2e',
+                                    primaryTextColor: '#ccd6f6',
+                                    primaryBorderColor: '#64ffda',
+                                    secondaryColor: '#0a0a0f',
+                                    tertiaryColor: '#1a1a2e'
+                                }
+                            });
+                        });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { rootMargin: '100px' });
+
+        const mermaidContainer = document.querySelector('.mermaid-container');
+        if (mermaidContainer) observer.observe(mermaidContainer);
     </script>
 </Layout>

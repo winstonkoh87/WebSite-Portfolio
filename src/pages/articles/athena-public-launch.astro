@@ -1,9 +1,22 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import redditStats from '../../assets/images/articles/athena-launch-reddit-stats.png';
+import githubClones from '../../assets/images/articles/athena-launch-github-clones.png';
+import githubReferrers from '../../assets/images/articles/athena-launch-github-referrers.png';
 import '../../styles/article.css';
 ---
 
-<Layout title="Project Athena Public Launch: Reflections & Data | Winston Koh" description="A closer look at the launch metrics, traffic sources, and unexpected behavioral data from the first week of Project Athena." showFloatingButtons={false}>
+<Layout 
+    title="Project Athena Public Launch: Reflections & Data | Winston Koh" 
+    description="A closer look at the launch metrics, traffic sources, and unexpected behavioral data from the first week of Project Athena." 
+    showFloatingButtons={false} 
+    image="/assets/images/articles/athena-launch-reddit-stats.png"
+    articleData={{
+        publishedTime: "2026-01-03T08:00:00Z",
+        tags: ["Launch", "Data", "Story"]
+    }}
+>
     <main class="article-container">
         <a href="/writing" class="back-link">← Back to Writing</a>
         <article>
@@ -64,11 +77,13 @@ import '../../styles/article.css';
                     <p style="font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-top: 1rem; text-align: center;">
                         Main post: 9.9K views | r/vibecoding: 1.3K | r/ArtificialSentience: 791 | r/ClaudeCode: 602</p>
                 </div>
-                <img src="/assets/images/articles/athena-launch-reddit-stats.png"
-                    alt="Reddit Post Insights showing 9.8K views, 80% upvote ratio, and top country breakdown"
-                    class="article-image">
-                <p class="article-image-caption">Figure 1: Reddit Post Insights — organic reach across US (37%), Germany
-                    (6%), UK (5%).</p>
+                <figure class="article-figure">
+                    <Image src={redditStats}
+                        alt="Reddit Post Insights showing 9.8K views, 80% upvote ratio, and top country breakdown"
+                        class="article-image" loading="lazy" decoding="async" />
+                    <figcaption class="article-image-caption">Figure 1: Reddit Post Insights — organic reach across US (37%), Germany
+                        (6%), UK (5%).</figcaption>
+                </figure>
                 <h2 id="the-decision">The Decision: Professional Account or... Bang My Pussy?</h2>
                 <p>When you're about to launch a serious technical project to the world, convention says: <em>create a
                         clean, professional account</em>. Scrub your history. Look respectable. Don't give people a
@@ -117,13 +132,13 @@ import '../../styles/article.css';
                     to do the repetitive, boring, un-glamorous work. When you show proof that you <em>did</em> do that
                     work—511 sessions worth—it creates instant authority.</p>
                 <p>The number is specific. It's not "over 500." It's "511." Specificity signals truth.</p>
-                <img src="/assets/images/articles/athena-launch-github-clones.png"
-                    alt="GitHub Insights showing 1,260 clones from 750 unique cloners in the last 14 days"
-                    class="article-image">
-                <p class="article-image-caption">Figure 2: GitHub Traffic (14-day window) — 1,260 clones from 750 unique
-                    users. The
-                    spike on 12/23 was early organic discovery; the larger spike (12/31-Jan 1) is the Reddit
-                    announcement.</p>
+                <figure class="article-figure">
+                    <Image src={githubClones}
+                        alt="GitHub Insights showing 1,260 clones from 750 unique cloners in the last 14 days"
+                        class="article-image" loading="lazy" decoding="async" />
+                    <figcaption class="article-image-caption">Figure 2: GitHub Traffic (14-day window) — 1,260 clones from 750 unique
+                    users.</figcaption>
+                </figure>
                 <h2 id="dark-social">The Dark Social Signal: Shares > Upvotes</h2>
                 <p>The most interesting metric wasn't the views. It was the share ratio.</p>
                 <p>The post had <strong>12 upvotes</strong> but <strong>61 shares</strong>. That's a 5:1 ratio.</p>
@@ -135,11 +150,13 @@ import '../../styles/article.css';
                 <p>This is "Dark Social"—traffic that doesn't show up in referrer logs because it's shared via private
                     channels. And it's the highest quality signal you can get. It means people found it <em>useful</em>,
                     not just interesting.</p>
-                <img src="/assets/images/articles/athena-launch-github-referrers.png"
-                    alt="GitHub referrer data showing traffic from github.com, reddit, Google, and more"
-                    class="article-image">
-                <p class="article-image-caption">Figure 3: Where the traffic came from. Note the reddit.com referral,
-                    but also direct traffic from github.com (people finding it organically).</p>
+                <figure class="article-figure">
+                    <Image src={githubReferrers}
+                        alt="GitHub referrer data showing traffic from github.com, reddit, Google, and more"
+                        class="article-image" loading="lazy" decoding="async" />
+                    <figcaption class="article-image-caption">Figure 3: Where the traffic came from. Note the reddit.com referral,
+                    but also direct traffic from github.com (people finding it organically).</figcaption>
+                </figure>
                 <h2 id="the-lesson">The Strategic Takeaway</h2>
                 <p>We are entering an era where AI can generate a "professional-looking" anything in seconds. A polished
                     LinkedIn post. A slick landing page. A corporate headshot.</p>

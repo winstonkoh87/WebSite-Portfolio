@@ -1,9 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import trilateralHero from '../../assets/images/trilateral-hero.png';
 import '../../styles/article.css';
 ---
 
-<Layout title="The Trilateral Feedback Loop: Why One AI is Not Enough | Winston Koh" description="How to stop your AI from becoming a 'Yes Man'. Using adversarial AI audit loops to validate high-stakes decisions and shatter echo chambers." showFloatingButtons={false}>
+<Layout title="The Trilateral Feedback Loop: Why One AI is Not Enough | Winston Koh" description="How to stop your AI from becoming a 'Yes Man' and use adversarial audit loops to validate high-stakes decisions." showFloatingButtons={false} image="/assets/images/trilateral-hero.png">
     <!-- Mermaid.js for diagrams -->
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js" is:inline></script>
     <script is:inline>
@@ -119,9 +121,9 @@ import '../../styles/article.css';
                     a specific instruction: <em>"Your goal is to kill this deal."</em></p>
                 <!-- Diagram -->
                 <figure class="article-figure">
-                    <img src="/assets/images/trilateral-hero.png" alt="Diagram showing the Trilateral Feedback Loop between Human, Primary AI, and Critic AI"
-                        loading="lazy" decoding="async" width="1200" height="675">
-                    <figcaption>The Trilateral Loop: Three nodes, three perspectives, one synthesis.</figcaption>
+                    <Image src={trilateralHero} alt="Diagram showing the Trilateral Feedback Loop between Human, Primary AI, and Critic AI" loading="lazy" decoding="async" />
+                    <figcaption>The Trilateral Feedback Loop: A human orchestrates while two AIs provide reasoning and
+                        rigorous critique.</figcaption>
                 </figure>
                 <!-- Mermaid Flowchart -->
                 <figure class="article-figure">
