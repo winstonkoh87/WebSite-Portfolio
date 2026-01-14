@@ -60,6 +60,41 @@ const {
     <meta property="twitter:title" content={title}>
     <meta property="twitter:description" content={description}>
     <meta property="twitter:image" content="/assets/images/og-image.png">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://winstonkoh87.github.io/#person",
+          "name": "Winston Koh",
+          "jobTitle": "AI Systems Architect",
+          "url": "https://winstonkoh87.github.io",
+          "image": "https://winstonkoh87.github.io/assets/images/profile-winston.jpg",
+          "sameAs": [
+            "https://www.linkedin.com/in/winstonkoh",
+            "https://github.com/winstonkoh87"
+          ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "name": "Winston Koh - AI Systems & Strategy",
+          "@id": "https://winstonkoh87.github.io/#service",
+          "url": "https://winstonkoh87.github.io",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Singapore",
+            "addressCountry": "SG"
+          },
+          "priceRange": "$$$",
+          "description": "Specialized AI Systems Architecture and Bionic Workflows for SMEs and Enterprises in Singapore.",
+          "founder": { "@id": "https://winstonkoh87.github.io/#person" }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
