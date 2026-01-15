@@ -1,0 +1,186 @@
+
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import heroImg from '../../assets/images/grab-trap/hero.png';
+import entropyImg from '../../assets/images/grab-trap/entropy.png';
+import robotaxiImg from '../../assets/images/grab-trap/robotaxi.png';
+import '../../styles/article.css';
+---
+
+<Layout 
+    title="Protocol: Auditing Your True Hourly Rate (The 'Grab Test') | Winston Koh" 
+    description="The dangerous illusion of 'Monthly Income' vs. The brutal reality of 'Net Life Hour'. A framework for auditing the unit economics of your career." 
+    showFloatingButtons={false} 
+    image="/assets/images/grab-trap/hero.png"
+    articleData={{
+        publishedTime: "2026-01-15T12:00:00Z",
+        tags: ["Strategy", "Systems", "Economics"]
+    }}
+>
+    <main class="article-container">
+        <a href="/writing" class="back-link">← Back to Writing</a>
+        <article>
+            <header class="article-header">
+                <h1>Protocol: Auditing Your "Net Life Hour" (The Grab Test)</h1>
+                <div class="article-meta">
+                    <span>🏷️ System Protocol</span>
+                    <span>⚡ Unit Economics</span>
+                </div>
+                <div class="article-dates">
+                    <span>Published: <time datetime="2026-01-15">15 January 2026</time></span>
+                </div>
+            </header>
+            <div class="article-content">
+                
+                <!-- Executive Summary -->
+                <div class="exec-summary">
+                    <h4>📋 Executive Summary</h4>
+                    <ul>
+                        <li><strong>The Trap:</strong> Optimizing for "Gross Monthly Income" (Vanity) instead of "Net Life Hour" (Sanity).</li>
+                        <li><strong>The Case Study:</strong> Private Hire (Grab) driving appears to pay $30+/hr, but auditing the "True COGS" reveals a rate closer to $7.50/hr.</li>
+                        <li><strong>The Concept:</strong> "Skill Entropy" — some jobs pay you cash but rot your future earning capacity.</li>
+                        <li><strong>The Protocol:</strong> A 4-step audit to calculate the true cost of any project, freelance gig, or job.</li>
+                    </ul>
+                </div>
+
+                <figure class="article-figure">
+                    <Image src={heroImg} alt="The Illusion of Gig Income" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; margin: 1.5rem 0; border: 1px solid rgba(255,255,255,0.1);" />
+                    <figcaption>The Dashboard Illusion: Green bars represent Revenue, not Profit.</figcaption>
+                </figure>
+                
+                <h2>The Illusion of Top-Line Revenue</h2>
+                <p>We are culturally trained to look at the biggest number on the screen. In the gig economy, this is the "Weekly Earnings" screenshot.</p>
+                <p>A viral screenshot might show <strong>$533 in a single Sunday</strong>. It looks like executive pay for entry-level work. But this is an accounting error.</p>
+                <p>It confuses <strong>Revenue</strong> (Money in) with <strong>Profit</strong> (Money kept). In a business, this mistake leads to bankruptcy. In a career, it leads to burnout.</p>
+
+                <div class="toc-box">
+                    <h4>Table of Contents</h4>
+                    <ul class="toc-list">
+                        <li><a href="#audit">Part 1: The "Bad Day" Audit</a></li>
+                        <li><a href="#cogs">Part 2: The Hidden COGS</a></li>
+                        <li><a href="#entropy">Part 3: Skill Entropy</a></li>
+                        <li><a href="#protocol">Part 4: The Net Life Hour Protocol</a></li>
+                    </ul>
+                </div>
+
+                <h2 id="audit">Part 1: The "Bad Day" Audit (Real Data)</h2>
+                <p>Based on verified forum data (Jan 2026), here is the P&L of a typical "Bad Day" for a PHV driver:</p>
+
+                <div class="table-wrapper">
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Item</th>
+                                <th scope="col">Amount (SGD)</th>
+                                <th scope="col">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Gross Revenue</strong></td>
+                                <td style="color: #4ade80;">$160.00</td>
+                                <td>8 Hours driving</td>
+                            </tr>
+                            <tr>
+                                <td>Rental Cost</td>
+                                <td style="color: #f87171;">($80.00)</td>
+                                <td>Daily fixed cost</td>
+                            </tr>
+                            <tr>
+                                <td>Fuel/Energy</td>
+                                <td style="color: #f87171;">($20.00)</td>
+                                <td>Petrol/Charging</td>
+                            </tr>
+                            <tr style="border-top: 2px solid rgba(255,255,255,0.2);">
+                                <td><strong>Net Profit</strong></td>
+                                <td><strong>$60.00</strong></td>
+                                <td>Take-home pay</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hourly Rate</strong></td>
+                                <td style="color: #fbbf24;"><strong>$7.50/hr</strong></td>
+                                <td>$60 / 8 hours</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p>For context, a McSpicy meal costs nearly that much. You are piloting a 1.5-ton metal box through high-stress traffic, bearing 100% of the liability risk, for a wage that barely beats inflation.</p>
+
+                <h2 id="cogs">Part 2: The Hidden "COGS" of Your Career</h2>
+                <p>Even if you hit a "Good Day" ($17.50/hr), the math is still deceptively low because it ignores the <strong>Cost of Goods Sold (COGS)</strong> on your biological hardware.</p>
+                <p>In standard employment, the employer pays for:</p>
+                <ul>
+                    <li><strong>Depreciation:</strong> Health insurance, ergonomic chairs, air conditioning.</li>
+                    <li><strong>Future CapEx:</strong> CPF contributions (17% top-up), training, skill compounding.</li>
+                </ul>
+                <p>In the gig economy (or bad freelance retainers), <strong>you</strong> pay for these.</p>
+                
+                <h3>The "Kidney Tax"</h3>
+                <p>The "Holding Pee Tax" is real. Veteran drivers trade kidney health for queue position. The "Spinal Tax" is real. These are long-term liabilities that do not show up on the daily earnings screen, but they will show up on a hospital bill in 10 years.</p>
+
+                <figure class="article-figure">
+                    <Image src={entropyImg} alt="Skill Entropy Hamster Wheel" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; margin: 2rem 0; border: 1px solid rgba(255,255,255,0.1);" />
+                    <figcaption>The Hamster Wheel: High activity, zero displacement.</figcaption>
+                </figure>
+
+                <h2 id="entropy">Part 3: Skill Entropy (The Real Cost)</h2>
+                <p>The most dangerous cost is not financial; it is strategic. I call this <strong>Skill Entropy</strong>.</p>
+                <p><strong>Definition:</strong> <em>The decay of professional value caused by engaging in non-compounding labor.</em></p>
+                <p>If you code for 8 hours, you get paid AND you get better at coding. Your rate next year might go up.</p>
+                <p>If you drive for 8 hours, you simply get tired. Your driving skill does not compound into higher wages. In fact, you are strictly <strong>financing your own obsolescence</strong>.</p>
+
+                <figure class="article-figure">
+                    <Image src={robotaxiImg} alt="Robotaxi Future" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; margin: 2rem 0; border: 1px solid rgba(255,255,255,0.1);" />
+                    <figcaption>The End Game: You are training the map data for the fleet that replaces you.</figcaption>
+                </figure>
+
+                <h2 id="protocol">Part 4: The Protocol (How to Audit Your Life)</h2>
+                <p>I apply this "Grab Test" to every client retainer and project now.</p>
+
+                <div class="checklist-box">
+                    <h4>The "Net Life Hour" Formula</h4>
+                    <pre><code>Net Life Hour = 
+
+(Gross Revenue - Hard Costs - "Sanity Tax") 
+-------------------------------------------
+     (Delivery Hours + Anxiety Hours)</code></pre>
+                    <ul>
+                        <li><strong>Hard Costs:</strong> Software, subscriptions, outsourcing fees.</li>
+                        <li><strong>Sanity Tax:</strong> The estimated cost of recovery (e.g., 2 hours of doom-scrolling after a toxic meeting).</li>
+                        <li><strong>Anxiety Hours:</strong> Time spent thinking about the work while not doing it.</li>
+                    </ul>
+                </div>
+
+                <div class="key-insight">
+                    <h4>💡 The Verdict</h4>
+                    <p>If the result makes you cringe, walk away. Liquidity is oxygen in the survival phase, so if you are drowning, take the gig. But never mistake a lifeline for a ladder. The lifeline keeps you afloat; the ladder gets you out.</p>
+                </div>
+
+                <div class="checklist-box">
+                    <h4>📚 Further Reading</h4>
+                    <ul>
+                        <li><a href="/articles/2-day-efficiency-trap">The Efficiency Trap</a> — Why fast learning curves are often a mirage.</li>
+                        <li><a href="/articles/athena-5-pillars">The 5 Pillars of Sovereign AI</a> — How to build systems that compound over time.</li>
+                        <li><a href="/about">The Project Athena Manifesto</a> — The philosophy of digital leverage.</li>
+                    </ul>
+                </div>
+
+                <hr />
+                
+                <p style="font-style: italic; color: #888;">This protocol was originally published as a personal essay on <a href="https://medium.com/@winstonkoh87" target="_blank">Medium</a>.</p>
+
+            <footer class="article-footer">
+                <div class="author-bio">
+                    <div class="author-avatar">WK</div>
+                    <div class="author-info">
+                        <h4>Winston Koh & Project Athena</h4>
+                        <p>This protocol was co-authored by Winston and <a href="/athena">Project Athena</a><br />— his AI-powered digital personal assistant.</p>
+                        <p><a href="/about">More about us →</a></p>
+                    </div>
+                </div>
+            </footer>
+        </article>
+    </main>
+</Layout>

@@ -102,7 +102,12 @@
     background: rgba(255, 255, 255, 0.05);
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
-    font-size: 0.95em;
+    font-size: 0.9em;
+    /* Slightly smaller to fit more */
+    white-space: pre-wrap;
+    /* Crucial for wrapping long formulas */
+    word-break: break-word;
+    /* Ensure it breaks on long variable names */
 }
 
 /* Executive Summary Box */
