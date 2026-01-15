@@ -159,7 +159,7 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 | **Sticker Shop** | E-commerce | [View Site](https://winstonkoh87.github.io/projects/sticker-shop/) |
 | **That Bio Tutor** | Education | [View Site](https://winstonkoh87.github.io/projects/thatbiotutor/) |
 | **Melvin Lim Portfolio** | Personal | [View Site](https://winstonkoh87.github.io/projects/melvin/) |
-| **Coach Derrick Lim** | Digital Marketing | [View Site](https://winstonkoh87.github.io/swim-coach-demo/) |
+| **Coach Derrick Lim** | Digital Marketing | [View Case Study](https://winstonkoh87.github.io/articles/ai-marketing-workflow/) |
 
 ---
 
