@@ -1,6 +1,6 @@
 # Building a Portfolio Website (Astro v5)
 
-> **Last Updated**: 10 January 2026
+> **Last Updated**: 16 January 2026
 > **Status**: Migrated to Astro Framework 🚀
 
 [![Live Site](https://img.shields.io/badge/Live-winstonkoh87.github.io-00C853?style=flat-square)](https://winstonkoh87.github.io/)
@@ -19,7 +19,7 @@ This documents how I built (and evolved) a complete portfolio website with AI-au
 | Metric | Count |
 |--------|-------|
 | **Pages** | 8 |
-| **Articles** | 6 |
+| **Articles** | 13 |
 | **Live Demo Sites** | 6 |
 | **AI Widget** | ✅ Athena Live |
 | **Framework** | Astro 5.0 |
@@ -129,7 +129,7 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 | [Home](https://winstonkoh87.github.io/) | Hero + Athena Live widget + Featured projects |
 | [About](https://winstonkoh87.github.io/about) | Identity, philosophy, Bionic Operating Model |
 | [Framework](https://winstonkoh87.github.io/framework) | Three-Pillar Leadership, Arena Physics, Laws, SDR |
-| [Writing](https://winstonkoh87.github.io/writing) | Blog with 6 published articles |
+| [Writing](https://winstonkoh87.github.io/writing) | Blog with 13 published articles |
 | [Portfolio](https://winstonkoh87.github.io/portfolio) | 6 live demo sites |
 | [Athena](https://winstonkoh87.github.io/athena) | Product page: What Athena is and how it works |
 | [Services](https://winstonkoh87.github.io/services) | Fixed pricing. Fast delivery. Systems that work. |
