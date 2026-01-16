@@ -1,0 +1,132 @@
+---
+import MelvinLayout from '../../../layouts/MelvinLayout.astro';
+---
+
+<MelvinLayout 
+    title="Connect"
+    description="Get in touch with Melvin Lim. Connect via Email, LinkedIn, or Instagram."
+>
+    <section class="page-header container">
+        <span class="eyebrow">Outreach</span>
+        <h1>Let's Connect.</h1>
+        <p class="lead">Always happy to discuss policy, leadership, or just grab a coffee.</p>
+    </section>
+
+    <section class="contact-grid container">
+        
+        <a href="mailto:melvinlim976@gmail.com" class="contact-card">
+            <div class="icon-box">✉️</div>
+            <h3>Email</h3>
+            <p>melvinlim976@gmail.com</p>
+            <span class="link-arrow">Send Message →</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/melvinlimjunwei/" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="icon-box">💼</div>
+            <h3>LinkedIn</h3>
+            <p>Melvin Lim Jun Wei</p>
+            <span class="link-arrow">View Profile →</span>
+        </a>
+
+        <a href="https://www.instagram.com/melv._.innnn/" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="icon-box">📸</div>
+            <h3>Instagram</h3>
+            <p>@melv._.innnn</p>
+            <span class="link-arrow">Follow →</span>
+        </a>
+
+    </section>
+
+</MelvinLayout>
+
+<style>
+    .page-header {
+        padding: 8rem 0 4rem 0;
+        text-align: center;
+    }
+
+    .eyebrow {
+        font-family: var(--mv-font-mono);
+        color: var(--mv-accent);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-size: 0.8rem;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .lead {
+        color: var(--mv-text-muted);
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding-bottom: 8rem;
+    }
+
+    .contact-card {
+        background: var(--mv-surface);
+        padding: 3rem 2rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.03);
+        text-align: center;
+        text-decoration: none;
+        transition: transform 0.2s, background 0.2s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .contact-card:hover {
+        transform: translateY(-5px);
+        background: #1a1a1a;
+        border-color: rgba(255,255,255,0.1);
+    }
+
+    .icon-box {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-card h3 {
+        color: var(--mv-text-main);
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    .contact-card p {
+        color: var(--mv-text-muted);
+        margin: 0;
+        font-family: var(--mv-font-mono);
+        font-size: 0.9rem;
+    }
+
+    .link-arrow {
+        margin-top: 1rem;
+        color: var(--mv-accent);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+        opacity: 0.8;
+    }
+
+    .contact-card:hover .link-arrow {
+        opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+        h1 { font-size: 2.5rem; }
+    }
+</style>

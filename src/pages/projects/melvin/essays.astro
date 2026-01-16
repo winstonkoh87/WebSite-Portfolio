@@ -1,0 +1,229 @@
+---
+import MelvinLayout from '../../../layouts/MelvinLayout.astro';
+---
+
+<MelvinLayout 
+    title="The Library"
+    description="Melvin Lim's Reading List (Sandel, LKY) and Selected Essays on Diplomacy, Meritocracy, and Legal Theory."
+>
+    <section class="page-header container">
+        <span class="eyebrow">Input / Output</span>
+        <h1>The Library</h1>
+        <p class="lead">Ideas I am consuming, and ideas I am producing.</p>
+    </section>
+
+    <div class="container layout-grid">
+        
+        <!-- Left: Reading List (Input) -->
+        <aside class="reading-section">
+            <h2 class="section-label">Currently Reading</h2>
+            
+            <div class="book-item">
+                <span class="book-status">Active</span>
+                <img src="/assets/images/projects/melvin/book-justice.webp" alt="Justice Book Cover" class="book-cover" />
+                <h3>Justice: What's the Right Thing to Do?</h3>
+                <p class="book-author">Michael Sandel</p>
+                <div class="book-meta">Exploring utilitarianism vs. libertarianism.</div>
+            </div>
+
+            <div class="book-item dim">
+                <span class="book-status">Queue</span>
+                <img src="/assets/images/projects/melvin/book-hard-truths.webp" alt="Hard Truths Book Cover" class="book-cover" />
+                <h3>Hard Truths</h3>
+                <p class="book-author">Lee Kuan Yew</p>
+            </div>
+
+            <div class="book-item dim">
+                <span class="book-status">Queue</span>
+                <h3>The Brothers Karamazov</h3>
+                <p class="book-author">Fyodor Dostoevsky</p>
+            </div>
+        </aside>
+
+        <!-- Right: Essays (Output) -->
+        <main class="essays-section">
+            <h2 class="section-label">Selected Writing</h2>
+
+            <article class="essay-item">
+                <span class="essay-date">2024 • Saints MUN • Deputy Chair</span>
+                <h3>Diplomacy in a Fragile World</h3>
+                <p class="essay-abstract">
+                    Reflections on <strong>Prof. Kishore Mahbubani's</strong> address. He spoke on the paradox of global interdependence vs. geopolitical fragility. The key takeaway: ASEAN acts as a critical shield against Great Power rivalry. Diplomacy isn't just about principles; it's about holding space for dialogue when tensions rise.
+                </p>
+            </article>
+
+            <article class="essay-item">
+                <span class="essay-date">2024 • Dialogue with Minister Chan Chun Sing</span>
+                <h3>The Trade-offs of Meritocracy</h3>
+                <p class="essay-abstract">
+                    A candid discussion on the "imperfect but necessary" nature of meritocracy. Minister Chan emphasized <em>Ikigai</em>—aligning passion, mission, vocation, and profession. My reflection: Efficiency matters, but a compassionate society requires us to value diverse talents beyond the academic scorecard.
+                </p>
+            </article>
+
+            <article class="essay-item">
+                <span class="essay-date">2023 • 13th S Rajaratnam Lecture</span>
+                <h3>Resilience as Foreign Policy</h3>
+                <p class="essay-abstract">
+                    President Halimah Yacob's insight: "Many countries would mourn our absence." This struck a chord. As a small nation, our relevance relies on our internal cohesion. Domestic unity is the currency we trade with on the global stage.
+                </p>
+            </article>
+
+            <a href="#" class="essay-item">
+            <span class="essay-date">Finalist</span>
+            <h3>NUS Sejarah Inquisition</h3>
+            <p>"Reimagining the Sang Nila Utama Narrative." A critique of colonial historiography.</p>
+        </a>
+
+            <article class="essay-item">
+                <span class="essay-date">2024 • NUS Sejarah Inquisition • Top 3 Finalist</span>
+                <h3>Preserving Culinary Heritage</h3>
+                <p class="essay-abstract">
+                    An exploration of Singapore's "Dying Traditions" through the lens of traditional pastries. Globalization isn't just an economic threat; it's a cultural one. Preserving identity requires active stewardship of our vanishing food culture.
+                </p>
+            </article>
+
+        </main>
+    </div>
+
+</MelvinLayout>
+
+<style>
+    .page-header {
+        padding-top: 8rem;
+        padding-bottom: 4rem;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .eyebrow {
+        font-family: var(--mv-font-sans);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--mv-accent);
+        font-size: 0.8rem;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .lead {
+        font-size: 1.25rem;
+        color: var(--mv-text-muted);
+    }
+
+    .layout-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 4rem;
+        padding: 4rem 0 8rem 0;
+    }
+
+    .section-label {
+        font-family: var(--mv-font-sans);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--mv-text-muted);
+        margin-bottom: 2rem;
+        display: block;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-bottom: 1rem;
+    }
+
+    /* Books */
+    .book-item {
+        margin-bottom: 2.5rem;
+    }
+
+    .book-item.dim { opacity: 0.5; }
+
+    .book-status {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        border: 1px solid rgba(255,255,255,0.2);
+        padding: 2px 6px;
+        border-radius: 4px;
+        margin-bottom: 0.5rem;
+        display: inline-block;
+    }
+
+    .book-item h3 {
+        font-size: 1.2rem;
+        margin: 0.5rem 0 0.2rem 0;
+    }
+
+    .book-author {
+        font-family: var(--mv-font-serif);
+        font-style: italic;
+        color: var(--mv-text-muted);
+        margin: 0 0 0.5rem 0;
+    }
+
+    .book-meta {
+        font-size: 0.85rem;
+        color: var(--mv-text-muted);
+        line-height: 1.4;
+    }
+
+    .book-cover {
+        width: 60px;
+        height: 90px;
+        float: left; 
+        margin-right: 1rem; 
+        margin-bottom: 0.5rem;
+        object-fit: cover;
+        border-radius: 4px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+
+    /* Essays */
+    .essay-item {
+        margin-bottom: 4rem;
+        display: block;
+        text-decoration: none; /* Remove default underline */
+        color: inherit; /* Inherit white color */
+        transition: opacity 0.2s;
+    }
+
+    .essay-item:hover {
+        opacity: 0.8;
+    }
+
+    .essay-date {
+        font-family: var(--mv-font-mono);
+        color: var(--mv-accent);
+        font-size: 0.8rem;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .essay-item h3 {
+        font-size: 1.75rem;
+        margin: 0 0 1rem 0;
+    }
+
+    .essay-abstract {
+        font-size: 1.1rem;
+        color: var(--mv-text-muted);
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        max-width: 600px;
+    }
+
+    .read-link {
+        color: var(--mv-text-main);
+        text-decoration: none;
+        border-bottom: 1px solid var(--mv-accent);
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+        .layout-grid {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+    }
+</style>

@@ -1,0 +1,216 @@
+---
+import MelvinLayout from '../../../layouts/MelvinLayout.astro';
+---
+
+<MelvinLayout 
+    title="Vision 2030"
+    description="Melvin Lim's 10-year roadmap. From mastering First Principles of Law to advocating for Restorative Justice and Public Policy."
+>
+    <section class="page-header container">
+        <span class="eyebrow">The Road Ahead</span>
+        <h1>Vision 2030</h1>
+        <p class="lead">From the parade square to the courtroom. My plan for the next decade.</p>
+        <div class="hypothesis-badge">
+            <span class="badge-icon">⚠️</span> 
+            <span class="badge-text"><strong>Current Hypothesis:</strong> This roadmap is a living document. Subject to evolution, failure, and new data.</span>
+        </div>
+    </section>
+
+    <section class="vision-grid container">
+        
+        <!-- Pillar 1: Academic -->
+        <article class="vision-pillar">
+            <div class="pillar-header">
+                <span class="step-number">01</span>
+                <h2>Legal Scholarship</h2>
+            </div>
+            <div class="pillar-content">
+                <p class="objective"><strong>Objective:</strong> To master the first principles of Law and Political Economy.</p>
+                <ul class="roadmap-list">
+                    <li><strong>Targets:</strong> NUS or SMU Law (Class of 2027)</li>
+                    <li><strong>Specialization:</strong> Public, Administrative, and Criminal Law</li>
+                    <li><strong>Research Focus:</strong> <em>Restorative Justice Frameworks in Urban Societies</em></li>
+                    <li><strong>Aspiration:</strong> Balancing deterrent frameworks with empathetic rehabilitation.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- Pillar 2: Professional -->
+        <article class="vision-pillar">
+            <div class="pillar-header">
+                <span class="step-number">02</span>
+                <h2>Litigation & Advocacy</h2>
+            </div>
+            <div class="pillar-content">
+                <p class="objective"><strong>Objective:</strong> To practice law with technical excellence and moral clarity.</p>
+                <ul class="roadmap-list">
+                    <li>Training Contract at a Big 4 Firm (Dispute Resolution)</li>
+                    <li>Pro Bono Practice: Criminal Legal Aid Scheme (CLAS)</li>
+                    <li>Focus: Commercial Litigation & White Collar Crime</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- Pillar 3: Impact -->
+        <article class="vision-pillar">
+            <div class="pillar-header">
+                <span class="step-number">03</span>
+                <h2>Public Policy</h2>
+            </div>
+            <div class="pillar-content">
+                <p class="objective"><strong>Objective:</strong> To shape the systems that shape us.</p>
+                <p class="narrative">
+                    Law is the operating system of society. My long-term ambition is to segue from practice into policy formulation, ensuring that our legal frameworks remain robust yet humane in an increasingly complex world.
+                </p>
+            </div>
+        </article>
+
+    </section>
+
+    <section class="quote-interlude container">
+        <blockquote>"Law is order, and good law is good order."</blockquote>
+        <cite>— Aristotle</cite>
+    </section>
+
+</MelvinLayout>
+
+<style>
+    .page-header {
+        padding-top: 8rem;
+        padding-bottom: 4rem;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .eyebrow {
+        font-family: var(--mv-font-sans);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--mv-accent);
+        font-size: 0.8rem;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .lead {
+        font-size: 1.25rem;
+        color: var(--mv-text-muted);
+        max-width: 600px;
+    }
+
+    .vision-grid {
+        padding: 6rem 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .vision-pillar {
+        padding-right: 2rem;
+    }
+
+    .pillar-header {
+        margin-bottom: 2rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-bottom: 1rem;
+    }
+
+    .step-number {
+        font-family: var(--mv-font-mono);
+        color: rgba(255,255,255,0.1);
+        font-size: 3rem;
+        font-weight: 700;
+        display: block;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+    }
+
+    .vision-pillar h2 {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    .pillar-content p {
+        font-size: 1rem;
+        color: var(--mv-text-muted);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .pillar-content strong {
+        color: var(--mv-text-main);
+    }
+
+    .roadmap-list li strong {
+        color: var(--mv-text-main);
+    }
+
+    /* Hypothesis Badge (Red Team Fix) */
+    .hypothesis-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        margin-top: 2rem;
+        padding: 0.8rem 1.2rem;
+        background: rgba(212, 175, 55, 0.05); /* Gold tint */
+        border: 1px dashed rgba(212, 175, 55, 0.3);
+        border-radius: 8px;
+        font-family: var(--mv-font-mono);
+        font-size: 0.8rem;
+        color: var(--mv-text-muted);
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .badge-icon {
+        font-size: 1rem;
+    }
+
+    .roadmap-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .roadmap-list li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--mv-text-muted);
+        font-size: 0.95rem;
+    }
+
+    .roadmap-list li::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: var(--mv-accent);
+    }
+
+    .quote-interlude {
+        text-align: center;
+        padding: 4rem 0 8rem 0;
+    }
+
+    .quote-interlude blockquote {
+        font-size: 2rem;
+        font-family: var(--mv-font-serif);
+        font-style: italic;
+        color: var(--mv-text-main);
+    }
+
+    @media (max-width: 900px) {
+        .vision-grid {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+        
+        .vision-pillar {
+            padding-right: 0;
+        }
+    }
+</style>

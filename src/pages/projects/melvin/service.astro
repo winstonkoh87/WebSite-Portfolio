@@ -1,0 +1,185 @@
+---
+import MelvinLayout from '../../../layouts/MelvinLayout.astro';
+---
+
+<MelvinLayout 
+    title="Service as Education"
+    description="Melvin Lim's community service journey. Insights from Guide Dogs Singapore, Youth Corps, and Senior Care volunteering."
+>
+    <section class="page-header container">
+        <span class="eyebrow">The Heart</span>
+        <h1>Service as Education</h1>
+        <p class="lead">Leadership that is detached from the ground is fragile. Service keeps me rooted in reality.</p>
+    </section>
+
+    <div class="container">
+        
+        <article class="service-case">
+            <div class="service-meta">
+                <span class="org-name">Youth Corps Singapore</span>
+                <span class="role-name">Migrant Badminton Pgm • 2023</span>
+                <div class="image-wrapper">
+                    <img src="/assets/images/projects/melvin/youth-corps.png" alt="Youth Corps Singapore" class="service-img" />
+                </div>
+            </div>
+            <div class="service-body">
+                <h2>Bridging the Dormitory Gap.</h2>
+                <p>
+                    At Terusan RC, I played badminton with migrant workers who labor 15 hours a day to build our city. The stereotype of them being "cold" shatteredinstantly—they were spontaneous, kind, and eagerness to teach us carrom.
+                </p>
+                <p>
+                    <strong>The Realization:</strong> 16 men in one room. It was a stark contrast to my own life. True inclusivity means building bridges, not just acknowledging them from a distance.
+                </p>
+            </div>
+        </article>
+
+        <hr class="divider">
+
+        <article class="service-case">
+            <div class="service-meta">
+                <span class="org-name">Guide Dogs Singapore</span>
+                <span class="role-name">Flag Day • 2024</span>
+                <div class="image-wrapper">
+                    <img src="/assets/images/projects/melvin/guide-dogs.jpg" alt="Guide Dogs Singapore Flag Day" class="service-img" />
+                </div>
+            </div>
+            <div class="service-body">
+                <h2>Accessibility is Dignity.</h2>
+                <p>
+                    Stepping onto the streets for Flag Day forced me past the fear of rejection. Advocating for the visually impaired isn't just about funds; it's about signaling to the community that <em>everyone</em> deserves to navigate our city with dignity.
+                </p>
+            </div>
+        </article>
+        
+        <hr class="divider">
+
+        <article class="service-case">
+            <div class="service-meta">
+                <span class="org-name">Ahmad Ibrahim Secondary</span>
+                <span class="role-name">Origin Project • 2020</span>
+            </div>
+            <div class="service-body">
+                <h2>Roots: The Friendly Canteen.</h2>
+                <p>
+                    Long before GDS, I led the <strong>Visually Impaired Friendly Canteen Project</strong> in secondary school. It was my first lesson in universal design: how physical spaces either include or exclude the marginalized.
+                </p>
+                <p><strong>The Legacy:</strong> This 4-year journey through Scouts and Student Council formed the foundation of the leader I am today.</p>
+            </div>
+        </article>
+
+    </div>
+
+</MelvinLayout>
+
+<style>
+    .page-header {
+        padding-top: 8rem;
+        padding-bottom: 4rem;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .eyebrow {
+        font-family: var(--mv-font-sans);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--mv-accent);
+        font-size: 0.8rem;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .lead {
+        font-size: 1.25rem;
+        color: var(--mv-text-muted);
+        max-width: 600px;
+    }
+
+    .service-case {
+        padding: 6rem 0;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 4rem;
+    }
+
+    .service-meta {
+        border-top: 1px solid var(--mv-accent);
+        padding-top: 1rem;
+    }
+
+    .org-name {
+        display: block;
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--mv-text-main);
+    }
+
+    .role-name {
+        font-family: var(--mv-font-mono);
+        color: var(--mv-text-muted);
+        font-size: 0.9rem;
+    }
+
+    .service-body h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: var(--mv-text-main);
+    }
+
+    .service-body p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--mv-text-muted);
+        margin-bottom: 1.5rem;
+        max-width: 700px;
+    }
+
+    .service-body strong {
+        color: var(--mv-text-main);
+        font-weight: 600;
+    }
+
+    .divider {
+        border: 0;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        margin: 0;
+    }
+
+    @media (max-width: 768px) {
+        .service-case {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            padding: 4rem 0;
+        }
+        
+        .service-meta {
+            border-top: none;
+            border-left: 1px solid var(--mv-accent);
+            padding-top: 0;
+            padding-left: 1rem;
+        }
+    }
+
+    .image-wrapper {
+        margin-top: 1rem;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .service-img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s;
+    }
+
+    .image-wrapper:hover .service-img {
+        transform: scale(1.02);
+    }
+</style>

@@ -1,0 +1,610 @@
+---
+import MelvinLayout from '../../../layouts/MelvinLayout.astro';
+---
+
+<MelvinLayout 
+    title="Officer. Scholar. Citizen." 
+    description="The personal portfolio of Melvin Lim. Charting a path from military leadership to legal scholarship and public policy in Singapore."
+>
+    <section class="hero-section">
+        <div class="container hero-container">
+            <h1 class="hero-title">Leading with <span class="italic-accent">conscience.</span></h1>
+            <p class="hero-sub">Discipline for outcomes. Warmth for people.</p>
+            <div class="distinctions-ticker">
+            <span>Arts Faculty Top Student (SAJC)</span>
+            <span class="separator">•</span>
+            <span>SAF Young Leader Award</span>
+            <span class="separator">•</span>
+            <span>Chief Commissioner's Award (Scouts)</span>
+            <span class="separator">•</span>
+            <span>Mrs Grace Ballas Scholarship</span>
+            <span class="separator">•</span>
+            <span>Wong Tim Wah Scholarship</span>
+        </div>
+            
+            <!-- Hero Portrait -->
+            <div class="hero-image-wrapper">
+                <img src="/assets/images/projects/melvin/hero-portrait.png" alt="Melvin Lim - Officer Scholar" class="hero-image" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Bento Grid Section -->
+    <section class="bento-section container">
+        <span class="section-label">Selected Updates</span>
+        <div class="bento-grid">
+            <!-- Large Card: Duty -->
+            <a href="/projects/melvin/vision" class="bento-card large-card service-card has-bg" style="background-image: url('/assets/images/projects/melvin/ocs-commissioned.jpg');">
+                <div class="card-overlay"></div>
+                <div class="card-content relative z-10">
+                    <span class="card-tag">Duty</span>
+                    <h3>Serving as 2LT</h3>
+                    <p>Commanding Officer, 11 C4I Bn. Leading the 139/25 Cohort.</p>
+                </div>
+                <div class="card-arrow">→</div>
+            </a>
+
+            <!-- Medium Card: Reading -->
+            <a href="/projects/melvin/essays" class="bento-card medium-card reading-card">
+                <div>
+                    <span class="card-tag">Reading</span>
+                    <h3>Justice</h3>
+                    <p>Michael Sandel</p>
+                </div>
+                <div class="reading-progress">
+                    <div class="bar" style="width: 65%;"></div>
+                </div>
+            </a>
+
+            <!-- Medium Card: Resilience -->
+            <div class="bento-card medium-card quote-card">
+                <span class="card-tag">Resilience</span>
+                <p class="small-text">Conquered Mount Fansipan (3,147m). "The trek tested who I thought I was against who I really am."</p>
+                <cite>— Dec 2023</cite>
+            </div>
+
+            <!-- Small Card: The Mind (Reading/Thinking) -->
+            <a href="/projects/melvin/essays" class="bento-card small-card link-card">
+                <span class="card-tag">Library</span>
+                <h3>Input / Output</h3>
+                <div class="card-arrow">→</div>
+            </a>
+
+            <!-- Wide Card: Volunteering -->
+            <a href="/projects/melvin/service" class="bento-card wide-card social-card has-bg" style="background-image: url('/assets/images/projects/melvin/guide-dogs.jpg');">
+                <div class="card-overlay"></div>
+                <div class="card-content relative z-10">
+                    <span class="card-tag">Volunteering</span>
+                    <h3>Guide Dogs SG</h3>
+                    <p>Building a more accessible Singapore, one route at a time.</p>
+                </div>
+                <div class="card-arrow">→</div>
+            </a>
+            <!-- Wide Card: The Authenticity Patch (Wabi-Sabi) -->
+            <div class="bento-card wide-card quote-card">
+                <span class="card-tag" style="color: var(--mv-text-muted);">Current Struggle</span>
+                <p class="small-text" style="font-style: normal; opacity: 0.9;">"Understanding the limits of Law. Sometimes, the most 'just' outcome isn't found in a statute, but in a handshake. Still learning where that line is."</p>
+                <cite>— Reflection, Jan 2026</cite>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cta-section container">
+        <div class="vision-link-block">
+            <h2>The Road Ahead.</h2>
+            <p>From the parade square to the courtroom. My plan for the next decade.</p>
+            <a href="/projects/melvin/vision" class="btn-primary">View Vision Map</a>
+        </div>
+    </section>
+
+</MelvinLayout>
+
+<style>
+    .hero-section {
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-top: 4rem;
+    }
+
+    .hero-title {
+        font-size: clamp(3rem, 6vw, 5.5rem);
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.03em;
+    }
+
+    .italic-accent {
+        font-family: var(--mv-font-serif);
+        font-style: italic;
+        color: var(--mv-text-muted); /* More subtle */
+    }
+
+    .hero-sub {
+        font-size: 1.25rem;
+        color: var(--mv-text-muted);
+        max-width: 600px;
+        margin: 0 auto 2rem auto;
+    }
+
+    .hero-meta {
+        font-family: var(--mv-font-sans);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-size: 0.75rem;
+        color: var(--mv-accent);
+        opacity: 0.8;
+    }
+
+    .separator {
+        padding: 0 0.5rem;
+        color: #333;
+    }
+
+    /* Bento Grid */
+    .section-label {
+        font-family: var(--mv-font-sans);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--mv-text-muted);
+        margin-bottom: 2rem;
+        display: block;
+    }
+
+    .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, minmax(200px, auto));
+        gap: 1.5rem;
+    }
+
+    .bento-card {
+        background: var(--mv-surface);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.03);
+        transition: transform 0.2s, background 0.2s;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden; /* For bg images */
+    }
+
+    .has-bg {
+        padding: 0;
+    }
+
+    .has-bg .card-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.3));
+        z-index: 1;
+    }
+
+    .has-bg .card-content {
+        padding: 2rem;
+        z-index: 2;
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .has-bg {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-image-wrapper {
+        margin: 3rem auto 0 auto;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        border: 2px solid var(--mv-accent);
+        padding: 4px; /* offset border */
+        overflow: hidden;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .bento-card:hover {
+        transform: translateY(-4px);
+        background: #1a1a1a;
+        border-color: rgba(255,255,255,0.1);
+    }
+
+    .card-tag {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        color: var(--mv-accent);
+        letter-spacing: 0.05em;
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    .bento-card h3 {
+        font-size: 1.5rem;
+        margin: 0 0 0.5rem 0;
+    }
+
+    .bento-card p {
+        color: var(--mv-text-muted);
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    /* Grid Areas */
+    .large-card { grid-column: span 2; grid-row: span 2; }
+    .medium-card { grid-column: span 1; grid-row: span 1; }
+    .wide-card { grid-column: span 2; grid-row: span 1; }
+
+    /* Specific Card Styles */
+    .reading-progress {
+        height: 4px;
+        background: #333;
+        border-radius: 2px;
+        margin-top: 1rem;
+        width: 100%;
+    }
+    .reading-progress .bar {
+        background: var(--mv-text-main);
+        height: 100%;
+        border-radius: 2px;
+    }
+    
+    .card-arrow {
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        font-size: 1.5rem;
+        color: var(--mv-text-muted);
+        opacity: 0;
+        transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .bento-card:hover .card-arrow {
+        opacity: 1;
+        transform: translateX(4px);
+    }
+
+    .quote-card {
+        justify-content: center;
+        text-align: center;
+        background: radial-gradient(circle at center, #1a1a1a 0%, #111 100%);
+    }
+
+    .quote-card blockquote {
+        font-family: var(--mv-font-serif);
+        font-size: 1.25rem;
+        color: var(--mv-text-main);
+        margin: 0 0 1rem 0;
+        font-style: italic;
+    }
+    
+    .quote-card cite {
+        font-size: 0.85rem;
+        color: var(--mv-text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    <section class="distinctions-section container">
+        <div class="distinctions-ticker">
+            <span>SAF Young Leader Award</span>
+            <span class="separator">•</span>
+            <span>Mrs Grace Ballas Scholarship</span>
+            <span class="separator">•</span>
+            <span>Wong Tim Wah Scholarship</span>
+            <span class="separator">•</span>
+            <span>CCC-CDC Education Merit Award</span>
+            <span class="separator">•</span>
+            <span>Edusave Eagle (Leadership)</span>
+        </div>
+    </section>
+
+    <section class="cta-section container">
+        <div class="vision-link-block">
+            <h2>The Road Ahead.</h2>
+            <p>From the parade square to the courtroom. My plan for the next decade.</p>
+            <a href="/projects/melvin/vision" class="btn-primary">View Vision Map</a>
+        </div>
+    </section>
+
+</MelvinLayout>
+
+<style>
+    .hero-section {
+        height: 70vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-top: 4rem;
+    }
+
+    .hero-title {
+        font-size: clamp(3rem, 6vw, 5.5rem);
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.03em;
+    }
+
+    .italic-accent {
+        font-family: var(--mv-font-serif);
+        font-style: italic;
+        color: var(--mv-text-muted); /* More subtle */
+    }
+
+    .hero-sub {
+        font-size: 1.25rem;
+        color: var(--mv-text-muted);
+        max-width: 600px;
+        margin: 0 auto 2rem auto;
+    }
+
+    .hero-meta {
+        font-family: var(--mv-font-sans);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-size: 0.75rem;
+        color: var(--mv-accent);
+        opacity: 0.8;
+    }
+
+    .separator {
+        padding: 0 0.5rem;
+        color: #333;
+    }
+
+    /* Bento Grid */
+    .section-label {
+        font-family: var(--mv-font-sans);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--mv-text-muted);
+        margin-bottom: 2rem;
+        display: block;
+    }
+
+    .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, minmax(200px, auto));
+        gap: 1.5rem;
+    }
+
+    .bento-card {
+        background: var(--mv-surface);
+        padding: 2rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255,255,255,0.03);
+        transition: transform 0.2s, background 0.2s;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden; /* For bg images */
+    }
+
+    .has-bg {
+        padding: 0;
+    }
+
+    .has-bg .card-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.3));
+        z-index: 1;
+    }
+
+    .has-bg .card-content {
+        padding: 2rem;
+        z-index: 2;
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+
+    .has-bg {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-image-wrapper {
+        margin: 3rem auto 0 auto;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        border: 2px solid var(--mv-accent);
+        padding: 4px; /* offset border */
+        overflow: hidden;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .bento-card:hover {
+        transform: translateY(-4px);
+        background: #1a1a1a;
+        border-color: rgba(255,255,255,0.1);
+    }
+
+    .card-tag {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        color: var(--mv-accent);
+        letter-spacing: 0.05em;
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    .bento-card h3 {
+        font-size: 1.5rem;
+        margin: 0 0 0.5rem 0;
+    }
+
+    .bento-card p {
+        color: var(--mv-text-muted);
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    /* Grid Areas */
+    .large-card { grid-column: span 2; grid-row: span 2; }
+    .medium-card { grid-column: span 1; grid-row: span 1; }
+    .wide-card { grid-column: span 2; grid-row: span 1; }
+
+    /* Specific Card Styles */
+    .reading-progress {
+        height: 4px;
+        background: #333;
+        border-radius: 2px;
+        margin-top: 1rem;
+        width: 100%;
+    }
+    .reading-progress .bar {
+        background: var(--mv-text-main);
+        height: 100%;
+        border-radius: 2px;
+    }
+    
+    .card-arrow {
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        font-size: 1.5rem;
+        color: var(--mv-text-muted);
+        opacity: 0;
+        transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .bento-card:hover .card-arrow {
+        opacity: 1;
+        transform: translateX(4px);
+    }
+
+    .quote-card {
+        justify-content: center;
+        text-align: center;
+        background: radial-gradient(circle at center, #1a1a1a 0%, #111 100%);
+    }
+
+    .quote-card blockquote {
+        font-family: var(--mv-font-serif);
+        font-size: 1.25rem;
+        color: var(--mv-text-main);
+        margin: 0 0 1rem 0;
+        font-style: italic;
+    }
+    
+    .quote-card cite {
+        font-size: 0.85rem;
+        color: var(--mv-text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+
+    /* Distinctions */
+    .distinctions-section {
+        padding: 4rem 0;
+        border-top: 1px solid rgba(255,255,255,0.05);
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        margin-top: 4rem;
+    }
+
+    .distinctions-ticker {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        font-family: var(--mv-font-sans);
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        color: var(--mv-text-muted);
+        letter-spacing: 0.1em;
+    }
+
+    .cta-section {
+        padding: 8rem 0;
+        text-align: center;
+    }
+
+    .vision-link-block h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .vision-link-block p {
+        margin-bottom: 2.5rem;
+        color: var(--mv-text-muted);
+    }
+
+    .btn-primary {
+        display: inline-block;
+        padding: 1rem 2.5rem;
+        background: var(--mv-text-main);
+        color: var(--mv-bg);
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: transform 0.2s;
+    }
+
+    .btn-primary:hover {
+        transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+        .bento-grid {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+        }
+        
+        .large-card, .medium-card, .wide-card {
+            grid-column: span 1;
+            grid-row: auto;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+        }
+
+        .distinctions-ticker {
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .distinctions-ticker .separator {
+            display: none;
+        }
+    }
+</style>
