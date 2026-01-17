@@ -9,7 +9,6 @@ import '@fontsource/outfit/600.css';
 import '@fontsource/outfit/700.css';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
-import CookieConsent from '../components/CookieConsent.astro';
 
 interface Props {
 	title: string;
@@ -39,23 +38,14 @@ const ogImageURL = new URL(image, Astro.site);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) with GDPR-compliant default denied consents -->
-    <script is:inline src="https://www.googletagmanager.com/gtag/js?id=G-VG4XS3R5NV"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VG4XS3R5NV"></script>
     <script is:inline>
         window.dataLayer = window.dataLayer || [];
         function gtag() { 
             try { dataLayer.push(arguments); } catch(e) {} 
         }
         gtag("js", new Date());
-        
-        // GDPR: Default denied consents (anonymous data only until user accepts)
-        gtag("consent", "default", {
-            ad_storage: "denied",
-            ad_user_data: "denied",
-            ad_personalization: "denied",
-            analytics_storage: "denied",
-        });
-        
         gtag("config", "G-VG4XS3R5NV");
     </script>
 
@@ -156,8 +146,6 @@ const ogImageURL = new URL(image, Astro.site);
 
     <Footer />
 
-    <!-- Cookie Consent Banner -->
-    <CookieConsent />
 
 
 
