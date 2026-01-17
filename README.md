@@ -1,6 +1,6 @@
 # Building a Portfolio Website (Astro v5)
 
-> **Last Updated**: 16 January 2026
+> **Last Updated**: 17 January 2026
 > **Status**: Migrated to Astro Framework 🚀
 
 [![Live Site](https://img.shields.io/badge/Live-winstonkoh87.github.io-00C853?style=flat-square)](https://winstonkoh87.github.io/)
@@ -19,7 +19,7 @@ This documents how I built (and evolved) a complete portfolio website with AI-au
 | Metric | Count |
 |--------|-------|
 | **Pages** | 8 |
-| **Articles** | 13 |
+| **Articles** | 14 |
 | **Live Demo Sites** | 6 |
 | **AI Widget** | ✅ Athena Live |
 | **Framework** | Astro 5.0 |
@@ -107,6 +107,7 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 - **Implemented** localStorage caching for instant responses
 - **Designed** dark mode aesthetic, glassmorphism cards, particle constellation
 - **Audited** codebase for SEO, accessibility, broken links
+- **Cleaned** 230+ lines of duplicate code (January 2026 Audit)
 
 ### The Operating Model
 
@@ -147,6 +148,7 @@ This isn't just a portfolio *about* AI-augmented work — it's a **living demons
 | [Case Study: P6 Math Tuition](https://winstonkoh87.github.io/articles/case-study-p6-math-tuition) | Client work breakdown |
 | [SME AI Marketing Guide](https://winstonkoh87.github.io/articles/sme-ai-marketing-guide) | Practical AI for small business |
 | [Trilateral Feedback Loop](https://winstonkoh87.github.io/articles/trilateral-feedback-loop) | Multi-AI validation system |
+| [The Anti-Slop Protocol](https://winstonkoh87.github.io/articles/anti-slop-protocol) | AI co-creation workflow |
 
 ---
 
