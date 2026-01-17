@@ -1,0 +1,159 @@
+---
+// CookieConsent Component
+// Handles GDPR-compliant cookie consent with GA4 integration
+---
+
+<div id="cc-container"></div>
+
+<script>
+  import 'vanilla-cookieconsent/dist/cookieconsent.css';
+  import * as CookieConsent from 'vanilla-cookieconsent';
+
+  // Extend Window interface for gtag
+  declare global {
+    interface Window {
+      dataLayer: Record<string, any>[];
+      gtag: (...args: any[]) => void;
+    }
+  }
+
+  CookieConsent.run({
+    root: '#cc-container',
+    
+    guiOptions: {
+      consentModal: {
+        layout: 'box inline',
+        position: 'bottom left',
+      },
+      preferencesModal: {
+        layout: 'box',
+        position: 'right',
+        equalWeightButtons: true,
+        flipButtons: false,
+      },
+    },
+
+    categories: {
+      necessary: {
+        enabled: true,
+        readOnly: true,
+      },
+      analytics: {
+        enabled: false,
+        autoClear: {
+          cookies: [
+            { name: /^_ga/ },
+            { name: '_gid' },
+          ],
+        },
+      },
+    },
+
+    onFirstConsent: ({ cookie }) => {
+      if (cookie.categories.includes('analytics')) {
+        updateGAConsent(true);
+      }
+    },
+
+    onChange: ({ cookie }) => {
+      const analyticsAccepted = cookie.categories.includes('analytics');
+      updateGAConsent(analyticsAccepted);
+    },
+
+    language: {
+      default: 'en',
+      translations: {
+        en: {
+          consentModal: {
+            title: '🍪 Cookie Settings',
+            description: 'I use cookies to understand how visitors interact with my site. You can accept or manage your preferences.',
+            acceptAllBtn: 'Accept All',
+            acceptNecessaryBtn: 'Necessary Only',
+            showPreferencesBtn: 'Manage Preferences',
+          },
+          preferencesModal: {
+            title: 'Cookie Preferences',
+            acceptAllBtn: 'Accept All',
+            acceptNecessaryBtn: 'Necessary Only',
+            savePreferencesBtn: 'Save Preferences',
+            closeIconLabel: 'Close',
+            sections: [
+              {
+                title: 'Cookie Usage',
+                description: 'I use cookies to analyze site traffic and optimize your experience. You can choose which cookies to allow.',
+              },
+              {
+                title: 'Strictly Necessary',
+                description: 'These cookies are essential for the website to function and cannot be disabled.',
+                linkedCategory: 'necessary',
+              },
+              {
+                title: 'Analytics',
+                description: 'These cookies help me understand how visitors use the site, allowing me to improve content and user experience.',
+                linkedCategory: 'analytics',
+                cookieTable: {
+                  headers: {
+                    name: 'Name',
+                    description: 'Description',
+                    duration: 'Duration',
+                  },
+                  body: [
+                    {
+                      name: '_ga',
+                      description: 'Google Analytics - Used to distinguish users',
+                      duration: '2 years',
+                    },
+                    {
+                      name: '_gid',
+                      description: 'Google Analytics - Used to distinguish users',
+                      duration: '24 hours',
+                    },
+                  ],
+                },
+              },
+            ],
+          },
+        },
+      },
+    },
+  });
+
+  function updateGAConsent(granted: boolean) {
+    if (typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        ad_storage: granted ? 'granted' : 'denied',
+        ad_user_data: granted ? 'granted' : 'denied',
+        ad_personalization: granted ? 'granted' : 'denied',
+        analytics_storage: granted ? 'granted' : 'denied',
+      });
+      console.log(`[CookieConsent] GA4 consent ${granted ? 'granted' : 'denied'}`);
+    }
+  }
+</script>
+
+<style is:global>
+  /* Custom styling to match site theme */
+  :root {
+    --cc-bg: #0a0a0f;
+    --cc-text: #e0e0e0;
+    --cc-btn-primary-bg: #64ffda;
+    --cc-btn-primary-text: #0a0a0f;
+    --cc-btn-primary-hover-bg: #4fd1c5;
+    --cc-btn-secondary-bg: #1a1a2e;
+    --cc-btn-secondary-text: #e0e0e0;
+    --cc-btn-secondary-hover-bg: #2a2a4e;
+    --cc-toggle-bg-off: #1a1a2e;
+    --cc-toggle-bg-on: #64ffda;
+    --cc-cookie-category-block-bg: #1a1a2e;
+    --cc-overlay-bg: rgba(0, 0, 0, 0.85);
+    --cc-separator-border-color: #2a2a4e;
+  }
+
+  .cc-link {
+    color: #64ffda !important;
+  }
+
+  #cc-main {
+    font-family: 'Inter', sans-serif;
+  }
+</style>
