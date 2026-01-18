@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import '../styles/athena.css';
 ---
 
-<Layout title="Project Athena | Winston Koh" description="My person AI architecture. Zero babysitting. The autonomous 'Second Brain' that makes engineering context durable.">
+<Layout title="Project Athena | Winston Koh" description="AI-augmented second brain powered by Claude Opus 4.5 & Gemini Pro 3. Zero babysitting. The autonomous knowledge system that makes engineering context durable.">
     <!-- HERO -->
     <section class="athena-hero">
         <div class="athena-hero-content">
@@ -93,6 +93,7 @@ import '../styles/athena.css';
             <h3>What Athena Is (and Isn't)</h3>
             <ul>
                 <li><strong>Is:</strong> A personal RAG system for knowledge recall + agentic execution</li>
+                <li><strong>Is:</strong> Powered by frontier models (Claude Opus 4.5, Gemini Pro 3)</li>
                 <li><strong>Is:</strong> An operating system for my engineering workflow</li>
                 <li><strong>Isn't:</strong> A chatbot or consumer product</li>
                 <li><strong>Isn't:</strong> Magic — everything is logged, repeatable, auditable</li>
@@ -185,7 +186,7 @@ F -.-> A
                         .then(m => {
                             const mermaid = m.default;
                             mermaid.initialize({
-                                startOnLoad: true,
+                                startOnLoad: false,
                                 theme: 'dark',
                                 fontFamily: 'JetBrains Mono',
                                 themeVariables: {
@@ -197,6 +198,8 @@ F -.-> A
                                     tertiaryColor: '#1a1a2e'
                                 }
                             });
+                            // Explicitly render since script loads after DOM
+                            mermaid.run({ nodes: document.querySelectorAll('.mermaid') });
                         });
                     observer.unobserve(entry.target);
                 }
